@@ -73,10 +73,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const data = await kubernetesService.listNamespaces(req.query.context as string | undefined);
       res.json({ success: true, data });
     } catch (err: unknown) {
@@ -91,10 +92,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const ns = (req.query.namespace as string) || 'default';
       const data = await kubernetesService.listPods(ns, req.query.context as string | undefined);
       res.json({ success: true, data });
@@ -110,10 +112,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const ns = (req.query.namespace as string) || 'default';
       const data = await kubernetesService.listDeployments(
         ns,
@@ -132,10 +135,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const ns = (req.query.namespace as string) || 'default';
       const data = await kubernetesService.listServices(
         ns,
@@ -154,10 +158,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const data = await kubernetesService.listNodes(req.query.context as string | undefined);
       res.json({ success: true, data });
     } catch (err: unknown) {
@@ -172,10 +177,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const data = await kubernetesService.getPod(
         req.params.namespace,
         req.params.name,
@@ -194,10 +200,11 @@ router.get(
   requireRole('admin', 'operator', 'viewer'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const tail = parseInt(req.query.tail as string) || 100;
       const data = await kubernetesService.getPodLogs(
         req.params.namespace,
@@ -218,10 +225,11 @@ router.delete(
   requireRole('admin', 'operator'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       await kubernetesService.deletePod(
         req.params.namespace,
         req.params.name,
@@ -240,13 +248,15 @@ router.put(
   requireRole('admin', 'operator'),
   async (req: Request, res: Response) => {
     try {
-      if (!kubernetesService.isAvailable())
+      if (!kubernetesService.isAvailable()) {
         return res
           .status(503)
           .json({ success: false, message: 'K8s is unavailable, please import kubeconfig configuration first' });
+      }
       const { replicas } = req.body;
-      if (replicas === null || replicas === undefined)
+      if (replicas === null || replicas === undefined) {
         return res.status(400).json({ success: false, message: 'Replicas count required' });
+      }
       await kubernetesService.scaleDeployment(
         req.params.namespace,
         req.params.name,

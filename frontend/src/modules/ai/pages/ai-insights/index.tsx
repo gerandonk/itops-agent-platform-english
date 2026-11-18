@@ -59,12 +59,12 @@ export default function AIInsights() {
   const weekDelta = remediationStats?.weekOverWeekDelta ?? 0;
   const { text: successTrend, positive: successPositive } = formatDelta(weekDelta);
   // MTTR 改善：delta < 0 是好事（更快）
-  const mttrDeltaPct = remediationStats && remediationStats.completedLastWeek > 0
+  const mttrDeltaPct = remediationStats?.completedLastWeek && remediationStats.completedLastWeek > 0
     ? (remediationStats.completedThisWeek - remediationStats.completedLastWeek) / remediationStats.completedLastWeek
     : 0;
   const { text: mttrTrend, positive: mttrPositive } = (() => {
     // 修复耗时减少（completedThisWeek > completedLastWeek 表示更多完成）= 正面
-    if (remediationStats && remediationStats.mttrSeconds != null && remediationStats.mttrCount > 0) {
+    if (remediationStats && remediationStats.mttrSeconds !== null && remediationStats.mttrCount > 0) {
       // 用本周/上周的差值：本周完成更多 → 趋势向上
       return { text: `\${remediationStats.completedThisWeek} completions this week`, positive: true };
     }
