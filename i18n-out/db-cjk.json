@@ -1,0 +1,1206 @@
+[
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 1,
+  "id": "98f06ef2-cf54-4223-850d-d8b51ce697f7",
+  "value": "告警处理 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 1,
+  "id": "98f06ef2-cf54-4223-850d-d8b51ce697f7",
+  "value": "告警分析与处理专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 1,
+  "id": "98f06ef2-cf54-4223-850d-d8b51ce697f7",
+  "value": "告警处理"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 1,
+  "id": "98f06ef2-cf54-4223-850d-d8b51ce697f7",
+  "value": "负责分析告警信息，评估严重程度，并提供处理建议"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 2,
+  "id": "e1e71ba5-a6c8-46e7-8018-5e39e5f38970",
+  "value": "故障诊断 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 2,
+  "id": "e1e71ba5-a6c8-46e7-8018-5e39e5f38970",
+  "value": "故障诊断专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 2,
+  "id": "e1e71ba5-a6c8-46e7-8018-5e39e5f38970",
+  "value": "故障诊断"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 2,
+  "id": "e1e71ba5-a6c8-46e7-8018-5e39e5f38970",
+  "value": "分析系统故障，识别根因，并提供解决方案"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 3,
+  "id": "7a36ec54-d30f-44e6-8c9f-90d900cd820c",
+  "value": "日志分析 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 3,
+  "id": "7a36ec54-d30f-44e6-8c9f-90d900cd820c",
+  "value": "日志分析专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 3,
+  "id": "7a36ec54-d30f-44e6-8c9f-90d900cd820c",
+  "value": "日志分析"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 3,
+  "id": "7a36ec54-d30f-44e6-8c9f-90d900cd820c",
+  "value": "分析系统和应用日志，识别错误模式和异常事件"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 4,
+  "id": "e3512433-9bb4-4090-95c8-2d16ec8a9fab",
+  "value": "系统巡检 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 4,
+  "id": "e3512433-9bb4-4090-95c8-2d16ec8a9fab",
+  "value": "系统健康检查专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 4,
+  "id": "e3512433-9bb4-4090-95c8-2d16ec8a9fab",
+  "value": "系统巡检"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 4,
+  "id": "e3512433-9bb4-4090-95c8-2d16ec8a9fab",
+  "value": "执行系统健康检查，评估各项指标状态"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 5,
+  "id": "2296614c-8320-429d-94c1-621a439519ee",
+  "value": "变更执行 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 5,
+  "id": "2296614c-8320-429d-94c1-621a439519ee",
+  "value": "变更执行专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 5,
+  "id": "2296614c-8320-429d-94c1-621a439519ee",
+  "value": "变更执行"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 5,
+  "id": "2296614c-8320-429d-94c1-621a439519ee",
+  "value": "执行系统变更操作，验证操作结果"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 6,
+  "id": "eee428a6-6184-4365-b911-fd7b6e5d304a",
+  "value": "文档生成 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 6,
+  "id": "eee428a6-6184-4365-b911-fd7b6e5d304a",
+  "value": "文档生成专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 6,
+  "id": "eee428a6-6184-4365-b911-fd7b6e5d304a",
+  "value": "文档生成"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 6,
+  "id": "eee428a6-6184-4365-b911-fd7b6e5d304a",
+  "value": "根据任务执行结果，生成结构化的运维报告"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 7,
+  "id": "fa494d25-f9b3-424b-9a60-f2f96722c336",
+  "value": "合规检查 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 7,
+  "id": "fa494d25-f9b3-424b-9a60-f2f96722c336",
+  "value": "合规检查专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 7,
+  "id": "fa494d25-f9b3-424b-9a60-f2f96722c336",
+  "value": "合规检查"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 7,
+  "id": "fa494d25-f9b3-424b-9a60-f2f96722c336",
+  "value": "验证系统配置是否符合安全基线和合规要求"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 8,
+  "id": "9b2be085-af58-4f01-b58c-ba1346509f25",
+  "value": "服务器命令执行 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 8,
+  "id": "9b2be085-af58-4f01-b58c-ba1346509f25",
+  "value": "服务器操作专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 8,
+  "id": "9b2be085-af58-4f01-b58c-ba1346509f25",
+  "value": "服务器操作"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 8,
+  "id": "9b2be085-af58-4f01-b58c-ba1346509f25",
+  "value": "在目标服务器上执行命令并返回结果"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 9,
+  "id": "4e442e7f-a4e9-472f-9d45-67f148784ec1",
+  "value": "命令生成专家"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 9,
+  "id": "4e442e7f-a4e9-472f-9d45-67f148784ec1",
+  "value": "运维命令生成专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 9,
+  "id": "4e442e7f-a4e9-472f-9d45-67f148784ec1",
+  "value": "服务器操作"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 9,
+  "id": "4e442e7f-a4e9-472f-9d45-67f148784ec1",
+  "value": "[COMMAND_GENERATOR] 根据自然语言需求，智能生成对应的服务器命令"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 10,
+  "id": "4ad69ca8-30b7-4661-a0f3-36b9c6f933cb",
+  "value": "自动巡检 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 10,
+  "id": "4ad69ca8-30b7-4661-a0f3-36b9c6f933cb",
+  "value": "自动巡检专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 10,
+  "id": "4ad69ca8-30b7-4661-a0f3-36b9c6f933cb",
+  "value": "系统巡检"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 10,
+  "id": "4ad69ca8-30b7-4661-a0f3-36b9c6f933cb",
+  "value": "对多台服务器执行自动化巡检任务"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 11,
+  "id": "0d785a84-56a6-4855-8026-9e5ed27653b9",
+  "value": "网络巡检专家"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 11,
+  "id": "0d785a84-56a6-4855-8026-9e5ed27653b9",
+  "value": "网络设备巡检与健康诊断专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 11,
+  "id": "0d785a84-56a6-4855-8026-9e5ed27653b9",
+  "value": "网络巡检"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 11,
+  "id": "0d785a84-56a6-4855-8026-9e5ed27653b9",
+  "value": "对路由器、交换机、防火墙等网络设备执行标准化或自定义巡检"
+ },
+ {
+  "table": "agents",
+  "col": "name",
+  "rowid": 12,
+  "id": "b00868d3-c746-4d02-8ce6-5225692293d8",
+  "value": "数据库运维 Agent"
+ },
+ {
+  "table": "agents",
+  "col": "role",
+  "rowid": 12,
+  "id": "b00868d3-c746-4d02-8ce6-5225692293d8",
+  "value": "数据库运维与诊断专家"
+ },
+ {
+  "table": "agents",
+  "col": "category",
+  "rowid": 12,
+  "id": "b00868d3-c746-4d02-8ce6-5225692293d8",
+  "value": "数据库运维"
+ },
+ {
+  "table": "agents",
+  "col": "description",
+  "rowid": 12,
+  "id": "b00868d3-c746-4d02-8ce6-5225692293d8",
+  "value": "执行数据库健康检查、诊断、安全审计、锁分析和 SQL 审核，依托 dbskiter 工具链"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 1,
+  "id": "preset-wf-ca10678159743b98fef0294c0415e4df",
+  "value": "日常健康检查"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 1,
+  "id": "preset-wf-ca10678159743b98fef0294c0415e4df",
+  "value": "对服务器进行日常健康检查，包括系统巡检、命令执行和报告生成"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 2,
+  "id": "preset-wf-e922e80aec8dbdbe70b49b34a779bc25",
+  "value": "告警处理"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 2,
+  "id": "preset-wf-e922e80aec8dbdbe70b49b34a779bc25",
+  "value": "处理系统告警，分析告警信息，检查日志并生成处理报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 3,
+  "id": "preset-wf-845872615dc28933a3b038469d305826",
+  "value": "故障诊断"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 3,
+  "id": "preset-wf-845872615dc28933a3b038469d305826",
+  "value": "对系统故障进行全面诊断，分析症状、检查日志、执行命令并生成诊断报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 4,
+  "id": "preset-wf-cc03a8c6dec372045bac551160b9e4fd",
+  "value": "合规检查"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 4,
+  "id": "preset-wf-cc03a8c6dec372045bac551160b9e4fd",
+  "value": "验证服务器配置是否符合安全基线和合规要求，生成合规检查报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 5,
+  "id": "preset-wf-8262b051a59aee948a3b3b93a3933c62",
+  "value": "变更执行"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 5,
+  "id": "preset-wf-8262b051a59aee948a3b3b93a3933c62",
+  "value": "执行系统变更操作，验证操作结果，生成变更执行报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 6,
+  "id": "preset-wf-0a9a204a902a9c355cc38986d7e50713",
+  "value": "日志分析"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 6,
+  "id": "preset-wf-0a9a204a902a9c355cc38986d7e50713",
+  "value": "分析系统和应用日志，识别错误模式和异常事件，生成分析报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 7,
+  "id": "preset-wf-fd3c353e3a9b1d2b060ea6b49639bf51",
+  "value": "智能告警分级修复"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 7,
+  "id": "preset-wf-fd3c353e3a9b1d2b060ea6b49639bf51",
+  "value": "根据告警级别自动选择修复策略：P0/P1紧急修复需人工确认，P2自动修复，P3/P4仅记录日志"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 8,
+  "id": "preset-wf-651d3570a3401a3de0382e7f9cfb1bc1",
+  "value": "批量服务器配置巡检"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 8,
+  "id": "preset-wf-651d3570a3401a3de0382e7f9cfb1bc1",
+  "value": "遍历服务器列表，并行检查CPU、内存、磁盘，汇总生成巡检报告"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 9,
+  "id": "preset-wf-c4e5fa3c27ce4569bf324ae3c491c12b",
+  "value": "配置文件模板化修复"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 9,
+  "id": "preset-wf-c4e5fa3c27ce4569bf324ae3c491c12b",
+  "value": "读取配置模板 → 渲染变量 → 下发配置 → 验证 → 失败则回滚"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 10,
+  "id": "preset-wf-d222ede5cdcb1a2758cdf35b22178b9c",
+  "value": "服务健康检查与自愈"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 10,
+  "id": "preset-wf-d222ede5cdcb1a2758cdf35b22178b9c",
+  "value": "检查服务状态 → 异常则自动重启 → 通知运维 → 重启失败则人工介入"
+ },
+ {
+  "table": "workflows",
+  "col": "name",
+  "rowid": 11,
+  "id": "preset-wf-8f5333e8ee56ae02b9af01c8c9d8291b",
+  "value": "AARS 全闭环工作流"
+ },
+ {
+  "table": "workflows",
+  "col": "description",
+  "rowid": 11,
+  "id": "preset-wf-8f5333e8ee56ae02b9af01c8c9d8291b",
+  "value": "完整10步闭环：告警处理→AI诊断→修复命令生成→风险评估→智能决策(自动/审批/升级)→SSH执行→5级验证→自动回滚→知识沉淀→文档生成"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 1,
+  "id": "231c7cd3-c34f-45c0-a8a8-d4a39522423b",
+  "value": "磁盘空间不足自动清理"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 1,
+  "id": "231c7cd3-c34f-45c0-a8a8-d4a39522423b",
+  "value": "当磁盘使用率超过阈值时，自动清理日志和临时文件"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 2,
+  "id": "5996c69c-6faa-49ff-82ad-7cfa877f2e71",
+  "value": "服务宕机自动重启"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 2,
+  "id": "5996c69c-6faa-49ff-82ad-7cfa877f2e71",
+  "value": "当检测到服务宕机时，自动尝试重启服务"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 3,
+  "id": "55890477-c1ac-4983-922e-221f72ae8913",
+  "value": "高 CPU 使用率处理"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 3,
+  "id": "55890477-c1ac-4983-922e-221f72ae8913",
+  "value": "当 CPU 使用率持续过高时，分析原因并提供建议"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 4,
+  "id": "f3406b1f-526d-41b7-aea5-9a95d31318b2",
+  "value": "内存使用率过高处理"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 4,
+  "id": "f3406b1f-526d-41b7-aea5-9a95d31318b2",
+  "value": "当系统内存使用率过高时，分析并处理"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 5,
+  "id": "db860fc8-7391-4e44-9ba0-965247054f12",
+  "value": "网络设备CPU告警巡检"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 5,
+  "id": "db860fc8-7391-4e44-9ba0-965247054f12",
+  "value": "网络设备CPU过载时自动巡检"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 6,
+  "id": "cd6f89ce-cdb4-4d9c-a0f3-04a0f6178636",
+  "value": "磁盘清理高风险操作审批"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 6,
+  "id": "cd6f89ce-cdb4-4d9c-a0f3-04a0f6178636",
+  "value": "当主分区(/)使用率超过95%时，需要人工审批后才执行清理"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 7,
+  "id": "8f699344-e77d-46d9-ae29-b590d05a78a4",
+  "value": "日志异常自动诊断"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 7,
+  "id": "8f699344-e77d-46d9-ae29-b590d05a78a4",
+  "value": "当检测到应用错误日志激增时，自动分析日志并触发轮转"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 8,
+  "id": "2a2d3b4e-653d-4790-820b-728c7c5d442d",
+  "value": "多服务宕机批量修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 8,
+  "id": "2a2d3b4e-653d-4790-820b-728c7c5d442d",
+  "value": "当同服务器上多个核心服务宕机时，需审批后统一重启"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 9,
+  "id": "14fe9239-8e36-4b97-9aa2-92c02dd94da2",
+  "value": "网络端口连通性自动诊断"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 9,
+  "id": "14fe9239-8e36-4b97-9aa2-92c02dd94da2",
+  "value": "当核心端口(80/443/22)不可达时，自动诊断网络问题"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 10,
+  "id": "647c6e43-d601-4daa-8cbd-4ba91a586c38",
+  "value": "SSL 证书即将到期提醒"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 10,
+  "id": "647c6e43-d601-4daa-8cbd-4ba91a586c38",
+  "value": "当SSL证书剩余天数少于30天时，生成诊断报告并通知续费"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 11,
+  "id": "51aad65e-70a0-4595-92d8-c816bd71907a",
+  "value": "CPU 过载自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 11,
+  "id": "51aad65e-70a0-4595-92d8-c816bd71907a",
+  "value": "CPU 使用率/负载/iowait 告警自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 12,
+  "id": "4ebc2fe6-6737-4411-a4de-a78137ce24c9",
+  "value": "内存/交换分区溢出自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 12,
+  "id": "4ebc2fe6-6737-4411-a4de-a78137ce24c9",
+  "value": "内存使用率/OOM/swap 告警自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 13,
+  "id": "792192b1-d009-4b53-a305-a85e85d83001",
+  "value": "磁盘空间/IO 自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 13,
+  "id": "792192b1-d009-4b53-a305-a85e85d83001",
+  "value": "磁盘空间不足/inode满/IO延迟告警自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 14,
+  "id": "7347bae3-6c69-4600-aa07-a91e398898be",
+  "value": "服务/进程异常自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 14,
+  "id": "7347bae3-6c69-4600-aa07-a91e398898be",
+  "value": "服务宕机/进程死亡/端口不可达自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 15,
+  "id": "5c822fbd-35d3-44e7-8608-7cfc44c5d6b4",
+  "value": "网络连通性自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 15,
+  "id": "5c822fbd-35d3-44e7-8608-7cfc44c5d6b4",
+  "value": "网络丢包/延迟/接口故障自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 16,
+  "id": "b88247fc-c632-4c8a-9b94-01ca74ca941c",
+  "value": "系统运行环境异常诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 16,
+  "id": "b88247fc-c632-4c8a-9b94-01ca74ca941c",
+  "value": "系统时间偏差/温度/硬件/UPS 等告警诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 17,
+  "id": "b37fc55f-605f-464f-bc36-73fc40da1a10",
+  "value": "Prometheus 节点资源诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 17,
+  "id": "b37fc55f-605f-464f-bc36-73fc40da1a10",
+  "value": "Prometheus NodeExporter CPU/内存/磁盘告警诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 18,
+  "id": "a5804694-7611-4031-94c3-bec68d1ea5d9",
+  "value": "Kubernetes 容器异常诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 18,
+  "id": "a5804694-7611-4031-94c3-bec68d1ea5d9",
+  "value": "Kube pod 崩溃/容器重启/节点异常自动诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 19,
+  "id": "25976372-b36c-4d0e-93b7-ca4cd2a7a9e2",
+  "value": "ES 日志异常自动分析修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 19,
+  "id": "25976372-b36c-4d0e-93b7-ca4cd2a7a9e2",
+  "value": "Elasticsearch 日志异常/错误率飙升自动分析修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 20,
+  "id": "799afbc3-2225-426a-a085-16e15025e965",
+  "value": "未匹配告警兜底诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 20,
+  "id": "799afbc3-2225-426a-a085-16e15025e965",
+  "value": "未匹配到任何特定策略的告警，自动执行通用诊断修复完整流程"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "name",
+  "rowid": 21,
+  "id": "7141adac-1269-453e-9073-8baee8a15e11",
+  "value": "安全基线合规自动诊断修复"
+ },
+ {
+  "table": "remediation_policies",
+  "col": "description",
+  "rowid": 21,
+  "id": "7141adac-1269-453e-9073-8baee8a15e11",
+  "value": "检测到安全基线偏离时，自动执行诊断修复完整流程"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 1,
+  "id": "3034b926-4fd7-46cd-a1e9-a4ce7af7b2be",
+  "value": "系统健康检查脚本"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 1,
+  "id": "3034b926-4fd7-46cd-a1e9-a4ce7af7b2be",
+  "value": "检查 CPU、内存、磁盘使用情况"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 2,
+  "id": "3ecaa65a-dffa-497a-b7a2-9252d71fff84",
+  "value": "日志清理脚本"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 2,
+  "id": "3ecaa65a-dffa-497a-b7a2-9252d71fff84",
+  "value": "清理旧的日志文件"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 3,
+  "id": "ecffd137-4c96-4978-b5ec-dfad1ace55fc",
+  "value": "服务状态检查"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 3,
+  "id": "ecffd137-4c96-4978-b5ec-dfad1ace55fc",
+  "value": "检查关键服务的运行状态"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 4,
+  "id": "a4c9f453-dce8-4120-9898-1a586fdd6e79",
+  "value": "数据库备份脚本"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 4,
+  "id": "a4c9f453-dce8-4120-9898-1a586fdd6e79",
+  "value": "自动备份 MySQL 数据库"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 5,
+  "id": "b8012b8c-00a1-4a91-857c-7c60ce87b53c",
+  "value": "系统资源报告"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 5,
+  "id": "b8012b8c-00a1-4a91-857c-7c60ce87b53c",
+  "value": "生成详细的系统资源使用报告"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 6,
+  "id": "538d4c70-6894-4b1d-bdb3-aeb0d67b3814",
+  "value": "Docker 容器清理脚本"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 6,
+  "id": "538d4c70-6894-4b1d-bdb3-aeb0d67b3814",
+  "value": "清理停止的容器和未使用的镜像"
+ },
+ {
+  "table": "scripts",
+  "col": "name",
+  "rowid": 7,
+  "id": "9e83a2a5-bb39-4656-8ab0-30063ab859e7",
+  "value": "Nginx 访问日志分析"
+ },
+ {
+  "table": "scripts",
+  "col": "description",
+  "rowid": 7,
+  "id": "9e83a2a5-bb39-4656-8ab0-30063ab859e7",
+  "value": "分析 Nginx 访问日志的基本统计"
+ },
+ {
+  "table": "tool_links",
+  "col": "description",
+  "rowid": 1,
+  "id": "89c18712-be14-4ad9-9e31-3de3d20704f8",
+  "value": "企业级 IT 基础设施监控，支持多平台告警与可视化"
+ },
+ {
+  "table": "tool_links",
+  "col": "category",
+  "rowid": 1,
+  "id": "89c18712-be14-4ad9-9e31-3de3d20704f8",
+  "value": "监控系统"
+ },
+ {
+  "table": "tool_links",
+  "col": "description",
+  "rowid": 2,
+  "id": "6f4a1609-dcbc-4b21-bc43-eb62efeae608",
+  "value": "统一可观测性仪表盘，聚合 Prometheus/Loki/ClickHouse 数据源"
+ },
+ {
+  "table": "tool_links",
+  "col": "category",
+  "rowid": 2,
+  "id": "6f4a1609-dcbc-4b21-bc43-eb62efeae608",
+  "value": "监控系统"
+ },
+ {
+  "table": "tool_links",
+  "col": "description",
+  "rowid": 3,
+  "id": "a00fffad-1b4f-4f4e-84da-ae0f9349e624",
+  "value": "云原生监控与告警系统，支持 PromQL 多维查询"
+ },
+ {
+  "table": "tool_links",
+  "col": "category",
+  "rowid": 3,
+  "id": "a00fffad-1b4f-4f4e-84da-ae0f9349e624",
+  "value": "监控系统"
+ },
+ {
+  "table": "tool_links",
+  "col": "description",
+  "rowid": 4,
+  "id": "e811f50a-e29d-441a-93a2-185b9f16f1bd",
+  "value": "ELK 日志分析平台前端，支持全文检索与可视化"
+ },
+ {
+  "table": "tool_links",
+  "col": "category",
+  "rowid": 4,
+  "id": "e811f50a-e29d-441a-93a2-185b9f16f1bd",
+  "value": "日志系统"
+ },
+ {
+  "table": "tool_links",
+  "col": "description",
+  "rowid": 5,
+  "id": "d4382ae6-e8d9-440a-aedd-231f2274c5c6",
+  "value": "开源堡垒机 - 账号管理、权限控制、操作审计"
+ },
+ {
+  "table": "tool_links",
+  "col": "category",
+  "rowid": 5,
+  "id": "d4382ae6-e8d9-440a-aedd-231f2274c5c6",
+  "value": "堡垒机"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "name",
+  "rowid": 1,
+  "id": "98329abf-168f-42b6-8a1b-90a05f9d3773",
+  "value": "每日健康检查"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "description",
+  "rowid": 1,
+  "id": "98329abf-168f-42b6-8a1b-90a05f9d3773",
+  "value": "每天早上 8 点执行系统健康检查工作流"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "name",
+  "rowid": 2,
+  "id": "7651c46b-1d4a-460e-acc8-a5d0a74ae6f7",
+  "value": "每周合规检查"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "description",
+  "rowid": 2,
+  "id": "7651c46b-1d4a-460e-acc8-a5d0a74ae6f7",
+  "value": "每周日凌晨 2 点执行合规检查工作流"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "name",
+  "rowid": 3,
+  "id": "2cb5b633-7391-4eda-8fef-90710783d353",
+  "value": "日志定期分析"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "description",
+  "rowid": 3,
+  "id": "2cb5b633-7391-4eda-8fef-90710783d353",
+  "value": "每天凌晨 3 点执行日志分析工作流"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "name",
+  "rowid": 4,
+  "id": "db05bcc0-7543-442e-b1f2-363ce4f9a066",
+  "value": "数据库备份"
+ },
+ {
+  "table": "scheduled_tasks",
+  "col": "description",
+  "rowid": 4,
+  "id": "db05bcc0-7543-442e-b1f2-363ce4f9a066",
+  "value": "每天凌晨 1 点自动执行数据库备份工作流"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 1,
+  "id": "8ea3131a-68cb-4e95-8e71-d3e625cd2754",
+  "value": "Nginx 基础配置"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 1,
+  "id": "8ea3131a-68cb-4e95-8e71-d3e625cd2754",
+  "value": "Nginx 主配置文件模板，适用于 Web 服务器基础配置修复"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 2,
+  "id": "65901489-aa37-47dd-9174-9fd9d401b7ad",
+  "value": "Nginx 虚拟主机配置"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 2,
+  "id": "65901489-aa37-47dd-9174-9fd9d401b7ad",
+  "value": "Nginx 虚拟主机配置文件模板，用于站点配置修复"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 3,
+  "id": "2f89c0c6-96a2-47c5-bc5e-ca52138c2917",
+  "value": "MySQL 配置文件"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 3,
+  "id": "2f89c0c6-96a2-47c5-bc5e-ca52138c2917",
+  "value": "MySQL/MariaDB 配置文件模板，用于数据库配置修复"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 4,
+  "id": "b7812a57-99f7-4537-a012-3e36c0f576bc",
+  "value": "Redis 配置文件"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 4,
+  "id": "b7812a57-99f7-4537-a012-3e36c0f576bc",
+  "value": "Redis 配置文件模板，用于缓存服务配置修复"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 5,
+  "id": "5eb65468-8a76-49ed-a67f-32e62a3757e9",
+  "value": "SSH 服务配置"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 5,
+  "id": "5eb65468-8a76-49ed-a67f-32e62a3757e9",
+  "value": "OpenSSH 服务配置文件模板，用于 SSH 服务配置修复"
+ },
+ {
+  "table": "config_templates",
+  "col": "name",
+  "rowid": 6,
+  "id": "db850399-c593-430e-a887-1fc59d143d68",
+  "value": "系统日志配置 (rsyslog)"
+ },
+ {
+  "table": "config_templates",
+  "col": "description",
+  "rowid": 6,
+  "id": "db850399-c593-430e-a887-1fc59d143d68",
+  "value": "rsyslog 系统日志配置模板，用于日志服务配置修复"
+ },
+ {
+  "table": "reports",
+  "col": "name",
+  "rowid": 1,
+  "id": "41822029-c49b-4ae1-8f8b-e242996881bb",
+  "value": "工作流执行报告"
+ },
+ {
+  "table": "reports",
+  "col": "name",
+  "rowid": 2,
+  "id": "6d4ef0ad-bd25-486b-885a-5e28db318997",
+  "value": "系统巡检报告"
+ },
+ {
+  "table": "reports",
+  "col": "name",
+  "rowid": 3,
+  "id": "61230578-6852-41cf-a01d-44a2b9451ac7",
+  "value": "工作流执行报告 - 11/14/2026, 1:00:01 AM"
+ },
+ {
+  "table": "reports",
+  "col": "name",
+  "rowid": 4,
+  "id": "4e4aec62-f321-4a02-89fc-52942e94dad6",
+  "value": "工作流执行报告 - 11/14/2026, 3:00:01 AM"
+ },
+ {
+  "table": "alerts",
+  "col": "title",
+  "rowid": 1,
+  "id": "a6c82e0a-c308-47d2-87e2-a6c0dc6fb132",
+  "value": "自监控: errors 异常"
+ },
+ {
+  "table": "alerts",
+  "col": "content",
+  "rowid": 1,
+  "id": "a6c82e0a-c308-47d2-87e2-a6c0dc6fb132",
+  "value": "错误率过高: 最近 5 分钟 432 个错误（阈值: 50）"
+ },
+ {
+  "table": "server_groups",
+  "col": "name",
+  "rowid": 1,
+  "id": "e877cd2c-c743-4ed3-8e5b-8f47fb4f68c0",
+  "value": "全部服务器"
+ },
+ {
+  "table": "server_groups",
+  "col": "description",
+  "rowid": 1,
+  "id": "e877cd2c-c743-4ed3-8e5b-8f47fb4f68c0",
+  "value": "所有服务器的根分组"
+ },
+ {
+  "table": "server_groups",
+  "col": "name",
+  "rowid": 2,
+  "id": "31b53825-d10d-4689-a12e-f2a4a37e9534",
+  "value": "生产环境"
+ },
+ {
+  "table": "server_groups",
+  "col": "description",
+  "rowid": 2,
+  "id": "31b53825-d10d-4689-a12e-f2a4a37e9534",
+  "value": "生产环境服务器"
+ },
+ {
+  "table": "server_groups",
+  "col": "name",
+  "rowid": 3,
+  "id": "05b84c16-cdb0-4b52-9eb7-b85796378e8c",
+  "value": "开发环境"
+ },
+ {
+  "table": "server_groups",
+  "col": "description",
+  "rowid": 3,
+  "id": "05b84c16-cdb0-4b52-9eb7-b85796378e8c",
+  "value": "开发环境服务器"
+ },
+ {
+  "table": "server_groups",
+  "col": "name",
+  "rowid": 4,
+  "id": "ddc7c540-9b7c-4a23-b78a-73cad7a69c9a",
+  "value": "测试环境"
+ },
+ {
+  "table": "server_groups",
+  "col": "description",
+  "rowid": 4,
+  "id": "ddc7c540-9b7c-4a23-b78a-73cad7a69c9a",
+  "value": "测试环境服务器"
+ },
+ {
+  "table": "tasks",
+  "col": "name",
+  "rowid": 1,
+  "id": "a4bd15ed-6b96-4827-a6b5-507007005f39",
+  "value": "定时执行: 变更执行"
+ },
+ {
+  "table": "tasks",
+  "col": "name",
+  "rowid": 2,
+  "id": "c6439bf4-cf08-4ad1-b059-6c444e57c23b",
+  "value": "定时执行: 日志分析"
+ }
+]

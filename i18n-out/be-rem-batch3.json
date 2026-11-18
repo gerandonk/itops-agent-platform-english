@@ -1,0 +1,2887 @@
+[
+ {
+  "text": "❌ Proxmox VE 连接失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 71
+ },
+ {
+  "text": "🔌 Proxmox VE 已断开连接",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 81
+ },
+ {
+  "text": "Proxmox API 请求超时 (30s)",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 164
+ },
+ {
+  "text": "Proxmox 用户名/密码未配置",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 176
+ },
+ {
+  "text": "🔑 Proxmox 登录票据获取成功",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 187
+ },
+ {
+  "text": "Proxmox API Token 未配置",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 192
+ },
+ {
+  "text": "🔑 Proxmox API Token 验证成功",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 195
+ },
+ {
+  "text": "Proxmox 任务失败",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/apiClient.ts",
+  "line": 270
+ },
+ {
+  "text": "📋 获取 Proxmox 主机列表",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 159
+ },
+ {
+  "text": "❌ 获取 Proxmox 主机列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 179
+ },
+ {
+  "text": "📋 获取 Proxmox 数据存储列表",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 203
+ },
+ {
+  "text": "❌ 获取 Proxmox 数据存储列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 224
+ },
+ {
+  "text": "📋 获取 Proxmox 网络列表",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 248
+ },
+ {
+  "text": "❌ 获取 Proxmox 网络列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 266
+ },
+ {
+  "text": "📋 获取 Proxmox 资源池列表",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 278
+ },
+ {
+  "text": "❌ 获取 Proxmox 资源池列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/infrastructureOps.ts",
+  "line": 290
+ },
+ {
+  "text": "❌ 获取 Proxmox 虚拟机列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmLifecycle.ts",
+  "line": 21
+ },
+ {
+  "text": "❌ 创建 Proxmox 虚拟机失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmLifecycle.ts",
+  "line": 93
+ },
+ {
+  "text": "❌ 克隆 Proxmox 虚拟机失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmLifecycle.ts",
+  "line": 142
+ },
+ {
+  "text": "⚠️ Proxmox 删除快照需要提供 vmId，当前仅记录快照ID",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmSnapshot.ts",
+  "line": 112
+ },
+ {
+  "text": "📋 获取 Proxmox 模板列表",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmSnapshot.ts",
+  "line": 129
+ },
+ {
+  "text": "❌ 获取 Proxmox 模板列表失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmSnapshot.ts",
+  "line": 152
+ },
+ {
+  "text": "❌ 创建 Proxmox 模板失败:",
+  "file": "modules/containers/services/vmManagement/proxmoxAdapter/vmSnapshot.ts",
+  "line": 194
+ },
+ {
+  "text": "❌ 记录审计日志失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/auditOps.ts",
+  "line": 63
+ },
+ {
+  "text": "⚠️ 无法解密平台密码",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 42
+ },
+ {
+  "text": "❌ 加载平台配置失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 53
+ },
+ {
+  "text": "📋 已加载虚拟化平台",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 57
+ },
+ {
+  "text": "暂不支持虚拟化平台类型",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 85
+ },
+ {
+  "text": "未知虚拟化平台类型",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 87
+ },
+ {
+  "text": "找不到虚拟化平台",
+  "file": "modules/containers/services/vmManagement/vmManagementService/lifecycle.ts",
+  "line": 98
+ },
+ {
+  "text": "✅ 添加虚拟化平台",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 77
+ },
+ {
+  "text": "❌ 添加虚拟化平台失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 80
+ },
+ {
+  "text": "平台配置不存在",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 93
+ },
+ {
+  "text": "✅ 更新虚拟化平台",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 147
+ },
+ {
+  "text": "❌ 更新虚拟化平台失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 150
+ },
+ {
+  "text": "🗑️ 删除虚拟化平台",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 171
+ },
+ {
+  "text": "❌ 删除虚拟化平台失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 173
+ },
+ {
+  "text": "❌ 获取平台配置失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 202
+ },
+ {
+  "text": "❌ 获取平台配置列表失败:",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 229
+ },
+ {
+  "text": "连接测试失败",
+  "file": "modules/containers/services/vmManagement/vmManagementService/platformOps.ts",
+  "line": 255
+ },
+ {
+  "text": "启动虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/powerOps.ts",
+  "line": 34
+ },
+ {
+  "text": "关闭虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/powerOps.ts",
+  "line": 62
+ },
+ {
+  "text": "重启虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/powerOps.ts",
+  "line": 90
+ },
+ {
+  "text": "获取到快照列表",
+  "file": "modules/containers/services/vmManagement/vmManagementService/snapshotOps.ts",
+  "line": 31
+ },
+ {
+  "text": "创建快照成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/snapshotOps.ts",
+  "line": 61
+ },
+ {
+  "text": "恢复快照成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/snapshotOps.ts",
+  "line": 91
+ },
+ {
+  "text": "删除快照成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/snapshotOps.ts",
+  "line": 118
+ },
+ {
+  "text": "迁移虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/snapshotOps.ts",
+  "line": 148
+ },
+ {
+  "text": "获取到虚拟机列表",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 36
+ },
+ {
+  "text": "获取虚拟机详情",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 59
+ },
+ {
+  "text": "创建虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 86
+ },
+ {
+  "text": "克隆虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 114
+ },
+ {
+  "text": "删除虚拟机成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 144
+ },
+ {
+  "text": "删除模板成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 177
+ },
+ {
+  "text": "创建模板成功",
+  "file": "modules/containers/services/vmManagement/vmManagementService/vmOps.ts",
+  "line": 203
+ },
+ {
+  "text": "📋 获取 VMware 虚拟机列表",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 22
+ },
+ {
+  "text": "❌ 获取 VMware 虚拟机列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 38
+ },
+ {
+  "text": "创建虚拟机失败：未返回 VM ID",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 69
+ },
+ {
+  "text": "⚠️ 创建后启动失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 71
+ },
+ {
+  "text": "❌ 创建 VMware 虚拟机失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 82
+ },
+ {
+  "text": "克隆失败：未返回 VM ID",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 95
+ },
+ {
+  "text": "⚠️ 克隆后启动失败",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 97
+ },
+ {
+  "text": "❌ 克隆 VMware 虚拟机失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmCrud.ts",
+  "line": 106
+ },
+ {
+  "text": "❌ 获取 VMware 主机列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmMonitoring.ts",
+  "line": 54
+ },
+ {
+  "text": "❌ 获取 VMware 数据存储列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmMonitoring.ts",
+  "line": 81
+ },
+ {
+  "text": "❌ 获取 VMware 网络列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmMonitoring.ts",
+  "line": 105
+ },
+ {
+  "text": "❌ 获取 VMware 资源池列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmMonitoring.ts",
+  "line": 123
+ },
+ {
+  "text": "❌ 获取 VMware 模板列表失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmSnapshot.ts",
+  "line": 99
+ },
+ {
+  "text": "❌ 创建 VMware 模板失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmSnapshot.ts",
+  "line": 120
+ },
+ {
+  "text": "VMware vSphere 用户名/密码未配置",
+  "file": "modules/containers/services/vmManagement/vmware/vmwareAdapter.ts",
+  "line": 123
+ },
+ {
+  "text": "获取 vSphere session-id 失败",
+  "file": "modules/containers/services/vmManagement/vmware/vmwareAdapter.ts",
+  "line": 139
+ },
+ {
+  "text": "❌ VMware vSphere 连接失败:",
+  "file": "modules/containers/services/vmManagement/vmware/vmwareAdapter.ts",
+  "line": 142
+ },
+ {
+  "text": "🔌 VMware vSphere 已断开连接",
+  "file": "modules/containers/services/vmManagement/vmware/vmwareAdapter.ts",
+  "line": 159
+ },
+ {
+  "text": "VMware API 请求超时 (30s)",
+  "file": "modules/containers/services/vmManagement/vmware/vmwareAdapter.ts",
+  "line": 237
+ },
+ {
+  "text": "VM 不存在",
+  "file": "modules/containers/services/vmMigrationService.ts",
+  "line": 37
+ },
+ {
+  "text": "仅运行中的 VM 支持迁移",
+  "file": "modules/containers/services/vmMigrationService.ts",
+  "line": 38
+ },
+ {
+  "text": "数据库连接成功",
+  "file": "modules/database/routes/dbConnectionsRoutes.ts",
+  "line": 113
+ },
+ {
+  "text": "密码解密失败，请重新配置该数据库连接的密码",
+  "file": "modules/database/routes/dbConnectionsRoutes.ts",
+  "line": 123
+ },
+ {
+  "text": "✅ dbskiter 已安装",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 37
+ },
+ {
+  "text": "⚠️ dbskiter 未安装，数据库运维 Agent 将不可用。请在部署镜像或本地环境中预先安装 dbskiter。",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 41
+ },
+ {
+  "text": "未提供",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 201
+ },
+ {
+  "text": "操作失败",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 206
+ },
+ {
+  "text": "无法连接",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 210
+ },
+ {
+  "text": "dbskiter 执行失败:",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 266
+ },
+ {
+  "text": "运行",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 308
+ },
+ {
+  "text": "跑",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 308
+ },
+ {
+  "text": "审核",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 311
+ },
+ {
+  "text": "规范",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 311
+ },
+ {
+  "text": "分析",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 314
+ },
+ {
+  "text": "卡",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 323
+ },
+ {
+  "text": "卡顿",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 324
+ },
+ {
+  "text": "性能差",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 325
+ },
+ {
+  "text": "慢查询",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 325
+ },
+ {
+  "text": "锁",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 332
+ },
+ {
+  "text": "死锁",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 332
+ },
+ {
+  "text": "阻塞",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 332
+ },
+ {
+  "text": "等待",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 333
+ },
+ {
+  "text": "容量",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 340
+ },
+ {
+  "text": "大小",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 341
+ },
+ {
+  "text": "满",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 341
+ },
+ {
+  "text": "空间不足",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 342
+ },
+ {
+  "text": "磁盘满",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 342
+ },
+ {
+  "text": "容量预测",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 343
+ },
+ {
+  "text": "并发",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 350
+ },
+ {
+  "text": "会话",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 351
+ },
+ {
+  "text": "表",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 359
+ },
+ {
+  "text": "结构",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 359
+ },
+ {
+  "text": "索引",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 360
+ },
+ {
+  "text": "字段",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 360
+ },
+ {
+  "text": "列",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 361
+ },
+ {
+  "text": "元数据",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 361
+ },
+ {
+  "text": "有哪些",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 362
+ },
+ {
+  "text": "列出",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 362
+ },
+ {
+  "text": "恢复",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 369
+ },
+ {
+  "text": "定时",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 375
+ },
+ {
+  "text": "指标",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 384
+ },
+ {
+  "text": "趋势",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 391
+ },
+ {
+  "text": "审计",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 397
+ },
+ {
+  "text": "注入",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 402
+ },
+ {
+  "text": "敏感数据",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 405
+ },
+ {
+  "text": "敏感信息",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 405
+ },
+ {
+  "text": "隐私",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 405
+ },
+ {
+  "text": "弱密码",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 408
+ },
+ {
+  "text": "弱口令",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 408
+ },
+ {
+  "text": "密码强度",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 408
+ },
+ {
+  "text": "账号",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 412
+ },
+ {
+  "text": "报错",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 422
+ },
+ {
+  "text": "查看",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 424
+ },
+ {
+  "text": "看看",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 424
+ },
+ {
+  "text": "实时",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 430
+ },
+ {
+  "text": "在线",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 430
+ },
+ {
+  "text": "当前",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 430
+ },
+ {
+  "text": "生成文档",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 435
+ },
+ {
+  "text": "## 数据库运维执行结果\\n\\n",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 451
+ },
+ {
+  "text": "**状态**: ✅ 成功\\n\\n",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 454
+ },
+ {
+  "text": "> ⚠️ 执行成功但未返回任何数据。可能是数据库权限不足或目标数据库无相关数据。\\n",
+  "file": "modules/database/services/dbskiterService.ts",
+  "line": 463
+ },
+ {
+  "text": "未配置 IP",
+  "file": "modules/dc/services/dcPduSnmpService.ts",
+  "line": 87
+ },
+ {
+  "text": "SNMP 响应超时或 OID 不支持",
+  "file": "modules/dc/services/dcPduSnmpService.ts",
+  "line": 102
+ },
+ {
+  "text": "U 位冲突：该 U 位已被占用",
+  "file": "modules/dc/services/dcSlotService.ts",
+  "line": 58
+ },
+ {
+  "text": "U 位记录不存在",
+  "file": "modules/dc/services/dcSlotService.ts",
+  "line": 125
+ },
+ {
+  "text": "U 位冲突",
+  "file": "modules/dc/services/dcSlotService.ts",
+  "line": 133
+ },
+ {
+  "text": "name,hostname,port,username,password,use_ssh_key,private_key,description,tags,enabled\\n\"测试服务器\",\"192.168.1.100\",22,\"root\",\"password\",0,\"\",\"这是一个测试服务器\",\"production,test\",1",
+  "file": "modules/import-export/routes/importExportRoutes.ts",
+  "line": 128
+ },
+ {
+  "text": "请提供 kubeconfig 内容",
+  "file": "modules/kubernetes/routes/kubernetesRoutes.ts",
+  "line": 26
+ },
+ {
+  "text": "K8s 不可用，请先导入 kubeconfig 配置",
+  "file": "modules/kubernetes/routes/kubernetesRoutes.ts",
+  "line": 79
+ },
+ {
+  "text": "Pod 已删除",
+  "file": "modules/kubernetes/routes/kubernetesRoutes.ts",
+  "line": 230
+ },
+ {
+  "text": "需要副本数",
+  "file": "modules/kubernetes/routes/kubernetesRoutes.ts",
+  "line": 249
+ },
+ {
+  "text": "@kubernetes/client-node 未安装",
+  "file": "modules/kubernetes/services/kubernetesService.ts",
+  "line": 197
+ },
+ {
+  "text": "设备不存在",
+  "file": "modules/linkage/routes/linkageRoutes.ts",
+  "line": 31
+ },
+ {
+  "text": "已停止监控",
+  "file": "modules/monitor/routes/monitorRoutes.ts",
+  "line": 45
+ },
+ {
+  "text": "Prometheus 查询失败",
+  "file": "modules/monitor/routes/prometheusRoutes.ts",
+  "line": 55
+ },
+ {
+  "text": "Prometheus 范围查询失败",
+  "file": "modules/monitor/routes/prometheusRoutes.ts",
+  "line": 87
+ },
+ {
+  "text": "Prometheus series 查询失败",
+  "file": "modules/monitor/routes/prometheusRoutes.ts",
+  "line": 116
+ },
+ {
+  "text": "Prometheus 连接测试失败",
+  "file": "modules/monitor/routes/prometheusRoutes.ts",
+  "line": 139
+ },
+ {
+  "text": "模板不存在或为预设模板不可删除",
+  "file": "modules/monitor/routes/reportRoutes.ts",
+  "line": 70
+ },
+ {
+  "text": "模板已删除",
+  "file": "modules/monitor/routes/reportRoutes.ts",
+  "line": 72
+ },
+ {
+  "text": "报告不存在",
+  "file": "modules/monitor/routes/reportRoutes.ts",
+  "line": 145
+ },
+ {
+  "text": "定时报告不存在",
+  "file": "modules/monitor/routes/reportRoutes.ts",
+  "line": 167
+ },
+ {
+  "text": "定时报告已删除",
+  "file": "modules/monitor/routes/reportRoutes.ts",
+  "line": 218
+ },
+ {
+  "text": "需要提供 apiToken（或由 Provider 内部登录）",
+  "file": "modules/monitor/routes/zabbixRoutes.ts",
+  "line": 40
+ },
+ {
+  "text": "需要提供 apiToken",
+  "file": "modules/monitor/routes/zabbixRoutes.ts",
+  "line": 59
+ },
+ {
+  "text": "闲置资源清理",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 118
+ },
+ {
+  "text": "检测到部分容器长时间CPU使用率低于5%，建议评估是否需要保留",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 119
+ },
+ {
+  "text": "2 个低使用率容器",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 120
+ },
+ {
+  "text": "容器规格缩容",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 125
+ },
+ {
+  "text": "部分容器分配了过多内存但实际使用率不足30%，建议缩容到合理范围",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 126
+ },
+ {
+  "text": "3 个过度配置容器",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 127
+ },
+ {
+  "text": "VM 资源优化",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 132
+ },
+ {
+  "text": "2台VM CPU使用率持续低于20%，建议降低CPU核数",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 133
+ },
+ {
+  "text": "2 个低使用率VM",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 134
+ },
+ {
+  "text": "预留实例建议",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 139
+ },
+ {
+  "text": "7x24运行的生产环境VM建议购买预留实例，可节省约40%成本",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 140
+ },
+ {
+  "text": "5 台长期运行VM",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 141
+ },
+ {
+  "text": "镜像清理",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 146
+ },
+ {
+  "text": "检测到dangling镜像占用磁盘空间，建议定期清理",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 147
+ },
+ {
+  "text": "未使用镜像",
+  "file": "modules/monitor/services/costAnalysisService.ts",
+  "line": 148
+ },
+ {
+  "text": "Health check alert联动失败",
+  "file": "modules/monitor/services/healthService.ts",
+  "line": 257
+ },
+ {
+  "text": "DNS 解析失败",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 103
+ },
+ {
+  "text": "连接被拒绝",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 106
+ },
+ {
+  "text": "连接被重置",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 109
+ },
+ {
+  "text": "TLS 证书校验失败",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 112
+ },
+ {
+  "text": "Prometheus 业务错误",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 176
+ },
+ {
+  "text": "Prometheus HTTP 调用失败:",
+  "file": "modules/monitor/services/prometheusService.ts",
+  "line": 182
+ },
+ {
+  "text": "故障报告模板",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 86
+ },
+ {
+  "text": "标准故障处理报告",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 87
+ },
+ {
+  "text": "系统巡检报告模板",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 122
+ },
+ {
+  "text": "定期系统健康检查报告",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 123
+ },
+ {
+  "text": "变更记录模板",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 156
+ },
+ {
+  "text": "系统变更操作记录",
+  "file": "modules/monitor/services/reportService.ts",
+  "line": 157
+ },
+ {
+  "text": "login 需要提供 username 和 password",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 112
+ },
+ {
+  "text": "login 返回数据格式错误",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 124
+ },
+ {
+  "text": "history.get 需要至少一个 itemid",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 235
+ },
+ {
+  "text": "url 不能为空",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 290
+ },
+ {
+  "text": "认证失败",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 299
+ },
+ {
+  "text": "host.get 探测失败",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 311
+ },
+ {
+  "text": "Zabbix URL 未配置",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 339
+ },
+ {
+  "text": "Zabbix 响应格式错误：非 JSON 对象",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 368
+ },
+ {
+  "text": "Zabbix 响应缺少 result 字段",
+  "file": "modules/monitor/services/zabbixService.ts",
+  "line": 379
+ },
+ {
+  "text": "设备未启用 SNMP 或不存在",
+  "file": "modules/network/routes/networkDeviceRoutes.ts",
+  "line": 183
+ },
+ {
+  "text": "SNMP 巡检失败",
+  "file": "modules/network/routes/networkDeviceRoutes.ts",
+  "line": 188
+ },
+ {
+  "text": "任务不存在",
+  "file": "modules/network/routes/networkDiscoveryRoutes.ts",
+  "line": 27
+ },
+ {
+  "text": "任务已取消",
+  "file": "modules/network/routes/networkDiscoveryRoutes.ts",
+  "line": 61
+ },
+ {
+  "text": "任务已删除",
+  "file": "modules/network/routes/networkDiscoveryRoutes.ts",
+  "line": 72
+ },
+ {
+  "text": "获取子网列表失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 19
+ },
+ {
+  "text": "子网不存在",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 26
+ },
+ {
+  "text": "获取子网失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 30
+ },
+ {
+  "text": "创建子网失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 43
+ },
+ {
+  "text": "更新子网失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 53
+ },
+ {
+  "text": "删除子网失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 63
+ },
+ {
+  "text": "获取IP列表失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 75
+ },
+ {
+  "text": "更新IP失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 85
+ },
+ {
+  "text": "批量操作失败",
+  "file": "modules/network/routes/networkSubnetRoutes.ts",
+  "line": 99
+ },
+ {
+  "text": "获取 SNMP 凭证失败",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 33
+ },
+ {
+  "text": "删除 SNMP 凭证失败",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 52
+ },
+ {
+  "text": "更新 SNMP 凭证失败",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 62
+ },
+ {
+  "text": "连接成功",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 74
+ },
+ {
+  "text": "凭证不存在",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 84
+ },
+ {
+  "text": "无法确定设备 IP，请直接使用表单测试",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 88
+ },
+ {
+  "text": "获取 SNMP Trap 记录失败",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 192
+ },
+ {
+  "text": "测试 Trap 已生成",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 199
+ },
+ {
+  "text": "生成测试 Trap 失败",
+  "file": "modules/network/routes/snmpRoutes.ts",
+  "line": 202
+ },
+ {
+  "text": "你是网络设备巡检专家，精通华为、华三、思科、锐捷、中兴等厂商设备的巡检命令。请根据用户需求生成合适的巡检命令。",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 44
+ },
+ {
+  "text": "你是网络设备巡检专家，擅长分析设备命令输出并提供专业建议。",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 81
+ },
+ {
+  "text": "AI 分析暂不可用，请查看原始输出。",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 86
+ },
+ {
+  "text": "具体命令",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 137
+ },
+ {
+  "text": "命令用途说明",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 138
+ },
+ {
+  "text": "预期输出特征",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 139
+ },
+ {
+  "text": "命令执行成功",
+  "file": "modules/network/services/networkCommandGenerator.ts",
+  "line": 167
+ },
+ {
+  "text": "已接收 = 1",
+  "file": "modules/network/services/networkDiscovery/icmpDiscovery.ts",
+  "line": 29
+ },
+ {
+  "text": "SSH 连接超时(10s)",
+  "file": "modules/network/services/networkInspectionService/shellOps.ts",
+  "line": 43
+ },
+ {
+  "text": "无法解析 CPU 使用率",
+  "file": "modules/network/services/networkResultParser.ts",
+  "line": 57
+ },
+ {
+  "text": "无法解析内存使用率",
+  "file": "modules/network/services/networkResultParser.ts",
+  "line": 137
+ },
+ {
+  "text": "无法解析版本信息",
+  "file": "modules/network/services/networkResultParser.ts",
+  "line": 231
+ },
+ {
+  "text": "环境温度信息",
+  "file": "modules/network/services/networkResultParser.ts",
+  "line": 288
+ },
+ {
+  "text": "自定义命令输出",
+  "file": "modules/network/services/networkResultParser.ts",
+  "line": 404
+ },
+ {
+  "text": "名称和CIDR不能为空",
+  "file": "modules/network/services/networkSubnetCrudService.ts",
+  "line": 60
+ },
+ {
+  "text": "请选择IP地址",
+  "file": "modules/network/services/networkSubnetCrudService.ts",
+  "line": 153
+ },
+ {
+  "text": "❌ SNMP 连接失败，设备无法响应",
+  "file": "modules/network/services/snmpPollingService.ts",
+  "line": 170
+ },
+ {
+  "text": "SNMP 连接失败",
+  "file": "modules/network/services/snmpPollingService.ts",
+  "line": 277
+ },
+ {
+  "text": "⏹ SNMP 轮询服务已停止",
+  "file": "modules/network/services/snmpPollingService.ts",
+  "line": 355
+ },
+ {
+  "text": "CPU 使用率",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 10
+ },
+ {
+  "text": "检查 CPU 使用率",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 10
+ },
+ {
+  "text": "内存使用率",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 11
+ },
+ {
+  "text": "检查内存使用率",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 11
+ },
+ {
+  "text": "检查所有接口状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 12
+ },
+ {
+  "text": "系统版本",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 13
+ },
+ {
+  "text": "检查 EOS 版本",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 13
+ },
+ {
+  "text": "最近日志",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 14
+ },
+ {
+  "text": "查看最近日志",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 14
+ },
+ {
+  "text": "路由表",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 15
+ },
+ {
+  "text": "查看路由表概要",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 15
+ },
+ {
+  "text": "BGP 状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 16
+ },
+ {
+  "text": "查看 BGP 邻居",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 16
+ },
+ {
+  "text": "OSPF 状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 17
+ },
+ {
+  "text": "查看 OSPF 邻居",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 17
+ },
+ {
+  "text": "STP 状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 STP 状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 18
+ },
+ {
+  "text": "VLAN 信息",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 19
+ },
+ {
+  "text": "查看 VLAN 配置",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 19
+ },
+ {
+  "text": "查看 ARP 表",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 20
+ },
+ {
+  "text": "MAC 地址表",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 21
+ },
+ {
+  "text": "查看 MAC 表",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 21
+ },
+ {
+  "text": "LLDP 邻居",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 22
+ },
+ {
+  "text": "查看 LLDP 邻居",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 22
+ },
+ {
+  "text": "NTP 状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 23
+ },
+ {
+  "text": "查看 NTP 同步",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 23
+ },
+ {
+  "text": "光模块信息",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 24
+ },
+ {
+  "text": "查看光模块参数",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 24
+ },
+ {
+  "text": "环境状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 25
+ },
+ {
+  "text": "查看温度/电源/风扇",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 25
+ },
+ {
+  "text": "电源状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 26
+ },
+ {
+  "text": "查看电源状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 26
+ },
+ {
+  "text": "风扇状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 27
+ },
+ {
+  "text": "查看风扇状态",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 27
+ },
+ {
+  "text": "License 信息",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 28
+ },
+ {
+  "text": "查看 License",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 28
+ },
+ {
+  "text": "DNS 配置",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 29
+ },
+ {
+  "text": "查看 DNS 配置",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 29
+ },
+ {
+  "text": "配置摘要",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 30
+ },
+ {
+  "text": "查看配置摘要",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 30
+ },
+ {
+  "text": "DHCP 池",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 31
+ },
+ {
+  "text": "查看 DHCP 租约",
+  "file": "modules/network/services/vendorAdapter/arista.ts",
+  "line": 31
+ },
+ {
+  "text": "检查设备 CPU 使用率，正常应低于 80%",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 14
+ },
+ {
+  "text": "检查设备内存使用情况，正常应低于 85%",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 20
+ },
+ {
+  "text": "检查所有接口物理状态和协议状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 26
+ },
+ {
+  "text": "检查设备型号、软件版本和运行时间",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 32
+ },
+ {
+  "text": "检查路由表状态和路由数量",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 37
+ },
+ {
+  "text": "日志缓冲区",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 40
+ },
+ {
+  "text": "检查最近的系统日志和告警信息",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 42
+ },
+ {
+  "text": "检查设备温度和电压状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 47
+ },
+ {
+  "text": "检查电源模块状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 52
+ },
+ {
+  "text": "检查风扇模块运行状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 57
+ },
+ {
+  "text": "检查生成树协议状态和端口角色",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 62
+ },
+ {
+  "text": "检查 VLAN 配置和端口成员",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 67
+ },
+ {
+  "text": "检查 ARP 表项数量和状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 72
+ },
+ {
+  "text": "检查 MAC 地址表项",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 77
+ },
+ {
+  "text": "检查光模块收发光功率和温度",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 84
+ },
+ {
+  "text": "查看 LLDP/CDP 邻居发现信息",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 91
+ },
+ {
+  "text": "安全策略",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 94
+ },
+ {
+  "text": "查看 ACL/安全策略配置",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 97
+ },
+ {
+  "text": "NAT 转换",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 101
+ },
+ {
+  "text": "查看 NAT 转换表",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 104
+ },
+ {
+  "text": "VPN 隧道",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 108
+ },
+ {
+  "text": "查看 IPSec VPN 隧道状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 111
+ },
+ {
+  "text": "无线信息",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 115
+ },
+ {
+  "text": "查看无线接入点和客户端",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 118
+ },
+ {
+  "text": "查看 DHCP 地址池使用情况",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 125
+ },
+ {
+  "text": "查看 DNS 服务器配置",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 132
+ },
+ {
+  "text": "查看 BGP 邻居状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 138
+ },
+ {
+  "text": "查看 OSPF 邻居状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 144
+ },
+ {
+  "text": "查看 NTP 同步状态",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 151
+ },
+ {
+  "text": "License 有效期",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 154
+ },
+ {
+  "text": "查看 License 有效期和功能授权",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 157
+ },
+ {
+  "text": "配置快照",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 160
+ },
+ {
+  "text": "查看运行配置摘要快照",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 162
+ },
+ {
+  "text": "防火墙会话",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 166
+ },
+ {
+  "text": "查看防火墙并发连接数",
+  "file": "modules/network/services/vendorAdapter/cisco.ts",
+  "line": 168
+ },
+ {
+  "text": "检查 Dell OS 版本",
+  "file": "modules/network/services/vendorAdapter/dell.ts",
+  "line": 13
+ },
+ {
+  "text": "查看路由表",
+  "file": "modules/network/services/vendorAdapter/dell.ts",
+  "line": 14
+ },
+ {
+  "text": "查看 NTP 状态",
+  "file": "modules/network/services/vendorAdapter/dell.ts",
+  "line": 23
+ },
+ {
+  "text": "查看 DHCP 池",
+  "file": "modules/network/services/vendorAdapter/dell.ts",
+  "line": 30
+ },
+ {
+  "text": "检查 BIG-IP 版本",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 13
+ },
+ {
+  "text": "查看最近 LTM 日志",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 14
+ },
+ {
+  "text": "节点池状态",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 16
+ },
+ {
+  "text": "查看所有节点池及成员状态",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 16
+ },
+ {
+  "text": "连接统计",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 17
+ },
+ {
+  "text": "查看当前连接数统计",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 17
+ },
+ {
+  "text": "DNS 解析",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 DNS 解析配置",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 License 有效期",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 20
+ },
+ {
+  "text": "查看设备基础信息",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 23
+ },
+ {
+  "text": "VPN / APM 状态",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 24
+ },
+ {
+  "text": "查看 APM VPN 会话",
+  "file": "modules/network/services/vendorAdapter/f5.ts",
+  "line": 24
+ },
+ {
+  "text": "检查固件版本和运行时间",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 13
+ },
+ {
+  "text": "查看最近系统日志",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 14
+ },
+ {
+  "text": "防火墙策略",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 16
+ },
+ {
+  "text": "查看所有防火墙策略",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 16
+ },
+ {
+  "text": "NAT 策略",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 17
+ },
+ {
+  "text": "查看 NAT 策略",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 17
+ },
+ {
+  "text": "会话统计",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 18
+ },
+ {
+  "text": "查看并发会话统计",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 IPSec VPN 隧道",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 19
+ },
+ {
+  "text": "License / 订阅",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 25
+ },
+ {
+  "text": "检查 License 到期日和 FortiGuard 订阅",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 25
+ },
+ {
+  "text": "查看 DHCP 配置",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 26
+ },
+ {
+  "text": "查看配置校验和",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 29
+ },
+ {
+  "text": "硬件状态",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 30
+ },
+ {
+  "text": "查看硬件温度风扇电源",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 30
+ },
+ {
+  "text": "查看电源模块状态",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 31
+ },
+ {
+  "text": "查看生成树状态",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 33
+ },
+ {
+  "text": "VLAN 接口",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 34
+ },
+ {
+  "text": "查看 VLAN 接口",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 34
+ },
+ {
+  "text": "查看 MAC 地址表",
+  "file": "modules/network/services/vendorAdapter/fortinet.ts",
+  "line": 36
+ },
+ {
+  "text": "检查设备 CPU 使用率",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 12
+ },
+ {
+  "text": "检查设备内存使用情况",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 13
+ },
+ {
+  "text": "检查所有接口物理状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 14
+ },
+ {
+  "text": "检查路由表",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 16
+ },
+ {
+  "text": "检查最近的系统日志",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 17
+ },
+ {
+  "text": "检查温度和电压",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 18
+ },
+ {
+  "text": "检查电源状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 19
+ },
+ {
+  "text": "检查风扇状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 20
+ },
+ {
+  "text": "检查 STP 状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 21
+ },
+ {
+  "text": "检查 VLAN 配置",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 22
+ },
+ {
+  "text": "检查 ARP 表项",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 23
+ },
+ {
+  "text": "检查 MAC 地址表",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 24
+ },
+ {
+  "text": "检查光模块收发光功率",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 26
+ },
+ {
+  "text": "查看 LLDP 邻居发现信息",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 27
+ },
+ {
+  "text": "查看安全策略配置",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 28
+ },
+ {
+  "text": "查看 NAT 会话",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 29
+ },
+ {
+  "text": "查看会话状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 30
+ },
+ {
+  "text": "查看 VPN 隧道状态",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 31
+ },
+ {
+  "text": "查看无线信息",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 32
+ },
+ {
+  "text": "查看 License 信息",
+  "file": "modules/network/services/vendorAdapter/h3c.ts",
+  "line": 38
+ },
+ {
+  "text": "检查系统版本",
+  "file": "modules/network/services/vendorAdapter/hpe.ts",
+  "line": 13
+ },
+ {
+  "text": "查看防火墙安全策略配置",
+  "file": "modules/network/services/vendorAdapter/huawei.ts",
+  "line": 111
+ },
+ {
+  "text": "查看 NAT 会话统计和映射",
+  "file": "modules/network/services/vendorAdapter/huawei.ts",
+  "line": 118
+ },
+ {
+  "text": "查看防火墙会话状态",
+  "file": "modules/network/services/vendorAdapter/huawei.ts",
+  "line": 125
+ },
+ {
+  "text": "查看无线接入点和客户端状态",
+  "file": "modules/network/services/vendorAdapter/huawei.ts",
+  "line": 139
+ },
+ {
+  "text": "查看运行配置最后保存时间和摘要",
+  "file": "modules/network/services/vendorAdapter/huawei.ts",
+  "line": 183
+ },
+ {
+  "text": "检查 JunOS 版本和运行时间",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 13
+ },
+ {
+  "text": "查看安全策略",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 16
+ },
+ {
+  "text": "查看 NAT 规则",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 17
+ },
+ {
+  "text": "查看会话统计",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 DHCP 绑定信息",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 25
+ },
+ {
+  "text": "查看机框硬件信息",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 27
+ },
+ {
+  "text": "配置签名",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 35
+ },
+ {
+  "text": "查看运行配置 MD5 签名",
+  "file": "modules/network/services/vendorAdapter/juniper.ts",
+  "line": 35
+ },
+ {
+  "text": "检查 RouterOS 版本",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 13
+ },
+ {
+  "text": "查看最近重要日志",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 15
+ },
+ {
+  "text": "NAT 规则",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 16
+ },
+ {
+  "text": "查看邻居发现信息",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 17
+ },
+ {
+  "text": "查看 NTP 客户端状态",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 20
+ },
+ {
+  "text": "无线状态",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 25
+ },
+ {
+  "text": "查看无线客户端",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 25
+ },
+ {
+  "text": "License 级别",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 26
+ },
+ {
+  "text": "查看 License 级别和到期时间",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 26
+ },
+ {
+  "text": "防火墙规则",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 27
+ },
+ {
+  "text": "查看防火墙过滤规则",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 27
+ },
+ {
+  "text": "查看温度/电压/风扇",
+  "file": "modules/network/services/vendorAdapter/mikrotik.ts",
+  "line": 29
+ },
+ {
+  "text": "查看 PAN-OS 版本",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 13
+ },
+ {
+  "text": "查看所有安全策略",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 15
+ },
+ {
+  "text": "License 状态",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 23
+ },
+ {
+  "text": "查看 License 到期日",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 23
+ },
+ {
+  "text": "查看 DNS 代理配置",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 25
+ },
+ {
+  "text": "查看温度/风扇",
+  "file": "modules/network/services/vendorAdapter/paloalto.ts",
+  "line": 27
+ },
+ {
+  "text": "查看接口流量与状态",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 16
+ },
+ {
+  "text": "系统日志",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 18
+ },
+ {
+  "text": "查看系统日志",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 18
+ },
+ {
+  "text": "并发会话",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 19
+ },
+ {
+  "text": "查看当前并发会话数",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 19
+ },
+ {
+  "text": "NAT 状态",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 20
+ },
+ {
+  "text": "策略命中",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 21
+ },
+ {
+  "text": "查看流量策略命中数",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 21
+ },
+ {
+  "text": "邻居发现",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 24
+ },
+ {
+  "text": "DNS 状态",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 26
+ },
+ {
+  "text": "授权信息",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 27
+ },
+ {
+  "text": "查看授权信息",
+  "file": "modules/network/services/vendorAdapter/panabit.ts",
+  "line": 27
+ },
+ {
+  "text": "检查接口状态",
+  "file": "modules/network/services/vendorAdapter/ruijie_eg.ts",
+  "line": 12
+ },
+ {
+  "text": "查看 DHCP 状态",
+  "file": "modules/network/services/vendorAdapter/ruijie_eg.ts",
+  "line": 18
+ },
+ {
+  "text": "查看 DNS 服务器",
+  "file": "modules/network/services/vendorAdapter/ruijie_eg.ts",
+  "line": 19
+ },
+ {
+  "text": "连接数统计",
+  "file": "modules/network/services/vendorAdapter/ruijie_eg.ts",
+  "line": 23
+ },
+ {
+  "text": "查看并发连接统计",
+  "file": "modules/network/services/vendorAdapter/ruijie_eg.ts",
+  "line": 23
+ },
+ {
+  "text": "检查日志",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 15
+ },
+ {
+  "text": "检查环境状态",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 16
+ },
+ {
+  "text": "检查 ARP 表",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 21
+ },
+ {
+  "text": "检查 MAC 表",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 22
+ },
+ {
+  "text": "检查光模块",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 24
+ },
+ {
+  "text": "查看 NAT 表",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 26
+ },
+ {
+  "text": "ACL 策略",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 31
+ },
+ {
+  "text": "查看 ACL 策略",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 31
+ },
+ {
+  "text": "查看 VPN 隧道",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 33
+ },
+ {
+  "text": "查看会话数",
+  "file": "modules/network/services/vendorAdapter/ruijie.ts",
+  "line": 35
+ },
+ {
+  "text": "检查固件版本",
+  "file": "modules/network/services/vendorAdapter/tplink.ts",
+  "line": 13
+ },
+ {
+  "text": "检查 EdgeOS 版本",
+  "file": "modules/network/services/vendorAdapter/ubiquiti.ts",
+  "line": 13
+ },
+ {
+  "text": "VLAN 配置",
+  "file": "modules/network/services/vendorAdapter/ubiquiti.ts",
+  "line": 19
+ },
+ {
+  "text": "MAC 表",
+  "file": "modules/network/services/vendorAdapter/ubiquiti.ts",
+  "line": 21
+ },
+ {
+  "text": "检查 VLAN",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 20
+ },
+ {
+  "text": "查看 BGP",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 26
+ },
+ {
+  "text": "查看 NTP",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 27
+ },
+ {
+  "text": "查看 DHCP",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 28
+ },
+ {
+  "text": "查看 DNS",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 29
+ },
+ {
+  "text": "查看无线 AP 信息",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 31
+ },
+ {
+  "text": "查看 ACL",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 33
+ },
+ {
+  "text": "查看 VPN",
+  "file": "modules/network/services/vendorAdapter/zte.ts",
+  "line": 34
+ },
+ {
+  "text": "169.254.0.0/16 link-local (含云元数据 169.254.169.254)",
+  "file": "modules/network/services/vncProxyService.ts",
+  "line": 25
+ },
+ {
+  "text": "获取通知配置失败:",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 16
+ },
+ {
+  "text": "获取通知配置失败",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 17
+ },
+ {
+  "text": "不能为空",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 33
+ },
+ {
+  "text": "通知配置已更新",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 48
+ },
+ {
+  "text": "更新通知配置失败:",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 50
+ },
+ {
+  "text": "更新通知配置失败",
+  "file": "modules/notification/routes/notificationConfigRoutes.ts",
+  "line": 51
+ },
+ {
+  "text": "**来源**: ",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 51
+ },
+ {
+  "text": "ITOps 平台",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 51
+ },
+ {
+  "text": "**时间**: ",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 52
+ },
+ {
+  "text": "❌ 飞书通知发送失败",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 66
+ },
+ {
+  "text": "❌ 企业微信通知发送失败",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 88
+ },
+ {
+  "text": "❌ 钉钉通知发送失败",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 118
+ },
+ {
+  "text": "❌ Telegram 通知发送失败",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 153
+ },
+ {
+  "text": "❌ Webhook 通知发送失败",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 197
+ },
+ {
+  "text": "飞书",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 209
+ },
+ {
+  "text": "企业微信",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 210
+ },
+ {
+  "text": "钉钉",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 211
+ },
+ {
+  "text": "邮件",
+  "file": "modules/notification/services/notificationChannels.ts",
+  "line": 213
+ },
+ {
+  "text": "SMTP 服务器和邮箱账号不能为空",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 41
+ },
+ {
+  "text": "🔔 ITOps Agent Platform - 通知渠道测试",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 55
+ },
+ {
+  "text": "这是一封测试邮件，证明邮件通知配置正确。\\n\\n如果您收到此邮件，说明 SMTP 配置已生效。",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 56
+ },
+ {
+  "text": "<h2>✅ 通知配置测试</h2><p>这是一封测试邮件，证明邮件通知配置正确。</p><hr/><small>ITOps Agent Platform</small>",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 57
+ },
+ {
+  "text": "测试邮件发送成功",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 60
+ },
+ {
+  "text": "企业微信 Webhook URL 不能为空",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 68
+ },
+ {
+  "text": "🔔 ITOps Agent - 通知渠道测试",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 71
+ },
+ {
+  "text": "这是一条测试消息，证明企业微信通知配置正确。\\n> 时间: ",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 72
+ },
+ {
+  "text": "企业微信测试消息发送成功",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 76
+ },
+ {
+  "text": "钉钉 Webhook URL 不能为空",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 84
+ },
+ {
+  "text": "这是一条测试消息，证明钉钉通知配置正确。",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 88
+ },
+ {
+  "text": "钉钉测试消息发送成功",
+  "file": "modules/notification/services/notificationChannelTestService.ts",
+  "line": 92
+ },
+ {
+  "text": "通知已重新发送",
+  "file": "modules/notification/services/notificationCrudService.ts",
+  "line": 106
+ },
+ {
+  "text": "通知重新发送失败",
+  "file": "modules/notification/services/notificationCrudService.ts",
+  "line": 106
+ },
+ {
+  "text": "当前端点仅返回脚本内容预览；真实 SSH 执行请通过 workflow/ai agent 触发（带 server_id 上下文）。",
+  "file": "modules/scripts/routes/scriptRoutes.ts",
+  "line": 124
+ },
+ {
+  "text": "以下是最近几轮终端交互记录：",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 81
+ },
+ {
+  "text": "⚠️ 上一轮输出检测到错误/异常，请重点分析。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 91
+ },
+ {
+  "text": "\\n用户手动请求分析当前终端内容。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 98
+ },
+ {
+  "text": "\\n请根据以上终端交互记录，给出你的分析和建议。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 101
+ },
+ {
+  "text": "检测到命令执行异常，建议检查命令语法、文件权限或网络连接。可以尝试查看详细日志定位问题。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 112
+ },
+ {
+  "text": "当前终端运行正常。如需帮助，可以手动触发分析或输入具体命令。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 118
+ },
+ {
+  "text": "请先在系统设置 → AI 模型中配置并启用一个默认 AI 模型。",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 133
+ },
+ {
+  "text": "AI 调用超时",
+  "file": "modules/scripts/services/terminalAiService.ts",
+  "line": 150
+ },
+ {
+  "text": "分组不存在",
+  "file": "modules/servers/routes/serverGroupRoutes.ts",
+  "line": 53
+ },
+ {
+  "text": "数据验证失败",
+  "file": "modules/servers/routes/serverManagementRoutes.ts",
+  "line": 87
+ },
+ {
+  "text": "Web服务器-01",
+  "file": "modules/servers/routes/serverManagementRoutes.ts",
+  "line": 115
+ },
+ {
+  "text": "生产环境Web服务器",
+  "file": "modules/servers/routes/serverManagementRoutes.ts",
+  "line": 121
+ },
+ {
+  "text": "无效的SSH密钥ID",
+  "file": "modules/servers/routes/sshKeyRoutes.ts",
+  "line": 11
+ },
+ {
+  "text": "密钥名称不能为空",
+  "file": "modules/servers/routes/sshKeyRoutes.ts",
+  "line": 44
+ },
+ {
+  "text": "认证类型必须是 key 或 password",
+  "file": "modules/servers/routes/sshKeyRoutes.ts",
+  "line": 45
+ },
+ {
+  "text": "SSH密钥类型必须提供私钥，用户名密码类型必须提供用户名和密码",
+  "file": "modules/servers/routes/sshKeyRoutes.ts",
+  "line": 55
+ },
+ {
+  "text": "不能将分组设置为自己的子分组",
+  "file": "modules/servers/services/serverGroupCrudService.ts",
+  "line": 98
+ },
+ {
+  "text": "不能将分组移动到自身",
+  "file": "modules/servers/services/serverGroupCrudService.ts",
+  "line": 116
+ },
+ {
+  "text": "请先删除或移动子分组",
+  "file": "modules/servers/services/serverGroupCrudService.ts",
+  "line": 128
+ },
+ {
+  "text": "服务器不存在",
+  "file": "modules/servers/services/serverGroupCrudService.ts",
+  "line": 139
+ },
+ {
+  "text": "缺少 server_id 或 group_id",
+  "file": "modules/servers/services/serverGroupCrudService.ts",
+  "line": 150
+ },
+ {
+  "text": "服务器已存在",
+  "file": "modules/servers/services/serverImportService.ts",
+  "line": 75
+ },
+ {
+  "text": "无效的 SSH 私钥格式，请确保粘贴的内容包含完整的私钥文本（从 BEGIN 到 END）",
+  "file": "modules/servers/services/sshKeyCrudService.ts",
+  "line": 72
+ },
+ {
+  "text": "密码不能为空",
+  "file": "modules/servers/services/sshKeyCrudService.ts",
+  "line": 88
+ },
+ {
+  "text": "作为一个专业的服务器运维专家，请分析以下合规检查结果，并为每个检查项给出专业的评估和建议。\\n\\n",
+  "file": "modules/servers/services/sshService/sshComplianceService.ts",
+  "line": 53
+ },
+ {
+  "text": "你是一个专业的服务器运维安全专家，擅长分析系统合规检查结果，识别安全风险并提供改进建议。你的回答要简洁、专业、有针对性。",
+  "file": "modules/servers/services/sshService/sshComplianceService.ts",
+  "line": 72
+ },
+ {
+  "text": "🤖 [Compliance AI] 批量解析失败，使用统一分析结果",
+  "file": "modules/servers/services/sshService/sshComplianceService.ts",
+  "line": 98
+ },
+ {
+  "text": "❌ [Compliance AI] 批量分析失败",
+  "file": "modules/servers/services/sshService/sshComplianceService.ts",
+  "line": 109
+ },
+ {
+  "text": " : '跳过'}",
+  "file": "modules/servers/services/sshService/sshComplianceService.ts",
+  "line": 198
+ },
+ {
+  "text": "豆包 4o",
+  "file": "modules/settings/routes/settingsRoutes.ts",
+  "line": 115
+ },
+ {
+  "text": "未设置",
+  "file": "modules/tool-links/services/toolLinkCrudService.ts",
+  "line": 79
+ },
+ {
+  "text": "SNMP 巡检",
+  "file": "repositories/analyticsRepository/linkageAnalytics.ts",
+  "line": 84
+ },
+ {
+  "text": "SSH 巡检",
+  "file": "repositories/analyticsRepository/linkageAnalytics.ts",
+  "line": 84
+ },
+ {
+  "text": "AI 分析",
+  "file": "repositories/analyticsRepository/linkageAnalytics.ts",
+  "line": 135
+ },
+ {
+  "text": "SELECT COUNT(*) as count FROM root_cause_analyses WHERE status = 'completed' AND recommendations LIKE '%自动%'",
+  "file": "repositories/rcaRepository.ts",
+  "line": 142
+ },
+ {
+  "text": "SELECT COUNT(*) as count FROM root_cause_analyses WHERE status = 'completed' AND root_cause LIKE '%误报%'",
+  "file": "repositories/rcaRepository.ts",
+  "line": 149
+ },
+ {
+  "text": "[itopSyncService] CMDB 同步未启用（ITOP_SYNC_ENABLED != true）",
+  "file": "serviceRegistry.ts",
+  "line": 303
+ },
+ {
+  "text": "用户名不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 5
+ },
+ {
+  "text": "用户名至少2个字符",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 9
+ },
+ {
+  "text": "密码至少8个字符",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 10
+ },
+ {
+  "text": "邮箱格式不正确",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 11
+ },
+ {
+  "text": "服务器名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 18
+ },
+ {
+  "text": "主机名不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 19
+ },
+ {
+  "text": "无效的服务器ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 44
+ },
+ {
+  "text": "无效的告警ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 55
+ },
+ {
+  "text": "无效的任务ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 61
+ },
+ {
+  "text": "任务名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 64
+ },
+ {
+  "text": "无效的工作流ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 65
+ },
+ {
+  "text": "工作流名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 75
+ },
+ {
+  "text": "节点配置不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 77
+ },
+ {
+  "text": "无效的Agent ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 85
+ },
+ {
+  "text": "Agent名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 88
+ },
+ {
+  "text": "测试输入不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 118
+ },
+ {
+  "text": "工具ID不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 144
+ },
+ {
+  "text": "策略名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 156
+ },
+ {
+  "text": "无效的策略ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 173
+ },
+ {
+  "text": "无效的ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 184
+ },
+ {
+  "text": "变更类型不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 192
+ },
+ {
+  "text": "分组名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 215
+ },
+ {
+  "text": "无效的分组ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 232
+ },
+ {
+  "text": "告警标题不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 244
+ },
+ {
+  "text": "Provider ID 不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 250
+ },
+ {
+  "text": "配置名称不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 251
+ },
+ {
+  "text": "无效的映射ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 283
+ },
+ {
+  "text": "无效的定时任务ID",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 306
+ },
+ {
+  "text": "命令不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 313
+ },
+ {
+  "text": "请提供至少一个服务器",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 344
+ },
+ {
+  "text": "节点ID不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 387
+ },
+ {
+  "text": "Prometheus URL 必须为合法 URL",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 437
+ },
+ {
+  "text": "PromQL 不能为空",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 451
+ },
+ {
+  "text": "Zabbix API URL 必须为合法 URL",
+  "file": "shared/schemas/apiValidation.ts",
+  "line": 470
+ },
+ {
+  "text": "❌ WebSocket 认证失败: 未提供 token",
+  "file": "shared/websocket/handler.ts",
+  "line": 28
+ },
+ {
+  "text": "❌ WebSocket 认证失败: token 已拉黑",
+  "file": "shared/websocket/handler.ts",
+  "line": 34
+ },
+ {
+  "text": "token已失效",
+  "file": "shared/websocket/handler.ts",
+  "line": 35
+ },
+ {
+  "text": "❌ WebSocket 认证失败: 用户不存在或已禁用",
+  "file": "shared/websocket/handler.ts",
+  "line": 43
+ },
+ {
+  "text": "用户不存在或已禁用",
+  "file": "shared/websocket/handler.ts",
+  "line": 44
+ },
+ {
+  "text": "❌ WebSocket 认证失败:",
+  "file": "shared/websocket/handler.ts",
+  "line": 51
+ },
+ {
+  "text": "AI 分析暂时不可用，请稍后重试。",
+  "file": "shared/websocket/handler.ts",
+  "line": 199
+ },
+ {
+  "text": "ITOps Agent 运维平台 API 文档",
+  "file": "swagger.ts",
+  "line": 11
+ },
+ {
+  "text": "服务器内部错误，请稍后重试",
+  "file": "types/errors.ts",
+  "line": 41
+ },
+ {
+  "text": "请求参数验证失败",
+  "file": "types/errors.ts",
+  "line": 42
+ },
+ {
+  "text": "认证失败，请重新登录",
+  "file": "types/errors.ts",
+  "line": 43
+ },
+ {
+  "text": "登录已过期，请重新登录",
+  "file": "types/errors.ts",
+  "line": 44
+ },
+ {
+  "text": "无效的认证令牌",
+  "file": "types/errors.ts",
+  "line": 45
+ },
+ {
+  "text": "权限不足，无法执行此操作",
+  "file": "types/errors.ts",
+  "line": 46
+ },
+ {
+  "text": "请求的资源不存在",
+  "file": "types/errors.ts",
+  "line": 47
+ },
+ {
+  "text": "未找到指定的资源",
+  "file": "types/errors.ts",
+  "line": 48
+ },
+ {
+  "text": "资源已存在，请勿重复创建",
+  "file": "types/errors.ts",
+  "line": 49
+ },
+ {
+  "text": "请求频率过高，请稍后重试",
+  "file": "types/errors.ts",
+  "line": 50
+ },
+ {
+  "text": "数据库操作失败",
+  "file": "types/errors.ts",
+  "line": 51
+ },
+ {
+  "text": "外部服务调用失败",
+  "file": "types/errors.ts",
+  "line": 52
+ },
+ {
+  "text": "请求超时，请稍后重试",
+  "file": "types/errors.ts",
+  "line": 53
+ },
+ {
+  "text": "请求格式错误",
+  "file": "types/errors.ts",
+  "line": 54
+ },
+ {
+  "text": "业务处理失败",
+  "file": "types/errors.ts",
+  "line": 55
+ },
+ {
+  "text": "密码符合要求",
+  "file": "utils/passwordPolicy.ts",
+  "line": 25
+ },
+ {
+  "text": "至少8位",
+  "file": "utils/passwordPolicy.ts",
+  "line": 29
+ },
+ {
+  "text": "大写字母",
+  "file": "utils/passwordPolicy.ts",
+  "line": 30
+ },
+ {
+  "text": "小写字母",
+  "file": "utils/passwordPolicy.ts",
+  "line": 31
+ },
+ {
+  "text": "数字",
+  "file": "utils/passwordPolicy.ts",
+  "line": 32
+ },
+ {
+  "text": "特殊字符(!@#$%^&*...)",
+  "file": "utils/passwordPolicy.ts",
+  "line": 33
+ }
+]

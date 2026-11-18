@@ -1,0 +1,1672 @@
+[
+ {
+  "text": "开始监控",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 243
+ },
+ {
+  "text": "详情",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 251
+ },
+ {
+  "text": "创建容器",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 71
+ },
+ {
+  "text": "Docker 引擎连接失败，请检查 Docker 是否正在运行。",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 81
+ },
+ {
+  "text": "个，第",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 202
+ },
+ {
+  "text": "页",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 202
+ },
+ {
+  "text": "添加端点",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 47
+ },
+ {
+  "text": "创建网络",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 39
+ },
+ {
+  "text": "网络详情:",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 227
+ },
+ {
+  "text": "管理 Docker 镜像 —— 同步、拉取、删除、本地仓库可视",
+  "file": "modules/containers/pages/Images.tsx",
+  "line": 190
+ },
+ {
+  "text": "拉取镜像",
+  "file": "modules/containers/pages/ImageSection.tsx",
+  "line": 80
+ },
+ {
+  "text": "重试",
+  "file": "modules/containers/pages/ImageSection.tsx",
+  "line": 91
+ },
+ {
+  "text": "管理虚拟机快照自动策略 —— Cron 定时、保留数量、内存快照、启用控制",
+  "file": "modules/containers/pages/SnapshotPolicies.tsx",
+  "line": 201
+ },
+ {
+  "text": "Cron 表达式",
+  "file": "modules/containers/pages/SnapshotPolicies.tsx",
+  "line": 337
+ },
+ {
+  "text": "克隆虚拟机:",
+  "file": "modules/containers/pages/virtual-machines/CloneVMModal.tsx",
+  "line": 28
+ },
+ {
+  "text": "克隆中...",
+  "file": "modules/containers/pages/virtual-machines/CloneVMModal.tsx",
+  "line": 64
+ },
+ {
+  "text": "克隆",
+  "file": "modules/containers/pages/virtual-machines/CloneVMModal.tsx",
+  "line": 69
+ },
+ {
+  "text": "删除虚拟机",
+  "file": "modules/containers/pages/virtual-machines/DeleteVMConfirm.tsx",
+  "line": 16
+ },
+ {
+  "text": "确定要删除虚拟机",
+  "file": "modules/containers/pages/virtual-machines/DeleteVMConfirm.tsx",
+  "line": 19
+ },
+ {
+  "text": "吗？此操作将同时从虚拟化平台和本地数据库中移除。",
+  "file": "modules/containers/pages/virtual-machines/DeleteVMConfirm.tsx",
+  "line": 19
+ },
+ {
+  "text": "删除中...",
+  "file": "modules/containers/pages/virtual-machines/DeleteVMConfirm.tsx",
+  "line": 36
+ },
+ {
+  "text": "确认删除",
+  "file": "modules/containers/pages/virtual-machines/DeleteVMConfirm.tsx",
+  "line": 41
+ },
+ {
+  "text": "暂无平台，请添加",
+  "file": "modules/containers/pages/virtual-machines/PlatformManagementModal.tsx",
+  "line": 45
+ },
+ {
+  "text": "添加中...",
+  "file": "modules/containers/pages/virtual-machines/PlatformManagementModal.tsx",
+  "line": 166
+ },
+ {
+  "text": "添加平台",
+  "file": "modules/containers/pages/virtual-machines/PlatformManagementModal.tsx",
+  "line": 171
+ },
+ {
+  "text": "创建中...",
+  "file": "modules/containers/pages/virtual-machines/SnapshotsDrawer.tsx",
+  "line": 159
+ },
+ {
+  "text": "台，第",
+  "file": "modules/containers/pages/virtual-machines/VMList.tsx",
+  "line": 181
+ },
+ {
+  "text": "管理平台",
+  "file": "modules/containers/pages/virtual-machines/VMPlatformSelector.tsx",
+  "line": 48
+ },
+ {
+  "text": "虚拟机总数",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 17
+ },
+ {
+  "text": "运行中",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 24
+ },
+ {
+  "text": "已关机",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 31
+ },
+ {
+  "text": "已挂起",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 38
+ },
+ {
+  "text": "运行",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 51
+ },
+ {
+  "text": "关机",
+  "file": "modules/containers/pages/virtual-machines/VMStatsCards.tsx",
+  "line": 52
+ },
+ {
+  "text": "同步",
+  "file": "modules/containers/pages/virtual-machines/VMToolbar.tsx",
+  "line": 60
+ },
+ {
+  "text": "新建 VM",
+  "file": "modules/containers/pages/virtual-machines/VMToolbar.tsx",
+  "line": 67
+ },
+ {
+  "text": "跨平台管理 Proxmox / ESXi / KVM 虚拟机",
+  "file": "modules/containers/pages/VirtualMachines.tsx",
+  "line": 24
+ },
+ {
+  "text": "保存中...",
+  "file": "modules/containers/pages/VmCreateWizard.tsx",
+  "line": 178
+ },
+ {
+  "text": "CPU 使用率",
+  "file": "modules/containers/pages/VmDetailPanel.tsx",
+  "line": 132
+ },
+ {
+  "text": "内存使用率",
+  "file": "modules/containers/pages/VmDetailPanel.tsx",
+  "line": 150
+ },
+ {
+  "text": "核",
+  "file": "modules/containers/pages/VmDetailPanel.tsx",
+  "line": 187
+ },
+ {
+  "text": "个快照",
+  "file": "modules/containers/pages/VmDetailPanel.tsx",
+  "line": 216
+ },
+ {
+  "text": "创建快照",
+  "file": "modules/containers/pages/VmDetailPanel.tsx",
+  "line": 224
+ },
+ {
+  "text": "管理跨 hypervisor 虚拟机迁移任务 —— 进度跟踪、错误重试、批量执行",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 107
+ },
+ {
+  "text": "/* 工具栏 */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 163
+ },
+ {
+  "text": "/* 表格 */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 194
+ },
+ {
+  "text": "/* 新建迁移 Modal */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 263
+ },
+ {
+  "text": "/* 详情 Modal */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 300
+ },
+ {
+  "text": "管理 Docker / NFS / 本地 / Ceph 存储卷 —— 同步、新建、删除、容量监控",
+  "file": "modules/containers/pages/Volumes.tsx",
+  "line": 209
+ },
+ {
+  "text": "创建数据卷",
+  "file": "modules/containers/pages/VolumeSection.tsx",
+  "line": 82
+ },
+ {
+  "text": "已禁用",
+  "file": "modules/database/pages/db-connections/DbConnectionCard.tsx",
+  "line": 44
+ },
+ {
+  "text": "启用连接",
+  "file": "modules/database/pages/db-connections/DbConnectionFormModal.tsx",
+  "line": 182
+ },
+ {
+  "text": "测试中...",
+  "file": "modules/database/pages/db-connections/DbConnectionFormModal.tsx",
+  "line": 210
+ },
+ {
+  "text": "测试连接",
+  "file": "modules/database/pages/db-connections/DbConnectionFormModal.tsx",
+  "line": 215
+ },
+ {
+  "text": "数据库管理",
+  "file": "modules/database/pages/db-connections/DbConnectionsHeader.tsx",
+  "line": 55
+ },
+ {
+  "text": "管理数据库连接配置，供数据库运维 Agent 调用 dbskiter 使用",
+  "file": "modules/database/pages/db-connections/DbConnectionsHeader.tsx",
+  "line": 58
+ },
+ {
+  "text": "添加连接",
+  "file": "modules/database/pages/db-connections/DbConnectionsHeader.tsx",
+  "line": 66
+ },
+ {
+  "text": "确定要删除数据库连接",
+  "file": "modules/database/pages/db-connections/DeleteDbConnectionModal.tsx",
+  "line": 41
+ },
+ {
+  "text": "吗？此操作不可撤销。",
+  "file": "modules/database/pages/db-connections/DeleteDbConnectionModal.tsx",
+  "line": 42
+ },
+ {
+  "text": "/* ── 顶部标题栏 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 65
+ },
+ {
+  "text": "数据中心管理",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 92
+ },
+ {
+  "text": "/* ── 指标卡片行 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 97
+ },
+ {
+  "text": "/* ── 左侧面板 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 126
+ },
+ {
+  "text": "/* 搜索 */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 128
+ },
+ {
+  "text": "/* 机柜状态 */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 144
+ },
+ {
+  "text": "/* ── 场景控制按钮 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 169
+ },
+ {
+  "text": "/* ── 底部告警条 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 185
+ },
+ {
+  "text": "构建数字孪生场景...",
+  "file": "modules/dc/components/DataRoom3D/LoadingScreen.tsx",
+  "line": 7
+ },
+ {
+  "text": "const TGT_Y = FLOOR_OFFSET + RH / 2; // = 6.25，机柜中点 Y（RH 在文件顶部已声明）",
+  "file": "modules/dc/components/DataRoom3D/Scene.tsx",
+  "line": 227
+ },
+ {
+  "text": "const FLOOR_OFFSET = 3.5; // 抬高机柜底部，让地板在视野中相对下沉",
+  "file": "modules/dc/components/DataRoom3D/Scene.tsx",
+  "line": 447
+ },
+ {
+  "text": "% 已用",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 34
+ },
+ {
+  "text": "/* 进度条 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 45
+ },
+ {
+  "text": "/* U 位列表 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 57
+ },
+ {
+  "text": "/* U 位标签 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 71
+ },
+ {
+  "text": "/* 设备信息 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 76
+ },
+ {
+  "text": "/* 资源占用 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 89
+ },
+ {
+  "text": "内存",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 98
+ },
+ {
+  "text": "导出数据中心完整布局数据为 JSON 格式，包含机房、机柜、U位、生命周期和供电设备信息。",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 16
+ },
+ {
+  "text": "/* 导出区域 */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 19
+ },
+ {
+  "text": "包含",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 28
+ },
+ {
+  "text": "个机房,",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 28
+ },
+ {
+  "text": "个机柜,",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 28
+ },
+ {
+  "text": "个设备",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 28
+ },
+ {
+  "text": "/* 导入区域 */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 40
+ },
+ {
+  "text": "/* 导入 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 50
+ },
+ {
+  "text": "粘贴 JSON 数据。格式与导出数据一致，可包含 rooms, racks, slots, pdus 等字段。",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 62
+ },
+ {
+  "text": "添加机房",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 149
+ },
+ {
+  "text": "添加机柜",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 161
+ },
+ {
+  "text": "添加PDU/UPS",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 167
+ },
+ {
+  "text": "添加制造商",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 173
+ },
+ {
+  "text": "添加型号",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 179
+ },
+ {
+  "text": "添加配电柜",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 185
+ },
+ {
+  "text": "添加供电线路",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 191
+ },
+ {
+  "text": "添加线缆",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 197
+ },
+ {
+  "text": "管理服务器/设备",
+  "file": "modules/dc/pages/DataCenterManage/index.tsx",
+  "line": 203
+ },
+ {
+  "text": "当前数据库中没有机房、机柜或设备数据。请手动添加真实资产开始使用。",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 41
+ },
+ {
+  "text": "手动添加机房",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 47
+ },
+ {
+  "text": "/* 机柜热力图 */",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 98
+ },
+ {
+  "text": "/* 图例 */",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 157
+ },
+ {
+  "text": "/* 分配 U 位 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 16
+ },
+ {
+  "text": "/* 设备操作 Modal（下架/移位） */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 59
+ },
+ {
+  "text": "移位",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 76
+ },
+ {
+  "text": "/* 移位 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 96
+ },
+ {
+  "text": "已占用:",
+  "file": "modules/dc/pages/DataCenterManage/SlotsPanel.tsx",
+  "line": 99
+ },
+ {
+  "text": "分配设备",
+  "file": "modules/dc/pages/DataCenterManage/SlotsPanel.tsx",
+  "line": 111
+ },
+ {
+  "text": "if (!roomForm.isFieldsTouched()) return; // 校验失败，antd 会自动提示",
+  "file": "modules/dc/pages/DataCenterManage/useDataCenter.ts",
+  "line": 226
+ },
+ {
+  "text": "进入数据中心管理",
+  "file": "modules/dc/pages/DataRoom.tsx",
+  "line": 48
+ },
+ {
+  "text": "选择文件",
+  "file": "modules/import-export/components/ImportExport.tsx",
+  "line": 123
+ },
+ {
+  "text": "成功导入",
+  "file": "modules/import-export/components/ImportExport.tsx",
+  "line": 133
+ },
+ {
+  "text": "支持 CSV / JSON 格式导入导出",
+  "file": "modules/import-export/pages/ImportExportDemo.tsx",
+  "line": 36
+ },
+ {
+  "text": "设备名称",
+  "file": "modules/infra/components/add-device-modal/BasicInfoSection.tsx",
+  "line": 22
+ },
+ {
+  "text": "IP 地址",
+  "file": "modules/infra/components/add-device-modal/BasicInfoSection.tsx",
+  "line": 36
+ },
+ {
+  "text": "需先在 SNMP 页面添加凭证，凭证中的 IP 会自动关联",
+  "file": "modules/infra/components/add-device-modal/SnmpConfigSection.tsx",
+  "line": 66
+ },
+ {
+  "text": "测试 SNMP 连接",
+  "file": "modules/infra/components/add-device-modal/SnmpConfigSection.tsx",
+  "line": 94
+ },
+ {
+  "text": "选择凭证",
+  "file": "modules/infra/components/add-device-modal/SshConfigSection.tsx",
+  "line": 71
+ },
+ {
+  "text": "手动输入",
+  "file": "modules/infra/components/add-device-modal/SshConfigSection.tsx",
+  "line": 83
+ },
+ {
+  "text": "认证凭证",
+  "file": "modules/infra/components/add-device-modal/SshConfigSection.tsx",
+  "line": 91
+ },
+ {
+  "text": "可选择已有的账号密码凭证；纯 SNMP 设备可跳过",
+  "file": "modules/infra/components/add-device-modal/SshConfigSection.tsx",
+  "line": 108
+ },
+ {
+  "text": "用户名",
+  "file": "modules/infra/components/add-device-modal/SshConfigSection.tsx",
+  "line": 115
+ },
+ {
+  "text": "测试工具",
+  "file": "modules/infra/pages/Tools.tsx",
+  "line": 213
+ },
+ {
+  "text": "测试工具:",
+  "file": "modules/infra/pages/Tools.tsx",
+  "line": 230
+ },
+ {
+  "text": "参数 (JSON)",
+  "file": "modules/infra/pages/Tools.tsx",
+  "line": 245
+ },
+ {
+  "text": "执行测试",
+  "file": "modules/infra/pages/Tools.tsx",
+  "line": 268
+ },
+ {
+  "text": "/* 内存 */",
+  "file": "modules/kubernetes/pages/k8s/NodeList.tsx",
+  "line": 89
+ },
+ {
+  "text": "K8s 版本：",
+  "file": "modules/kubernetes/pages/k8s/NodeList.tsx",
+  "line": 124
+ },
+ {
+  "text": "/* Pod 详情 Drawer */",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 165
+ },
+ {
+  "text": "Pod 详情",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 172
+ },
+ {
+  "text": "/* Pod 日志 Drawer */",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 291
+ },
+ {
+  "text": "Pod 日志",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 298
+ },
+ {
+  "text": "导入集群",
+  "file": "modules/kubernetes/pages/kubernetes/ClusterSelector.tsx",
+  "line": 50
+ },
+ {
+  "text": "刷新集群",
+  "file": "modules/kubernetes/pages/kubernetes/ClusterSelector.tsx",
+  "line": 57
+ },
+ {
+  "text": "删除当前集群",
+  "file": "modules/kubernetes/pages/kubernetes/ClusterSelector.tsx",
+  "line": 68
+ },
+ {
+  "text": "确定要删除",
+  "file": "modules/kubernetes/pages/kubernetes/DeleteConfirmModal.tsx",
+  "line": 35
+ },
+ {
+  "text": "吗？",
+  "file": "modules/kubernetes/pages/kubernetes/DeleteConfirmModal.tsx",
+  "line": 35
+ },
+ {
+  "text": "扩缩容",
+  "file": "modules/kubernetes/pages/kubernetes/DeploymentTable.tsx",
+  "line": 101
+ },
+ {
+  "text": "确认导入",
+  "file": "modules/kubernetes/pages/kubernetes/ImportClusterModal.tsx",
+  "line": 94
+ },
+ {
+  "text": "注册服务器",
+  "file": "modules/mcp/pages/ExternalServers.tsx",
+  "line": 202
+ },
+ {
+  "text": "启动所有",
+  "file": "modules/mcp/pages/ExternalServers.tsx",
+  "line": 205
+ },
+ {
+  "text": "MCP 服务概览",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 142
+ },
+ {
+  "text": "/* 状态卡片 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 145
+ },
+ {
+  "text": "分布在",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 169
+ },
+ {
+  "text": "个领域",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 169
+ },
+ {
+  "text": "台外部服务器已连接",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 180
+ },
+ {
+  "text": "6 层安全防护已启用",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 192
+ },
+ {
+  "text": "/* 服务信息 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 198
+ },
+ {
+  "text": "个可用",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 206
+ },
+ {
+  "text": "台注册",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 207
+ },
+ {
+  "text": "/* 工具领域分布 + 外部服务器 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 212
+ },
+ {
+  "text": "个工具",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 238
+ },
+ {
+  "text": "/* 内置工具列表 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 249
+ },
+ {
+  "text": "内置 MCP 工具列表 (",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 251
+ },
+ {
+  "text": "MCP 工具通过 JSON-RPC 2.0 协议调用。Agent 在执行任务时会自动选择并调用这些工具。详细测试和调用请前往",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 298
+ },
+ {
+  "text": "或",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 299
+ },
+ {
+  "text": "页面。",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 300
+ },
+ {
+  "text": "/* 工具详情 */",
+  "file": "modules/mcp/pages/ToolBrowser.tsx",
+  "line": 222
+ },
+ {
+  "text": "/* 工具测试 */",
+  "file": "modules/mcp/pages/ToolBrowser.tsx",
+  "line": 251
+ },
+ {
+  "text": "调用工具",
+  "file": "modules/mcp/pages/ToolTester.tsx",
+  "line": 134
+ },
+ {
+  "text": "/* 时间范围选择 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 68
+ },
+ {
+  "text": "近",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 83
+ },
+ {
+  "text": "天",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 83
+ },
+ {
+  "text": "/* 概览卡片 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 89
+ },
+ {
+  "text": "巡检总数",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 95
+ },
+ {
+  "text": "成功率",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 102
+ },
+ {
+  "text": "告警总数",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 111
+ },
+ {
+  "text": "严重告警",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 118
+ },
+ {
+  "text": "日均告警",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 125
+ },
+ {
+  "text": "/* 巡检趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 138
+ },
+ {
+  "text": "部分成功",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 157
+ },
+ {
+  "text": "/* 告警趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 162
+ },
+ {
+  "text": "/* 巡检成功率 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 186
+ },
+ {
+  "text": "/* 修复执行趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 202
+ },
+ {
+  "text": "/* 标题 / 编辑 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 83
+ },
+ {
+  "text": "/* 快捷入口 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 134
+ },
+ {
+  "text": "/* 资源统计 + 时间 + 全屏 + 刷新 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 148
+ },
+ {
+  "text": "/* 系统资源监控 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 146
+ },
+ {
+  "text": "系统资源监控",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 151
+ },
+ {
+  "text": "/* 服务器选择下拉框 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 154
+ },
+ {
+  "text": "实时数据",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 175
+ },
+ {
+  "text": "/* 4 张并排指标卡 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 188
+ },
+ {
+  "text": "/* 告警趋势 (24h) */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 234
+ },
+ {
+  "text": "告警趋势 (24h)",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 238
+ },
+ {
+  "text": "暂无告警数据",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 244
+ },
+ {
+  "text": "/* 任务趋势 (24h) */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 249
+ },
+ {
+  "text": "任务趋势 (24h)",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 253
+ },
+ {
+  "text": "暂无任务数据",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 259
+ },
+ {
+  "text": "/* 自动修复统计 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 264
+ },
+ {
+  "text": "自动修复统计",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 269
+ },
+ {
+  "text": "详情 →",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 275
+ },
+ {
+  "text": "暂无修复记录",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 328
+ },
+ {
+  "text": "最近任务执行",
+  "file": "modules/monitor/pages/big-screen/BigScreenRecentTasksList.tsx",
+  "line": 45
+ },
+ {
+  "text": "条记录 →",
+  "file": "modules/monitor/pages/big-screen/BigScreenRecentTasksList.tsx",
+  "line": 51
+ },
+ {
+  "text": "节点完成",
+  "file": "modules/monitor/pages/big-screen/BigScreenRecentTasksList.tsx",
+  "line": 78
+ },
+ {
+  "text": "/* 实时告警 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 62
+ },
+ {
+  "text": "实时告警",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 67
+ },
+ {
+  "text": "全部 →",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 73
+ },
+ {
+  "text": "/* Agent 调用统计 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 120
+ },
+ {
+  "text": "Agent调用统计",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 125
+ },
+ {
+  "text": "次调用 · 成功率",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 168
+ },
+ {
+  "text": "/* 任务状态分布 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 179
+ },
+ {
+  "text": "任务状态分布",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 183
+ },
+ {
+  "text": "/* 4 个 StatCard */",
+  "file": "modules/monitor/pages/big-screen/BigScreenStatCardRow.tsx",
+  "line": 26
+ },
+ {
+  "text": "/* 4 个 SLA mini-card */",
+  "file": "modules/monitor/pages/big-screen/BigScreenStatCardRow.tsx",
+  "line": 62
+ },
+ {
+  "text": "/* CPU + 内存趋势 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 28
+ },
+ {
+  "text": "CPU趋势",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 33
+ },
+ {
+  "text": "内存趋势",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 40
+ },
+ {
+  "text": "/* 网络 + 磁盘趋势 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 46
+ },
+ {
+  "text": "网络流量 (Mbps)",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 51
+ },
+ {
+  "text": "磁盘I/O (MB/s)",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 58
+ },
+ {
+  "text": "当前有",
+  "file": "modules/monitor/pages/big-screen/CriticalAlertBanner.tsx",
+  "line": 41
+ },
+ {
+  "text": "个严重级别告警需要处理",
+  "file": "modules/monitor/pages/big-screen/CriticalAlertBanner.tsx",
+  "line": 45
+ },
+ {
+  "text": "立即查看",
+  "file": "modules/monitor/pages/big-screen/CriticalAlertBanner.tsx",
+  "line": 53
+ },
+ {
+  "text": "const RATE_CONTAINER_CPU = 0.05;    // ¥/核/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 46
+ },
+ {
+  "text": "const RATE_CONTAINER_MEM = 0.005;   // ¥/MB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 47
+ },
+ {
+  "text": "const RATE_VM_CPU = 0.10;           // ¥/核/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 48
+ },
+ {
+  "text": "const RATE_VM_MEM = 0.01;           // ¥/MB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 49
+ },
+ {
+  "text": "const RATE_VM_DISK = 0.0002;        // ¥/GB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 50
+ },
+ {
+  "text": "/* 费率说明 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 191
+ },
+ {
+  "text": "/核/h",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 194
+ },
+ {
+  "text": "/* 优化建议列表 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 305
+ },
+ {
+  "text": "月省 ¥",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 324
+ },
+ {
+  "text": "/* 汇总卡片 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 338
+ },
+ {
+  "text": "条优化建议",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 353
+ },
+ {
+  "text": "/* 左侧：6个统计卡片 */",
+  "file": "modules/monitor/pages/Dashboard.tsx",
+  "line": 273
+ },
+ {
+  "text": "/* 右侧：最新告警 */",
+  "file": "modules/monitor/pages/Dashboard.tsx",
+  "line": 301
+ },
+ {
+  "text": "输入 PromQL 并点击「查询」开始",
+  "file": "modules/monitor/pages/prometheus/ResultsTable.tsx",
+  "line": 22
+ },
+ {
+  "text": "查询成功，但无数据（result 为空）",
+  "file": "modules/monitor/pages/prometheus/ResultsTable.tsx",
+  "line": 47
+ },
+ {
+  "text": "结果类型：",
+  "file": "modules/monitor/pages/prometheus/ResultsTable.tsx",
+  "line": 58
+ },
+ {
+  "text": "/* 标题 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 96
+ },
+ {
+  "text": "/* 连接配置 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 105
+ },
+ {
+  "text": "连接配置",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 110
+ },
+ {
+  "text": "高级选项（Bearer Token / Timeout）",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 166
+ },
+ {
+  "text": "/* PromQL 查询 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 195
+ },
+ {
+  "text": "查询",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 270
+ },
+ {
+  "text": "/* 结果 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 275
+ },
+ {
+  "text": "报告管理",
+  "file": "modules/monitor/pages/Reports.tsx",
+  "line": 198
+ },
+ {
+  "text": "创建模板",
+  "file": "modules/monitor/pages/Reports.tsx",
+  "line": 208
+ },
+ {
+  "text": "最后生成:",
+  "file": "modules/monitor/pages/Reports.tsx",
+  "line": 367
+ },
+ {
+  "text": "接收人:",
+  "file": "modules/monitor/pages/Reports.tsx",
+  "line": 369
+ },
+ {
+  "text": "回滚",
+  "file": "modules/monitor/pages/reports/AnalyticsTab.tsx",
+  "line": 41
+ },
+ {
+  "text": "次)",
+  "file": "modules/monitor/pages/reports/AnalyticsTab.tsx",
+  "line": 89
+ },
+ {
+  "text": "模板内容 (使用",
+  "file": "modules/monitor/pages/reports/CreateTemplateModal.tsx",
+  "line": 67
+ },
+ {
+  "text": "定义变量)",
+  "file": "modules/monitor/pages/reports/CreateTemplateModal.tsx",
+  "line": 67
+ },
+ {
+  "text": "变量列表 (每行一个)",
+  "file": "modules/monitor/pages/reports/CreateTemplateModal.tsx",
+  "line": 79
+ },
+ {
+  "text": "正在请求 Zabbix ...",
+  "file": "modules/monitor/pages/zabbix/ResultsTable.tsx",
+  "line": 24
+ },
+ {
+  "text": "用户名密码",
+  "file": "modules/monitor/pages/ZabbixQuery.tsx",
+  "line": 241
+ },
+ {
+  "text": "执行查询",
+  "file": "modules/monitor/pages/ZabbixQuery.tsx",
+  "line": 390
+ },
+ {
+  "text": "点击上方「测试连接」按钮验证 Zabbix 配置。",
+  "file": "modules/monitor/pages/ZabbixQuery.tsx",
+  "line": 429
+ },
+ {
+  "text": "标准巡检",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 129
+ },
+ {
+  "text": "全面巡检",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 136
+ },
+ {
+  "text": "自定义巡检",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 143
+ },
+ {
+  "text": "SNMP 巡检",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 152
+ },
+ {
+  "text": "巡检历史",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 169
+ },
+ {
+  "text": "SNMP 测试连接",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 245
+ },
+ {
+  "text": "一键巡检",
+  "file": "modules/network/components/NetworkDeviceCard.tsx",
+  "line": 253
+ },
+ {
+  "text": "SNMP 巡检 -",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 70
+ },
+ {
+  "text": "耗时",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 100
+ },
+ {
+  "text": "/* 系统信息 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 106
+ },
+ {
+  "text": "SNMP 可达",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 112
+ },
+ {
+  "text": "/* 告警区域 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 133
+ },
+ {
+  "text": "告警（",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 138
+ },
+ {
+  "text": "/* 接口列表 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 151
+ },
+ {
+  "text": "/* 底部 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 218
+ },
+ {
+  "text": "状态:",
+  "file": "modules/network/components/TopologyGraph.tsx",
+  "line": 347
+ },
+ {
+  "text": "批量巡检 (",
+  "file": "modules/network/pages/network-devices/BatchInspectModal.tsx",
+  "line": 15
+ },
+ {
+  "text": "台设备)",
+  "file": "modules/network/pages/network-devices/BatchInspectModal.tsx",
+  "line": 15
+ },
+ {
+  "text": "将对",
+  "file": "modules/network/pages/network-devices/BatchInspectModal.tsx",
+  "line": 25
+ },
+ {
+  "text": "台设备执行标准巡检，此操作可能需要较长时间。",
+  "file": "modules/network/pages/network-devices/BatchInspectModal.tsx",
+  "line": 25
+ },
+ {
+  "text": "巡检 -",
+  "file": "modules/network/pages/network-devices/InspectionModal.tsx",
+  "line": 27
+ },
+ {
+  "text": "台已选",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 84
+ },
+ {
+  "text": "批量巡检",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 89
+ },
+ {
+  "text": "新建设备",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 101
+ },
+ {
+  "text": "/* 列表 / 加载 / 空态 */",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 118
+ },
+ {
+  "text": "全选 (",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 160
+ },
+ {
+  "text": "分析:",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 196
+ },
+ {
+  "text": "/* 模态框 */",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 217
+ },
+ {
+  "text": "确定要删除设备",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 285
+ },
+ {
+  "text": "）吗？",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 287
+ },
+ {
+  "text": "refetchInterval: 3000, // 3 秒刷新",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 95
+ },
+ {
+  "text": "网络设备发现",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 182
+ },
+ {
+  "text": "/* 扫描表单 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 188
+ },
+ {
+  "text": "开始扫描",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 262
+ },
+ {
+  "text": "/* 任务列表 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 268
+ },
+ {
+  "text": "个主机",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 327
+ },
+ {
+  "text": "已发现",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 328
+ },
+ {
+  "text": "扫描中",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 330
+ },
+ {
+  "text": "/* 扫描结果 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 376
+ },
+ {
+  "text": "扫描结果",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 382
+ },
+ {
+  "text": "在线:",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 391
+ },
+ {
+  "text": "/ SNMP可达:",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 391
+ },
+ {
+  "text": "接口",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 475
+ },
+ {
+  "text": "/* 批量导入 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 514
+ },
+ {
+  "text": "导入 SNMP 可达设备（",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 527
+ },
+ {
+  "text": "个）",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 527
+ },
+ {
+  "text": "/* 导入对话框 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 534
+ },
+ {
+  "text": "将选中",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 542
+ },
+ {
+  "text": "个 SNMP",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 542
+ },
+ {
+  "text": "可达设备导入到网络设备库",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 543
+ },
+ {
+  "text": "…以及其他",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 596
+ },
+ {
+  "text": "个错误",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 596
+ },
+ {
+  "text": "无 IP 数据",
+  "file": "modules/network/pages/networks/IpListTable.tsx",
+  "line": 57
+ },
+ {
+  "text": "返回子网列表",
+  "file": "modules/network/pages/networks/SubnetDetailView.tsx",
+  "line": 51
+ },
+ {
+  "text": "标记为已用",
+  "file": "modules/network/pages/networks/SubnetDetailView.tsx",
+  "line": 66
+ },
+ {
+  "text": "标记为预留",
+  "file": "modules/network/pages/networks/SubnetDetailView.tsx",
+  "line": 72
+ },
+ {
+  "text": "释放",
+  "file": "modules/network/pages/networks/SubnetDetailView.tsx",
+  "line": 78
+ },
+ {
+  "text": "新建子网",
+  "file": "modules/network/pages/networks/SubnetListHeader.tsx",
+  "line": 35
+ },
+ {
+  "text": "SNMP 管理",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 46
+ },
+ {
+  "text": "/* ======================== Tab 1: 凭证管理 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 68
+ },
+ {
+  "text": "/* ======================== Tab 2: SNMP 查询 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 73
+ },
+ {
+  "text": "/* ======================== Tab 3: Trap 接收 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 76
+ },
+ {
+  "text": "/* API 速查 */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 79
+ },
+ {
+  "text": "SNMP API 端点速查",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 83
+ },
+ {
+  "text": "新增凭证",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 136
+ },
+ {
+  "text": "/* 新增表单 */",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 140
+ },
+ {
+  "text": "测试连接中...",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 251
+ },
+ {
+  "text": "连接成功",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 256
+ },
+ {
+  "text": "/* 凭证列表 */",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 286
+ },
+ {
+  "text": "端口",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 314
+ },
+ {
+  "text": "用户",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 315
+ },
+ {
+  "text": "认证",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 316
+ },
+ {
+  "text": "加密",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 318
+ },
+ {
+  "text": "/* 查询控制面板 */",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 49
+ },
+ {
+  "text": "SNMP 查询",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 53
+ },
+ {
+  "text": "系统信息",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 87
+ },
+ {
+  "text": "接口列表",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 93
+ },
+ {
+  "text": "/* 查询结果 */",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 98
+ },
+ {
+  "text": "系统信息 -",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 118
+ },
+ {
+  "text": "接口列表 -",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 131
+ },
+ {
+  "text": "个接口",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 132
+ },
+ {
+  "text": "监听中 (端口 162)",
+  "file": "modules/network/pages/snmp/SnmpTrapsTab.tsx",
+  "line": 34
+ },
+ {
+  "text": "生成测试 Trap",
+  "file": "modules/network/pages/snmp/SnmpTrapsTab.tsx",
+  "line": 43
+ },
+ {
+  "text": "发现依赖",
+  "file": "modules/network/pages/Topology.tsx",
+  "line": 204
+ },
+ {
+  "text": "添加",
+  "file": "modules/network/pages/Topology.tsx",
+  "line": 211
+ },
+ {
+  "text": "/* 添加依赖模态框 */",
+  "file": "modules/network/pages/Topology.tsx",
+  "line": 216
+ },
+ {
+  "text": "源服务器",
+  "file": "modules/network/pages/Topology.tsx",
+  "line": 233
+ }
+]

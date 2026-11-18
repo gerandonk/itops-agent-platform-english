@@ -1,0 +1,358 @@
+[
+ {
+  "text": "💡 说明：",
+  "count": 2
+ },
+ {
+  "text": "输出:",
+  "count": 2
+ },
+ {
+  "text": "错误:",
+  "count": 2
+ },
+ {
+  "text": "AI 智能分析",
+  "count": 2
+ },
+ {
+  "text": "并发执行数",
+  "count": 2
+ },
+ {
+  "text": "同时执行的检查命令数量",
+  "count": 2
+ },
+ {
+  "text": "执行命令",
+  "count": 2
+ },
+ {
+  "text": "AI 终端助手",
+  "count": 1
+ },
+ {
+  "text": "AI 助手已就绪",
+  "count": 1
+ },
+ {
+  "text": "· 自动",
+  "count": 1
+ },
+ {
+  "text": "建议命令",
+  "count": 1
+ },
+ {
+  "text": "AI 智能命令生成",
+  "count": 1
+ },
+ {
+  "text": "目标操作系统：",
+  "count": 1
+ },
+ {
+  "text": "请描述您要执行的操作",
+  "count": 1
+ },
+ {
+  "text": "AI 生成的命令（可编辑）",
+  "count": 1
+ },
+ {
+  "text": "⚠️ 警告：",
+  "count": 1
+ },
+ {
+  "text": "确认执行命令",
+  "count": 1
+ },
+ {
+  "text": "目标服务器：",
+  "count": 1
+ },
+ {
+  "text": "执行命令：",
+  "count": 1
+ },
+ {
+  "text": "命令执行结果",
+  "count": 1
+ },
+ {
+  "text": "执行的命令:",
+  "count": 1
+ },
+ {
+  "text": "状态:",
+  "count": 1
+ },
+ {
+  "text": "常用命令:",
+  "count": 1
+ },
+ {
+  "text": "合规检查结果",
+  "count": 1
+ },
+ {
+  "text": "检查选项",
+  "count": 1
+ },
+ {
+  "text": "3 (较慢)",
+  "count": 1
+ },
+ {
+  "text": "5 (推荐)",
+  "count": 1
+ },
+ {
+  "text": "8 (较快)",
+  "count": 1
+ },
+ {
+  "text": "10 (最快)",
+  "count": 1
+ },
+ {
+  "text": "AI 分析建议",
+  "count": 1
+ },
+ {
+  "text": "点击\"Compliance check\"按钮开始执行检查",
+  "count": 1
+ },
+ {
+  "text": "连接失败:",
+  "count": 1
+ },
+ {
+  "text": "VNC 握手已建立（TCP 通道）",
+  "count": 1
+ },
+ {
+  "text": "⚠ 完整 noVNC 客户端尚未集成",
+  "count": 1
+ },
+ {
+  "text": "当前模式：仅诊断 RFB 握手状态。后续集成方案：",
+  "count": 1
+ },
+ {
+  "text": "安装",
+  "count": 1
+ },
+ {
+  "text": "包",
+  "count": 1
+ },
+ {
+  "text": "订阅",
+  "count": 1
+ },
+ {
+  "text": "事件喂给 RFB 客户端",
+  "count": 1
+ },
+ {
+  "text": "canvas 鼠标/键盘事件通过",
+  "count": 1
+ },
+ {
+  "text": "发回",
+  "count": 1
+ },
+ {
+  "text": "通过 VNC 连接远程服务器桌面",
+  "count": 1
+ },
+ {
+  "text": "选择服务器",
+  "count": 1
+ },
+ {
+  "text": "断开连接",
+  "count": 1
+ },
+ {
+  "text": "连接错误",
+  "count": 1
+ },
+ {
+  "text": "选择服务器开始连接",
+  "count": 1
+ },
+ {
+  "text": "名称 *",
+  "count": 1
+ },
+ {
+  "text": "主机名/IP *",
+  "count": 1
+ },
+ {
+  "text": "操作系统类型",
+  "count": 1
+ },
+ {
+  "text": "用户名 *",
+  "count": 1
+ },
+ {
+  "text": "使用认证凭证",
+  "count": 1
+ },
+ {
+  "text": "SSH 私钥",
+  "count": 1
+ },
+ {
+  "text": "选择已有标签",
+  "count": 1
+ },
+ {
+  "text": "添加服务器后，标签将在此处显示为可选项",
+  "count": 1
+ },
+ {
+  "text": "VNC 配置（远程桌面）",
+  "count": 1
+ },
+ {
+  "text": "VNC 端口",
+  "count": 1
+ },
+ {
+  "text": "服务器分组",
+  "count": 1
+ },
+ {
+  "text": "暂无分组",
+  "count": 1
+ },
+ {
+  "text": "AI 执行",
+  "count": 1
+ },
+ {
+  "text": "命令历史",
+  "count": 1
+ },
+ {
+  "text": "检查历史",
+  "count": 1
+ },
+ {
+  "text": "从已有密钥中选择",
+  "count": 1
+ },
+ {
+  "text": "未找到匹配的密钥",
+  "count": 1
+ },
+ {
+  "text": "点击打开终端",
+  "count": 1
+ },
+ {
+  "text": "暂无命令历史",
+  "count": 1
+ },
+ {
+  "text": "暂无合规检查历史",
+  "count": 1
+ },
+ {
+  "text": "较慢（稳定）",
+  "count": 1
+ },
+ {
+  "text": "推荐",
+  "count": 1
+ },
+ {
+  "text": "较快（对服务器压力大）",
+  "count": 1
+ },
+ {
+  "text": "父分组",
+  "count": 1
+ },
+ {
+  "text": "无 (根分组)",
+  "count": 1
+ },
+ {
+  "text": "批量导入服务器",
+  "count": 1
+ },
+ {
+  "text": "示例:",
+  "count": 1
+ },
+ {
+  "text": "导入结果",
+  "count": 1
+ },
+ {
+  "text": "跳过(重复)",
+  "count": 1
+ },
+ {
+  "text": "管理和监控您的服务器",
+  "count": 1
+ },
+ {
+  "text": "使用说明",
+  "count": 1
+ },
+ {
+  "text": "Linux 服务器",
+  "count": 1
+ },
+ {
+  "text": "Windows 服务器",
+  "count": 1
+ },
+ {
+  "text": "采集信息",
+  "count": 1
+ },
+ {
+  "text": "私钥内容",
+  "count": 1
+ },
+ {
+  "text": "无关联服务器",
+  "count": 1
+ },
+ {
+  "text": "凭证名称",
+  "count": 1
+ },
+ {
+  "text": "认证类型",
+  "count": 1
+ },
+ {
+  "text": "认证凭证管理",
+  "count": 1
+ },
+ {
+  "text": "安全说明",
+  "count": 1
+ },
+ {
+  "text": "AES 加密存储",
+  "count": 1
+ },
+ {
+  "text": "双认证方式",
+  "count": 1
+ },
+ {
+  "text": "按需解密",
+  "count": 1
+ }
+]

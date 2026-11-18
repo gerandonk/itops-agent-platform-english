@@ -1,0 +1,2042 @@
+[
+ {
+  "text": "解析工具调用失败:",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 52
+ },
+ {
+  "text": "🔧 执行工具: ${toolId}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 67
+ },
+ {
+  "text": "❌ 工具执行失败: ${toolId}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 76
+ },
+ {
+  "text": "【SSH/系统/容器工具】\\n${agentToolDescriptions}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 99
+ },
+ {
+  "text": "【MCP 运维工具（告警/服务器/网络/K8s/数据库等）】\\n${mcpToolDescriptions}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 100
+ },
+ {
+  "text": "Agent 执行超时（${AGENT_EXECUTION_TIMEOUT / 1000}s）",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 175
+ },
+ {
+  "text": "🔧 检测到工具调用: ${toolCall.toolId}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 189
+ },
+ {
+  "text": "工具 [${toolCall.toolId}] 执行成功。请根据以下结果继续回答用户的问题：\\n\\n${toolResult.result}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 194
+ },
+ {
+  "text": "错误: ${toolResult.error}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 196
+ },
+ {
+  "text": "工具 [${toolCall.toolId}] 执行失败: ${toolResult.error}。请告知用户并建议替代方案。",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 197
+ },
+ {
+  "text": "🔧 工具调用结果 (第 ${i + 1} 轮):",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 200
+ },
+ {
+  "text": "⚠️ 工具调用次数用完，返回最后一次结果",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 204
+ },
+ {
+  "text": "多次尝试后未能完成任务，请重试或使用其他方式。",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 205
+ },
+ {
+  "text": "Agent 配置缺失，请检查 Agent 配置。",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 223
+ },
+ {
+  "text": "\\n\\n【历史对话】\\n",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 281
+ },
+ {
+  "text": "\\n\\n【当前请求】\\n${input}",
+  "file": "modules/ai/services/agents/agentCore.ts",
+  "line": 283
+ },
+ {
+  "text": "[只读]",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 108
+ },
+ {
+  "text": "[需审批]",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 110
+ },
+ {
+  "text": "[可写]",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 111
+ },
+ {
+  "text": "通用",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 117
+ },
+ {
+  "text": "[AgentMCP] 执行工具: ${toolName}",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 158
+ },
+ {
+  "text": "[AgentMCP] 工具返回错误: ${toolName} (${elapsed}ms)",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 174
+ },
+ {
+  "text": "[AgentMCP] 工具执行成功: ${toolName} (${elapsed}ms)",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 183
+ },
+ {
+  "text": "[AgentMCP] 工具执行异常: ${toolName} (${elapsed}ms)",
+  "file": "modules/ai/services/agents/agentMcpAdapter.ts",
+  "line": 192
+ },
+ {
+  "text": "告警处理",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 9
+ },
+ {
+  "text": "正在解析告警内容...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 10
+ },
+ {
+  "text": "识别到告警关键信息：主机名、告警类型、告警值",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 11
+ },
+ {
+  "text": "评估告警严重程度和紧急程度",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 12
+ },
+ {
+  "text": "准备告警摘要供后续处理使用",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 13
+ },
+ {
+  "text": "故障诊断",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 15
+ },
+ {
+  "text": "分析告警模式和历史数据...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 16
+ },
+ {
+  "text": "检查相关系统日志和应用日志",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 17
+ },
+ {
+  "text": "识别可能的故障原因",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 18
+ },
+ {
+  "text": "生成排查步骤清单",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 19
+ },
+ {
+  "text": "日志分析",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 21
+ },
+ {
+  "text": "解析日志格式和时间戳...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 22
+ },
+ {
+  "text": "识别错误模式和异常事件",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 23
+ },
+ {
+  "text": "提取关键日志条目",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 24
+ },
+ {
+  "text": "生成日志分析摘要",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 25
+ },
+ {
+  "text": "系统巡检",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 27
+ },
+ {
+  "text": "收集系统资源使用信息...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 28
+ },
+ {
+  "text": "检查服务进程运行状态",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 29
+ },
+ {
+  "text": "验证系统配置和安全设置",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 30
+ },
+ {
+  "text": "生成健康检查报告",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 31
+ },
+ {
+  "text": "变更执行",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 33
+ },
+ {
+  "text": "验证操作命令安全性...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 34
+ },
+ {
+  "text": "准备执行环境和参数",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 35
+ },
+ {
+  "text": "执行系统变更操作",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 36
+ },
+ {
+  "text": "验证操作结果",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 37
+ },
+ {
+  "text": "文档生成",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 39
+ },
+ {
+  "text": "收集任务执行数据...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 40
+ },
+ {
+  "text": "整理分析结果和输出",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 41
+ },
+ {
+  "text": "按照报告模板格式化",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 42
+ },
+ {
+  "text": "生成最终文档",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 43
+ },
+ {
+  "text": "合规检查",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 45
+ },
+ {
+  "text": "对照安全基线检查...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 46
+ },
+ {
+  "text": "验证配置项合规性",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 47
+ },
+ {
+  "text": "识别不符合项",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 48
+ },
+ {
+  "text": "生成合规报告",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 49
+ },
+ {
+  "text": "服务器命令执行",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 51
+ },
+ {
+  "text": "连接目标服务器...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 52
+ },
+ {
+  "text": "验证身份认证...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 53
+ },
+ {
+  "text": "准备执行命令...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 54
+ },
+ {
+  "text": "执行命令并收集输出...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 55
+ },
+ {
+  "text": "自动巡检",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 57
+ },
+ {
+  "text": "开始系统健康检查...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 59
+ },
+ {
+  "text": "收集各项指标数据...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 60
+ },
+ {
+  "text": "整理巡检结果...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 61
+ },
+ {
+  "text": "数据库运维",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 63
+ },
+ {
+  "text": "解析数据库运维意图...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 64
+ },
+ {
+  "text": "识别目标数据库和运维操作...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 65
+ },
+ {
+  "text": "调用 dbskiter 执行诊断/监控/安全/锁分析...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 66
+ },
+ {
+  "text": "格式化执行结果...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 67
+ },
+ {
+  "text": "正在分析...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 71
+ },
+ {
+  "text": "正在处理...",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 71
+ },
+ {
+  "text": "完成",
+  "file": "modules/ai/services/agents/agentThinking.ts",
+  "line": 71
+ },
+ {
+  "text": "暂无可用工具",
+  "file": "modules/ai/services/agents/agentToolRegistry.ts",
+  "line": 81
+ },
+ {
+  "text": "已预注册 ${allTools.length} 个工具（${readonlyCount} 只读 / ${highRiskCount} 高危 / ${auditCount} 写审计）",
+  "file": "modules/ai/services/agents/agentToolRegistry.ts",
+  "line": 116
+ },
+ {
+  "text": "预注册工具失败:",
+  "file": "modules/ai/services/agents/agentToolRegistry.ts",
+  "line": 119
+ },
+ {
+  "text": "列出 Docker 容器",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 17
+ },
+ {
+  "text": "是否包含已停止容器",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 24
+ },
+ {
+  "text": "获取 Docker 容器列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 35
+ },
+ {
+  "text": "列出 Docker 镜像",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 44
+ },
+ {
+  "text": "获取 Docker 镜像列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 59
+ },
+ {
+  "text": "获取 Docker 容器日志",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 68
+ },
+ {
+  "text": "容器 ${containerId} 的日志 (最近${tail}行):\\n${logs}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 85
+ },
+ {
+  "text": "获取容器日志失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 87
+ },
+ {
+  "text": "获取 Docker 容器统计信息",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 96
+ },
+ {
+  "text": "容器 ${containerId} 的统计信息:\\n${JSON.stringify(stats, null, 2)}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 111
+ },
+ {
+  "text": "获取容器统计信息失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 113
+ },
+ {
+  "text": "获取 Docker 容器详细信息",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 122
+ },
+ {
+  "text": "容器 ${containerId} 的详细信息:\\n${JSON.stringify(containerInfo, null, 2)}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 137
+ },
+ {
+  "text": "获取容器详细信息失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 139
+ },
+ {
+  "text": "获取 Docker 系统信息",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 148
+ },
+ {
+  "text": "Docker 系统信息:\\n${JSON.stringify(info, null, 2)}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 159
+ },
+ {
+  "text": "获取 Docker 系统信息失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 161
+ },
+ {
+  "text": "列出 Docker 卷",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 170
+ },
+ {
+  "text": "获取 Docker 卷列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 185
+ },
+ {
+  "text": "列出 Docker 网络",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 194
+ },
+ {
+  "text": "获取 Docker 网络列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/dockerTools.ts",
+  "line": 209
+ },
+ {
+  "text": "K8s Pod 列表",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 17
+ },
+ {
+  "text": "列出 Kubernetes Pod",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 18
+ },
+ {
+  "text": "命名空间（默认 default）",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 25
+ },
+ {
+  "text": "K8s Context ID（可选）",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 26
+ },
+ {
+  "text": "获取 K8s Pod 列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 38
+ },
+ {
+  "text": "K8s Node 列表",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 46
+ },
+ {
+  "text": "列出 Kubernetes Node 节点",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 47
+ },
+ {
+  "text": "获取 K8s Node 列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 65
+ },
+ {
+  "text": "K8s Service 列表",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 73
+ },
+ {
+  "text": "列出 Kubernetes Service",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 74
+ },
+ {
+  "text": "获取 K8s Service 列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 94
+ },
+ {
+  "text": "K8s Namespace 列表",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 102
+ },
+ {
+  "text": "列出 Kubernetes Namespace",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 103
+ },
+ {
+  "text": "获取 K8s Namespace 列表失败: ${(error as Error).message}",
+  "file": "modules/ai/services/agents/agentTools/k8sTools.ts",
+  "line": 121
+ },
+ {
+  "text": "告警列表",
+  "file": "modules/ai/services/agents/agentTools/otherTools.ts",
+  "line": 17
+ },
+ {
+  "text": "获取告警列表",
+  "file": "modules/ai/services/agents/agentTools/otherTools.ts",
+  "line": 18
+ },
+ {
+  "text": "状态",
+  "file": "modules/ai/services/agents/agentTools/otherTools.ts",
+  "line": 27
+ },
+ {
+  "text": "数据库信息",
+  "file": "modules/ai/services/agents/agentTools/otherTools.ts",
+  "line": 50
+ },
+ {
+  "text": "获取数据库相关信息",
+  "file": "modules/ai/services/agents/agentTools/otherTools.ts",
+  "line": 51
+ },
+ {
+  "text": "在远程服务器上执行白名单内命令（如 cat/ls/df/journalctl/systemctl 等）",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 19
+ },
+ {
+  "text": "白名单内命令名（cat/ls/df/journalctl/systemctl 等）",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 27
+ },
+ {
+  "text": "命令参数（会做白名单字符校验，禁止 shell metacharacter）",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 31
+ },
+ {
+  "text": "✅ 成功",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 42
+ },
+ {
+  "text": "❌ 失败",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 42
+ },
+ {
+  "text": "查看文件内容",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 54
+ },
+ {
+  "text": "查看远程文件内容",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 55
+ },
+ {
+  "text": "错误: ${result.stderr}",
+  "file": "modules/ai/services/agents/agentTools/sshTools.ts",
+  "line": 78
+ },
+ {
+  "text": "系统信息查询",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 22
+ },
+ {
+  "text": "获取服务器信息（CPU、内存、磁盘、网络）",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 23
+ },
+ {
+  "text": "获取系统信息失败: ${info.error}",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 38
+ },
+ {
+  "text": "获取服务器列表",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 67
+ },
+ {
+  "text": "获取所有已配置的服务器",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 68
+ },
+ {
+  "text": "• ${s.name} (${s.hostname}) ${s.enabled ? '✅ 在线' : '❌ 离线'}",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 79
+ },
+ {
+  "text": "获取主机负载信息（CPU、内存、磁盘、系统运行时间）",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 88
+ },
+ {
+  "text": "主机进程信息",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 113
+ },
+ {
+  "text": "获取主机进程列表（可按CPU或内存排序）",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 114
+ },
+ {
+  "text": "检查网络状态（端口、连接、路由）",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 142
+ },
+ {
+  "text": "查找指定目录下的大文件",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 168
+ },
+ {
+  "text": "查询系统日志（journalctl）",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 204
+ },
+ {
+  "text": "服务单元",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 212
+ },
+ {
+  "text": "所有",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 231
+ },
+ {
+  "text": "检查系统服务状态",
+  "file": "modules/ai/services/agents/agentTools/systemTools.ts",
+  "line": 243
+ },
+ {
+  "text": "告警",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 243
+ },
+ {
+  "text": "当前告警数据：共 ${alerts.length} 条告警，严重程度分布：${JSON.stringify(severityCounts)}，状态分布：${JSON.stringify(statusCounts)}。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 252
+ },
+ {
+  "text": "最近告警：${alerts.slice(0, 5).map((a) => ",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 254
+ },
+ {
+  "text": "无法获取告警数据。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 257
+ },
+ {
+  "text": "服务器",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 261
+ },
+ {
+  "text": "服务器数据：共 ${servers.length} 台服务器，${enabledCount} 台已启用。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 271
+ },
+ {
+  "text": "服务器列表：${servers.slice(0, 8).map((s) => ",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 273
+ },
+ {
+  "text": "已启用",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 273
+ },
+ {
+  "text": "已禁用",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 273
+ },
+ {
+  "text": "无法获取服务器数据。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 276
+ },
+ {
+  "text": "任务",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 280
+ },
+ {
+  "text": "任务数据：共 ${tasks.length} 条任务记录，状态分布：${JSON.stringify(statusCounts)}。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 287
+ },
+ {
+  "text": "最近任务：${tasks.slice(0, 5).map((t) => ",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 289
+ },
+ {
+  "text": "无法获取任务数据。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 292
+ },
+ {
+  "text": "巡检",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 296
+ },
+ {
+  "text": "检查",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 296
+ },
+ {
+  "text": "系统支持以下巡检：服务器健康检查、磁盘空间检查、服务状态检查、安全合规检查。用户可以使用\"工作流\"模块创建和执行巡检任务。\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 297
+ },
+ {
+  "text": "🤖 [Copilot] 开始生成响应，输入长度: ${input.length}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 305
+ },
+ {
+  "text": "${m.role === 'user' ? '用户' : '助手'}: ${m.content}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 309
+ },
+ {
+  "text": "当前系统数据：\\n${context}\\n用户输入：${input}\\n对话历史：\\n${historyText}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 315
+ },
+ {
+  "text": "用户输入：${input}\\n对话历史：\\n${historyText}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 316
+ },
+ {
+  "text": "🤖 [Copilot] 调用 generateCompletion 生成响应",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 319
+ },
+ {
+  "text": "...\\n\\n（回复过长，已截断）",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 324
+ },
+ {
+  "text": "🤖 [Copilot] 响应生成成功，长度: ${truncatedResponse.length}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 327
+ },
+ {
+  "text": "🤖 [Copilot] LLM 调用失败，回退到规则响应: ${errorMessage}",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 331
+ },
+ {
+  "text": "帮助",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 351
+ },
+ {
+  "text": "📊 **当前告警状态概览**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 371
+ },
+ {
+  "text": "当前共有 **${alerts.length}** 条告警记录\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 372
+ },
+ {
+  "text": "- 🔴 严重告警: **${criticalCount}** 条\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 373
+ },
+ {
+  "text": "- 🟠 高级告警: **${highCount}** 条\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 374
+ },
+ {
+  "text": "- 📌 待处理告警: **${newCount}** 条\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 375
+ },
+ {
+  "text": "**最近告警**:\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 378
+ },
+ {
+  "text": "\\n👉 建议：前往\"告警中心\"查看详细信息并处理待解决告警",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 383
+ },
+ {
+  "text": "🖥️ **服务器管理概览**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 399
+ },
+ {
+  "text": "当前共有 **${servers.length}** 台服务器配置\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 400
+ },
+ {
+  "text": "- ✅ 已启用: **${enabledCount}** 台\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 401
+ },
+ {
+  "text": "- ❌ 已禁用: **${servers.length - enabledCount}** 台\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 402
+ },
+ {
+  "text": "**服务器列表**:\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 405
+ },
+ {
+  "text": "\\n👉 如需对服务器执行操作，请前往\"服务器管理\"页面",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 410
+ },
+ {
+  "text": "📋 **任务执行概览**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 424
+ },
+ {
+  "text": "当前共有 **${tasks.length}** 个任务记录\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 425
+ },
+ {
+  "text": "- ▶️ 运行中: **${statusCounts['running'] || 0}** 个\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 426
+ },
+ {
+  "text": "- ✅ 已完成: **${statusCounts['completed'] || 0}** 个\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 427
+ },
+ {
+  "text": "- ❌ 失败: **${statusCounts['failed'] || 0}** 个\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 428
+ },
+ {
+  "text": "- ⏳ 待执行: **${statusCounts['pending'] || 0}** 个\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 429
+ },
+ {
+  "text": "**最近任务**:\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 432
+ },
+ {
+  "text": "🔍 **系统巡检建议**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 443
+ },
+ {
+  "text": "我可以帮您执行以下巡检操作：\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 444
+ },
+ {
+  "text": "1. **服务器健康检查** - 检查服务器基本状态\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 445
+ },
+ {
+  "text": "2. **磁盘空间检查** - 检查磁盘使用情况\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 446
+ },
+ {
+  "text": "3. **服务状态检查** - 检查关键服务运行状态\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 447
+ },
+ {
+  "text": "4. **安全合规检查** - 检查系统安全配置\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 448
+ },
+ {
+  "text": "👉 您可以：\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 449
+ },
+ {
+  "text": "- 前往\"工作流\"使用预设的巡检模板\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 450
+ },
+ {
+  "text": "- 创建自定义巡检工作流\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 451
+ },
+ {
+  "text": "- 设置定时巡检任务\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 452
+ },
+ {
+  "text": "需要我帮您推荐一个合适的巡检流程吗？",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 453
+ },
+ {
+  "text": "👋 **欢迎使用 ITOps Copilot！**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 457
+ },
+ {
+  "text": "我是您的智能运维助手，可以帮您：\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 458
+ },
+ {
+  "text": "**查询类：**\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 459
+ },
+ {
+  "text": "- \"查看当前告警状态\"\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 460
+ },
+ {
+  "text": "- \"服务器状态怎么样？\"\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 461
+ },
+ {
+  "text": "- \"最近执行了哪些任务？\"\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 462
+ },
+ {
+  "text": "**操作类：**\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 463
+ },
+ {
+  "text": "- \"帮我执行系统巡检\"\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 464
+ },
+ {
+  "text": "- \"检查一下磁盘空间\"\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 465
+ },
+ {
+  "text": "- \"生成一份运维报告\"\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 466
+ },
+ {
+  "text": "**系统功能：**\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 467
+ },
+ {
+  "text": "- 告警中心：告警查看与处理\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 468
+ },
+ {
+  "text": "- 工作流：编排自动化任务\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 469
+ },
+ {
+  "text": "- 服务器管理：远程操作服务器\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 470
+ },
+ {
+  "text": "- 报告系统：生成运维报告\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 471
+ },
+ {
+  "text": "有什么我可以帮您的吗？",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 472
+ },
+ {
+  "text": "🤔 我理解您想了解：**\"${input}\"**\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 476
+ },
+ {
+  "text": "让我给您一些建议：\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 477
+ },
+ {
+  "text": "**您可以尝试：**\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 478
+ },
+ {
+  "text": "1. 查看\"告警中心\" - 了解当前系统状态\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 479
+ },
+ {
+  "text": "2. 检查\"工作流\" - 运行自动化任务\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 480
+ },
+ {
+  "text": "3. 使用\"服务器管理\" - 对服务器执行操作\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 481
+ },
+ {
+  "text": "4. 生成\"报告\" - 查看运维统计\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 482
+ },
+ {
+  "text": "**常见问题：**\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 483
+ },
+ {
+  "text": "- 问：如何处理告警？ 答：前往告警中心，点击告警进行处理\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 484
+ },
+ {
+  "text": "- 问：如何创建自动化流程？ 答：使用工作流编排功能\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 485
+ },
+ {
+  "text": "- 问：如何连接服务器？ 答：在服务器管理中添加服务器配置\\n\\n",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 486
+ },
+ {
+  "text": "需要更具体的帮助吗？可以问我\"帮助\"！",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 487
+ },
+ {
+  "text": "查看当前告警状态",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 493
+ },
+ {
+  "text": "服务器状态怎么样",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 494
+ },
+ {
+  "text": "最近执行了哪些任务",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 495
+ },
+ {
+  "text": "帮我生成运维报告",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 496
+ },
+ {
+  "text": "检查系统健康状态",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 497
+ },
+ {
+  "text": "有哪些服务器需要巡检",
+  "file": "modules/ai/services/agents/copilotService.ts",
+  "line": 498
+ },
+ {
+  "text": "## 数据库运维执行失败\\n\\n**错误**: 未选择数据库连接。请先在数据库连接管理中配置数据库，然后在测试时选择目标数据库。",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 37
+ },
+ {
+  "text": "## 数据库运维执行失败\\n\\n**错误**: 找不到指定的数据库连接。请检查数据库连接 ID 是否正确。",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 44
+ },
+ {
+  "text": "## 数据库运维执行失败\\n\\n**错误**: 数据库连接 \"${dbConn.name}\" 已被禁用。",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 48
+ },
+ {
+  "text": "无法从输入推断数据库运维意图，使用默认健康检查",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 74
+ },
+ {
+  "text": "🗄️ 推断的数据库运维操作:",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 78
+ },
+ {
+  "text": "【数据库运维原始数据】\\n\\n用户请求：${input}\\n\\n数据库：${dbConn.name} (${dbConn.db_type}://${dbConn.host}:${dbConn.port}/${dbConn.database})\\n\\n执行操作：${options.operation} ${options.subCommand || ''}\\n\\n原始采集数据：\\n\\`\\`\\`json\\n${rawData.substring(0, 12000)}\\n\\`\\`\\`\\n\\n请基于以上原始数据，为用户提供一份专业的数据库运维分析报告。要求：\\n1. 用自然语言描述数据库当前状态\\n2. 指出关键指标和潜在问题\\n3. 给出具体的优化建议或处理方案\\n4. 报告结构清晰，包含摘要、详细分析、建议三个部分\\n",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 91
+ },
+ {
+  "text": "🤖 调用 LLM 分析 dbskiter 原始数据...",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 94
+ },
+ {
+  "text": "LLM 分析失败，返回原始数据:",
+  "file": "modules/ai/services/agents/databaseAdminAgent.ts",
+  "line": 98
+ },
+ {
+  "text": "## 无法执行巡检\\n\\n**错误**: 没有找到可用的服务器。请先在服务器管理中添加服务器。",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 39
+ },
+ {
+  "text": "## 服务器自动巡检报告\\n\\n**检查时间**: ${new Date().toLocaleString()}\\n**目标服务器**: ${serverIds.length} 台\\n\\n---\\n",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 48
+ },
+ {
+  "text": "\\n**总体统计**: ${totalSuccessChecks} 项成功, ${totalFailChecks} 项失败\\n",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 60
+ },
+ {
+  "text": "🔍 对服务器 ${server.name}(${server.hostname}) 执行自动巡检...",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 77
+ },
+ {
+  "text": "**检查结果**: ${successCount} ✅, ${failCount} ❌\\n\\n",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 85
+ },
+ {
+  "text": "${result.success ? '✅' : '❌'} **${checkName}**: ${result.success ? '通过' : '失败'}\\n",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 88
+ },
+ {
+  "text": "**错误**: ${errorMessage}\\n\\n",
+  "file": "modules/ai/services/agents/inspectionAgent.ts",
+  "line": 92
+ },
+ {
+  "text": "[SSH 安全] 参数 ${paramName} 含非法字符：${JSON.stringify(value).slice(0, 50)}。",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 37
+ },
+ {
+  "text": "只允许字母/数字/_/-/.// 等安全字符，禁止所有 shell metacharacter",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 38
+ },
+ {
+  "text": "[SSH 安全] 参数 ${paramName} 超过 1024 字符",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 43
+ },
+ {
+  "text": "[SSH 安全] 参数 ${paramName} 不是有限数字：${value}",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 54
+ },
+ {
+  "text": "[SSH 安全] 参数 ${paramName}=${value} 超出 [${min}, ${max}] 范围",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 57
+ },
+ {
+  "text": "[SSH 安全] 未知命令种类",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 94
+ },
+ {
+  "text": "[SSH 安全] argv 含非法字符：${arg}",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 99
+ },
+ {
+  "text": "[SSH 安全] 命令 \"${commandName}\" 不在白名单 ${Array.from(SSH_ALLOWED_COMMANDS).join(', ')} 内",
+  "file": "modules/ai/services/agents/safeCommandBuilder.ts",
+  "line": 128
+ },
+ {
+  "text": "内存",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 26
+ },
+ {
+  "text": "磁盘",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 29
+ },
+ {
+  "text": "网络",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 32
+ },
+ {
+  "text": "服务",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 35
+ },
+ {
+  "text": "## 无法执行操作\\n\\n**错误**: 没有找到可用的服务器。请先在服务器管理中添加服务器。",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 64
+ },
+ {
+  "text": "## 服务器命令执行结果\\n\\n**执行时间**: ${new Date().toLocaleString()}\\n**执行命令**: \\n\\`\\`\\`bash\\n${finalCommand}\\n\\`\\`\\`\\n**目标服务器**: ${serverIds.length} 台\\n\\n---\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 73
+ },
+ {
+  "text": "\\n**统计**: ${totalSuccess} 台成功, ${totalFail} 台失败\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 88
+ },
+ {
+  "text": "**状态**: ✅ 成功 (${result.duration}ms)\\n\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 100
+ },
+ {
+  "text": "**状态**: ❌ 失败 (${result.duration}ms)\\n\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 102
+ },
+ {
+  "text": "**输出**: \\n\\`\\`\\`\\n${result.stdout?.substring(0, 500) || '(无输出)'}\\n\\`\\`\\`\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 105
+ },
+ {
+  "text": "**错误**: \\n\\`\\`\\`\\n${result.stderr}\\n\\`\\`\\`\\n",
+  "file": "modules/ai/services/agents/serverCommandAgent.ts",
+  "line": 108
+ },
+ {
+  "text": "HTTP 请求 Provider",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 13
+ },
+ {
+  "text": "发送 GET 请求",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 18
+ },
+ {
+  "text": "请求 URL",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 20
+ },
+ {
+  "text": "URL 参数",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 22
+ },
+ {
+  "text": "获取 JSON 数据",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 31
+ },
+ {
+  "text": "发送 POST 请求",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 38
+ },
+ {
+  "text": "通知 Provider",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 112
+ },
+ {
+  "text": "通知渠道: slack, webhook, email",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 119
+ },
+ {
+  "text": "标题",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 120
+ },
+ {
+  "text": "消息内容",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 121
+ },
+ {
+  "text": "级别: info, warning, error",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 122
+ },
+ {
+  "text": "发送错误通知",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 129
+ },
+ {
+  "text": "系统告警",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 132
+ },
+ {
+  "text": "检测到异常",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 133
+ },
+ {
+  "text": "脚本执行 Provider",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 159
+ },
+ {
+  "text": "执行命令/脚本",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 164
+ },
+ {
+  "text": "命令参数",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 167
+ },
+ {
+  "text": "工作目录",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 168
+ },
+ {
+  "text": "超时(ms)",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 169
+ },
+ {
+  "text": "数据库操作 Provider",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 219
+ },
+ {
+  "text": "执行 SQL 查询",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 224
+ },
+ {
+  "text": "数据库连接 ID",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 226
+ },
+ {
+  "text": "SQL 查询语句",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 227
+ },
+ {
+  "text": "查询参数",
+  "file": "modules/ai/services/providers/builtins.ts",
+  "line": 228
+ },
+ {
+  "text": "钉钉消息通知 Provider",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 8
+ },
+ {
+  "text": "发送文本消息",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 13
+ },
+ {
+  "text": "钉钉机器人 Webhook",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 15
+ },
+ {
+  "text": "@ 手机号码列表",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 17
+ },
+ {
+  "text": "@ 所有人",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 18
+ },
+ {
+  "text": "发送告警通知",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 26
+ },
+ {
+  "text": "⚠️ 服务器 CPU 使用率告警，请及时处理！",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 29
+ },
+ {
+  "text": "发送 Markdown 消息",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 37
+ },
+ {
+  "text": "Markdown 内容",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 41
+ },
+ {
+  "text": "发送卡片消息",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 53
+ },
+ {
+  "text": "内容",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 57
+ },
+ {
+  "text": "按钮文字",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 58
+ },
+ {
+  "text": "按钮链接",
+  "file": "modules/ai/services/providers/dingtalkProvider.ts",
+  "line": 59
+ },
+ {
+  "text": "Elasticsearch 搜索 Provider",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 8
+ },
+ {
+  "text": "执行搜索查询",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 13
+ },
+ {
+  "text": "Elasticsearch 地址",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 15
+ },
+ {
+  "text": "索引名称",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 16
+ },
+ {
+  "text": "DSL 查询对象",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 17
+ },
+ {
+  "text": "起始位置",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 19
+ },
+ {
+  "text": "搜索错误日志",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 28
+ },
+ {
+  "text": "索引文档",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 39
+ },
+ {
+  "text": "文档内容",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 43
+ },
+ {
+  "text": "文档ID",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 44
+ },
+ {
+  "text": "统计文档数量",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 54
+ },
+ {
+  "text": "过滤条件",
+  "file": "modules/ai/services/providers/elasticsearchProvider.ts",
+  "line": 58
+ },
+ {
+  "text": "Kubernetes 管理 Provider",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 9
+ },
+ {
+  "text": "列出 Pod",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 14
+ },
+ {
+  "text": "Kubeconfig 内容",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 16
+ },
+ {
+  "text": "获取 Pod 日志",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 27
+ },
+ {
+  "text": "Pod 名称",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 31
+ },
+ {
+  "text": "容器名称",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 32
+ },
+ {
+  "text": "尾部行数",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 33
+ },
+ {
+  "text": "开始时间",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 34
+ },
+ {
+  "text": "列出节点",
+  "file": "modules/ai/services/providers/kubernetesProvider.ts",
+  "line": 43
+ },
+ {
+  "text": "Prometheus 监控 Provider",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 8
+ },
+ {
+  "text": "执行 PromQL 查询",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 13
+ },
+ {
+  "text": "Prometheus 地址",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 15
+ },
+ {
+  "text": "PromQL 查询语句",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 16
+ },
+ {
+  "text": "查询时间戳",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 17
+ },
+ {
+  "text": "查询 CPU 使用率",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 26
+ },
+ {
+  "text": "执行范围查询",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 36
+ },
+ {
+  "text": "开始时间戳",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 40
+ },
+ {
+  "text": "结束时间戳",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 41
+ },
+ {
+  "text": "步长，如 15s, 1m, 5m",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 42
+ },
+ {
+  "text": "获取告警信息",
+  "file": "modules/ai/services/providers/prometheusProvider.ts",
+  "line": 52
+ },
+ {
+  "text": "Slack 消息通知 Provider",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 8
+ },
+ {
+  "text": "发送消息",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 13
+ },
+ {
+  "text": "频道",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 17
+ },
+ {
+  "text": "用户名",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 18
+ },
+ {
+  "text": "图标",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 19
+ },
+ {
+  "text": "发送块消息",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 28
+ },
+ {
+  "text": "块内容",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 31
+ },
+ {
+  "text": "回退文本",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 32
+ },
+ {
+  "text": "发送附件消息",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 42
+ },
+ {
+  "text": "附件列表",
+  "file": "modules/ai/services/providers/slackProvider.ts",
+  "line": 45
+ },
+ {
+  "text": "企业微信消息通知 Provider",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 8
+ },
+ {
+  "text": "企业微信群机器人 Webhook",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 15
+ },
+ {
+  "text": "@ 用户ID列表",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 17
+ },
+ {
+  "text": "@ 手机号列表",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 18
+ },
+ {
+  "text": "发送图文消息",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 41
+ },
+ {
+  "text": "图文列表",
+  "file": "modules/ai/services/providers/wecomProvider.ts",
+  "line": 44
+ },
+ {
+  "text": "${toolDef.description}\\n(来自外部 MCP Server: ${this.config.name})",
+  "file": "modules/mcp/services/externalClient/ExternalMCPClient.ts",
+  "line": 129
+ },
+ {
+  "text": "[MCP SSRF 防护] URL 格式不合法：${url}",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 31
+ },
+ {
+  "text": "[MCP SSRF 防护] 仅允许 http/https 协议，收到 \"${parsed.protocol}\"",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 37
+ },
+ {
+  "text": "[MCP SSRF 防护] 拒绝内网 IP：${hostname}",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 58
+ },
+ {
+  "text": "[MCP SSRF 防护] 拒绝 localhost 域名",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 61
+ },
+ {
+  "text": "[MCP SSRF 防护] 拒绝 IPv6 loopback/私网：${hostname}",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 64
+ },
+ {
+  "text": "[MCP SSRF 防护] 域名 \"${hostname}\" 解析到内网 IP ${address}",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 81
+ },
+ {
+  "text": "[MCP SSRF 防护]",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 85
+ },
+ {
+  "text": "[MCP SSRF 防护] DNS 解析失败：${hostname}",
+  "file": "modules/mcp/services/externalClient/SseTransport.ts",
+  "line": 87
+ },
+ {
+  "text": "[MCP Stdio 安全] 命令 \"${command}\" 不在白名单内（仅允许：${Array.from(STDIO_ALLOWED_COMMANDS).join(', ')}）",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 47
+ },
+ {
+  "text": "[MCP Stdio 安全] 命令名 \"${command}\" 含非法字符（只允许字母/数字/_/-/.//）",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 55
+ },
+ {
+  "text": "[MCP Stdio 安全] 参数个数 ${args.length} 超过上限 ${MAX_STDIO_ARG_COUNT}",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 62
+ },
+ {
+  "text": "[MCP Stdio 安全] args[${i}] 不是 string 类型",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 70
+ },
+ {
+  "text": "[MCP Stdio 安全] args[${i}] 长度 ${arg.length} 超过上限 ${MAX_STDIO_ARG_LENGTH}",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 74
+ },
+ {
+  "text": "[MCP Stdio 安全] args[${i}] 命中危险模式：${pattern.source} → ${arg.slice(0, 80)}",
+  "file": "modules/mcp/services/externalClient/StdioTransport.ts",
+  "line": 80
+ },
+ {
+  "text": "daima 智能运维平台 — 多 Agent 协作 MCP 工具服务",
+  "file": "modules/mcp/services/gateway/toolInvocation.ts",
+  "line": 192
+ },
+ {
+  "text": "参数 \"${key}\" 长度 ${value.length} 超出限制",
+  "file": "modules/mcp/services/securityGate/layer3Injection.ts",
+  "line": 29
+ },
+ {
+  "text": "[${label}] 检测到: 参数 \"${key}\" 包含可疑内容",
+  "file": "modules/mcp/services/securityGate/layer3Injection.ts",
+  "line": 34
+ },
+ {
+  "text": "[${label}] 疑似凭证泄露",
+  "file": "modules/mcp/services/securityGate/layer4CredentialLeak.ts",
+  "line": 24
+ },
+ {
+  "text": "指令覆盖尝试",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 17
+ },
+ {
+  "text": "角色劫持尝试",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 23
+ },
+ {
+  "text": "输出格式劫持",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 29
+ },
+ {
+  "text": "提示词探测",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 35
+ },
+ {
+  "text": "代码注入尝试",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 41
+ },
+ {
+  "text": "SQL 注入尝试",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 47
+ },
+ {
+  "text": "越狱尝试",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 52
+ },
+ {
+  "text": "硬编码凭证",
+  "file": "modules/mcp/services/securityGate/patterns.ts",
+  "line": 74
+ },
+ {
+  "text": "查询修复策略",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 12
+ },
+ {
+  "text": "查询自动化修复策略列表，包含匹配条件、修复动作、执行历史。",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 13
+ },
+ {
+  "text": "是否启用",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 17
+ },
+ {
+  "text": "返回数量",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 18
+ },
+ {
+  "text": "找到 ${policies.length} 条修复策略",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 26
+ },
+ {
+  "text": "查询修复策略失败: ${(err as Error).message}",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 28
+ },
+ {
+  "text": "查询修复审计",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 36
+ },
+ {
+  "text": "查询自动化修复的执行审计记录，包含触发告警、修复动作、执行结果。",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 37
+ },
+ {
+  "text": "执行状态",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 41
+ },
+ {
+  "text": "找到 ${audits?.length || 0} 条修复审计",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 50
+ },
+ {
+  "text": "查询修复审计失败: ${(err as Error).message}",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 52
+ },
+ {
+  "text": "查询 AIOps 知识图谱",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 60
+ },
+ {
+  "text": "查询运维知识图谱，按环境、系统或服务搜索历史排障经验和最佳实践。",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 61
+ },
+ {
+  "text": "搜索关键词",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 65
+ },
+ {
+  "text": "知识分类",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 66
+ },
+ {
+  "text": "找到 ${results?.length || 0} 条知识",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 76
+ },
+ {
+  "text": "查询知识图谱失败: ${(err as Error).message}",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 78
+ },
+ {
+  "text": "查询 AI 会话列表",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 86
+ },
+ {
+  "text": "查询 AI Agent 会话历史，包含用户问题、Agent 回答、工具调用统计。",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 87
+ },
+ {
+  "text": "会话状态",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 91
+ },
+ {
+  "text": "找到 ${(sessions as unknown[]).length} 个会话",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 100
+ },
+ {
+  "text": "查询会话失败: ${(err as Error).message}",
+  "file": "modules/mcp/services/toolDefinitions/aiTools.ts",
+  "line": 102
+ },
+ {
+  "text": "查询容器列表",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 11
+ },
+ {
+  "text": "查询 Docker 容器列表，包含运行状态、镜像、端口映射、资源使用。",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 12
+ },
+ {
+  "text": "Docker 主机 ID",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 16
+ },
+ {
+  "text": "容器状态",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 17
+ },
+ {
+  "text": "找到 ${(containers as unknown[])?.length || 0} 个容器",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 27
+ },
+ {
+  "text": "查询容器失败: ${(err as Error).message}",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 29
+ },
+ {
+  "text": "查询虚拟机列表",
+  "file": "modules/mcp/services/toolDefinitions/containerTools.ts",
+  "line": 37
+ }
+]

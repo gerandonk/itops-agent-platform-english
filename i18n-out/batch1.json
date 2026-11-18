@@ -1,0 +1,1582 @@
+[
+ {
+  "text": "创建对话失败: ${data.error}",
+  "file": "modules/ai/components/ChatWidget.tsx",
+  "line": 116
+ },
+ {
+  "text": "IT运维助手",
+  "file": "modules/ai/components/ChatWidget.tsx",
+  "line": 196
+ },
+ {
+  "text": "需要修改密码",
+  "file": "modules/ai/components/ChatWidget.tsx",
+  "line": 268
+ },
+ {
+  "text": "需要帮助？",
+  "file": "modules/ai/components/ChatWidget.tsx",
+  "line": 279
+ },
+ {
+  "text": "导入成功：共导入 ${data.data.importedCount} 个 Agent",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 52
+ },
+ {
+  "text": "Agent 总数",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 109
+ },
+ {
+  "text": "预设",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 132
+ },
+ {
+  "text": "预设 Agent",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 135
+ },
+ {
+  "text": "总执行次数",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 148
+ },
+ {
+  "text": "分类:",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 165
+ },
+ {
+  "text": "点击选择文件或拖拽到此处",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 262
+ },
+ {
+  "text": "支持 .json 格式",
+  "file": "modules/ai/pages/Agents.tsx",
+  "line": 263
+ },
+ {
+  "text": "主模型",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 151
+ },
+ {
+  "text": "备选模型",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 158
+ },
+ {
+  "text": "使用次数",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 171
+ },
+ {
+  "text": "最后使用",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 177
+ },
+ {
+  "text": "系统提示词",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 216
+ },
+ {
+  "text": "暂无执行记录",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 253
+ },
+ {
+  "text": "确定要删除Agent \"${agent.name}\" 吗？",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 307
+ },
+ {
+  "text": "执行时间",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 347
+ },
+ {
+  "text": "输入",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 353
+ },
+ {
+  "text": "输出",
+  "file": "modules/ai/pages/agents/AgentDetail.tsx",
+  "line": 361
+ },
+ {
+  "text": "保存失败：${msg}",
+  "file": "modules/ai/pages/agents/AgentEditor.tsx",
+  "line": 69
+ },
+ {
+  "text": "测试失败: ${err.response?.data?.error || err.response?.data?.message || err.message}",
+  "file": "modules/ai/pages/agents/AgentEditor.tsx",
+  "line": 99
+ },
+ {
+  "text": "选择分类...",
+  "file": "modules/ai/pages/agents/AgentEditor.tsx",
+  "line": 162
+ },
+ {
+  "text": "选择主模型...",
+  "file": "modules/ai/pages/agents/AgentEditor.tsx",
+  "line": 207
+ },
+ {
+  "text": "选择备选模型...",
+  "file": "modules/ai/pages/agents/AgentEditor.tsx",
+  "line": 228
+ },
+ {
+  "text": "暂无可用的服务器",
+  "file": "modules/ai/pages/agents/AgentTestPanel.tsx",
+  "line": 149
+ },
+ {
+  "text": "输入内容",
+  "file": "modules/ai/pages/agents/AgentTestPanel.tsx",
+  "line": 165
+ },
+ {
+  "text": "输出结果",
+  "file": "modules/ai/pages/agents/AgentTestPanel.tsx",
+  "line": 213
+ },
+ {
+  "text": "风险等级: ${riskCfg.label}",
+  "file": "modules/ai/pages/agents/AgentToolsPage.tsx",
+  "line": 282
+ },
+ {
+  "text": "选择一个工具",
+  "file": "modules/ai/pages/agents/AgentToolsPage.tsx",
+  "line": 311
+ },
+ {
+  "text": "风险等级: ${riskCfg.label}，执行后写入审计日志",
+  "file": "modules/ai/pages/agents/AgentToolsPage.tsx",
+  "line": 379
+ },
+ {
+  "text": "该工具不需要参数",
+  "file": "modules/ai/pages/agents/tool/SchemaTable.tsx",
+  "line": 26
+ },
+ {
+  "text": "调用历史",
+  "file": "modules/ai/pages/agents/tool/ToolHistoryPanel.tsx",
+  "line": 21
+ },
+ {
+  "text": "缺少必填参数: ${missing.join(', ')}",
+  "file": "modules/ai/pages/agents/tool/ToolTestPanel.tsx",
+  "line": 45
+ },
+ {
+  "text": "该工具不需要参数，直接点击执行即可",
+  "file": "modules/ai/pages/agents/tool/ToolTestPanel.tsx",
+  "line": 62
+ },
+ {
+  "text": "-- 请选择 --",
+  "file": "modules/ai/pages/agents/tool/ToolTestPanel.tsx",
+  "line": 103
+ },
+ {
+  "text": "输入 ${name}",
+  "file": "modules/ai/pages/agents/tool/ToolTestPanel.tsx",
+  "line": 122
+ },
+ {
+  "text": "输入 ${type} 类型的 JSON 值",
+  "file": "modules/ai/pages/agents/tool/ToolTestPanel.tsx",
+  "line": 147
+ },
+ {
+  "text": "确定要删除Agent \"${name}\" 吗？",
+  "file": "modules/ai/pages/agents/useAgents.ts",
+  "line": 94
+ },
+ {
+  "text": "+${pct}% vs 上周",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 13
+ },
+ {
+  "text": "-${pct}% vs 上周",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 14
+ },
+ {
+  "text": "本周 ${remediationStats.completedThisWeek} 次完成",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 69
+ },
+ {
+  "text": "基于 ${totalRCAs} 次分析（${completedRCAs.length} 完成）",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 112
+ },
+ {
+  "text": "已自动处理 ${noiseFilter.autoHandled} / 共 ${noiseFilter.total} 告警",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 122
+ },
+ {
+  "text": "${knowledge.length} 条",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 128
+ },
+ {
+  "text": "+${recentKnowledgeCount} 本周",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 131
+ },
+ {
+  "text": "AI 洞察",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 181
+ },
+ {
+  "text": "基于 AI 分析的系统运维洞察和统计",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 182
+ },
+ {
+  "text": "暂无洞察数据",
+  "file": "modules/ai/pages/ai-insights/index.tsx",
+  "line": 282
+ },
+ {
+  "text": "AI 模型管理",
+  "file": "modules/ai/pages/ai-models/index.tsx",
+  "line": 43
+ },
+ {
+  "text": "添加并管理所有 AI 模型，支持多平台配置",
+  "file": "modules/ai/pages/ai-models/index.tsx",
+  "line": 44
+ },
+ {
+  "text": "选择 AI 平台",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 46
+ },
+ {
+  "text": "选择要添加的 AI 服务提供商",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 47
+ },
+ {
+  "text": "AI 平台 *",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 101
+ },
+ {
+  "text": "显示名称 *",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 141
+ },
+ {
+  "text": "模型 ID *",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 153
+ },
+ {
+  "text": "API 调用地址",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 196
+ },
+ {
+  "text": "标签（逗号分隔，可选）",
+  "file": "modules/ai/pages/ai-models/ModelFormModal.tsx",
+  "line": 211
+ },
+ {
+  "text": "暂无 AI 模型配置",
+  "file": "modules/ai/pages/ai-models/ModelList.tsx",
+  "line": 57
+ },
+ {
+  "text": "点击\"Add model\"开始配置",
+  "file": "modules/ai/pages/ai-models/ModelList.tsx",
+  "line": 58
+ },
+ {
+  "text": "支持豆包、DeepSeek 等模型",
+  "file": "modules/ai/pages/ai-models/types.ts",
+  "line": 38
+ },
+ {
+  "text": "通义千问系列模型",
+  "file": "modules/ai/pages/ai-models/types.ts",
+  "line": 58
+ },
+ {
+  "text": "OpenAI 官方 API",
+  "file": "modules/ai/pages/ai-models/types.ts",
+  "line": 78
+ },
+ {
+  "text": "本地 AI (Ollama/LM Studio)",
+  "file": "modules/ai/pages/ai-models/types.ts",
+  "line": 82
+ },
+ {
+  "text": "AI 修复记录",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 138
+ },
+ {
+  "text": "AI 自动生成的修复方案及执行状态",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 139
+ },
+ {
+  "text": "暂无 AI 修复记录",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 156
+ },
+ {
+  "text": "当 AI 分析告警后自动生成修复方案时，会显示在这里",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 157
+ },
+ {
+  "text": "AI 未提供修复命令",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 223
+ },
+ {
+  "text": "执行结果",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 231
+ },
+ {
+  "text": "批准 AI 修复方案",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 305
+ },
+ {
+  "text": "拒绝 AI 修复方案",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 310
+ },
+ {
+  "text": "设备：",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 334
+ },
+ {
+  "text": "风险等级：",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 338
+ },
+ {
+  "text": "修复命令：",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 342
+ },
+ {
+  "text": "(可选，500 字内)",
+  "file": "modules/ai/pages/AiRemediations.tsx",
+  "line": 348
+ },
+ {
+  "text": "运维知识管理和问题解决方案",
+  "file": "modules/ai/pages/Knowledge.tsx",
+  "line": 51
+ },
+ {
+  "text": "暂无知识条目",
+  "file": "modules/ai/pages/Knowledge.tsx",
+  "line": 216
+ },
+ {
+  "text": "添加运维知识管理和问题解决方案",
+  "file": "modules/ai/pages/Knowledge.tsx",
+  "line": 217
+ },
+ {
+  "text": "解决方案",
+  "file": "modules/ai/pages/Knowledge.tsx",
+  "line": 285
+ },
+ {
+  "text": "症状数",
+  "file": "modules/ai/pages/RCADetail.tsx",
+  "line": 63
+ },
+ {
+  "text": "证据数",
+  "file": "modules/ai/pages/RCADetail.tsx",
+  "line": 74
+ },
+ {
+  "text": "建议数",
+  "file": "modules/ai/pages/RCADetail.tsx",
+  "line": 83
+ },
+ {
+  "text": "未找到分析记录",
+  "file": "modules/ai/pages/RCADetail.tsx",
+  "line": 190
+ },
+ {
+  "text": "该分析记录可能已被删除",
+  "file": "modules/ai/pages/RCADetail.tsx",
+  "line": 191
+ },
+ {
+  "text": "故障根因分析",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 110
+ },
+ {
+  "text": "自动分析告警的根本原因，提供解决方案",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 111
+ },
+ {
+  "text": "暂无根因分析",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 193
+ },
+ {
+  "text": "创建一个新的根因分析来开始",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 194
+ },
+ {
+  "text": "创建根因分析",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 211
+ },
+ {
+  "text": "描述（可选）",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 224
+ },
+ {
+  "text": "根因分析详情",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 258
+ },
+ {
+  "text": "问题描述",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 277
+ },
+ {
+  "text": "观察到的症状",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 296
+ },
+ {
+  "text": "时间线",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 307
+ },
+ {
+  "text": "分析证据",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 321
+ },
+ {
+  "text": "修复建议",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 332
+ },
+ {
+  "text": "建议 ${idx + 1}",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 341
+ },
+ {
+  "text": "暂无巡检记录",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 94
+ },
+ {
+  "text": "执行巡检后这里会显示历史记录",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 95
+ },
+ {
+  "text": "巡检类型",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 162
+ },
+ {
+  "text": "命令执行",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 178
+ },
+ {
+  "text": "命令失败",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 182
+ },
+ {
+  "text": "巡检摘要",
+  "file": "modules/alerts/components/InspectionHistory.tsx",
+  "line": 189
+ },
+ {
+  "text": "详细结果",
+  "file": "modules/alerts/components/InspectionResult.tsx",
+  "line": 149
+ },
+ {
+  "text": "没有找到匹配的告警源",
+  "file": "modules/alerts/pages/alert-providers/AvailableProviderGrid.tsx",
+  "line": 36
+ },
+ {
+  "text": "需要配置的字段:",
+  "file": "modules/alerts/pages/alert-providers/AvailableProviderGrid.tsx",
+  "line": 68
+ },
+ {
+  "text": "Webhook 接收地址:",
+  "file": "modules/alerts/pages/alert-providers/AvailableProviderGrid.tsx",
+  "line": 102
+ },
+ {
+  "text": "编辑配置: ${configName}",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 62
+ },
+ {
+  "text": "新建 ${provider.name} 配置",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 62
+ },
+ {
+  "text": "配置参数",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 102
+ },
+ {
+  "text": "请输入${field.label}",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 155
+ },
+ {
+  "text": "请输入（自动加密存储）",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 183
+ },
+ {
+  "text": "Webhook 接收地址",
+  "file": "modules/alerts/pages/alert-providers/EditConfigModal.tsx",
+  "line": 207
+ },
+ {
+  "text": "💡 通用格式，适用于自定义系统或第三方工具。最小 JSON 示例：{\"title\":\"告警标题\",\"severity\":\"warning\",\"content\":\"Alert Details\"}",
+  "file": "modules/alerts/pages/alert-providers/providerGuides.ts",
+  "line": 61
+ },
+ {
+  "text": "${provider.name} 配置",
+  "file": "modules/alerts/pages/alert-providers/useAlertProvidersData.ts",
+  "line": 147
+ },
+ {
+  "text": "确定要删除此配置吗？",
+  "file": "modules/alerts/pages/alert-providers/useAlertProvidersData.ts",
+  "line": 185
+ },
+ {
+  "text": "Provider \"${selectedProvider.name}\" 配置有效，Webhook 地址: ${webhookUrl}",
+  "file": "modules/alerts/pages/alert-providers/useAlertProvidersData.ts",
+  "line": 207
+ },
+ {
+  "text": "总分析次数",
+  "file": "modules/alerts/pages/AlertAutoAnalysis.tsx",
+  "line": 218
+ },
+ {
+  "text": "服务器分析",
+  "file": "modules/alerts/pages/AlertAutoAnalysis.tsx",
+  "line": 225
+ },
+ {
+  "text": "网络设备分析",
+  "file": "modules/alerts/pages/AlertAutoAnalysis.tsx",
+  "line": 232
+ },
+ {
+  "text": "暂无自动分析记录",
+  "file": "modules/alerts/pages/AlertAutoAnalysis.tsx",
+  "line": 280
+ },
+ {
+  "text": "告警触发后会自动进行分析",
+  "file": "modules/alerts/pages/AlertAutoAnalysis.tsx",
+  "line": 281
+ },
+ {
+  "text": "自动关联完成: ${grouped} 条告警已分组",
+  "file": "modules/alerts/pages/AlertCorrelationGroups.tsx",
+  "line": 125
+ },
+ {
+  "text": "将相关告警自动归组，快速定位故障根因",
+  "file": "modules/alerts/pages/AlertCorrelationGroups.tsx",
+  "line": 152
+ },
+ {
+  "text": "关联告警",
+  "file": "modules/alerts/pages/AlertCorrelationGroups.tsx",
+  "line": 362
+ },
+ {
+  "text": "配置告警自动触发工作流，实现自动化运维",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 176
+ },
+ {
+  "text": "暂无告警映射",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 238
+ },
+ {
+  "text": "开始配置您的第一个告警自动处理规则",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 239
+ },
+ {
+  "text": "✨ 任意级别",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 383
+ },
+ {
+  "text": "💥 Disaster (Zabbix 灾难)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 384
+ },
+ {
+  "text": "🔴 Critical (严重)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 385
+ },
+ {
+  "text": "🟠 High (高)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 386
+ },
+ {
+  "text": "🟡 Medium (中)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 387
+ },
+ {
+  "text": "🟨 Warning (Zabbix 警告)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 388
+ },
+ {
+  "text": "🔵 Low (低)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 389
+ },
+ {
+  "text": "ℹ️ Info (信息)",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 390
+ },
+ {
+  "text": "选择要触发的工作流...",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 421
+ },
+ {
+  "text": "立即启用此映射",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 437
+ },
+ {
+  "text": "配置说明",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 447
+ },
+ {
+  "text": "留空的条件表示匹配任意值。Zabbix 可直接使用 disaster、warning、info 等原始级别，也可使用 critical、medium、low 等归一化级别。",
+  "file": "modules/alerts/pages/AlertMappings.tsx",
+  "line": 448
+ },
+ {
+  "text": "手动抑制告警",
+  "file": "modules/alerts/pages/AlertNoiseManagement.tsx",
+  "line": 203
+ },
+ {
+  "text": "抑制原因",
+  "file": "modules/alerts/pages/AlertNoiseManagement.tsx",
+  "line": 206
+ },
+ {
+  "text": "抑制时长 (分钟)",
+  "file": "modules/alerts/pages/AlertNoiseManagement.tsx",
+  "line": 216
+ },
+ {
+  "text": "告警源配置",
+  "file": "modules/alerts/pages/AlertProviders.tsx",
+  "line": 52
+ },
+ {
+  "text": "类型:",
+  "file": "modules/alerts/pages/AlertProviders.tsx",
+  "line": 78
+ },
+ {
+  "text": "可用告警源类型",
+  "file": "modules/alerts/pages/AlertProviders.tsx",
+  "line": 122
+ },
+ {
+  "text": "⚠️ 执行遇到错误: ",
+  "file": "modules/alerts/pages/alerts/AlertDetailPanel.tsx",
+  "line": 59
+ },
+ {
+  "text": "触发 ${processResult.matchedPolicies.length} 条修复策略，${processResult.mappingTasks?.length || 0} 个告警映射任务，${processResult.executionIds.length} 条修复执行记录已创建",
+  "file": "modules/alerts/pages/alerts/AlertDetailPanel.tsx",
+  "line": 61
+ },
+ {
+  "text": "执行记录 ID",
+  "file": "modules/alerts/pages/alerts/AlertDetailPanel.tsx",
+  "line": 115
+ },
+ {
+  "text": "告警列表",
+  "file": "modules/alerts/pages/alerts/AlertFilterBar.tsx",
+  "line": 23
+ },
+ {
+  "text": "所有级别",
+  "file": "modules/alerts/pages/alerts/AlertFilterBar.tsx",
+  "line": 41
+ },
+ {
+  "text": "所有状态",
+  "file": "modules/alerts/pages/alerts/AlertFilterBar.tsx",
+  "line": 52
+ },
+ {
+  "text": "暂无告警",
+  "file": "modules/alerts/pages/alerts/AlertList.tsx",
+  "line": 44
+ },
+ {
+  "text": "自动处理记录",
+  "file": "modules/alerts/pages/alerts/AutomationLogPanel.tsx",
+  "line": 32
+ },
+ {
+  "text": "总记录",
+  "file": "modules/alerts/pages/InspectionCenter.tsx",
+  "line": 123
+ },
+ {
+  "text": "巡检次数",
+  "file": "modules/alerts/pages/InspectionCenter.tsx",
+  "line": 130
+ },
+ {
+  "text": "AI 分析次数",
+  "file": "modules/alerts/pages/InspectionCenter.tsx",
+  "line": 137
+ },
+ {
+  "text": "修复执行",
+  "file": "modules/alerts/pages/InspectionCenter.tsx",
+  "line": 144
+ },
+ {
+  "text": "资源",
+  "file": "modules/audit/pages/AuditLogs.tsx",
+  "line": 171
+ },
+ {
+  "text": "密码强度",
+  "file": "modules/auth/pages/ForcePasswordChange.tsx",
+  "line": 108
+ },
+ {
+  "text": "密码匹配",
+  "file": "modules/auth/pages/ForcePasswordChange.tsx",
+  "line": 146
+ },
+ {
+  "text": "密码不匹配",
+  "file": "modules/auth/pages/ForcePasswordChange.tsx",
+  "line": 151
+ },
+ {
+  "text": "管理系统用户和权限",
+  "file": "modules/auth/pages/Users.tsx",
+  "line": 134
+ },
+ {
+  "text": "管理员 - 拥有所有权限",
+  "file": "modules/auth/pages/Users.tsx",
+  "line": 286
+ },
+ {
+  "text": "运维 - 可执行操作和管理",
+  "file": "modules/auth/pages/Users.tsx",
+  "line": 287
+ },
+ {
+  "text": "只读 - 仅可查看",
+  "file": "modules/auth/pages/Users.tsx",
+  "line": 288
+ },
+ {
+  "text": "确定要删除规则 \"${rule.name}\" 吗？",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 145
+ },
+ {
+  "text": "自动伸缩",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 232
+ },
+ {
+  "text": "活跃规则数",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 244
+ },
+ {
+  "text": "今日扩容次数",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 254
+ },
+ {
+  "text": "今日缩容次数",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 264
+ },
+ {
+  "text": "管理实例总数",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 274
+ },
+ {
+  "text": "共 ${t} 条规则",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 306
+ },
+ {
+  "text": "时间范围：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 319
+ },
+ {
+  "text": "清除",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 331
+ },
+ {
+  "text": "共 ${t} 条记录",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 349
+ },
+ {
+  "text": "名称：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 376
+ },
+ {
+  "text": "目标类型：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 386
+ },
+ {
+  "text": "目标：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 400
+ },
+ {
+  "text": "指标类型：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 426
+ },
+ {
+  "text": "阈值 (%)：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 441
+ },
+ {
+  "text": "触发伸缩的指标百分比",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 450
+ },
+ {
+  "text": "目标值 (%)：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 454
+ },
+ {
+  "text": "伸缩后的目标值",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 463
+ },
+ {
+  "text": "最小实例数：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 467
+ },
+ {
+  "text": "最大：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 475
+ },
+ {
+  "text": "扩容冷却(s)：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 486
+ },
+ {
+  "text": "缩容：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 495
+ },
+ {
+  "text": "启用：",
+  "file": "modules/auto/pages/AutoScale.tsx",
+  "line": 507
+ },
+ {
+  "text": "总告警",
+  "file": "modules/auto/pages/remediation-dashboard/AlertSourceStats.tsx",
+  "line": 38
+ },
+ {
+  "text": "修复效果仪表盘",
+  "file": "modules/auto/pages/remediation-dashboard/index.tsx",
+  "line": 28
+ },
+ {
+  "text": "自动修复策略执行效果与统计分析",
+  "file": "modules/auto/pages/remediation-dashboard/index.tsx",
+  "line": 29
+ },
+ {
+  "text": "总策略数",
+  "file": "modules/auto/pages/remediation-dashboard/OverallStatsCards.tsx",
+  "line": 31
+ },
+ {
+  "text": "${remediationStats?.enabled_policies || 0} 个已启用",
+  "file": "modules/auto/pages/remediation-dashboard/OverallStatsCards.tsx",
+  "line": 33
+ },
+ {
+  "text": "今日修复执行",
+  "file": "modules/auto/pages/remediation-dashboard/OverallStatsCards.tsx",
+  "line": 49
+ },
+ {
+  "text": "平均执行时间",
+  "file": "modules/auto/pages/remediation-dashboard/OverallStatsCards.tsx",
+  "line": 65
+ },
+ {
+  "text": "执行ID",
+  "file": "modules/auto/pages/remediation-dashboard/RecentExecutionsTable.tsx",
+  "line": 26
+ },
+ {
+  "text": "修复执行记录",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 182
+ },
+ {
+  "text": "查看所有自动修复策略的执行历史和结果",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 183
+ },
+ {
+  "text": "全部状态",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 194
+ },
+ {
+  "text": "策略",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 218
+ },
+ {
+  "text": "策略名称",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 354
+ },
+ {
+  "text": "执行状态",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 358
+ },
+ {
+  "text": "状态原因",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 376
+ },
+ {
+  "text": "已触发回滚",
+  "file": "modules/auto/pages/RemediationExecutions.tsx",
+  "line": 437
+ },
+ {
+  "text": "自动修复策略",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 103
+ },
+ {
+  "text": "配置告警自动修复规则和策略",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 104
+ },
+ {
+  "text": "暂无修复策略",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 145
+ },
+ {
+  "text": "触发条件",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 159
+ },
+ {
+  "text": "执行模式",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 160
+ },
+ {
+  "text": "频率限制",
+  "file": "modules/auto/pages/RemediationPolicies.tsx",
+  "line": 161
+ },
+ {
+  "text": "策略名称 *",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 180
+ },
+ {
+  "text": "告警来源 *",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 207
+ },
+ {
+  "text": "告警级别",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 220
+ },
+ {
+  "text": "关键词匹配",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 233
+ },
+ {
+  "text": "标签匹配",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 243
+ },
+ {
+  "text": "执行策略",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 256
+ },
+ {
+  "text": "执行模式 *",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 259
+ },
+ {
+  "text": "关联工作流",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 272
+ },
+ {
+  "text": "选择工作流",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 278
+ },
+ {
+  "text": "工作流参数 (JSON)",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 285
+ },
+ {
+  "text": "触发控制",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 298
+ },
+ {
+  "text": "每小时最大执行次数",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 301
+ },
+ {
+  "text": "冷却时间（秒）",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 311
+ },
+ {
+  "text": "验证配置",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 324
+ },
+ {
+  "text": "启用修复后验证",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 333
+ },
+ {
+  "text": "验证工作流",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 339
+ },
+ {
+  "text": "验证超时（秒）",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 352
+ },
+ {
+  "text": "验证参数 (JSON)",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 362
+ },
+ {
+  "text": "回滚配置",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 375
+ },
+ {
+  "text": "启用自动回滚",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 384
+ },
+ {
+  "text": "回滚工作流",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 390
+ },
+ {
+  "text": "修复失败时自动回滚",
+  "file": "modules/auto/pages/RemediationPolicyEditor.tsx",
+  "line": 410
+ },
+ {
+  "text": "自愈工作台",
+  "file": "modules/auto/pages/RemediationWorkbench.tsx",
+  "line": 186
+ },
+ {
+  "text": "管理自愈策略的审批和执行",
+  "file": "modules/auto/pages/RemediationWorkbench.tsx",
+  "line": 187
+ },
+ {
+  "text": "审计详情",
+  "file": "modules/auto/pages/RemediationWorkbench.tsx",
+  "line": 374
+ },
+ {
+  "text": "审批时间",
+  "file": "modules/auto/pages/RemediationWorkbench.tsx",
+  "line": 414
+ },
+ {
+  "text": "建议措施",
+  "file": "modules/auto/pages/RemediationWorkbench.tsx",
+  "line": 422
+ },
+ {
+  "text": "数据库类型",
+  "file": "modules/backup/pages/BackupSettings.tsx",
+  "line": 115
+ },
+ {
+  "text": "SQLite (当前)",
+  "file": "modules/backup/pages/BackupSettings.tsx",
+  "line": 116
+ },
+ {
+  "text": "数据路径",
+  "file": "modules/backup/pages/BackupSettings.tsx",
+  "line": 120
+ },
+ {
+  "text": "数据备份",
+  "file": "modules/backup/pages/BackupSettings.tsx",
+  "line": 126
+ },
+ {
+  "text": "暂无备份",
+  "file": "modules/backup/pages/BackupSettings.tsx",
+  "line": 216
+ },
+ {
+  "text": "管理工作流审批请求",
+  "file": "modules/change-management/pages/Approvals.tsx",
+  "line": 129
+ },
+ {
+  "text": "暂无审批记录",
+  "file": "modules/change-management/pages/Approvals.tsx",
+  "line": 162
+ },
+ {
+  "text": "拒绝审批",
+  "file": "modules/change-management/pages/Approvals.tsx",
+  "line": 236
+ },
+ {
+  "text": "通用",
+  "file": "modules/config-management/pages/ConfigTemplates.tsx",
+  "line": 122
+ },
+ {
+  "text": "新建模板",
+  "file": "modules/config-management/pages/ConfigTemplates.tsx",
+  "line": 128
+ },
+ {
+  "text": "变量列表",
+  "file": "modules/config-management/pages/ConfigTemplates.tsx",
+  "line": 151
+ },
+ {
+  "text": "添加变量",
+  "file": "modules/config-management/pages/ConfigTemplates.tsx",
+  "line": 152
+ },
+ {
+  "text": "预览当前模板",
+  "file": "modules/config-management/pages/ConfigTemplates.tsx",
+  "line": 162
+ },
+ {
+  "text": "${label} 成功",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 124
+ },
+ {
+  "text": "Compose 编排",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 358
+ },
+ {
+  "text": "项目总数",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 372
+ },
+ {
+  "text": "运行中项目",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 381
+ },
+ {
+  "text": "服务运行 / 总数",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 390
+ },
+ {
+  "text": "异常项目",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 417
+ },
+ {
+  "text": "共 ${t} 个项目",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 476
+ },
+ {
+  "text": "未找到含 \"${search}\" 的项目",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 485
+ },
+ {
+  "text": "服务列表 - ${currentProject?.name || ''}",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 547
+ },
+ {
+  "text": "日志 - ${currentProject?.name || ''}",
+  "file": "modules/containers/pages/ComposeEditor.tsx",
+  "line": 564
+ },
+ {
+  "text": "使用 / 限制",
+  "file": "modules/containers/pages/ContainerDetail.tsx",
+  "line": 180
+ },
+ {
+  "text": "无网络数据",
+  "file": "modules/containers/pages/ContainerDetail.tsx",
+  "line": 195
+ },
+ {
+  "text": "暂无统计数据",
+  "file": "modules/containers/pages/ContainerDetail.tsx",
+  "line": 209
+ },
+ {
+  "text": "暂无详情数据",
+  "file": "modules/containers/pages/ContainerDetail.tsx",
+  "line": 250
+ },
+ {
+  "text": "容器日志查看器",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 161
+ },
+ {
+  "text": "实时查看容器终端输出日志，支持搜索、过滤与导出",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 162
+ },
+ {
+  "text": "时间戳",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 219
+ },
+ {
+  "text": "行数",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 231
+ },
+ {
+  "text": "选择容器并点击\"Start\"查看日志",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 259
+ },
+ {
+  "text": "容器日志将实时显示在此处",
+  "file": "modules/containers/pages/ContainerLogs.tsx",
+  "line": 261
+ },
+ {
+  "text": "容器实时监控",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 264
+ },
+ {
+  "text": "实时监控容器运行状态、CPU、内存与网络资源",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 265
+ },
+ {
+  "text": "容器总数",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 279
+ },
+ {
+  "text": "总 CPU 使用率",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 309
+ },
+ {
+  "text": "总内存使用",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 324
+ },
+ {
+  "text": "总内存限制",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 333
+ },
+ {
+  "text": "总内存使用率",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 354
+ },
+ {
+  "text": "共 ${total} 个容器",
+  "file": "modules/containers/pages/ContainerMonitor.tsx",
+  "line": 373
+ },
+ {
+  "text": "容器服务不可用",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 79
+ },
+ {
+  "text": "暂无容器",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 111
+ },
+ {
+  "text": "确定要删除容器 ${containerName(c)} 吗？",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 185
+ },
+ {
+  "text": "创建容器",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 226
+ },
+ {
+  "text": "容器名称",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 235
+ },
+ {
+  "text": "端口映射",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 239
+ },
+ {
+  "text": "格式: 宿主机端口:容器端口, 逗号分隔",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 241
+ },
+ {
+  "text": "环境变量",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 244
+ },
+ {
+  "text": "数据卷挂载",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 248
+ },
+ {
+  "text": "重启策略",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 253
+ },
+ {
+  "text": "不重启",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 255
+ },
+ {
+  "text": "总是重启",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 256
+ },
+ {
+  "text": "失败时重启",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 257
+ },
+ {
+  "text": "除非停止",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 258
+ },
+ {
+  "text": "内存限制 (MB)",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 262
+ },
+ {
+  "text": "CPU 权重",
+  "file": "modules/containers/pages/containers/ContainersTab.tsx",
+  "line": 267
+ },
+ {
+  "text": "端点服务不可用",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 54
+ },
+ {
+  "text": "无法加载端点列表。",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 55
+ },
+ {
+  "text": "协议",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 72
+ },
+ {
+  "text": "暂无端点",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 81
+ },
+ {
+  "text": "TLS CA 证书",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 183
+ },
+ {
+  "text": "TLS 证书",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 187
+ },
+ {
+  "text": "TLS 密钥",
+  "file": "modules/containers/pages/containers/EndpointsTab.tsx",
+  "line": 191
+ },
+ {
+  "text": "Docker 主机:",
+  "file": "modules/containers/pages/containers/index.tsx",
+  "line": 55
+ },
+ {
+  "text": "总网络数",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 48
+ },
+ {
+  "text": "Bridge 网络",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 57
+ },
+ {
+  "text": "连接容器",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 68
+ },
+ {
+  "text": "网络服务不可用",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 84
+ },
+ {
+  "text": "范围",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 101
+ },
+ {
+  "text": "子网",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 102
+ },
+ {
+  "text": "暂无网络",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 112
+ },
+ {
+  "text": "创建网络",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 170
+ },
+ {
+  "text": "内部网络",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 200
+ },
+ {
+  "text": "允许连接",
+  "file": "modules/containers/pages/containers/NetworksTab.tsx",
+  "line": 204
+ }
+]

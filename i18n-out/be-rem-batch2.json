@@ -1,0 +1,2897 @@
+[
+ {
+  "text": "检查配置文件是否正确",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 107
+ },
+ {
+  "text": "检查依赖服务是否正常运行",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 108
+ },
+ {
+  "text": "尝试重启服务",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 109
+ },
+ {
+  "text": "数据库异常",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 115
+ },
+ {
+  "text": "连接池",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 116
+ },
+ {
+  "text": "数据库服务异常或连接问题，可能由于连接数耗尽、死锁、性能下降或配置错误",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 117
+ },
+ {
+  "text": "数据库连接失败",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 118
+ },
+ {
+  "text": "查询超时",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 118
+ },
+ {
+  "text": "连接池耗尽",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 118
+ },
+ {
+  "text": "锁等待",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 118
+ },
+ {
+  "text": "检查数据库服务状态",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 120
+ },
+ {
+  "text": "查看数据库错误日志",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 121
+ },
+ {
+  "text": "检查活跃连接数和慢查询",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 122
+ },
+ {
+  "text": "检查是否有长时间未提交的事务",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 123
+ },
+ {
+  "text": "优化查询语句或增加连接池大小",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 124
+ },
+ {
+  "text": "SSL 证书过期",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 130
+ },
+ {
+  "text": "SSL/TLS 证书已过期或即将过期，导致 HTTPS 连接失败或告警",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 132
+ },
+ {
+  "text": "HTTPS 访问失败",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 133
+ },
+ {
+  "text": "浏览器证书告警",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 133
+ },
+ {
+  "text": "API 调用证书验证失败",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 133
+ },
+ {
+  "text": "检查证书有效期 openssl x509 -dates",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 135
+ },
+ {
+  "text": "续期或重新申请证书",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 136
+ },
+ {
+  "text": "更新服务器证书配置",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 137
+ },
+ {
+  "text": "配置证书到期自动提醒",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 138
+ },
+ {
+  "text": "认证/授权失败",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 144
+ },
+ {
+  "text": "认证",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 145
+ },
+ {
+  "text": "权限",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 145
+ },
+ {
+  "text": "密码",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 145
+ },
+ {
+  "text": "用户认证或授权失败，可能由于密码错误、token 过期、权限配置不当",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 146
+ },
+ {
+  "text": "登录失败",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 147
+ },
+ {
+  "text": "401 Unauthorized 错误",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 147
+ },
+ {
+  "text": "403 Forbidden 错误",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 147
+ },
+ {
+  "text": "检查用户凭据是否正确",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 149
+ },
+ {
+  "text": "检查 token 是否过期",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 150
+ },
+ {
+  "text": "查看认证服务日志",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 151
+ },
+ {
+  "text": "检查权限配置和角色分配",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 152
+ },
+ {
+  "text": "响应延迟过高",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 158
+ },
+ {
+  "text": "慢",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 159
+ },
+ {
+  "text": "系统响应时间过长，可能由于资源瓶颈、慢查询、网络延迟或应用性能问题",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 160
+ },
+ {
+  "text": "接口响应时间超过阈值",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 161
+ },
+ {
+  "text": "用户体验下降",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 161
+ },
+ {
+  "text": "请求排队",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 161
+ },
+ {
+  "text": "使用 APM 工具定位慢接口",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 163
+ },
+ {
+  "text": "检查数据库慢查询日志",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 164
+ },
+ {
+  "text": "分析网络延迟",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 165
+ },
+ {
+  "text": "检查缓存命中率",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 166
+ },
+ {
+  "text": "考虑水平扩展或优化代码",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 167
+ },
+ {
+  "text": "CPU 使用率过高排查指南",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 175
+ },
+ {
+  "text": "性能",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 176
+ },
+ {
+  "text": "本文介绍如何系统性地排查和解决 CPU 使用率过高的问题，包括使用 top、perf 等工具定位问题进程和代码。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 178
+ },
+ {
+  "text": "内存泄漏分析与解决",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 181
+ },
+ {
+  "text": "本文介绍内存泄漏的常见场景、分析工具和解决方案，帮助快速定位和修复内存问题。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 184
+ },
+ {
+  "text": "磁盘空间管理最佳实践",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 187
+ },
+ {
+  "text": "运维",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 188
+ },
+ {
+  "text": "本文介绍磁盘空间监控、清理策略和扩容方案，确保系统存储资源充足。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 190
+ },
+ {
+  "text": "网络故障排查手册",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 193
+ },
+ {
+  "text": "本文提供网络故障的系统性排查流程，包括连通性测试、路由追踪、抓包分析等。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 196
+ },
+ {
+  "text": "服务高可用保障方案",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 199
+ },
+ {
+  "text": "高可用",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 200
+ },
+ {
+  "text": "本文介绍服务高可用架构设计和故障恢复策略，包括负载均衡、健康检查、自动重启等。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 202
+ },
+ {
+  "text": "数据库性能优化指南",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 205
+ },
+ {
+  "text": "优化",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 206
+ },
+ {
+  "text": "本文介绍数据库性能优化方法，包括索引优化、查询优化、连接池配置等。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 208
+ },
+ {
+  "text": "SSL 证书管理与续期",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 211
+ },
+ {
+  "text": "本文介绍 SSL 证书的申请、部署、监控和自动续期方案。",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 214
+ },
+ {
+  "text": "重启",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 221
+ },
+ {
+  "text": "重启指定服务并检查状态",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 223
+ },
+ {
+  "text": "检查磁盘使用情况和日志文件",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 229
+ },
+ {
+  "text": "检查内存使用和占用最高的进程",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 235
+ },
+ {
+  "text": "检查网络连通性和端口状态",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 241
+ },
+ {
+  "text": "收集",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 245
+ },
+ {
+  "text": "收集指定服务的时间段日志",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 247
+ },
+ {
+  "text": "执行服务健康检查",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 253
+ },
+ {
+  "text": "基于规则库生成分析结果",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 280
+ },
+ {
+  "text": "系统异常告警触发",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 425
+ },
+ {
+  "text": "未匹配到已知故障模式",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 425
+ },
+ {
+  "text": "规则库匹配失败，返回通用分析",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 428
+ },
+ {
+  "text": "未匹配到预设故障模式关键词",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 431
+ },
+ {
+  "text": "建议收集更多上下文信息后人工分析",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 432
+ },
+ {
+  "text": "检查系统日志和应用日志获取更多信息",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 435
+ },
+ {
+  "text": "检查近期是否有变更发布",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 436
+ },
+ {
+  "text": "联系相关系统负责人协助排查",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 437
+ },
+ {
+  "text": "考虑将此故障模式添加到规则库中",
+  "file": "modules/ai/services/rca/localRuleEngine.ts",
+  "line": 438
+ },
+ {
+  "text": "分析失败：未返回结果",
+  "file": "modules/ai/services/rca/rcaJobManager.ts",
+  "line": 83
+ },
+ {
+  "text": "AI诊断完成",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/index.ts",
+  "line": 137
+ },
+ {
+  "text": "需要进一步系统检查",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 40
+ },
+ {
+  "text": "建议查看相关日志",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 41
+ },
+ {
+  "text": "需要人工介入分析",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 42
+ },
+ {
+  "text": "开始根因分析",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 46
+ },
+ {
+  "text": "分析完成，需要人工验证",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 47
+ },
+ {
+  "text": "需要人工收集更多证据",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 51
+ },
+ {
+  "text": "建议查看系统日志和应用日志",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 52
+ },
+ {
+  "text": "人工检查系统状态",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 56
+ },
+ {
+  "text": "查看相关日志文件",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 57
+ },
+ {
+  "text": "配置合适的LLM API以获得更好的分析结果",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 58
+ },
+ {
+  "text": "详细的根因描述",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 93
+ },
+ {
+  "text": "症状1",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 94
+ },
+ {
+  "text": "症状2",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 94
+ },
+ {
+  "text": "症状3",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 94
+ },
+ {
+  "text": "证据1",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 98
+ },
+ {
+  "text": "证据2",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 98
+ },
+ {
+  "text": "建议1",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 99
+ },
+ {
+  "text": "建议2",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 99
+ },
+ {
+  "text": "建议3",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 99
+ },
+ {
+  "text": "无法解析LLM响应",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 129
+ },
+ {
+  "text": "系统异常",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 134
+ },
+ {
+  "text": "进一步调查",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 137
+ },
+ {
+  "text": "LLM分析失败: ",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 150
+ },
+ {
+  "text": "未知",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 368
+ },
+ {
+  "text": "⚠️ [RCA] LLM响应解析失败，使用回退分析",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 401
+ },
+ {
+  "text": "需要进一步调查",
+  "file": "modules/ai/services/rca/rootCauseAnalysisService/rcaAnalyzer.ts",
+  "line": 419
+ },
+ {
+  "text": "# 注意：防火墙规则回滚需要手动确认",
+  "file": "modules/ai/services/remediation/analysisStep.ts",
+  "line": 161
+ },
+ {
+  "text": "# 无法自动推断回滚命令，请执行以下检查：",
+  "file": "modules/ai/services/remediation/analysisStep.ts",
+  "line": 168
+ },
+ {
+  "text": "的",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "了",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "在",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "是",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "我",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "有",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "和",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "就",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "不",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "人",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "都",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "一",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "一个",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 26
+ },
+ {
+  "text": "上",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "也",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "很",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "到",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "说",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "要",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "去",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "你",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "会",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "着",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "没有",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "看",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "好",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 27
+ },
+ {
+  "text": "📚 本地规则引擎推荐的相关知识：\\n\\n",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 239
+ },
+ {
+  "text": "请注意：以上推荐基于本地规则库，建议结合实际情况进行判断。",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 244
+ },
+ {
+  "text": "📚 以下是从知识库中检索到的相关信息（相关度排序）：\\n\\n",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 258
+ },
+ {
+  "text": "请根据以上信息和你的专业知识回答问题。如果信息不足以回答问题，请说明。",
+  "file": "modules/ai/services/remediation/enhancedRAGService.ts",
+  "line": 265
+ },
+ {
+  "text": "执行修复命令",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 80
+ },
+ {
+  "text": "在目标设备上执行 AI 建议的修复命令",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 83
+ },
+ {
+  "text": "验证修复结果",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 94
+ },
+ {
+  "text": "验证修复命令是否成功执行，检查系统状态是否恢复正常",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 97
+ },
+ {
+  "text": "自动回滚",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 108
+ },
+ {
+  "text": "验证失败时自动执行回滚操作，恢复系统到修复前状态",
+  "file": "modules/ai/services/remediation/planStep.ts",
+  "line": 111
+ },
+ {
+  "text": "告警不存在",
+  "file": "modules/alerts/routes/alertAutoResponseRoutes.ts",
+  "line": 31
+ },
+ {
+  "text": "未找到该告警的响应记录",
+  "file": "modules/alerts/routes/alertAutoResponseRoutes.ts",
+  "line": 71
+ },
+ {
+  "text": "没有可更新的字段",
+  "file": "modules/alerts/routes/alertAutoResponseRoutes.ts",
+  "line": 123
+ },
+ {
+  "text": "该告警正在分析中",
+  "file": "modules/alerts/routes/alertAutoRoutes.ts",
+  "line": 41
+ },
+ {
+  "text": "组不存在",
+  "file": "modules/alerts/routes/alertCorrelationRoutes.ts",
+  "line": 29
+ },
+ {
+  "text": "至少需要2个告警ID",
+  "file": "modules/alerts/routes/alertCorrelationRoutes.ts",
+  "line": 42
+ },
+ {
+  "text": "指纹不能为空",
+  "file": "modules/alerts/routes/alertNoiseRoutes.ts",
+  "line": 29
+ },
+ {
+  "text": "未找到对应的告警",
+  "file": "modules/alerts/routes/alertNoiseRoutes.ts",
+  "line": 34
+ },
+ {
+  "text": "告警已恢复",
+  "file": "modules/alerts/routes/alertNoiseRoutes.ts",
+  "line": 37
+ },
+ {
+  "text": "指纹和原因不能为空",
+  "file": "modules/alerts/routes/alertNoiseRoutes.ts",
+  "line": 47
+ },
+ {
+  "text": "告警已抑制",
+  "file": "modules/alerts/routes/alertNoiseRoutes.ts",
+  "line": 60
+ },
+ {
+  "text": "触发告警处理失败",
+  "file": "modules/alerts/routes/alertRoutes.ts",
+  "line": 158
+ },
+ {
+  "text": "统一告警处理失败",
+  "file": "modules/alerts/routes/alertRoutes.ts",
+  "line": 196
+ },
+ {
+  "text": "\\n\\n## 历史知识库参考\\n",
+  "file": "modules/alerts/services/alertAutoAnalyzer/analysisEngine.ts",
+  "line": 102
+ },
+ {
+  "text": "重启 Nginx 服务并检查日志",
+  "file": "modules/alerts/services/alertAutoAnalyzer/analysisEngine.ts",
+  "line": 126
+ },
+ {
+  "text": "AI 分析不可用",
+  "file": "modules/alerts/services/alertAutoAnalyzer/analysisEngine.ts",
+  "line": 182
+ },
+ {
+  "text": "未找到关联设备或无 SSH/SNMP 凭证，无法分析",
+  "file": "modules/alerts/services/alertAutoAnalyzer/analysisEngine.ts",
+  "line": 238
+ },
+ {
+  "text": "【SNMP】设备 ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 284
+ },
+ {
+  "text": ") 未找到 SNMP 巡检记录和接口指标数据",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 284
+ },
+ {
+  "text": "【SNMP 接口指标 - ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 289
+ },
+ {
+  "text": "接口 ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 293
+ },
+ {
+  "text": " (索引 ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 293
+ },
+ {
+  "text": "管理状态=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 294
+ },
+ {
+  "text": ", 运行状态=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 294
+ },
+ {
+  "text": ", 速度=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 295
+ },
+ {
+  "text": ", 入流量=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 296
+ },
+ {
+  "text": ", 出流量=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 296
+ },
+ {
+  "text": ", 入错误=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 297
+ },
+ {
+  "text": ", 出错误=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 297
+ },
+ {
+  "text": "【SNMP 巡检记录 - ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 305
+ },
+ {
+  "text": "\\n巡检类型: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 308
+ },
+ {
+  "text": "状态: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 309
+ },
+ {
+  "text": "时间: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 310
+ },
+ {
+  "text": "摘要: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 311
+ },
+ {
+  "text": "结果: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 315
+ },
+ {
+  "text": "获取 SNMP 巡检数据失败 (device=",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 325
+ },
+ {
+  "text": "【SNMP】获取设备 ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 327
+ },
+ {
+  "text": ") 巡检数据失败: ",
+  "file": "modules/alerts/services/alertAutoAnalyzer/deviceResolver.ts",
+  "line": 327
+ },
+ {
+  "text": "🤖 告警自动分析服务已就绪（由 AlertProcessor 统一调用，无独立轮询）",
+  "file": "modules/alerts/services/alertAutoAnalyzer/index.ts",
+  "line": 56
+ },
+ {
+  "text": "⏹ 告警自动分析服务已停止",
+  "file": "modules/alerts/services/alertAutoAnalyzer/index.ts",
+  "line": 61
+ },
+ {
+  "text": "无历史基线数据，按异常处理",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/baselineAnomalyDetector.ts",
+  "line": 54
+ },
+ {
+  "text": "基线分析失败，按异常处理",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/baselineAnomalyDetector.ts",
+  "line": 77
+ },
+ {
+  "text": "接口异常比例",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/baselineAnomalyDetector.ts",
+  "line": 99
+ },
+ {
+  "text": "错误包总数",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/baselineAnomalyDetector.ts",
+  "line": 112
+ },
+ {
+  "text": "所有接口 down",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/baselineAnomalyDetector.ts",
+  "line": 124
+ },
+ {
+  "text": "防火墙",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/deviceProfiler.ts",
+  "line": 244
+ },
+ {
+  "text": "华为",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/deviceProfiler.ts",
+  "line": 244
+ },
+ {
+  "text": "虚拟机",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/deviceProfiler.ts",
+  "line": 246
+ },
+ {
+  "text": "🚀 [EscalationEngine] 渐进式升级引擎已启动",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 103
+ },
+ {
+  "text": "⏹ [EscalationEngine] 升级引擎已停止",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 121
+ },
+ {
+  "text": "请及时人工介入。",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 244
+ },
+ {
+  "text": "自动处理中",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 260
+ },
+ {
+  "text": "观察期(1分钟)",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 261
+ },
+ {
+  "text": "观察期(3分钟)",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 262
+ },
+ {
+  "text": "通知值班",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 263
+ },
+ {
+  "text": "通知负责人",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 264
+ },
+ {
+  "text": "紧急升级",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 265
+ },
+ {
+  "text": "已解决",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 266
+ },
+ {
+  "text": "处理失败",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/escalationEngine.ts",
+  "line": 267
+ },
+ {
+  "text": "核",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/strategyRecommender.ts",
+  "line": 130
+ },
+ {
+  "text": "耗尽",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/strategyRecommender.ts",
+  "line": 131
+ },
+ {
+  "text": "宕",
+  "file": "modules/alerts/services/alertAutoResponse/adaptive/strategyRecommender.ts",
+  "line": 134
+ },
+ {
+  "text": "🤖 [AARS v2] 告警自适应智能响应服务已启动（纯执行引擎模式，由 AlertProcessor 统一触发）",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 61
+ },
+ {
+  "text": "⏹ [AARS v2] 服务已停止",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 75
+ },
+ {
+  "text": "设备无法识别",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 125
+ },
+ {
+  "text": "❌ 无法访问设备（无 SSH/SNMP 凭证）",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 153
+ },
+ {
+  "text": "无法访问",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 154
+ },
+ {
+  "text": "无访问凭证",
+  "file": "modules/alerts/services/alertAutoResponse/alertAutoResponseService.ts",
+  "line": 155
+ },
+ {
+  "text": "=== SNMP 实时探测结果 ===",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 68
+ },
+ {
+  "text": "=== SNMP 历史数据 ===",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 71
+ },
+ {
+  "text": "【最近巡检记录】",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 119
+ },
+ {
+  "text": "【最近接口指标】",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 129
+ },
+ {
+  "text": "（无历史数据）",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 136
+ },
+ {
+  "text": "（获取历史数据失败）",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 138
+ },
+ {
+  "text": "一行摘要（50字内）",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 162
+ },
+ {
+  "text": "根因分析",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 163
+ },
+ {
+  "text": "详细诊断说明",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 164
+ },
+ {
+  "text": "发现1",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 165
+ },
+ {
+  "text": "发现2",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 165
+ },
+ {
+  "text": "发现3",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 165
+ },
+ {
+  "text": "SNMP 诊断完成",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 199
+ },
+ {
+  "text": "请检查 SNMP 数据",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 201
+ },
+ {
+  "text": "进一步人工排查",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 202
+ },
+ {
+  "text": "无法确定根因",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 209
+ },
+ {
+  "text": "AI分析不可用",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 219
+ },
+ {
+  "text": "人工检查网络设备",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/snmpDiagnosisEngine.ts",
+  "line": 220
+ },
+ {
+  "text": "详细的根因分析描述",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 108
+ },
+ {
+  "text": "详细的诊断说明",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 109
+ },
+ {
+  "text": "修复命令1",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 110
+ },
+ {
+  "text": "修复命令2",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 110
+ },
+ {
+  "text": "回滚命令1",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 111
+ },
+ {
+  "text": "回滚命令2",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 111
+ },
+ {
+  "text": "修复方案简述",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 112
+ },
+ {
+  "text": "诊断完成",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 154
+ },
+ {
+  "text": "无自动修复方案，需要人工介入",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 187
+ },
+ {
+  "text": "紧急",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 217
+ },
+ {
+  "text": "严重",
+  "file": "modules/alerts/services/alertAutoResponse/diagnosis/sshDiagnosisEngine.ts",
+  "line": 218
+ },
+ {
+  "text": "(无命令)",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 104
+ },
+ {
+  "text": "审批请求",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 144
+ },
+ {
+  "text": "告警解除",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 145
+ },
+ {
+  "text": "修复失败",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 146
+ },
+ {
+  "text": "已回滚",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 147
+ },
+ {
+  "text": "告警升级",
+  "file": "modules/alerts/services/alertAutoResponse/notification/smartNotifier.ts",
+  "line": 148
+ },
+ {
+  "text": "操作系统版本",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 24
+ },
+ {
+  "text": "获取 OS 发行版、内核版本",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 25
+ },
+ {
+  "text": "运行时长和负载",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 37
+ },
+ {
+  "text": "系统运行时间和 CPU 负载",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 38
+ },
+ {
+  "text": "CPU 高消耗进程",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 49
+ },
+ {
+  "text": "按 CPU 使用率排序的 Top 进程",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 50
+ },
+ {
+  "text": "内存高消耗进程",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 61
+ },
+ {
+  "text": "按内存使用率排序的 Top 进程",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 62
+ },
+ {
+  "text": "磁盘使用率",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 73
+ },
+ {
+  "text": "各分区磁盘使用情况",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 74
+ },
+ {
+  "text": "大文件/目录",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 85
+ },
+ {
+  "text": "磁盘空间最大消耗者",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 86
+ },
+ {
+  "text": "内存详请",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 97
+ },
+ {
+  "text": "详细内存使用情况（含 swap/cache）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 98
+ },
+ {
+  "text": "磁盘 I/O 统计",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 109
+ },
+ {
+  "text": "磁盘读写延迟和 IOPS（需 sysstat）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 110
+ },
+ {
+  "text": "网络连接状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 121
+ },
+ {
+  "text": "所有监听和活跃连接",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 122
+ },
+ {
+  "text": "内核错误日志",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 133
+ },
+ {
+  "text": "最近内核错误和告警消息",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 134
+ },
+ {
+  "text": "系统日志错误",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 145
+ },
+ {
+  "text": "最近系统日志中的错误",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 146
+ },
+ {
+  "text": "进程树",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 157
+ },
+ {
+  "text": "完整进程树",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 158
+ },
+ {
+  "text": "失败服务列表",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 169
+ },
+ {
+  "text": "systemd 失败状态的服务",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 170
+ },
+ {
+  "text": "僵尸进程",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 181
+ },
+ {
+  "text": "检查僵尸进程数量",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 182
+ },
+ {
+  "text": "网络带宽使用",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 193
+ },
+ {
+  "text": "实时网络带宽（需 iftop/nload）或 /proc/net/dev",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 194
+ },
+ {
+  "text": "ARP 表",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 205
+ },
+ {
+  "text": "邻居发现表",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 206
+ },
+ {
+  "text": "监听端口安全",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 218
+ },
+ {
+  "text": "所有监听端口，检查是否有多余开放端口",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 219
+ },
+ {
+  "text": "接口错误统计",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 232
+ },
+ {
+  "text": "各接口入/出错误和丢弃包计数",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 233
+ },
+ {
+  "text": "CPU 使用率（SNMP）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 249
+ },
+ {
+  "text": "网络设备 CPU 利用率",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 250
+ },
+ {
+  "text": "内存使用率（SNMP）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 261
+ },
+ {
+  "text": "网络设备内存利用率",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 262
+ },
+ {
+  "text": "设备温度（SNMP）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 273
+ },
+ {
+  "text": "设备温度和风扇状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 274
+ },
+ {
+  "text": "接口状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 285
+ },
+ {
+  "text": "各接口管理状态和运行状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 286
+ },
+ {
+  "text": "接口流量",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 300
+ },
+ {
+  "text": "各接口入/出流量速率",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 301
+ },
+ {
+  "text": "设备运行时间（SNMP）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 315
+ },
+ {
+  "text": "网络设备启动时长",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 316
+ },
+ {
+  "text": "应用日志尾部",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 329
+ },
+ {
+  "text": "特定应用日志最后 50 行（需传参）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 330
+ },
+ {
+  "text": "进程详情",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 341
+ },
+ {
+  "text": "指定进程的详细信息（fd/open files）",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 342
+ },
+ {
+  "text": "容器列表",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 353
+ },
+ {
+  "text": "Docker 容器运行状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 354
+ },
+ {
+  "text": "SELinux/AppArmor 状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 365
+ },
+ {
+  "text": "强制访问控制状态",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 366
+ },
+ {
+  "text": "通用基础探针",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 394
+ },
+ {
+  "text": "SNMP 网络设备探针",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 399
+ },
+ {
+  "text": "专项诊断探针",
+  "file": "modules/alerts/services/alertAutoResponse/probeUnit.ts",
+  "line": 404
+ },
+ {
+  "text": "告警已确认",
+  "file": "modules/alerts/services/alertCrudService.ts",
+  "line": 251
+ },
+ {
+  "text": "告警已解决",
+  "file": "modules/alerts/services/alertCrudService.ts",
+  "line": 279
+ },
+ {
+  "text": "频繁告警自动抑制",
+  "file": "modules/alerts/services/alertNoiseReductionService.ts",
+  "line": 72
+ },
+ {
+  "text": "系统健康状态异常",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 34
+ },
+ {
+  "text": "备份失败告警",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 41
+ },
+ {
+  "text": "高内存使用率",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 48
+ },
+ {
+  "text": "高CPU使用率",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 55
+ },
+ {
+  "text": "SSH连接失败",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 62
+ },
+ {
+  "text": "任务执行失败",
+  "file": "modules/alerts/services/alertNotificationService.ts",
+  "line": 69
+ },
+ {
+  "text": "✅ AlertProcessor 统一告警处理引擎已启动",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 33
+ },
+ {
+  "text": "medium 等级告警: 默认采用 aars 策略",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 103
+ },
+ {
+  "text": "找不到或无法创建修复策略",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 149
+ },
+ {
+  "text": "🤖 [Hybrid] 首先尝试 AARS 策略",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 170
+ },
+ {
+  "text": "🔄 [Hybrid] AARS 策略失败，回退到 workflow 策略",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 178
+ },
+ {
+  "text": "知识库推荐查询失败",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 213
+ },
+ {
+  "text": "找不到可用的预设工作流",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 221
+ },
+ {
+  "text": "系统自动创建的统一策略",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 238
+ },
+ {
+  "text": "保存处理记录时出错",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 256
+ },
+ {
+  "text": "保存策略决策时出错",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 264
+ },
+ {
+  "text": "更新最终记录时出错",
+  "file": "modules/alerts/services/AlertProcessor.ts",
+  "line": 279
+ },
+ {
+  "text": "Webhook 端点",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 55
+ },
+ {
+  "text": "🔔 收到 Webhook 告警: ",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 61
+ },
+ {
+  "text": "Webhook 告警",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 64
+ },
+ {
+  "text": "❌ 告警存入数据库失败:",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 86
+ },
+ {
+  "text": "查询语句",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 102
+ },
+ {
+  "text": "📊 查询 Prometheus 告警: ",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 107
+ },
+ {
+  "text": "认证 Token",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 122
+ },
+ {
+  "text": "🏠 查询 Zabbix 告警: ",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 127
+ },
+ {
+  "text": "❌ 预注册告警 Provider 失败:",
+  "file": "modules/alerts/services/alertProviderRegistry.ts",
+  "line": 135
+ },
+ {
+  "text": "[AlertWorkflowMapping] 未找到匹配的映射",
+  "file": "modules/alerts/services/alertWorkflowMappingService.ts",
+  "line": 48
+ },
+ {
+  "text": "[AlertWorkflowMapping] 匹配失败:",
+  "file": "modules/alerts/services/alertWorkflowMappingService.ts",
+  "line": 51
+ },
+ {
+  "text": "[AlertWorkflowMapping] 工作流执行完成: taskId=",
+  "file": "modules/alerts/services/alertWorkflowMappingService.ts",
+  "line": 135
+ },
+ {
+  "text": "[AlertWorkflowMapping] 工作流执行失败:",
+  "file": "modules/alerts/services/alertWorkflowMappingService.ts",
+  "line": 137
+ },
+ {
+  "text": "用户名或密码错误",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 45
+ },
+ {
+  "text": "账户已被禁用",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 52
+ },
+ {
+  "text": "密码错误次数过多，账户已被锁定30分钟",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 62
+ },
+ {
+  "text": "登录成功",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 101
+ },
+ {
+  "text": "服务器错误",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 118
+ },
+ {
+  "text": "请提供refresh token",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 131
+ },
+ {
+  "text": "Token已失效",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 138
+ },
+ {
+  "text": "无效的refresh token",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 149
+ },
+ {
+  "text": "用户不存在或已被禁用",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 158
+ },
+ {
+  "text": "Refresh token已过期或无效",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 185
+ },
+ {
+  "text": "Token刷新失败",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 188
+ },
+ {
+  "text": "用户不存在",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 207
+ },
+ {
+  "text": "无效的token",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 218
+ },
+ {
+  "text": "退出成功",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 241
+ },
+ {
+  "text": "登出失败",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 244
+ },
+ {
+  "text": "登出过程出现错误",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 247
+ },
+ {
+  "text": "请提供当前密码和新密码",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 263
+ },
+ {
+  "text": "当前密码错误",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 282
+ },
+ {
+  "text": "密码修改成功",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 318
+ },
+ {
+  "text": "修改密码失败",
+  "file": "modules/auth/routes/authRoutes.ts",
+  "line": 321
+ },
+ {
+  "text": "不能修改/禁用最后一个 admin 账号",
+  "file": "modules/auth/routes/userRoutes.ts",
+  "line": 111
+ },
+ {
+  "text": "不能删除最后一个 admin 账号",
+  "file": "modules/auth/routes/userRoutes.ts",
+  "line": 186
+ },
+ {
+  "text": "规则不存在",
+  "file": "modules/auto/routes/autoScaleRoutes.ts",
+  "line": 39
+ },
+ {
+  "text": "已删除",
+  "file": "modules/auto/routes/autoScaleRoutes.ts",
+  "line": 70
+ },
+ {
+  "text": "countInstances: docker 列表失败，回退到 1:",
+  "file": "modules/auto/services/autoScaleService.ts",
+  "line": 125
+ },
+ {
+  "text": "countInstances: VM 列表失败，回退到 1:",
+  "file": "modules/auto/services/autoScaleService.ts",
+  "line": 135
+ },
+ {
+  "text": "countInstances: k8s replicas 获取失败，回退到 1:",
+  "file": "modules/auto/services/autoScaleService.ts",
+  "line": 150
+ },
+ {
+  "text": "evaluateRule: VM 指标获取失败:",
+  "file": "modules/auto/services/autoScaleService.ts",
+  "line": 199
+ },
+ {
+  "text": "修复审批请求",
+  "file": "modules/auto/services/remediationService/executionOrchestration.ts",
+  "line": 213
+ },
+ {
+  "text": "修复建议",
+  "file": "modules/auto/services/remediationService/executionOrchestration.ts",
+  "line": 231
+ },
+ {
+  "text": "数据库已恢复，系统将在1秒后自动重启",
+  "file": "modules/backup/services/backupOperations.ts",
+  "line": 230
+ },
+ {
+  "text": "API 地址格式不正确",
+  "file": "modules/cmdb-sync/routes/config.ts",
+  "line": 20
+ },
+ {
+  "text": "未同步 SSH 密码/密钥，请在平台手动配置",
+  "file": "modules/cmdb-sync/services/cmdbSyncWriter.ts",
+  "line": 136
+ },
+ {
+  "text": "iTop 未配置：请先设置 API 地址和认证信息",
+  "file": "modules/cmdb-sync/services/itopClient.ts",
+  "line": 132
+ },
+ {
+  "text": "iTop 返回了 HTML 错误页面（可能是认证失败）",
+  "file": "modules/cmdb-sync/services/itopClient.ts",
+  "line": 162
+ },
+ {
+  "text": "创建失败",
+  "file": "modules/cmdb-sync/services/itopClient.ts",
+  "line": 251
+ },
+ {
+  "text": "iTop 返回空对象",
+  "file": "modules/cmdb-sync/services/itopClient.ts",
+  "line": 256
+ },
+ {
+  "text": "更新失败",
+  "file": "modules/cmdb-sync/services/itopClient.ts",
+  "line": 288
+ },
+ {
+  "text": "连接失败",
+  "file": "modules/cmdb-sync/services/itopConfigService.ts",
+  "line": 134
+ },
+ {
+  "text": "上一次同步仍在进行中，已跳过",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 97
+ },
+ {
+  "text": "iTop 未配置，跳过同步",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 100
+ },
+ {
+  "text": "同步成功",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 121
+ },
+ {
+  "text": "[CMDB-Sync] 初始同步失败:",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 293
+ },
+ {
+  "text": "[CMDB-Sync] 定时同步失败:",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 299
+ },
+ {
+  "text": "⏹️ [CMDB-Sync] 定时同步已停止",
+  "file": "modules/cmdb-sync/services/itopSyncService.ts",
+  "line": 316
+ },
+ {
+  "text": "项目不存在",
+  "file": "modules/config-management/routes/composeRoutes.ts",
+  "line": 38
+ },
+ {
+  "text": "名称和compose内容必填",
+  "file": "modules/config-management/routes/composeRoutes.ts",
+  "line": 50
+ },
+ {
+  "text": "需要compose内容",
+  "file": "modules/config-management/routes/composeRoutes.ts",
+  "line": 142
+ },
+ {
+  "text": "❌ 获取模板列表失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 27
+ },
+ {
+  "text": "获取模板列表失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 30
+ },
+ {
+  "text": "模板不存在",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 44
+ },
+ {
+  "text": "❌ 获取模板失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 52
+ },
+ {
+  "text": "获取模板失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 55
+ },
+ {
+  "text": "缺少必要参数",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 70
+ },
+ {
+  "text": "❌ 分析配置失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 90
+ },
+ {
+  "text": "分析配置失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 93
+ },
+ {
+  "text": "❌ 生成修复方案失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 129
+ },
+ {
+  "text": "生成修复方案失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 132
+ },
+ {
+  "text": "❌ 执行修复失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 177
+ },
+ {
+  "text": "执行修复失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 180
+ },
+ {
+  "text": "缺少 recordId",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 195
+ },
+ {
+  "text": "回滚成功",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 203
+ },
+ {
+  "text": "回滚失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 203
+ },
+ {
+  "text": "❌ 回滚修复失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 206
+ },
+ {
+  "text": "回滚修复失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 209
+ },
+ {
+  "text": "记录不存在",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 223
+ },
+ {
+  "text": "❌ 获取修复记录失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 231
+ },
+ {
+  "text": "获取修复记录失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 234
+ },
+ {
+  "text": "❌ 获取修复记录列表失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 253
+ },
+ {
+  "text": "获取修复记录列表失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 256
+ },
+ {
+  "text": "缺少 deviceId",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 273
+ },
+ {
+  "text": "❌ 获取备份列表失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 283
+ },
+ {
+  "text": "获取备份列表失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 286
+ },
+ {
+  "text": "备份不存在",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 300
+ },
+ {
+  "text": "❌ 获取备份失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 308
+ },
+ {
+  "text": "获取备份失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 311
+ },
+ {
+  "text": "❌ 恢复备份失败:",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 332
+ },
+ {
+  "text": "恢复备份失败",
+  "file": "modules/config-management/routes/configRepairRoutes.ts",
+  "line": 335
+ },
+ {
+  "text": "未找到",
+  "file": "modules/config-management/routes/configTemplateRoutes.ts",
+  "line": 38
+ },
+ {
+  "text": "未知错误",
+  "file": "modules/config-management/services/composeService.ts",
+  "line": 262
+ },
+ {
+  "text": "worker_processes 设置过低，建议设置为 auto 或 CPU 核心数",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 50
+ },
+ {
+  "text": "缺少 worker_processes 配置",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 64
+ },
+ {
+  "text": "worker_connections 设置过低，建议至少 1024",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 79
+ },
+ {
+  "text": "keepalive_timeout 设置过长，可能占用连接资源",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 99
+ },
+ {
+  "text": "vm.swappiness 设置过高，可能导致频繁 swap",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 127
+ },
+ {
+  "text": "net.core.somaxconn 设置过低，可能限制连接数",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 147
+ },
+ {
+  "text": "PermitRootLogin 设为 yes 存在安全风险，建议设为 no",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 175
+ },
+ {
+  "text": "缺少 PermitRootLogin 配置，默认可能允许 root 登录",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 189
+ },
+ {
+  "text": "PasswordAuthentication 设为 yes，建议使用 SSH 密钥",
+  "file": "modules/config-management/services/configParser/analyzeOps.ts",
+  "line": 204
+ },
+ {
+  "text": "✅ ConfigRepairService 初始化完成",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 41
+ },
+ {
+  "text": "❌ ConfigRepairService 初始化失败:",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 43
+ },
+ {
+  "text": "Nginx 主配置",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 54
+ },
+ {
+  "text": "Nginx 主配置文件",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 60
+ },
+ {
+  "text": "Sysctl 配置",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 65
+ },
+ {
+  "text": "系统内核参数配置",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 71
+ },
+ {
+  "text": "SSHD 配置",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 76
+ },
+ {
+  "text": "SSH 服务配置",
+  "file": "modules/config-management/services/configRepair/configRepairService.ts",
+  "line": 82
+ },
+ {
+  "text": "通用配置",
+  "file": "modules/config-management/services/configRepair/detection.ts",
+  "line": 65
+ },
+ {
+  "text": "通用配置文件",
+  "file": "modules/config-management/services/configRepair/detection.ts",
+  "line": 69
+ },
+ {
+  "text": "无需要修复的问题",
+  "file": "modules/config-management/services/configRepair/repairStrategies.ts",
+  "line": 82
+ },
+ {
+  "text": "修复记录不存在",
+  "file": "modules/config-management/services/configRepair/repairStrategies.ts",
+  "line": 166
+ },
+ {
+  "text": "没有可用的备份",
+  "file": "modules/config-management/services/configRepair/repairStrategies.ts",
+  "line": 170
+ },
+ {
+  "text": "❌ 回滚失败:",
+  "file": "modules/config-management/services/configRepair/repairStrategies.ts",
+  "line": 182
+ },
+ {
+  "text": "❌ 保存修复记录失败:",
+  "file": "modules/config-management/services/configRepair/verification.ts",
+  "line": 107
+ },
+ {
+  "text": "指定的 Docker 端点不可用",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 20
+ },
+ {
+  "text": "Docker 端点不存在",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 32
+ },
+ {
+  "text": "Docker 服务不可用，请先配置 Docker 连接",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 43
+ },
+ {
+  "text": "本地 Docker socket 不可用",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 68
+ },
+ {
+  "text": "本地 Docker",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 105
+ },
+ {
+  "text": "名称和主机为必填项",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 124
+ },
+ {
+  "text": "缺少镜像名称",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 325
+ },
+ {
+  "text": "容器已启动",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 383
+ },
+ {
+  "text": "容器已停止",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 397
+ },
+ {
+  "text": "容器已重启",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 414
+ },
+ {
+  "text": "容器已连接到网络",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 643
+ },
+ {
+  "text": "容器已断开网络",
+  "file": "modules/containers/routes/containerRoutes.ts",
+  "line": 659
+ },
+ {
+  "text": "此 /api/v1/docker/* 路径已弃用，请改用 /api/v1/containers/*",
+  "file": "modules/containers/routes/dockerRoutes.ts",
+  "line": 14
+ },
+ {
+  "text": "Docker 服务不可用",
+  "file": "modules/containers/routes/dockerVolumeRoutes.ts",
+  "line": 34
+ },
+ {
+  "text": "缺少卷名称",
+  "file": "modules/containers/routes/dockerVolumeRoutes.ts",
+  "line": 57
+ },
+ {
+  "text": "镜像数据同步完成",
+  "file": "modules/containers/routes/imageRoutes.ts",
+  "line": 122
+ },
+ {
+  "text": "仓库不存在",
+  "file": "modules/containers/routes/registryRoutes.ts",
+  "line": 23
+ },
+ {
+  "text": "名称、类型、地址必填",
+  "file": "modules/containers/routes/registryRoutes.ts",
+  "line": 34
+ },
+ {
+  "text": "策略不存在",
+  "file": "modules/containers/routes/snapshotPolicyRoutes.ts",
+  "line": 24
+ },
+ {
+  "text": "Cron 表达式必填",
+  "file": "modules/containers/routes/snapshotPolicyRoutes.ts",
+  "line": 33
+ },
+ {
+  "text": "名称、平台ID、虚拟机ID、Cron表达式必填",
+  "file": "modules/containers/routes/snapshotPolicyRoutes.ts",
+  "line": 51
+ },
+ {
+  "text": "没有可用的虚拟化平台",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 20
+ },
+ {
+  "text": "name、hypervisorType、host 为必填项",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 51
+ },
+ {
+  "text": "平台已删除",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 73
+ },
+ {
+  "text": "无法获取统计数据",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 118
+ },
+ {
+  "text": "虚拟机已删除",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 303
+ },
+ {
+  "text": "虚拟机已开机",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 320
+ },
+ {
+  "text": "虚拟机已关机",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 335
+ },
+ {
+  "text": "虚拟机已重启",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 350
+ },
+ {
+  "text": "快照名称为必填项",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 411
+ },
+ {
+  "text": "快照已恢复",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 438
+ },
+ {
+  "text": "快照已删除",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 452
+ },
+ {
+  "text": "克隆名称为必填项",
+  "file": "modules/containers/routes/virtualMachineRoutes.ts",
+  "line": 492
+ },
+ {
+  "text": "❌ 获取审计日志失败:",
+  "file": "modules/containers/routes/vmManagement/auditRoutes.ts",
+  "line": 25
+ },
+ {
+  "text": "获取审计日志失败",
+  "file": "modules/containers/routes/vmManagement/auditRoutes.ts",
+  "line": 26
+ },
+ {
+  "text": "❌ 获取虚拟机状态失败:",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 20
+ },
+ {
+  "text": "获取虚拟机状态失败",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 21
+ },
+ {
+  "text": "❌ 获取主机列表失败:",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 31
+ },
+ {
+  "text": "获取主机列表失败",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 32
+ },
+ {
+  "text": "❌ 获取数据存储列表失败:",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 42
+ },
+ {
+  "text": "获取数据存储列表失败",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 43
+ },
+ {
+  "text": "❌ 获取网络列表失败:",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 53
+ },
+ {
+  "text": "获取网络列表失败",
+  "file": "modules/containers/routes/vmManagement/infrastructureRoutes.ts",
+  "line": 54
+ },
+ {
+  "text": "❌ 获取平台列表失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 22
+ },
+ {
+  "text": "获取平台列表失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 23
+ },
+ {
+  "text": "平台不存在",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 32
+ },
+ {
+  "text": "❌ 获取平台详情失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 36
+ },
+ {
+  "text": "获取平台详情失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 37
+ },
+ {
+  "text": "平台添加成功",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 63
+ },
+ {
+  "text": "❌ 添加平台失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 65
+ },
+ {
+  "text": "添加平台失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 66
+ },
+ {
+  "text": "平台更新成功",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 75
+ },
+ {
+  "text": "❌ 更新平台失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 77
+ },
+ {
+  "text": "更新平台失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 78
+ },
+ {
+  "text": "平台删除成功",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 86
+ },
+ {
+  "text": "❌ 删除平台失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 88
+ },
+ {
+  "text": "删除平台失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 89
+ },
+ {
+  "text": "❌ 测试平台连接失败:",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 99
+ },
+ {
+  "text": "测试平台连接失败",
+  "file": "modules/containers/routes/vmManagement/platformRoutes.ts",
+  "line": 100
+ },
+ {
+  "text": "❌ 获取快照列表失败:",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 25
+ },
+ {
+  "text": "获取快照列表失败",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 26
+ },
+ {
+  "text": "快照创建成功",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 44
+ },
+ {
+  "text": "❌ 创建快照失败:",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 46
+ },
+ {
+  "text": "创建快照失败",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 47
+ },
+ {
+  "text": "快照恢复成功",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 61
+ },
+ {
+  "text": "❌ 恢复快照失败:",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 63
+ },
+ {
+  "text": "恢复快照失败",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 64
+ },
+ {
+  "text": "快照删除成功",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 79
+ },
+ {
+  "text": "❌ 删除快照失败:",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 81
+ },
+ {
+  "text": "删除快照失败",
+  "file": "modules/containers/routes/vmManagement/snapshotRoutes.ts",
+  "line": 82
+ },
+ {
+  "text": "模板创建成功",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 35
+ },
+ {
+  "text": "❌ 创建模板失败:",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 37
+ },
+ {
+  "text": "创建模板失败",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 38
+ },
+ {
+  "text": "模板删除成功",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 49
+ },
+ {
+  "text": "❌ 删除模板失败:",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 51
+ },
+ {
+  "text": "删除模板失败",
+  "file": "modules/containers/routes/vmManagement/templateRoutes.ts",
+  "line": 52
+ },
+ {
+  "text": "❌ 获取虚拟机列表失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 22
+ },
+ {
+  "text": "获取虚拟机列表失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 23
+ },
+ {
+  "text": "虚拟机不存在",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 32
+ },
+ {
+  "text": "❌ 获取虚拟机详情失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 36
+ },
+ {
+  "text": "获取虚拟机详情失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 37
+ },
+ {
+  "text": "虚拟机创建成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 51
+ },
+ {
+  "text": "❌ 创建虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 53
+ },
+ {
+  "text": "创建虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 54
+ },
+ {
+  "text": "虚拟机克隆成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 70
+ },
+ {
+  "text": "❌ 克隆虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 72
+ },
+ {
+  "text": "克隆虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 73
+ },
+ {
+  "text": "虚拟机删除成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 85
+ },
+ {
+  "text": "❌ 删除虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 87
+ },
+ {
+  "text": "删除虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 88
+ },
+ {
+  "text": "虚拟机启动成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 100
+ },
+ {
+  "text": "❌ 启动虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 102
+ },
+ {
+  "text": "启动虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 103
+ },
+ {
+  "text": "虚拟机关闭成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 115
+ },
+ {
+  "text": "❌ 关闭虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 117
+ },
+ {
+  "text": "关闭虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 118
+ },
+ {
+  "text": "虚拟机重启成功",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 130
+ },
+ {
+  "text": "❌ 重启虚拟机失败:",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 132
+ },
+ {
+  "text": "重启虚拟机失败",
+  "file": "modules/containers/routes/vmManagement/vmRoutes.ts",
+  "line": 133
+ },
+ {
+  "text": "迁移任务不存在",
+  "file": "modules/containers/routes/vmMigrationRoutes.ts",
+  "line": 27
+ },
+ {
+  "text": "platformId, vmId, targetHost 必填",
+  "file": "modules/containers/routes/vmMigrationRoutes.ts",
+  "line": 35
+ },
+ {
+  "text": "无法取消该迁移任务",
+  "file": "modules/containers/routes/vmMigrationRoutes.ts",
+  "line": 44
+ },
+ {
+  "text": "已取消迁移",
+  "file": "modules/containers/routes/vmMigrationRoutes.ts",
+  "line": 45
+ },
+ {
+  "text": "端点不存在",
+  "file": "modules/containers/services/multiHostDockerService.ts",
+  "line": 148
+ },
+ {
+  "text": "Docker 端点未连接",
+  "file": "modules/containers/services/multiHostDockerService.ts",
+  "line": 197
+ },
+ {
+  "text": "Docker Hub 连接成功",
+  "file": "modules/containers/services/registryService.ts",
+  "line": 186
+ },
+ {
+  "text": "无法连接到通用仓库",
+  "file": "modules/containers/services/registryService.ts",
+  "line": 202
+ },
+ {
+  "text": "✅ VM管理服务初始化完成",
+  "file": "modules/containers/services/vmManagement/index.ts",
+  "line": 98
+ },
+ {
+  "text": "❌ VM管理服务初始化失败:",
+  "file": "modules/containers/services/vmManagement/index.ts",
+  "line": 100
+ },
+ {
+  "text": "⚠️ KVM 虚拟机正在运行，配置修改将在下次启动时生效",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 87
+ },
+ {
+  "text": "KVM 迁移需要指定目标主机",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 124
+ },
+ {
+  "text": "📋 获取 KVM 主机列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 143
+ },
+ {
+  "text": "❌ 获取 KVM 主机列表失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 171
+ },
+ {
+  "text": "📋 获取 KVM 数据存储列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 194
+ },
+ {
+  "text": "❌ 获取 KVM 数据存储列表失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 251
+ },
+ {
+  "text": "📋 获取 KVM 网络列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 274
+ },
+ {
+  "text": "❌ 获取 KVM 网络列表失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 305
+ },
+ {
+  "text": "📋 获取 KVM 资源池列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 316
+ },
+ {
+  "text": "❌ 获取 KVM 资源池列表失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/infrastructureOps.ts",
+  "line": 346
+ },
+ {
+  "text": "KVM 主机地址未配置",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/sshClient.ts",
+  "line": 69
+ },
+ {
+  "text": "❌ KVM/libvirt 连接失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/sshClient.ts",
+  "line": 76
+ },
+ {
+  "text": "KVM SSH 连接失败",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/sshClient.ts",
+  "line": 78
+ },
+ {
+  "text": "🔌 KVM/libvirt 已断开连接",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/sshClient.ts",
+  "line": 84
+ },
+ {
+  "text": "SSH 命令执行超时 (30s)",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/sshClient.ts",
+  "line": 116
+ },
+ {
+  "text": "📋 获取 KVM 虚拟机列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 13
+ },
+ {
+  "text": "❌ 获取 KVM 虚拟机列表失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 57
+ },
+ {
+  "text": "KVM 虚拟机创建需要预配置的镜像文件。请使用：",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 118
+ },
+ {
+  "text": " 或提供自定义 XML 定义文件。建议通过 virsh define 命令从 XML 定义创建虚拟机。",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 120
+ },
+ {
+  "text": "源虚拟机不存在",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 130
+ },
+ {
+  "text": "❌ 克隆 KVM 虚拟机失败:",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmLifecycle.ts",
+  "line": 162
+ },
+ {
+  "text": "📋 获取 KVM 模板列表",
+  "file": "modules/containers/services/vmManagement/kvmAdapter/vmSnapshot.ts",
+  "line": 122
+ }
+]

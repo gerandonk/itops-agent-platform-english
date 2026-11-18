@@ -1,0 +1,497 @@
+[
+ {
+  "text": "risk: /重启|删除|rm\\s|reboot|shutdown|format/i.test(rec) ?        :      ,",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 340
+ },
+ {
+  "text": "auto_executable: !/重启|删除|rm\\s|reboot|shutdown|format|delete/i.test(rec),",
+  "file": "modules/ai/pages/RootCauseAnalysis.tsx",
+  "line": 344
+ },
+ {
+  "text": "/* 工具栏 */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 163
+ },
+ {
+  "text": "/* 表格 */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 194
+ },
+ {
+  "text": "/* 新建迁移 Modal */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 263
+ },
+ {
+  "text": "/* 详情 Modal */",
+  "file": "modules/containers/pages/VMMigrations.tsx",
+  "line": 300
+ },
+ {
+  "text": "/* ── 顶部标题栏 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 65
+ },
+ {
+  "text": "/* ── 指标卡片行 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 97
+ },
+ {
+  "text": "/* ── 左侧面板 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 126
+ },
+ {
+  "text": "/* 搜索 */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 128
+ },
+ {
+  "text": "/* 机柜状态 */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 144
+ },
+ {
+  "text": "/* ── 场景控制按钮 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 169
+ },
+ {
+  "text": "/* ── 底部告警条 ── */",
+  "file": "modules/dc/components/DataRoom3D/DashboardOverlay.tsx",
+  "line": 185
+ },
+ {
+  "text": "const TGT_Y = FLOOR_OFFSET + RH / 2; // = 6.25，机柜中点 Y（RH 在文件顶部已声明）",
+  "file": "modules/dc/components/DataRoom3D/Scene.tsx",
+  "line": 227
+ },
+ {
+  "text": "const FLOOR_OFFSET = 3.5; // 抬高机柜底部，让地板在视野中相对下沉",
+  "file": "modules/dc/components/DataRoom3D/Scene.tsx",
+  "line": 447
+ },
+ {
+  "text": "/* 进度条 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 45
+ },
+ {
+  "text": "/* U 位列表 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 57
+ },
+ {
+  "text": "/* U 位标签 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 71
+ },
+ {
+  "text": "/* 设备信息 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 76
+ },
+ {
+  "text": "/* 资源占用 */",
+  "file": "modules/dc/components/DataRoom3D/SlotDetailPanel.tsx",
+  "line": 89
+ },
+ {
+  "text": "/* 导出区域 */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 19
+ },
+ {
+  "text": "/* 导入区域 */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 40
+ },
+ {
+  "text": "/* 导入 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/ExportImportTab.tsx",
+  "line": 50
+ },
+ {
+  "text": "/* 机柜热力图 */",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 98
+ },
+ {
+  "text": "/* 图例 */",
+  "file": "modules/dc/pages/DataCenterManage/OverviewTab.tsx",
+  "line": 157
+ },
+ {
+  "text": "/* 分配 U 位 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 16
+ },
+ {
+  "text": "/* 设备操作 Modal（下架/移位） */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 59
+ },
+ {
+  "text": "/* 移位 Modal */",
+  "file": "modules/dc/pages/DataCenterManage/SlotModals.tsx",
+  "line": 96
+ },
+ {
+  "text": "if (!roomForm.isFieldsTouched()) return; // 校验失败，antd 会自动提示",
+  "file": "modules/dc/pages/DataCenterManage/useDataCenter.ts",
+  "line": 226
+ },
+ {
+  "text": "/* 内存 */",
+  "file": "modules/kubernetes/pages/k8s/NodeList.tsx",
+  "line": 89
+ },
+ {
+  "text": "/* Pod 详情 Drawer */",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 165
+ },
+ {
+  "text": "/* Pod 日志 Drawer */",
+  "file": "modules/kubernetes/pages/k8s/PodList.tsx",
+  "line": 291
+ },
+ {
+  "text": "/* 状态卡片 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 145
+ },
+ {
+  "text": "/* 服务信息 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 198
+ },
+ {
+  "text": "/* 工具领域分布 + 外部服务器 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 212
+ },
+ {
+  "text": "/* 内置工具列表 */",
+  "file": "modules/mcp/pages/McpOverview.tsx",
+  "line": 249
+ },
+ {
+  "text": "/* 工具详情 */",
+  "file": "modules/mcp/pages/ToolBrowser.tsx",
+  "line": 222
+ },
+ {
+  "text": "/* 工具测试 */",
+  "file": "modules/mcp/pages/ToolBrowser.tsx",
+  "line": 251
+ },
+ {
+  "text": "/* 时间范围选择 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 68
+ },
+ {
+  "text": "/* 概览卡片 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 89
+ },
+ {
+  "text": "/* 巡检趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 138
+ },
+ {
+  "text": "/* 告警趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 162
+ },
+ {
+  "text": "/* 巡检成功率 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 186
+ },
+ {
+  "text": "/* 修复执行趋势 */",
+  "file": "modules/monitor/components/TrendCharts.tsx",
+  "line": 202
+ },
+ {
+  "text": "/* 标题 / 编辑 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 83
+ },
+ {
+  "text": "/* 快捷入口 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 134
+ },
+ {
+  "text": "/* 资源统计 + 时间 + 全屏 + 刷新 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenHeader.tsx",
+  "line": 148
+ },
+ {
+  "text": "/* 系统资源监控 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 146
+ },
+ {
+  "text": "/* 服务器选择下拉框 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 154
+ },
+ {
+  "text": "/* 4 张并排指标卡 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 188
+ },
+ {
+  "text": "/* 告警趋势 (24h) */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 234
+ },
+ {
+  "text": "/* 任务趋势 (24h) */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 249
+ },
+ {
+  "text": "/* 自动修复统计 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenLeftColumn.tsx",
+  "line": 264
+ },
+ {
+  "text": "/* 实时告警 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 62
+ },
+ {
+  "text": "/* Agent 调用统计 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 120
+ },
+ {
+  "text": "/* 任务状态分布 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenRightColumn.tsx",
+  "line": 179
+ },
+ {
+  "text": "/* 4 个 StatCard */",
+  "file": "modules/monitor/pages/big-screen/BigScreenStatCardRow.tsx",
+  "line": 26
+ },
+ {
+  "text": "/* 4 个 SLA mini-card */",
+  "file": "modules/monitor/pages/big-screen/BigScreenStatCardRow.tsx",
+  "line": 62
+ },
+ {
+  "text": "/* CPU + 内存趋势 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 28
+ },
+ {
+  "text": "/* 网络 + 磁盘趋势 */",
+  "file": "modules/monitor/pages/big-screen/BigScreenTrendCharts.tsx",
+  "line": 46
+ },
+ {
+  "text": "const RATE_CONTAINER_CPU = 0.05;    // ¥/核/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 46
+ },
+ {
+  "text": "const RATE_CONTAINER_MEM = 0.005;   // ¥/MB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 47
+ },
+ {
+  "text": "const RATE_VM_CPU = 0.10;           // ¥/核/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 48
+ },
+ {
+  "text": "const RATE_VM_MEM = 0.01;           // ¥/MB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 49
+ },
+ {
+  "text": "const RATE_VM_DISK = 0.0002;        // ¥/GB/小时",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 50
+ },
+ {
+  "text": "/* 费率说明 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 191
+ },
+ {
+  "text": "/* 优化建议列表 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 305
+ },
+ {
+  "text": "/* 汇总卡片 */",
+  "file": "modules/monitor/pages/CostAnalysis.tsx",
+  "line": 338
+ },
+ {
+  "text": "/* 左侧：6个统计卡片 */",
+  "file": "modules/monitor/pages/Dashboard.tsx",
+  "line": 273
+ },
+ {
+  "text": "/* 右侧：最新告警 */",
+  "file": "modules/monitor/pages/Dashboard.tsx",
+  "line": 301
+ },
+ {
+  "text": "/* 标题 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 96
+ },
+ {
+  "text": "/* 连接配置 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 105
+ },
+ {
+  "text": "/* PromQL 查询 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 195
+ },
+ {
+  "text": "/* 结果 */",
+  "file": "modules/monitor/pages/PrometheusQuery.tsx",
+  "line": 275
+ },
+ {
+  "text": "/* 系统信息 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 106
+ },
+ {
+  "text": "/* 告警区域 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 133
+ },
+ {
+  "text": "/* 接口列表 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 151
+ },
+ {
+  "text": "/* 底部 */",
+  "file": "modules/network/components/SnmpInspectionResult.tsx",
+  "line": 218
+ },
+ {
+  "text": "/* 列表 / 加载 / 空态 */",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 118
+ },
+ {
+  "text": "/* 模态框 */",
+  "file": "modules/network/pages/NetworkDevices.tsx",
+  "line": 217
+ },
+ {
+  "text": "refetchInterval: 3000, // 3 秒刷新",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 95
+ },
+ {
+  "text": "/* 扫描表单 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 188
+ },
+ {
+  "text": "/* 任务列表 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 268
+ },
+ {
+  "text": "/* 扫描结果 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 376
+ },
+ {
+  "text": "/* 批量导入 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 514
+ },
+ {
+  "text": "/* 导入对话框 */",
+  "file": "modules/network/pages/NetworkDiscovery.tsx",
+  "line": 534
+ },
+ {
+  "text": "/* ======================== Tab 1: 凭证管理 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 68
+ },
+ {
+  "text": "/* ======================== Tab 2: SNMP 查询 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 73
+ },
+ {
+  "text": "/* ======================== Tab 3: Trap 接收 ======================== */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 76
+ },
+ {
+  "text": "/* API 速查 */",
+  "file": "modules/network/pages/SNMP.tsx",
+  "line": 79
+ },
+ {
+  "text": "/* 新增表单 */",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 140
+ },
+ {
+  "text": "/* 凭证列表 */",
+  "file": "modules/network/pages/snmp/SnmpCredentialsTab.tsx",
+  "line": 286
+ },
+ {
+  "text": "/* 查询控制面板 */",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 49
+ },
+ {
+  "text": "/* 查询结果 */",
+  "file": "modules/network/pages/snmp/SnmpQueryTab.tsx",
+  "line": 98
+ },
+ {
+  "text": "/* 添加依赖模态框 */",
+  "file": "modules/network/pages/Topology.tsx",
+  "line": 216
+ },
+ {
+  "text": "暂无脚本，点击右上角               Start",
+  "file": "modules/scripts/pages/Scripts.tsx",
+  "line": 211
+ },
+ {
+  "text": "const [authToken, setAuthToken] = useState(  ); // 单独管理 token 输入",
+  "file": "modules/settings/pages/settings/ITopSyncSettings.tsx",
+  "line": 91
+ },
+ {
+  "text": "setAuthToken(  ); // 清空 token 输入框",
+  "file": "modules/settings/pages/settings/ITopSyncSettings.tsx",
+  "line": 150
+ },
+ {
+  "text": "暂无同步记录，点击             Start",
+  "file": "modules/settings/pages/settings/ITopSyncSettings.tsx",
+  "line": 473
+ }
+]

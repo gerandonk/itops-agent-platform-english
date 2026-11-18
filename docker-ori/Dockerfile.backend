@@ -1,0 +1,149 @@
+# ITOps Agent Platform - Backend
+# Multi-stage build optimized for production and public registry distribution
+# Build: docker build -f docker/Dockerfile.backend -t itops-backend:latest .
+
+# ============================================================
+# Build-time arguments (overridable via --build-arg)
+# ============================================================
+# APT mirror for China users; pass empty string to keep Debian defaults
+#   docker build --build-arg APT_MIRROR= -f docker/Dockerfile.backend .
+# Enterprise/intranet environments can set a proxy or use a local mirror:
+#   docker build --build-arg HTTP_PROXY=http://proxy:8080 --build-arg HTTPS_PROXY=http://proxy:8080 \
+#                --build-arg APT_MIRROR= -f docker/Dockerfile.backend .
+ARG APT_MIRROR=mirrors.aliyun.com
+ARG HTTP_PROXY=
+ARG HTTPS_PROXY=
+ARG NO_PROXY=localhost,127.0.0.1
+
+# ============================================================
+# Stage 1: Builder
+# ============================================================
+FROM node:20.19.5-slim AS builder
+
+ARG APT_MIRROR
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ARG NO_PROXY
+
+ENV http_proxy=${HTTP_PROXY} \
+    https_proxy=${HTTPS_PROXY} \
+    no_proxy=${NO_PROXY}
+
+# Use Aliyun Debian mirror for faster apt access in China.
+# Set APT_MIRROR="" to keep official Debian sources (required in enterprise
+# intranets where mirrors.aliyun.com is unreachable but a proxy is available).
+RUN if [ -n "$APT_MIRROR" ]; then \
+      sed -i "s|http://deb.debian.org/debian|http://${APT_MIRROR}/debian|g; s|http://security.debian.org/debian-security|http://${APT_MIRROR}/debian-security|g" /etc/apt/sources.list.d/debian.sources; \
+    fi
+
+WORKDIR /app
+
+# Install build dependencies for native modules (better-sqlite3)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy package files first for better layer caching
+COPY backend/package.json backend/package-lock.json ./
+
+# Install all dependencies (including devDependencies for tsx) and build native modules
+# Use npmmirror for China; override with --build-arg NPM_REGISTRY= for other mirrors/proxies
+ARG NPM_REGISTRY=https://registry.npmmirror.com
+RUN if [ -n "$NPM_REGISTRY" ]; then npm config set registry "$NPM_REGISTRY"; fi && \
+    npm ci
+
+# Copy source code
+COPY backend/ ./
+
+# ============================================================
+# Stage 2: Production
+# ============================================================
+FROM node:20.19.5-slim
+
+ARG APT_MIRROR
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ARG NO_PROXY
+
+ENV http_proxy=${HTTP_PROXY} \
+    https_proxy=${HTTPS_PROXY} \
+    no_proxy=${NO_PROXY}
+
+# Use Aliyun Debian mirror for faster apt access in China.
+# Set APT_MIRROR="" to keep official Debian sources (for proxy/intranet builds).
+RUN if [ -n "$APT_MIRROR" ]; then \
+      sed -i "s|http://deb.debian.org/debian|http://${APT_MIRROR}/debian|g; s|http://security.debian.org/debian-security|http://${APT_MIRROR}/debian-security|g" /etc/apt/sources.list.d/debian.sources; \
+    fi
+
+# Labels for public registry (replace with your actual info)
+LABEL maintainer="谭策 <huawei_network@foxmail.com>" \
+    org.opencontainers.image.title="ITOps Agent Platform Backend" \
+    org.opencontainers.image.description="Enterprise IT Operations Multi-Agent Automation Platform - Backend API Server" \
+    org.opencontainers.image.source="https://github.com/qinshihu/itops-agent-platform" \
+    org.opencontainers.image.licenses="MPL-2.0" \
+    org.opencontainers.image.vendor="谭策" \
+    org.opencontainers.image.url="https://www.zjzwfw.cloud/ITOpsAgentinfo"
+
+# Set working directory
+WORKDIR /app
+
+# Environment variables
+ENV NODE_ENV=production \
+    PORT=3001 \
+    HOST=0.0.0.0
+
+# Clear build-time proxy settings so they don't leak into the runtime container
+ENV http_proxy= \
+    https_proxy= \
+    no_proxy=
+
+# Install runtime dependencies (SQLite library, Python for dbskiter, gosu for privilege dropping)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libsqlite3-0 \
+    python3 \
+    python3-pip \
+    gosu \
+    && rm -rf /var/lib/apt/lists/*
+
+# 安装 dbskiter（数据库运维 Agent 依赖），构建时失败不阻塞镜像构建
+# Debian 12 (bookworm) 使用 PEP 668 限制系统级 pip 安装，需要 --break-system-packages
+RUN python3 -m pip install --upgrade pip --break-system-packages || true
+RUN python3 -m pip install dbskiter --break-system-packages || true
+
+# Copy node_modules from builder (already compiled with native modules)
+COPY --from=builder /app/node_modules ./node_modules
+
+# Copy source code from builder
+COPY --from=builder /app/src ./src
+
+# Copy package.json for reference
+COPY backend/package.json ./
+
+# Copy entrypoint script
+COPY docker/docker-entrypoint-backend.sh /usr/local/bin/docker-entrypoint.sh
+RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh && chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Create data directory for SQLite database
+RUN mkdir -p /app/data
+
+# Create non-root user
+RUN addgroup --system --gid 1001 appgroup && \
+    adduser --system --uid 1001 --ingroup appgroup appuser
+
+# Set proper ownership
+RUN chown -R appuser:appgroup /app
+
+# Expose API port
+EXPOSE 3001
+
+# Health check endpoint
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3001/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
+
+# Use entrypoint script for proper volume permission handling
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+# Start the application using tsx (TypeScript runtime, no pre-compilation needed)
+CMD ["npx", "tsx", "src/app.ts"]
