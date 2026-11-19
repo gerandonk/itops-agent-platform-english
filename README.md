@@ -1,201 +1,145 @@
-[English](README.en.md) | [中文](README.md) | [繁體中文](README.tw.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
+[English](README.md) | [中文](README.zh.md) | [繁體中文](README.tw.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
 
 ---
 
-**项目正基于 4A 架构框架与 DDD 领域驱动设计进行全面重构。本次重构旨在彻底解耦业务逻辑与技术实现，重塑架构合理性，在提升代码可维护性与规范性的同时，赋予系统更强的弹性扩展能力。**
+**The project is undergoing a full refactor onto a 4A architecture framework and Domain-Driven Design (DDD). The goal is to fully decouple business logic from technical implementation, restore architectural soundness, and make the system far more elastic and extensible while improving maintainability and consistency. The scope is massive and the replacement is happening incrementally. Recently pushed code and Docker images are transitional — dependencies are unverified and unstable, and they are not recommended for direct use. Regular users should wait for a stable release; developers who can read and modify source can build on it directly, and fixes for temporary defects are very welcome.**
 
-项目正基于 4A 架构框架与 DDD 领域驱动设计进行全面重构。本次重构旨在彻底解耦业务逻辑与技术实现，重塑架构合理性，在提升代码可维护性与规范性的同时，赋予系统更强的弹性扩展能力。重构工作量巨大，目前处于渐进式替换阶段。近期推送的代码和构建的 Docker 镜像为过渡态，未经验证依赖混乱，不建议直接拉取使用。建议普通用户等待稳定版本发布；具备源码调试修改能力的开发者可先行基于源码修改二开，并欢迎协助修复临时性缺陷。
-
-```
-# Linux/Mac 一键脚本部署（推荐）
-curl -sL https://gitee.com/IT_Oline/itops-agent-platform/raw/main/deploy.sh -o deploy.sh && chmod +x deploy.sh && ./deploy.sh
-
+```bash
+# Deploy with Docker Compose (recommended)
+docker compose up -d --build
 ```
 
 ---
 
-**重要许可证变更通知（2026-05-27）**
+**Important license change notice (2026-05-27)**
 
-本项目2026 年 5 月 27 日之前提交的所有代码，依旧沿用 MIT 许可证，可按照 MIT 协议规则自由使用、修改、商用分发。
-自 2026 年 5 月 27 日起，本项目所有新增、修改的代码，统一采用 Mozilla Public License 2.0（MPL-2.0） 开源授权，使用者必须严格遵循 MPL-2.0 官方协议约束：
-若对外分发包含本项目修改代码的二进制包、镜像、部署程序，必须开源所有修改过的源文件，同时完整保留原项目版权、许可证声明，不得抹除出处冒充自研产品；
-允许企业内网私有化部署、内部二次改造自用；允许基于本项目提供部署调试、技术咨询、定制开发等人力类付费服务；
-严禁仅对本项目源码简单封装后，闭源打包作为独立商业化软件、镜像产品对外售卖；严禁直接基于本项目搭建同类型竞品 SaaS 平台进行商业化运营。
-本项目将永久开源，归属全体开源技术社区，不会被任何商业公司独占买断。我们鼓励合规前提下的技术交流、二次迭代与行业落地，共同维护良性开源生态。
-
----
-
-<br />
-
-<h1 align="center">⚡ ITOps Agent Platform</h1>
-<p align="center">
-  <strong>AI 多 Agent 协作的企业级运维自动化平台</strong>
-  <br/>
-  国产开源 · PagerDuty + Rundeck + Portainer + vCenter 替代方案
-  <br/>
-  <em>一个平台，搞定告警 → 诊断 → 修复 → 审批 → 验证全闭环</em>
-</p>
-
-<p align="center">
-  <a href="https://github.com/qinshihu/itops-agent-platform/actions/workflows/ci.yml"><img src="https://github.com/qinshihu/itops-agent-platform/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://github.com/qinshihu/itops-agent-platform/releases/latest"><img src="https://img.shields.io/github/v/release/qinshihu/itops-agent-platform?sort=semver" alt="Release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-blue.svg" alt="License"></a>
-  <a href="https://github.com/qinshihu/itops-agent-platform"><img src="https://img.shields.io/github/stars/qinshihu/itops-agent-platform?style=social" alt="Stars"></a>
-  <a href="https://github.com/qinshihu/itops-agent-platform/issues"><img src="https://img.shields.io/github/issues/qinshihu/itops-agent-platform" alt="Issues"></a>
-  <br/>
-  <a href="https://gitee.com/IT_Oline/itops-agent-platform"><img src="https://img.shields.io/badge/Gitee-仓库-C71D23?logo=gitee" alt="Gitee"></a>
-  <a href="https://gitcode.com/gcw_IM7aAihp/itops-agent-platform"><img src="https://img.shields.io/badge/GitCode-仓库-FF6600?logo=git" alt="GitCode"></a>
-  <br/>
-  <img src="https://img.shields.io/badge/Agents-12-blueviolet" alt="12 Agents">
-  <img src="https://img.shields.io/badge/API_Routes-68-success" alt="68 API Routes">
-  <img src="https://img.shields.io/badge/Services-72-blue" alt="72 Services">
-  <img src="https://img.shields.io/badge/Frontend_Pages-63-orange" alt="63 Pages">
-  <img src="https://img.shields.io/badge/Workflows-10-teal" alt="10 Workflows">
-  <br/>
-  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react" alt="React 18">
-  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Node.js-22-339933?logo=nodedotjs" alt="Node.js">
-  <img src="https://img.shields.io/badge/Docker-🐳-2496ED?logo=docker" alt="Docker">
-  <br/>
-<a href="https://www.star-history.com/?repos=qinshihu%2Fitops-agent-platform&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=qinshihu/itops-agent-platform&type=date&theme=dark&legend=top-left&sealed_token=rQRuWRuFdnghn-fItLfTVzIeeiesXsTLZCgxyEHMLGH9rOu_cYVM3wNb9IDr8sccAXuQX04teT-Gc5htFu3P_BJYe5sKScWSyTsABQmGoKH0XrMcktAicA" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=qinshihu/itops-agent-platform&type=date&legend=top-left&sealed_token=rQRuWRuFdnghn-fItLfTVzIeeiesXsTLZCgxyEHMLGH9rOu_cYVM3wNb9IDr8sccAXuQX04teT-Gc5htFu3P_BJYe5sKScWSyTsABQmGoKH0XrMcktAicA" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=qinshihu/itops-agent-platform&type=date&legend=top-left&sealed_token=rQRuWRuFdnghn-fItLfTVzIeeiesXsTLZCgxyEHMLGH9rOu_cYVM3wNb9IDr8sccAXuQX04teT-Gc5htFu3P_BJYe5sKScWSyTsABQmGoKH0XrMcktAicA" />
- </picture>
-</a>
-</p>
-
-🎮 [在线演示](https://agentdemo-0mwug01t6.maozi.io/) &emsp;|&emsp; 📝[项目愿景与社区共建](项目愿景与社区共建.md) &emsp;|&emsp; 📘[AI 协作入口](AGENTS.md) &emsp;|&emsp; [AI 工具配置](ai-tool-configs/) &emsp;
-
-📝 [教学书籍](https://aiopsdoc-0mwug01t6.maozi.io/book/) &emsp;|&emsp; 📖[项目文档](https://aiopsdoc-0mwug01t6.maozi.io/) &emsp;|&emsp; ✍️[作者的话](https://mp.weixin.qq.com/s/NDqYrfqR0RZEvSESyVD2hg) &emsp; 🌐 项目官网：<https://www.zjzwfw.cloud/ITOpsAgentinfo>
-
-📦 代码仓库：[GitHub](https://github.com/qinshihu/itops-agent-platform)  |  [Gitee](https://gitee.com/IT_Oline/itops-agent-platform)  |  [GitCode](https://gitcode.com/gcw_IM7aAihp/itops-agent-platform)
+All code committed before 2026-05-27 remains under the MIT license and may be freely used, modified, and redistributed commercially under MIT terms.
+From 2026-05-27 onward, all new and modified code is licensed under Mozilla Public License 2.0 (MPL-2.0). Users must strictly follow the official MPL-2.0 terms:
+If you distribute binaries, images, or deployment packages containing modified project code, you must open-source every modified source file and retain the original copyright and license notices — removing attribution and passing it off as your own product is prohibited;
+Private on-premise deployment and internal customization for own use are allowed; paid services such as deployment, debugging, consulting, and custom development based on this project are allowed;
+Simply wrapping this project's source and shipping it closed-source as a standalone commercial product, image, or competing SaaS platform is prohibited.
+This project will remain open source forever and belongs to the open-source community; it will not be acquired or exclusively bought out by any commercial company. Technical exchange and compliant collaboration are encouraged.
 
 ---
 
-> 🛠 **[ai-tool-configs/](ai-tool-configs/)**：其他 AI 工具（Cursor / Windsurf / Aider / Continue / Claude Code / GitHub Copilot）的入口配置**派生模板**，**非源真相**。源真相是根目录 `AGENTS.md` + `.trae/`——使用这些工具前先读 `AGENTS.md` 再按本机环境复制并调整对应文件，不要直接 `cp` 使用默认模板。
+## 🎯 Who is it for?
+
+| Role                  | Typical pain point                                   | How the platform solves it                                          |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------- |
+| **Ops engineer**      | Woken at 3 a.m. by alerts, manually SSH to debug     | AI auto-diagnoses root cause → approval push → one-tap fix on phone |
+| **SRE / DevOps**      | Switching between tools, information silos           | Alert + diagnosis + execution + approval in one closed loop         |
+| **IT manager / CTO**  | Ops depends on people, incident response on luck     | Automated patrols + self-healing policies free people from toil     |
+| **SMB IT**            | Can't afford PagerDuty / Rundeck licenses            | Feature parity, open source, free, data never leaves your network   |
+| **Security / compliance** | Remediation actions lack approval and audit      | HITL approval + full-chain audit + command safety filtering         |
 
 ---
 
-## 🎯 谁在用 / 谁适合用？
+## Why does this project exist?
 
-| 角色              | 典型痛点                            | 本平台如何解决                              |
-| ----------------- | ----------------------------------- | ------------------------------------------- |
-| **运维工程师**    | 半夜被告警吵醒，手动 SSH 排查       | AI 自动诊断根因 → 推送审批 → 手机一键修复   |
-| **SRE / DevOps**  | 多套工具来回切换，信息孤岛          | 告警+诊断+执行+审批一站式闭环               |
-| **IT 主管 / CTO** | 运维全靠人，故障响应靠运气          | 自动化巡检 + 自愈策略，把人从重复劳动中解放 |
-| **中小企业 IT**   | 买不起 PagerDuty/Rundeck 等商业软件 | 功能对标，开源免费，数据不出域              |
-| **安全合规团队**  | 修复操作无审批、无审计              | HITL 人工审批 + 全链路审计 + 命令安全过滤   |
-
----
-
-## 为什么需要这个项目？
-
-凌晨 3 点，服务器 CPU 飙到 99%。传统流程是：
+3 a.m. Server CPU at 99%. The traditional flow:
 
 ```
-告警通知 → 被吵醒 → 登录 VPN → SSH 上去 → 敲命令排查 → 翻文档 → 修复 → 写报告 → 睡觉
+Alert notification → woken up → VPN login → SSH in → run commands → search docs → fix → write report → sleep
 ```
 
-**整个过程 30-60 分钟，而你本可以继续睡觉。**
+**30–60 minutes, when you could have kept sleeping.**
 
-ITOps Agent Platform 把这个流程变成：
+ITOps Agent Platform turns that into:
 
 ```
-告警触发 → AI 自动诊断根因 → 生成修复命令 → 推送手机审批 → 一键执行 → 自动验证 → 生成报告
+Alert triggered → AI diagnoses root cause → generates fix commands → pushes to phone for approval → one-tap execute → auto-verify → report generated
 ```
 
-**全程 3 分钟，你只需要在手机上点一下"同意"。**
+**3 minutes total, and all you do is tap "approve" on your phone.**
 
 ---
 
-## 🚀 运维的终极形态：从自动化到自主化
+## 🚀 The endgame of operations: from automation to autonomy
 
-ITOps Agent Platform 不只是一个运维工具，它瞄准的是 **IT 运维的终极演进方向** — AI 全自主运维。
+ITOps Agent Platform is not just an ops tool — it targets **the ultimate direction of IT operations**: fully autonomous AI operations.
 
 ```
-手工运维  →  脚本自动化  →  平台化  →  AI 辅助  →  🤖 自主运维（本项目）
- 2000s        2010s        2020s       2024+         现在 & 未来
+Manual ops  →  Script automation  →  Platformization  →  AI assistance  →  🤖 Autonomous ops (this project)
+  2000s           2010s                2020s               2024+              now & future
 ```
 
-| 演进阶段        | 特征                                                  | 人的角色   |
-| --------------- | ----------------------------------------------------- | ---------- |
-| 手工运维        | 敲命令、登服务器                                      | 执行者     |
-| 脚本自动化      | Shell / Python 半自动化                               | 脚本维护者 |
-| 平台化          | Ansible / Prometheus / Terraform                      | 平台操作者 |
-| AI 辅助         | Copilot 建议、告警分析                                | 决策者     |
-| **AI 自主运维** | **AI Agent 全闭环：感知 → 诊断 → 决策 → 执行 → 验证** | **监督者** |
+| Stage                 | Characteristics                                            | Human role        |
+| --------------------- | ---------------------------------------------------------- | ----------------- |
+| Manual ops            | Typing commands, logging into servers                      | Executor          |
+| Script automation     | Shell / Python semi-automation                             | Script maintainer |
+| Platformization       | Ansible / Prometheus / Terraform                           | Platform operator |
+| AI assistance         | Copilot suggestions, alert analysis                        | Decision maker    |
+| **AI autonomous ops** | **Full agent loop: sense → diagnose → decide → act → verify** | **Supervisor** |
 
-### 为什么说这是终极形态？
+### Why is this the endgame?
 
-| 维度     | 传统方式                               | ITOps Agent Platform                      |
-| -------- | -------------------------------------- | ----------------------------------------- |
-| 故障响应 | 人工：发现 → 定位 → 修复（30-60 分钟） | AI：自动感知 → 诊断 → 修复（< 3 分钟）    |
-| 运维规模 | 1 人管 20-50 台                        | **1 人管 500+ 节点，AI 承担 80%+ 工作量** |
-| 知识沉淀 | 老员工脑中、散落文档                   | **知识库 + RAG，AI 持续学习，永不流失**   |
-| 决策质量 | 依赖个人经验，不稳定                   | **多 Agent 协作推理，完整推理链可审计**   |
-| 边际成本 | 加机器 ≈ 加人                          | **加机器 ≈ 加 Agent，边际成本趋近于零**   |
+| Dimension       | Traditional approach                          | ITOps Agent Platform                          |
+| --------------- | --------------------------------------------- | --------------------------------------------- |
+| Incident response | Human: detect → locate → fix (30–60 min)   | AI: auto-sense → diagnose → fix (< 3 min)     |
+| Ops scale       | 1 person for 20–50 machines                   | **1 person for 500+ nodes, AI carries 80%+** |
+| Knowledge retention | In seniors' heads, scattered docs         | **Knowledge base + RAG, never lost**          |
+| Decision quality | Depends on individual experience, unstable   | **Multi-agent reasoning, auditable chain**    |
+| Marginal cost   | More machines ≈ more people                   | **More machines ≈ more agents, near zero**    |
 
-> **这不是一个运维工具，这是运维的下一代操作系统。** 当 AI Agent 能够自主完成告警接入、根因诊断、修复决策、命令执行、结果验证的全链路闭环，运维就不再是"人盯着系统"，而是"人设计策略，AI 执行策略"。
+> **This is not an ops tool; it is the next-generation operating system for operations.** When agents can autonomously cover alert ingestion, root-cause diagnosis, fix decisions, command execution, and result verification, operations stops being "humans watching systems" and becomes "humans design policy, AI executes it."
 
-### 行业趋势：AI 自主运维是不可逆的方向
+### Industry trend: autonomous AI operations is irreversible
 
-- **Gartner** 将 AIOps 列为 IT 运维战略技术趋势，预测 AI 驱动的自主运维将成为企业标配
-- **CNCF** 云原生 + AI 融合是下一代基础设施的核心方向
-- 运维人力成本逐年攀升，**AI Agent 是唯一能在不增加人力的情况下支撑业务规模 10 倍增长的方案**
-- **开源 + AI Agent 协作** 是打破商业软件垄断、实现技术普惠的关键路径
+- **Gartner** lists AIOps as a strategic technology trend, predicting AI-driven autonomous operations will become standard
+- **CNCF**: cloud-native + AI fusion is the core direction for next-gen infrastructure
+- Ops labor cost keeps rising — **AI agents are the only way to support 10x business growth without 10x headcount**
+- **Open source + multi-agent collaboration** is the key path to breaking commercial software monopolies
 
-### 我们的定位
+### Our positioning
 
-**ITOps Agent Platform 是目前开源的 AIOps 项目中，唯一将「告警 → 诊断 → 决策 → 执行 → 验证」全链路 AI 自主闭环工程化落地的平台。**
+**ITOps Agent Platform is the only open-source AIOps project that has engineered the full "alert → diagnose → decide → act → verify" autonomous loop.**
 
-我们的长期目标是：让 80% 的日常运维工作完全由 AI Agent 自主完成，人类运维工程师专注于架构设计、策略制定和创新性工作。**这不仅是一个开源项目，这是运维工程师解放运动的起点。**
+Long-term goal: let AI agents handle 80% of routine operations, freeing engineers for architecture, policy, and creative work. **This is not just an open-source project; it is the starting point of an operations liberation movement.**
 
 ---
 
-## ⏰ 为什么是现在？
+## ⏰ Why now?
 
-三个趋势在同一时间点交汇，让 AI 自主运维从"概念"变成了"必然"：
+Three trends converge at the same moment, turning autonomous AI operations from "concept" into "inevitability":
 
-| 趋势                       | 说明                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------- |
-| **LLM 能力跨越阈值**       | GPT-4o / DeepSeek / 豆包 / 通义千问等模型已具备生产级推理能力，能胜任故障诊断、命令生成等严肃场景 |
-| **运维人力成本不可逆上升** | 企业 IT 规模 10 倍增长，运维团队无法同比例扩张，唯一的出路是 AI 承担 80%+ 日常工作量              |
-| **开源生态足够成熟**       | Docker / K8s / React / TypeScript / Node.js 技术栈已足够支撑企业级产品，开源不再是"简陋"的代名词  |
+| Trend                          | Explanation                                                                                                                   |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| **LLM capability crossed the threshold** | GPT-4o / DeepSeek / Doubao / Qwen now have production-grade reasoning, capable of fault diagnosis and command generation |
+| **Ops labor cost rises irreversibly**    | 10x IT growth can't be matched by 10x headcount; AI must absorb 80%+ of routine work                                    |
+| **Open-source ecosystem is mature**      | Docker / K8s / React / TypeScript / Node.js can support enterprise products; open source is no longer "crude"           |
 
-> **2026 年是 AI 自主运维的元年。** 当 LLM 能力 + 运维痛点 + 开源生态三者交汇，ITOps Agent Platform 站在了这个历史节点上。错过这个窗口，就是错过一个时代。
+> **2026 is year one of autonomous AI operations.** With LLM capability + ops pain + mature ecosystem converging, ITOps Agent Platform sits at this historical node. Missing this window means missing an era.
 
 ---
 
-### 一个 $400 亿的市场，正在被 AI 重写规则
+### A $40B market is having its rules rewritten by AI
 
-全球 IT 运维市场规模 **$400 亿（2025 年）**，预计 2030 年突破 $700 亿。每一次范式转移都会诞生新的王者：
+Global IT operations market: **$40B (2025)**, projected to exceed $70B by 2030. Every paradigm shift creates a new king:
 
-- 云计算转移 → AWS（$2 万亿市值）
-- 云监控转移 → Datadog（$400 亿市值）
-- 开发工具转移 → GitLab（$140 亿 IPO）
-- **运维自动化转移 → ？**
+- Cloud shift → AWS ($2T market cap)
+- Cloud monitoring shift → Datadog ($40B market cap)
+- Dev tooling shift → GitLab ($14B IPO)
+- **Ops automation shift → ?**
 
-> **问题不是"会不会发生"，而是"谁会成为这个赛道的 GitLab"。** 开源 AIOps 领导者位置目前是空缺的 — 这是一个 Winner-takes-most 的市场。
+> **The question isn't "will it happen" but "who becomes the GitLab of this track".** The open-source AIOps leadership slot is vacant — a winner-takes-most market.
 
-| 当年 GitLab                | 今天 ITOps Agent Platform                |
-| -------------------------- | ---------------------------------------- |
-| 开源替代 GitHub            | 开源替代 PagerDuty + Rundeck + Portainer |
-| 初期只有基础 CI/CD         | 12 个 AI Agent + 68 个 API 路由          |
-| 没人相信代码托管值 $100 亿 | **没人相信运维平台值 $100 亿**           |
+| GitLab back then                     | ITOps Agent Platform today                    |
+| ------------------------------------ | --------------------------------------------- |
+| Open-source alternative to GitHub    | Open-source alternative to PagerDuty + Rundeck + Portainer |
+| Only basic CI/CD at first            | 12 AI agents + 68 API routes                  |
+| Nobody believed code hosting was worth $10B | **Nobody believes an ops platform is worth $10B** |
 
-> ITOps Agent Platform 站在一个更大赛道的更早阶段。
+> ITOps Agent Platform stands at an earlier stage of a much larger track.
 
-### 三个不可逆的顺风
+### Three irreversible tailwinds
 
-| 顺风                 | 为什么不可逆                                                                                           |
-| -------------------- | ------------------------------------------------------------------------------------------------------ |
-| **AI 能力爆发**      | LLM 从"玩具"到"生产级"仅 2 年，下一步是"自主决策"                                                      |
-| **运维人力断层**     | 70 后运维专家退休潮 + 年轻人不愿 7×24 值班 = AI 是唯一出路                                             |
-| **开源吃掉企业软件** | GitLab、Confluent、Grafana、HashiCorp — 开源 IPO 已发生 5 次，每一次都证明开源模式比闭源更具商业爆发力 |
+| Tailwind                       | Why irreversible                                                                                              |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| **AI capability explosion**    | LLMs went from "toy" to "production grade" in 2 years; next is "autonomous decision-making"                    |
+| **Ops talent gap**             | Retirement wave of veteran engineers + youth unwilling to do 24/7 on-call = AI is the only way out             |
+| **Open source eats enterprise software** | GitLab, Confluent, Grafana, HashiCorp — 5 open-source IPOs, each proving open beats closed commercially |
 
-> **这不是选不选的问题，是选谁的问题。** 当上述三条曲线交汇，AI 自主运维是数学上的必然。
+> **It's not whether to choose, but whom to choose.** When those three curves converge, autonomous AI operations is mathematical inevitability.
 
 ---
 
@@ -207,215 +151,214 @@ ITOps Agent Platform 不只是一个运维工具，它瞄准的是 **IT 运维�
 
 ---
 
-## 5 分钟体验完整闭环
+## Experience the full loop in 5 minutes
 
 ```bash
-# 1. 一行命令部署（需要 Docker 环境）
-curl -sL https://gitee.com/IT_Oline/itops-agent-platform/raw/main/deploy.sh -o deploy.sh && chmod +x deploy.sh && ./deploy.sh
+# 1. Deploy (Docker required)
+docker compose up -d --build
 
-# 2. 打开浏览器 http://localhost:8080，默认账号 admin/admin
-# 3. 添加一台服务器 → 系统自动发现宿主机上的容器和资源
-# 4. 配置告警 Webhook → 触发一条测试告警 → 观察 AI 自动分析
-# 5. 点击"自动修复" → 手机审批 → 完成！
+# 2. Open http://localhost:8080, default account admin/admin
+# 3. Add a server → the system auto-discovers containers and resources on the host
+# 4. Configure an alert webhook → fire a test alert → watch AI analyze it
+# 5. Click "auto-remediate" → approve on your phone → done!
 ```
 
-**5 分钟，从零到完整的 AI 运维闭环体验。**
+**Five minutes from zero to a complete AI operations loop.**
 
 ---
 
-## 这个平台到底能做什么？
+## What can this platform actually do?
 
-### 路径1️⃣   智能告警 → AI 诊断 → 自动修复
+### Path 1️⃣  Smart alerts → AI diagnosis → auto-remediation
 
 ```
-Prometheus / Zabbix 告警 → Webhook 接收
-  → AI 根因分析（自然语言诊断报告）
-    → 自动生成修复命令 + 风险评估
-      → 企微/钉钉推送审批 → 手机一键通过
-        → SSH 自动执行修复 → 验证结果 → 生成报告
+Prometheus / Zabbix alert → webhook received
+  → AI root-cause analysis (natural-language diagnosis report)
+    → auto-generated fix commands + risk assessment
+      → WeCom / DingTalk approval push → one-tap approve on phone
+        → SSH auto-executes fix → verifies result → generates report
 ```
 
 <details>
-<summary><b>展开查看这个流程解决了什么痛点</b></summary>
+<summary><b>Expand: what pain points this flow solves</b></summary>
 
-| 传统方式                | 本平台                             |
-| ----------------------- | ---------------------------------- |
-| 告警风暴，半夜被吵醒    | AI 自动降噪去重，同类告警聚合      |
-| 手动 ssh 排查，靠经验猜 | AI 分析日志 + 指标，给自然语言诊断 |
-| 翻文档找修复步骤        | 自动生成结构化修复命令（JSON）     |
-| 修复没审批，出事没人担  | 人工审批节点，移动端一键审批       |
-| 担心修复出错无法回滚    | 自动验证结果，失败告警             |
+| Traditional way                     | This platform                              |
+| ----------------------------------- | ------------------------------------------ |
+| Alert storms, woken at night        | AI deduplicates and aggregates alerts      |
+| Manual SSH debugging, guesswork     | AI analyzes logs + metrics, gives NL diagnosis |
+| Digging docs for fix steps          | Auto-generated structured fix commands (JSON) |
+| Fixes without approval, no accountability | Human approval node, one-tap mobile approval |
+| Fear of failed fixes with no rollback | Auto-verification, alert on failure       |
 
 </details>
 
-### 路径2️⃣   可视化工作流 → 定时自动巡检
+### Path 2️⃣  Visual workflows → scheduled auto-patrols
 
 ```
-拖拽编排工作流（Agent + 审批 + 条件分支）
-  → 配置 Cron 定时触发
-    → 自动执行多台服务器巡检
-      → 生成合规检查报告
-        → 异常自动创建告警 → 进入路径1️⃣
+Drag-and-drop workflow (agents + approvals + conditional branches)
+  → configure Cron trigger
+    → auto-run patrols across many servers
+      → generate compliance reports
+        → anomalies raise alerts → enter Path 1️⃣
 ```
 
-### 路径3️⃣   容器与虚拟化统一管理
+### Path 3️⃣  Unified container and virtualization management
 
 ```
-一键添加 Docker 主机 / VMware vCenter / Proxmox VE / KVM 节点
-  → 自动发现所有容器和虚拟机
-    → 实时监控 CPU / 内存 / 网络（WebSocket 推送）
-      → 容器日志流式查看
-        → Docker Compose 可视化编排
-          → K8s 集群导入与管理（kubeconfig 导入 + 集群状态监控）
-            → 镜像仓库集成（Harbor / ACR / Docker Hub）
+Add a Docker host / VMware vCenter / Proxmox VE / KVM node in one step
+  → auto-discover all containers and VMs
+    → real-time CPU / memory / network monitoring (WebSocket push)
+      → streaming container logs
+        → visual Docker Compose orchestration
+          → K8s cluster import and management (kubeconfig import + cluster status)
+            → image registry integration (Harbor / ACR / Docker Hub)
 ```
 
-### 路径4️⃣   数据中心与网络设施管理
+### Path 4️⃣  Data center and network infrastructure management
 
 ```
-网段规划 → IP 子网与 VLAN 管理 → IP 地址自动分配 / 预留 / 回收
-  → 数据中心机房建模（机柜 / PDU / 设备生命周期 / 供电管理）
-    → 机房 3D 数字孪生监控（WebGL 实时渲染）
-      → 网络拓扑自动发现（SNMP / LLDP / ARP）
+Subnet planning → IP subnet and VLAN management → automatic IP allocation / reservation / reclamation
+  → data center modeling (racks / PDUs / device lifecycle / power management)
+    → 3D digital-twin room monitoring (WebGL real-time rendering)
+      → automatic network topology discovery (SNMP / LLDP / ARP)
 ```
 
 ---
 
-## 和同类开源项目有什么不同？
+## How is it different from similar open-source projects?
 
-| 能力                     | ITOps Agent | GrafanaOnCall | Portainer | UptimeKuma | Rundeck | Coolify |
-| ------------------------ | :---------: | :-----------: | :-------: | :--------: | :-----: | :-----: |
-| 告警接入 + 降噪          |     ✅      |      ✅       |    ❌     |     ✅     |   ❌    |   ❌    |
-| **AI 多 Agent 协作**     |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| **告警 → 自动修复闭环**  |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| **人工审批（HITL）**     |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| Docker/VM 可视化管理     |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ✅    |
-| K8s 集群管理             |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ❌    |
-| IP 子网 / VLAN 管理      |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| 数据中心机房建模         |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| 机房 3D 数字孪生         |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| 工作流拖拽编排           |     ✅      |      ✅       |    ❌     |     ❌     |   ✅    |   ❌    |
-| Web SSH 终端             |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ❌    |
-| 知识库 + RAG             |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| 定时巡检 + 自动报告      |     ✅      |      ❌       |    ❌     |     ❌     |   ✅    |   ❌    |
-| 成本分析 + 自动伸缩      |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| **本地 AI · 数据不出域** |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
-| **国产化（信创）友好**   |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| Capability                        | ITOps Agent | GrafanaOnCall | Portainer | UptimeKuma | Rundeck | Coolify |
+| --------------------------------- | :---------: | :-----------: | :-------: | :--------: | :-----: | :-----: |
+| Alert ingestion + noise reduction |     ✅      |      ✅       |    ❌     |     ✅     |   ❌    |   ❌    |
+| **AI multi-agent collaboration**  |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| **Alert → auto-remediation loop** |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| **Human approval (HITL)**         |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| Docker/VM visual management       |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ✅    |
+| K8s cluster management            |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ❌    |
+| IP subnet / VLAN management       |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| Data center room modeling         |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| 3D room digital twin              |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| Drag-and-drop workflow editor     |     ✅      |      ✅       |    ❌     |     ❌     |   ✅    |   ❌    |
+| Web SSH terminal                  |     ✅      |      ❌       |    ✅     |     ❌     |   ❌    |   ❌    |
+| Knowledge base + RAG              |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| Scheduled patrols + auto reports  |     ✅      |      ❌       |    ❌     |     ❌     |   ✅    |   ❌    |
+| Cost analysis + autoscaling       |     ✅      |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
+| **Local AI · data never leaves**  |   **✅**    |      ❌       |    ❌     |     ❌     |   ❌    |   ❌    |
 
-> **一句话总结**：现有开源工具各管一段 — OnCall 管告警、Portainer 管容器、Rundeck 管执行。ITOps Agent 把这一切打通，加上 **AI 多 Agent 协作大脑**，实现真正的「告警进来，修复完成」。
+> **In one line**: existing open-source tools each cover a slice — OnCall for alerts, Portainer for containers, Rundeck for execution. ITOps Agent connects them all and adds an **AI multi-agent brain**, delivering true "alert in, fix done".
 
-### vs 商业方案
+### vs commercial offerings
 
-开源免费不是唯一优势。与付费商业产品正面比较：
+Free and open source is not the only advantage. Head-to-head with paid products:
 
-| 能力               | PagerDuty + Rundeck | ServiceNow ITOM  | **ITOps Agent（开源免费）** |
-| ------------------ | :-----------------: | :--------------: | :-------------------------: |
-| 年费用（100 节点） |      $50,000+       |    $100,000+     |           **$0**            |
-| AI 自主诊断        |    ❌ 仅告警路由    |  ⚠️ 需额外模块   |  **✅ 多 Agent 协作推理**   |
-| 自动修复闭环       |    ❌ 需人工执行    |  ⚠️ 需定制开发   |      **✅ 内置全链路**      |
-| 人工审批（HITL）   |         ❌          |    ⚠️ 需定制     |  **✅ 企微/钉钉原生推送**   |
-| 容器/VM/K8s 管理   |         ❌          |        ❌        |      **✅ 内置可视化**      |
-| 数据不出域         |  ❌ SaaS 强制上云   | ❌ SaaS 强制上云 |    **✅ 100% 本地部署**     |
-| 开源可控           |     ❌ 闭源锁定     |   ❌ 闭源锁定    |     **✅ MPL-2.0 开源**     |
-| 社区驱动           |         ❌          |        ❌        |           **✅**            |
+| Capability                 | PagerDuty + Rundeck | ServiceNow ITOM  | **ITOps Agent (free)**      |
+| -------------------------- | :-----------------: | :--------------: | :-------------------------: |
+| Annual cost (100 nodes)    |      $50,000+       |    $100,000+     |           **$0**            |
+| Autonomous AI diagnosis    |    ❌ alert routing only | ⚠️ extra module | **✅ multi-agent reasoning** |
+| Auto-remediation loop      |    ❌ manual        | ⚠️ custom dev    |      **✅ built-in**        |
+| Human approval (HITL)      |         ❌          |    ⚠️ custom     |  **✅ native push**         |
+| Container/VM/K8s management|         ❌          |        ❌        |      **✅ built-in**        |
+| Data stays on-premise      |  ❌ SaaS-only       | ❌ SaaS-only     |    **✅ 100% local**        |
+| Open source, controllable  |     ❌ closed       |   ❌ closed      |     **✅ MPL-2.0**          |
+| Community driven           |         ❌          |        ❌        |           **✅**            |
 
-> **一个开源项目，做到三个商业产品（PagerDuty + Rundeck + Portainer）合起来都做不到的事。** 而且是免费的。
+> **One open-source project doing what three commercial products (PagerDuty + Rundeck + Portainer) combined cannot.** And it's free.
 
 ---
 
-## 架构一览
+## Architecture overview
 
 ```mermaid
 graph TB
-    %% ===== 客户端层 =====
-    subgraph Client["🖥️ 客户端层"]
-        Browser["🌐 浏览器<br/>React 18 + Vite + Ant Design<br/>474 个 .tsx 组件 · 23 个 DDD 模块"]
+    %% ===== Client layer =====
+    subgraph Client["🖥️ Client layer"]
+        Browser["🌐 Browser<br/>React 18 + Vite + Ant Design<br/>474 .tsx components · 23 DDD modules"]
     end
 
-    %% ===== 边缘层 =====
-    subgraph Edge["🚪 边缘层"]
-        Nginx["Nginx 反向代理<br/>静态资源 · Gzip · HTTPS 终止"]
+    %% ===== Edge layer =====
+    subgraph Edge["🚪 Edge layer"]
+        Nginx["Nginx reverse proxy<br/>static assets · gzip · HTTPS termination"]
     end
 
-    %% ===== 技术架构层 =====
-    subgraph Tech["4️⃣ 技术架构层（Technology · core/）"]
-        DI["DI 容器<br/>serviceContainer.ts<br/>拓扑排序初始化"]
-        MW["中间件<br/>auth(JWT+RBAC) · errorHandler<br/>rateLimiter · validation(Zod) · trace"]
-        WS["WebSocket 服务<br/>Socket.IO 4.7<br/>实时推送 · VNC 代理"]
+    %% ===== Technology layer =====
+    subgraph Tech["4️⃣ Technology layer (core/)"]
+        DI["DI container<br/>serviceContainer.ts<br/>topological init"]
+        MW["Middleware<br/>auth(JWT+RBAC) · errorHandler<br/>rateLimiter · validation(Zod) · trace"]
+        WS["WebSocket service<br/>Socket.IO 4.7<br/>realtime push · VNC proxy"]
     end
 
-    %% ===== 应用架构层 =====
-    subgraph App["2️⃣ 应用架构层（Application · modules/）"]
+    %% ===== Application layer =====
+    subgraph App["2️⃣ Application layer (modules/)"]
         direction TB
 
-        subgraph AIMcp["🤖 AI & 工具协议域"]
-            AiMod["ai/<br/>多 Agent · RCA · 知识库<br/>agentToolRegistry 24 工具"]
-            McpMod["mcp/<br/>MCP 协议 · 6 层 securityGate<br/>toolRegistry 13+ 平台 + 外部 Server"]
-            Bridge["agentMcpAdapter<br/>桥接器（mcp ↔ Agent）"]
+        subgraph AIMcp["🤖 AI & tool protocol domain"]
+            AiMod["ai/<br/>multi-agent · RCA · knowledge base<br/>agentToolRegistry 24 tools"]
+            McpMod["mcp/<br/>MCP protocol · 6-layer securityGate<br/>toolRegistry 13+ platform + external server"]
+            Bridge["agentMcpAdapter<br/>bridge (mcp ↔ agent)"]
         end
 
-        subgraph AlertMon["🚨 告警与监控域"]
-            AlertsMod["alerts/<br/>接收→过滤→关联→降噪→通知<br/>AlertProcessor 状态机"]
-            MonMod["monitor/<br/>Dashboard · 大屏 · 报告 · 成本<br/>Prometheus · Zabbix"]
-            LinkMod["linkage/<br/>联动统计 · 巡检中心<br/>(仅后端)"]
+        subgraph AlertMon["🚨 Alerting & monitoring domain"]
+            AlertsMod["alerts/<br/>ingest→filter→correlate→dedupe→notify<br/>AlertProcessor state machine"]
+            MonMod["monitor/<br/>dashboard · big screen · reports · cost<br/>Prometheus · Zabbix"]
+            LinkMod["linkage/<br/>linkage stats · patrol center<br/>(backend only)"]
         end
 
-        subgraph InfraDom["🛠️ 基础设施域"]
-            ServersMod["servers/<br/>SSH · 远程桌面 · 终端"]
-            ContainersMod["containers/<br/>Docker 多主机 · VMware/Proxmox/KVM<br/>三适配器 + 快照/迁移"]
+        subgraph InfraDom["🛠️ Infrastructure domain"]
+            ServersMod["servers/<br/>SSH · remote desktop · terminal"]
+            ContainersMod["containers/<br/>Docker multi-host · VMware/Proxmox/KVM<br/>three adapters + snapshot/migration"]
             K8sMod["kubernetes/<br/>K8sContext · Pod · Node"]
-            NetworkMod["network/<br/>17 厂商适配器 · SNMP · 拓扑 · VNC"]
-            DcMod["dc/<br/>机房 · 机柜 · 设备 · 电力<br/>3D 可视化 · 5s 实时推送"]
+            NetworkMod["network/<br/>17 vendor adapters · SNMP · topology · VNC"]
+            DcMod["dc/<br/>room · rack · device · power<br/>3D visualization · 5s realtime push"]
         end
 
-        subgraph AutoDom["⚙️ 运维自动化域"]
-            WfMod["workflow/<br/>WorkflowEngine 状态机 · 任务调度"]
-            AutoMod["auto/<br/>修复策略 · 自动伸缩<br/>container/vm/k8s_deployment"]
-            CfgMod["config-management/<br/>配置模板 · 配置修复 · Compose"]
-            ChgMod["change-management/<br/>变更审批 · ApprovalTicket"]
-            ScriptsMod["scripts/<br/>脚本 · 终端 · AI 命令"]
+        subgraph AutoDom["⚙️ Ops automation domain"]
+            WfMod["workflow/<br/>WorkflowEngine state machine · task scheduling"]
+            AutoMod["auto/<br/>remediation policy · autoscaling<br/>container/vm/k8s_deployment"]
+            CfgMod["config-management/<br/>config templates · config repair · Compose"]
+            ChgMod["change-management/<br/>change approval · ApprovalTicket"]
+            ScriptsMod["scripts/<br/>scripts · terminal · AI commands"]
         end
 
-        subgraph SysDom["🔐 系统支撑域"]
-            AuthMod["auth/<br/>JWT + RBAC + 登录限流"]
-            SettingsMod["settings/<br/>系统设置 · AI Provider 配置<br/>取代 .env"]
-            BackupMod["backup/<br/>自动备份 · 加密 · 手动恢复"]
-            AuditMod["audit/<br/>审计日志 · P1-6 新增"]
-            DBMod["database/<br/>数据库连接管理"]
-            NotifyMod["notification/<br/>6 通道 · 模板 · 发送"]
-            ImpMod["import-export/<br/>CSV/JSON 导入导出"]
-            TLMod["tool-links/<br/>工具箱 CRUD"]
+        subgraph SysDom["🔐 System support domain"]
+            AuthMod["auth/<br/>JWT + RBAC + login rate limit"]
+            SettingsMod["settings/<br/>system settings · AI provider config<br/>replaces .env"]
+            BackupMod["backup/<br/>auto backup · encryption · manual restore"]
+            AuditMod["audit/<br/>audit log"]
+            DBMod["database/<br/>DB connection management"]
+            NotifyMod["notification/<br/>6 channels · templates · delivery"]
+            ImpMod["import-export/<br/>CSV/JSON import export"]
+            TLMod["tool-links/<br/>toolbox CRUD"]
         end
     end
 
-    %% ===== 业务架构层（横切规则） =====
-    subgraph Biz["1️⃣ 业务架构层（Business · 状态机/规则/权限）"]
-        BizRules["工作流状态机 · 告警处理规则<br/>审批权限规则 · 聚合根保护<br/>(不可在 routes/repository 中硬编码)"]
+    %% ===== Business layer =====
+    subgraph Biz["1️⃣ Business layer (state machines/rules/permissions)"]
+        BizRules["workflow state machine · alert rules<br/>approval permissions · aggregate-root protection<br/>(never hardcoded in routes/repository)"]
     end
 
-    %% ===== 数据架构层 =====
-    subgraph Data["3️⃣ 数据架构层（Data · repositories/）"]
-        SQLite[("SQLite 数据库<br/>better-sqlite3 + WAL 模式<br/>AES-256 加密 · 60 个 migration<br/>31 顶层 repo + 90 子目录")]
+    %% ===== Data layer =====
+    subgraph Data["3️⃣ Data layer (repositories/)"]
+        SQLite[("SQLite<br/>better-sqlite3 + WAL mode<br/>AES-256 encryption · 60 migrations<br/>31 top-level repos + 90 subdirs")]
     end
 
-    %% ===== 外部集成层 =====
-    subgraph Ext["🌍 外部集成层"]
-        LLM["🤖 LLM 模型池<br/>豆包 · DeepSeek · 通义千问<br/>OpenAI · 智谱 · 本地模型<br/>(providerAdapters 函数式抽象)"]
-        SSH["🖥️ SSH 远程服务器<br/>ssh2 · shell-quote"]
+    %% ===== External integrations =====
+    subgraph Ext["🌍 External integration layer"]
+        LLM["🤖 LLM model pool<br/>Doubao · DeepSeek · Qwen<br/>OpenAI · Zhipu · local models<br/>(providerAdapters functional abstraction)"]
+        SSH["🖥️ SSH servers<br/>ssh2 · shell-quote"]
         Docker["🐳 Docker Engine API<br/>dockerode"]
         VMware["💻 VMware vSphere / KVM"]
-        Prometheus["📊 Prometheus / Zabbix / Grafana<br/>告警 Webhook"]
+        Prometheus["📊 Prometheus / Zabbix / Grafana<br/>alert webhooks"]
         K8sExt["☸️ Kubernetes API"]
-        SnmpExt["📡 SNMP / NetFlow 设备<br/>17 厂商适配器 · net-snmp"]
-        Notify["📬 通知渠道<br/>企业微信 · 飞书 · 钉钉<br/>Telegram · Email · Webhook"]
-        McpExt["🔌 外部 MCP Server<br/>SSE / stdio Transport"]
+        SnmpExt["📡 SNMP / NetFlow devices<br/>17 vendor adapters · net-snmp"]
+        Notify["📬 Notification channels<br/>WeCom · Feishu · DingTalk<br/>Telegram · Email · Webhook"]
+        McpExt["🔌 External MCP servers<br/>SSE / stdio transport"]
     end
 
-    %% ===== 连线 =====
+    %% ===== Edges =====
     Browser --> Nginx
     Nginx --> App
-    Browser <-->|"WebSocket 实时<br/>告警 · VNC · dc:status"| WS
-    WS -.注入 DI.-> DI
+    Browser <-->|"WebSocket realtime<br/>alerts · VNC · dc:status"| WS
+    WS -.inject into DI.-> DI
 
     App --> Biz
     App --> Data
@@ -447,225 +390,209 @@ graph TB
     class SQLite data
 ```
 
-> 📐 [查看完整架构图 →](./docs/ARCHITECTURE_DIAGRAM.md)
+> 📐 [Full architecture diagram →](./docs/ARCHITECTURE_DIAGRAM.md)
 
 ---
 
-| 壁垒                  | 说明                                                                  |
-| --------------------- | --------------------------------------------------------------------- |
-| **12 Agent 协作调度** | 不是单个 AI API 调用，是多 Agent 分工 + 协作 + 仲裁的复杂分布式系统   |
-| **全链路状态机**      | 告警 → 诊断 → 决策 → 审批 → 执行 → 验证，7 节点状态流转已工程化打磨   |
-| **命令安全引擎**      | 7 类危险命令策略 + 角色权限矩阵，确保 AI 生成的命令在生产环境安全执行 |
-| **多模型降级链**      | 主模型故障自动切换备用模型，保证 AI 服务高可用，不因单点故障中断      |
-| **32 版本数据库迁移** | 经历 32 次 schema 迭代稳定演进，工程成熟度远超 Demo 级别项目          |
+| Moat                        | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| **12-agent orchestration**  | Not a single AI API call, but a distributed system of agent roles, collaboration, and arbitration |
+| **Full-chain state machine** | Alert → diagnose → decide → approve → execute → verify, a 7-node flow hardened in production |
+| **Command safety engine**   | 7 dangerous-command policy classes + role permission matrix, keeping AI-generated commands safe |
+| **Multi-model fallback chain** | Automatic failover to backup models, so AI service survives single point failure |
+| **60 database migrations**  | Schema evolved through dozens of iterations — engineering maturity well beyond demo projects |
 
-### 规模化经济学：开源模式的商业爆发力
+### Scaling economics: why open source wins
 
-| 指标         |          传统运维 SaaS          |                  ITOps Agent 开源模式                  |
-| ------------ | :-----------------------------: | :----------------------------------------------------: |
-| 获客成本     | 销售驱动，单个企业客户 $10,000+ |          **≈ $0（社区驱动 + 开发者自传播）**           |
-| 边际服务成本 |        随用户数线性增长         |               **趋近于零（用户自托管）**               |
-| 网络效应     |               弱                |       **强（Agent 越多 → 平台越强 → 社区越大）**       |
-| 生态锁定     |         合同到期可迁移          |    **知识库 + Agent 市场 + 工作流模板（深度绑定）**    |
-| 商业化弹性   |           只能卖订阅            | **企业版 / 托管云 / 技术支持 / Agent 市场 / 培训认证** |
+| Metric               | Traditional ops SaaS                | ITOps Agent open-source model                        |
+| -------------------- | :---------------------------------: | :--------------------------------------------------: |
+| Customer acquisition | Sales-driven, $10,000+ per customer | **≈ $0 (community + developer word of mouth)**       |
+| Marginal cost        | Grows linearly with users           | **Near zero (self-hosted)**                          |
+| Network effects      | Weak                                | **Strong (more agents → stronger platform → bigger community)** |
+| Ecosystem lock-in    | Migratable when contract ends       | **Knowledge base + agent marketplace + workflow templates** |
+| Commercial flexibility | Subscriptions only                | **Enterprise edition / managed cloud / support / marketplace / training** |
 
-> 开源模式的核心优势在于获客效率与规模化能力，已被业界主流开源项目验证。这为项目的长期可持续发展提供了坚实基础。
+> The core advantage of open source is acquisition efficiency and scalability, already proven by mainstream projects. It provides a solid foundation for long-term sustainability.
 
-## 🗺️ 未来路线图
+## 🗺️ Roadmap
 
-| 阶段                    | 核心目标                                                 |
-| ----------------------- | -------------------------------------------------------- |
-| **v3.x 工程化**（当前） | 多主机容器/VM/K8s 统一管理，告警 → 修复全链路闭环        |
-| **v4.x 智能化**         | 多 Agent 自主协商决策、跨系统关联分析、AI 自学习策略优化 |
-| **v5.x 自治化**         | 零人工干预自主运维、AI 驱动的容量规划与成本优化          |
-| **v6.x 生态化**         | Agent 市场（社区共享 Agent）、多集群联邦、运维数字孪生   |
+| Phase                       | Core goal                                                        |
+| --------------------------- | ---------------------------------------------------------------- |
+| **v3.x engineering** (now)  | Unified multi-host container/VM/K8s management, alert → fix loop |
+| **v4.x intelligence**       | Multi-agent autonomous negotiation, cross-system correlation, self-learning strategies |
+| **v5.x autonomy**           | Zero-touch operations, AI-driven capacity and cost planning      |
+| **v6.x ecosystem**          | Agent marketplace, multi-cluster federation, ops digital twin    |
 
-> **路线图不只是一个时间表，它是运维行业对未来的承诺。** 项目会持续迭代，每一步都朝着"AI 全自主运维"的终极目标迈进。
-
----
-
-## 核心特性
-
-### 🤖 AI 智能运维
-
-- **12 个预设 Agent**：告警处理、故障诊断、日志分析、系统巡检、变更执行、文档生成、合规检查、命令执行、自动巡检、命令生成专家、网络巡检专家、数据库运维
-- **AI 修复闭环**：告警 → AI 分析 → 修复命令生成 → 审批 → 执行 → 验证
-- **根因分析**：AI 驱动告警分析，自然语言诊断报告，完整推理链
-- **AI Copilot**：自然语言运维助手，自动感知系统状态
-- **知识库 + RAG**：21 条预设知识，语义检索注入 LLM 上下文
-
-### 🔧 可视化管理
-
-- **工作流编辑器**：拖拽编排，串行/并行/条件分支，10 个预设模板
-- **Web SSH 终端**：xterm.js 交互式终端，窗口自适应，会话管理
-- **容器管理**：多主机 Docker 可视化（启停/日志/监控/Compose 编排）
-- **虚拟机管理**：VMware vSphere / Proxmox VE / KVM 多平台，快照管理，实时迁移
-- **K8s 管理**：kubeconfig 导入集群，Pod / Deployment / Service / Node 全生命周期
-- **网段管理**：IP 子网 / VLAN 规划，自动生成 IP 地址池，分配 / 预留 / 回收，批量操作
-- **数据中心管理**：机房机柜建模，设备生命周期追踪，PDU/UPS 供电管理
-- **机房 3D 监控**：Three.js WebGL 数字孪生，实时设备状态可视化
-- **大屏仪表盘**：全屏 NOC 监控中心
-
-### 🏢 企业级能力
-
-- **HITL 审批**：工作流人工审批节点，企微/钉钉推送，移动端审批
-- **告警降噪**：智能去重 + 抑制 + 关联分析
-- **自动伸缩**：CPU/内存指标驱动，冷却窗口，伸缩历史
-- **成本分析**：容器/VM 成本估算 + 优化建议
-- **定时任务**：Cron 表达式，自动执行指定工作流
-- **报告系统**：自动生成 Markdown 报告
-
-### 🔒 安全与合规
-
-- **AES-256-GCM 加密**：服务器密码、SSH 密钥银行级加密
-- **JWT 双令牌认证**：Access Token (24h) + Refresh Token (7d)，自动刷新
-- **SSH 命令安全过滤**：7 类危险命令策略（rm -rf / mkfs / iptables -F 等），按角色拦截
-- **登录保护**：5 次失败锁定 30 分钟，强制密码复杂度
-- **审计日志**：全操作可追溯
-- **非 root 运行**：Docker 容器最小权限原则
-- **本地 AI**：支持 Ollama / LM Studio / vLLM，数据不出域
+> **A roadmap is not just a schedule; it is a commitment to the future of operations.** The project keeps iterating toward fully autonomous AI operations.
 
 ---
 
-## 支持的 AI 模型
+## Core features
 
-通过统一的 AI 模型池管理，支持主备降级链，每个提供商独立熔断器。
+### 🤖 AI-driven operations
 
-| 类型         | 提供商/模型                        | 接入方式    | 推荐场景             |
-| ------------ | ---------------------------------- | ----------- | -------------------- |
-| **国内云**   | 火山引擎 · 豆包 (Doubao)           | 原生 API    | 国内推荐，稳定快速   |
-| **国内云**   | 阿里云 · 通义千问 (Qwen)           | OpenAI 兼容 | 企业级应用           |
-| **国内云**   | DeepSeek                           | OpenAI 兼容 | 代码生成、推理       |
-| **国内云**   | 智谱 AI (GLM-4)                    | OpenAI 兼容 | 中文理解优秀         |
-| **国内云**   | Moonshot · Kimi                    | OpenAI 兼容 | 长文本处理           |
-| **国内云**   | 百度 · 文心一言                    | OpenAI 兼容 | 国内企业             |
-| **国内云**   | 零一万物 (Yi) / 百川 (Baichuan)    | OpenAI 兼容 | 开源模型             |
-| **国际云**   | OpenAI (GPT-4o) / Anthropic Claude | 原生 API    | 外网环境             |
-| **本地部署** | Ollama / LM Studio / vLLM          | OpenAI 兼容 | **数据 100% 不出域** |
+- **12 preset agents**: alert handling, fault diagnosis, log analysis, system patrol, change execution, doc generation, compliance check, command execution, auto patrol, command generation expert, network patrol expert, database ops
+- **AI remediation loop**: alert → AI analysis → fix command generation → approval → execution → verification
+- **Root cause analysis**: AI-driven alert analysis with natural-language diagnosis reports and full reasoning chains
+- **AI Copilot**: natural-language ops assistant with automatic system-state awareness
+- **Knowledge base + RAG**: 21 preset entries, semantic retrieval injected into LLM context
 
-> ✅ 模型池统一管理   ✅ 主备降级链   ✅ 独立熔断器   ✅ 拖拽排序   ✅ 连通性测试
+### 🔧 Visual management
+
+- **Workflow editor**: drag-and-drop, serial/parallel/conditional branches, 10 preset templates
+- **Web SSH terminal**: xterm.js interactive terminal, auto-resizing, session management
+- **Container management**: multi-host Docker visualization (start/stop/logs/monitoring/Compose)
+- **VM management**: VMware vSphere / Proxmox VE / KVM, snapshots, live migration
+- **K8s management**: import clusters via kubeconfig, full Pod/Deployment/Service/Node lifecycle
+- **Subnet management**: IP subnet / VLAN planning, automatic IP pools, allocate/reserve/release, bulk operations
+- **Data center management**: room and rack modeling, device lifecycle tracking, PDU/UPS power management
+- **3D room monitoring**: Three.js WebGL digital twin, realtime device status
+- **Big-screen dashboard**: full-screen NOC monitoring center
+
+### 🏢 Enterprise capabilities
+
+- **HITL approval**: human approval nodes in workflows, WeCom/DingTalk push, mobile approval
+- **Alert noise reduction**: smart deduplication + inhibition + correlation
+- **Autoscaling**: CPU/memory driven, cooldown windows, scaling history
+- **Cost analysis**: container/VM cost estimation + optimization suggestions
+- **Scheduled tasks**: Cron expressions that run workflows automatically
+- **Report system**: auto-generated Markdown reports
+
+### 🔒 Security and compliance
+
+- **AES-256-GCM encryption**: bank-grade encryption for server passwords and SSH keys
+- **JWT dual-token auth**: access token (24h) + refresh token (7d) with auto refresh
+- **SSH command safety filter**: 7 dangerous-command policy classes (rm -rf / mkfs / iptables -F …), blocked per role
+- **Login protection**: lockout for 30 min after 5 failures, enforced password complexity
+- **Audit log**: every operation traceable
+- **Non-root runtime**: least-privilege Docker containers
+- **Local AI**: Ollama / LM Studio / vLLM support, data never leaves your network
 
 ---
 
-## 快速开始
+## Supported AI models
 
-### 方式一：一键脚本部署（推荐）
+Managed through a unified model pool with primary/backup fallback chains and an independent circuit breaker per provider.
 
-```bash
-# Linux/Mac
-curl -sL https://gitee.com/IT_Oline/itops-agent-platform/raw/main/deploy.sh -o deploy.sh && chmod +x deploy.sh && ./deploy.sh
+| Type            | Provider/model                        | Integration  | Recommended for            |
+| --------------- | ------------------------------------- | ------------ | -------------------------- |
+| **China cloud** | Volcano Engine · Doubao               | native API   | Stable and fast in China   |
+| **China cloud** | Alibaba Cloud · Qwen                  | OpenAI-compatible | Enterprise workloads  |
+| **China cloud** | DeepSeek                              | OpenAI-compatible | Code generation, reasoning |
+| **China cloud** | Zhipu AI (GLM-4)                      | OpenAI-compatible | Strong Chinese understanding |
+| **China cloud** | Moonshot · Kimi                       | OpenAI-compatible | Long-context processing |
+| **China cloud** | Baidu · ERNIE                         | OpenAI-compatible | Chinese enterprises    |
+| **China cloud** | 01.AI (Yi) / Baichuan                 | OpenAI-compatible | Open models            |
+| **Global cloud** | OpenAI (GPT-4o) / Anthropic Claude   | native API   | Networks outside China     |
+| **Self-hosted** | Ollama / LM Studio / vLLM             | OpenAI-compatible | **data 100% on-premise** |
 
-# Windows PowerShell
-.\deploy.ps1
-```
+> ✅ Unified model pool   ✅ Fallback chains   ✅ Independent circuit breakers   ✅ Drag-and-drop ordering   ✅ Connectivity tests
 
-### 方式二：Docker Compose
+---
+
+## Quick start
+
+### Option 1: Docker Compose
 
 ```bash
 docker compose up -d --build
-# 前端: http://localhost:8080
-# 健康检查: http://localhost:3001/health
+# Frontend: http://localhost:8080
+# Health check: http://localhost:3001/health
 ```
 
-### 方式三：本地开发（热重载）
+### Option 2: Local development (hot reload)
 
 ```bash
-# Docker 本地开发环境
-cd local-dev
-# Windows: .\start-dev.bat
-# Linux/Mac: ./start-dev.sh
-
-# 或传统方式
 npm run dev
-# 前端: http://localhost:3000
-# 后端: http://localhost:3001
+# Frontend: http://localhost:3000
+# Backend: http://localhost:3001
 ```
 
-**默认管理员**: `admin` / `admin`（首次登录强制修改密码）
+**Default admin**: `admin` / `admin` (password change is enforced on first login)
 
 ---
 
-## 技术栈
+## Tech stack
 
-| 层           | 技术                                            |
-| ------------ | ----------------------------------------------- |
-| 前端         | React 18 + TypeScript + Vite 5 + Tailwind CSS 3 |
-| 状态管理     | Zustand + React Query                           |
-| 工作流编辑器 | @xyflow/react                                   |
-| 后端         | Node.js + Express 4 + TypeScript                |
-| 数据库       | SQLite (better-sqlite3, WAL 模式)               |
-| 实时通信     | Socket.io 4                                     |
-| 远程连接     | SSH2                                            |
-| 容器操作     | Dockerode                                       |
-| 部署         | Docker + Docker Compose + Nginx                 |
+| Layer              | Technology                                      |
+| ------------------ | ----------------------------------------------- |
+| Frontend           | React 18 + TypeScript + Vite 5 + Tailwind CSS 3 |
+| State management   | Zustand + React Query                           |
+| Workflow editor    | @xyflow/react                                   |
+| Backend            | Node.js + Express 4 + TypeScript                |
+| Database           | SQLite (better-sqlite3, WAL mode)               |
+| Realtime           | Socket.io 4                                     |
+| Remote connections | SSH2                                            |
+| Container ops      | Dockerode                                       |
+| Deployment         | Docker + Docker Compose + Nginx                 |
 
 ---
 
-## 项目结构
+## Project structure
 
 ```
 ├── backend/src/
-│   ├── app.ts                    # Express 入口
-│   ├── routes/                   # 68 个 API 路由模块
-│   ├── services/                 # 72 个业务服务
-│   ├── models/                   # 数据库 + 迁移（32 版本）
-│   ├── presets/                  # 预设数据（Agent / 工作流 / 知识库等）
-│   ├── middleware/               # 6 个中间件（auth / rateLimiter / validation 等）
-│   ├── websocket/                # Socket.io 实时通信
-│   └── utils/                    # 工具函数
+│   ├── app.ts                    # Express entry
+│   ├── routes/                   # 68 API route modules
+│   ├── services/                 # 72 business services
+│   ├── models/                   # database + migrations
+│   ├── presets/                  # preset data (agents / workflows / knowledge)
+│   ├── middleware/               # 6 middlewares (auth / rateLimiter / validation …)
+│   ├── websocket/                # Socket.io realtime
+│   └── utils/                    # utilities
 ├── frontend/src/
-│   ├── pages/                    # 63 个页面组件
-│   ├── components/               # 通用组件（DataRoom3D / WorkflowEditor 等）
-│   ├── contexts/                 # React Context (Auth / Theme / Toast)
-│   └── lib/                      # Axios 封装 / 工具库
-├── docker/                       # 生产 Docker 配置 + Nginx
-├── docs/                         # 技术文档
-├── .github/workflows/            # CI/CD (ci.yml + release.yml)
-├── docker-compose.yml            # 生产编排
-└── deploy.sh / deploy.ps1        # 一键部署脚本
+│   ├── pages/                    # 63 page components
+│   ├── components/               # shared components (DataRoom3D / WorkflowEditor …)
+│   ├── contexts/                 # React context (Auth / Theme / Toast)
+│   └── lib/                      # axios wrapper / helpers
+├── docker/                       # production Docker config + Nginx
+├── docs/                         # technical docs
+├── .github/workflows/            # CI (docker-build.yml)
+├── docker-compose.yml            # production orchestration
+└── package.json                  # workspace scripts
 ```
 
 ---
 
-## 文档导航
+## Documentation
 
-| 文档                                                | 说明           |
-| --------------------------------------------------- | -------------- |
-| [部署手册](./docs/DEPLOYMENT.md)                    | 详细部署操作   |
-| [API 文档](./docs/API.md)                           | 完整 API 接口  |
-| [架构设计](./docs/ARCHITECTURE.md)                  | 系统架构说明   |
-| [开发指南](./docs/DEVELOPMENT.md)                   | 本地开发搭建   |
-| [工作流指南](./docs/WORKFLOW_GUIDE.md)              | 工作流编排使用 |
-| [自动修复设计](./docs/AUTO_REMEDIATION_DESIGN.md)   | 告警自动修复   |
-| [网络设备巡检](./docs/NETWORK_DEVICE_INSPECTION.md) | 网络设备功能   |
-| [测试指南](./docs/TEST_GUIDE.md)                    | 功能测试说明   |
-| [项目愿景](./项目愿景与社区共建.md)                 | 愿景与共建     |
+| Document                                          | Description              |
+| ------------------------------------------------- | ------------------------ |
+| [Deployment guide](./docs/DEPLOYMENT.md)          | Detailed deployment steps |
+| [API reference](./docs/API.md)                    | Full API surface         |
+| [Architecture](./docs/ARCHITECTURE.md)            | System architecture      |
+| [Development guide](./docs/DEVELOPMENT.md)        | Local setup              |
+| [Workflow guide](./docs/WORKFLOW_GUIDE.md)        | Workflow orchestration   |
+| [Auto-remediation design](./docs/AUTO_REMEDIATION_DESIGN.md) | Alert auto-remediation |
+| [Network device inspection](./docs/NETWORK_DEVICE_INSPECTION.md) | Network device features |
+| [Testing guide](./docs/TEST_GUIDE.md)             | Functional testing       |
+| [Project vision](./项目愿景与社区共建.md)          | Vision and co-building   |
 
 ---
 
-## 作者
+## Author
 
-**谭策** — 独立开发者 | AIOps 领域探索者
+**Tan Ce** — independent developer | AIOps explorer
 
-- 🌐 项目官网：[ITOpsAgentinfo](https://www.zjzwfw.cloud/ITOpsAgentinfo)
-- 📝 博客：[zjzwfw.cloud](https://www.zjzwfw.cloud/)
-- 📧 邮箱：<huawei_network@foxmail.com>
-- 💬 微信公众号：**IT Online**
+- 🌐 Website: [ITOpsAgentinfo](https://www.zjzwfw.cloud/ITOpsAgentinfo)
+- 📝 Blog: [zjzwfw.cloud](https://www.zjzwfw.cloud/)
+- 📧 Email: <huawei_network@foxmail.com>
+- 💬 WeChat official account: **IT Online**
 
 <p align="left">
-  <img src="./frontend/public/wechaterweima.png" width="200" alt="IT Online 微信公众号">
+  <img src="./frontend/public/wechaterweima.png" width="200" alt="IT Online WeChat account">
 </p>
 
 ---
 
-## 🙏 致谢贡献者
+## 🙏 Contributors
 
-|                                                             头像                                                              |   名称 / 用户名    |     角色      | 主要贡献 |
-| :---------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-----------: | :------- |
-| <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> | **热心市民高先生** |  微信贡献者   | 测试反馈 |
-| <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> |      **@林**       |  微信贡献者   | 测试反馈 |
-|               <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" />               |     **尔东辰**     |  微信贡献者   | 测试     |
-|     <img src="https://avatars.githubusercontent.com/u/68582645?v=4" width="60" height="60" style="border-radius:50%;" />      | **xiezhiliang89**  | GitHub 贡献者 | 测试     |
+|                                                              Avatar                                                              |   Name / handle    |     Role      | Contribution |
+| :---------------------------------------------------------------------------------------------------------------------------: | :----------------: | :-----------: | :----------- |
+| <img src="./docs-assets/contributors/微信图片_2026-06-12_143259_183.jpg" width="60" height="60" style="border-radius:50%;" /> | **热心市民高先生** | WeChat contributor | Testing feedback |
+| <img src="./docs-assets/contributors/微信图片_2026-06-12_143226_852.jpg" width="60" height="60" style="border-radius:50%;" /> |      **@林**       | WeChat contributor | Testing feedback |
+|               <img src="./docs-assets/contributors/11.jpg" width="60" height="60" style="border-radius:50%;" />               |     **尔东辰**     | WeChat contributor | Testing |
+|     <img src="https://avatars.githubusercontent.com/u/68582645?v=4" width="60" height="60" style="border-radius:50%;" />      | **xiezhiliang89**  | GitHub contributor | Testing |
 
 <a href="https://github.com/qinshihu/itops-agent-platform/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=qinshihu/itops-agent-platform" />
@@ -673,49 +600,49 @@ npm run dev
 
 ---
 
-## 🌍 社区愿景：这不只是代码，是一场运动
+## 🌍 Community vision: more than code, a movement
 
-ITOps Agent Platform 不仅仅是一个开源项目，它是一场 **运维工程师解放运动**。
+ITOps Agent Platform is not merely an open-source project; it is an **operations engineer liberation movement**.
 
-我们相信：
+We believe:
 
-- **运维不应该是 7×24 待命的体力劳动**，而应该是策略设计和架构创新
-- **AI 不应该替代运维工程师**，而应该替代运维工程师不想做的重复工作
-- **开源社区的力量** 可以做出比商业软件更好的产品
-- **每一个运维工程师都值得从告警风暴中解脱出来**，去陪伴家人、去追求自己真正热爱的事
+- **Operations should not be 24/7 physical labor** — it should be policy design and architectural innovation
+- **AI should not replace engineers** — it should replace the repetitive work engineers don't want to do
+- **Open-source communities** can build better products than commercial software
+- **Every operations engineer deserves relief from alert storms** — to spend time with family, to pursue what they truly love
 
-> 如果你也相信运维的未来是 AI 自主化，欢迎加入我们。**Star 是对项目最大的认可，Issues 上的每一个反馈都在让这个愿景更近一步。**
-
----
-
-## 🔭 长期愿景
-
-> **"我们正在构建运维领域的自主操作系统。"**
->
-> 全球 5000 万运维工程师，管理着 $400 亿的 IT 基础设施。今天，他们还在凌晨 3 点爬起来手动修服务器。
->
-> 我们在做的是让运维从「人操作工具」变成「人制定策略、AI 自主执行」。这不是功能增强，是范式转移。
->
-> 项目持续迭代中，欢迎关注。每一个 Star 都是对未来的投票。
+> If you also believe the future of operations is AI autonomy, join us. **Stars are the greatest recognition an open-source project can receive, and every issue moves that vision closer.**
 
 ---
 
-## 🤝 参与贡献
+## 🔭 Long-term vision
 
-我们欢迎任何形式的贡献！
-
-- 🐛 [提交 Bug](https://github.com/qinshihu/itops-agent-platform/issues/new?template=bug_report.yml)
-- 💡 [提出新功能](https://github.com/qinshihu/itops-agent-platform/issues/new?template=feature_request.yml)
-- 📝 [改进文档](https://github.com/qinshihu/itops-agent-platform/issues/new?template=docs_update.yml)
-- 🔒 [报告安全问题](SECURITY.md)
-
-查看 [贡献指南](CONTRIBUTING.md) 了解详情。
+> **"We are building the autonomous operating system for operations."**
+>
+> 50 million operations engineers worldwide manage $400B of IT infrastructure. Today they still get up at 3 a.m. to fix servers by hand.
+>
+> What we're doing is moving operations from "humans operate tools" to "humans set policy, AI executes". Not a feature enhancement — a paradigm shift.
+>
+> The project keeps iterating; follow along. Every star is a vote for the future.
 
 ---
 
-## ⭐ 支持项目
+## 🤝 Contributing
 
-如果这个项目帮到了你，请给我们一个 **Star** ⭐ 让更多人看到！
+Contributions of all kinds are welcome!
+
+- 🐛 [Report a bug](https://github.com/qinshihu/itops-agent-platform/issues/new?template=bug_report.yml)
+- 💡 [Request a feature](https://github.com/qinshihu/itops-agent-platform/issues/new?template=feature_request.yml)
+- 📝 [Improve docs](https://github.com/qinshihu/itops-agent-platform/issues/new?template=docs_update.yml)
+- 🔒 [Report a security issue](SECURITY.md)
+
+See the [contributing guide](CONTRIBUTING.md) for details.
+
+---
+
+## ⭐ Support the project
+
+If this project helped you, give us a **Star** ⭐ so more people can find it!
 
 <p align="center">
   <a href="https://github.com/qinshihu/itops-agent-platform">
@@ -727,10 +654,10 @@ ITOps Agent Platform 不仅仅是一个开源项目，它是一场 **运维工�
   </a>
 </p>
 
-> 🌟 **Star 越多，项目越容易被 GitHub Trending 推荐，也越能吸引更多开发者加入共建。每一颗 Star 都是对项目最大的鼓励！**
+> 🌟 **More stars → more likely to hit GitHub Trending → more developers join the build. Every star is the greatest encouragement!**
 
 ---
 
-## 📄 许可证
+## 📄 License
 
-[MPL-2.0](./LICENSE) © 谭策
+[MPL-2.0](./LICENSE) © Tan Ce
