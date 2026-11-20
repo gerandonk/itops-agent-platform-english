@@ -37,8 +37,17 @@ export class ProxmoxApiClient {
     this.platformId = platformId;
     // 规范化 host：去掉协议前缀 (http:// / https://) 和尾部斜杠，避免拼出 https://https://...
     const rawHost = (config.host || '').trim();
-    this.host = rawHost.replace(/^https?:\/\//, '').replace(/\/+$/, '') || '127.0.0.1';
-    this.port = config.port || 8006;
+    let hostStr = rawHost.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+    // 兼容用户在 host 字段中直接写入端口（如 https://10.122.122.100:8006）
+    const portMatch = hostStr.match(/^([^:]+):(\d+)$/);
+    let parsedPort: number | undefined;
+    if (portMatch) {
+      hostStr = portMatch[1];
+      parsedPort = parseInt(portMatch[2], 10);
+    }
+    this.host = hostStr || '127.0.0.1';
+    // 端口优先取 host 中显式写出的端口，其次取配置的 port 字段，最后默认 8006
+    this.port = parsedPort || config.port || 8006;
     this.node = config.node || 'pve';
     this.authType = config.authType || 'password';
     this.username = config.username;
@@ -120,13 +129,15 @@ export class ProxmoxApiClient {
   ): Promise<any> {
     return new Promise((resolve, reject) => {
       const url = new URL(`${this.baseUrl}${path}`);
-      const postData = body ? JSON.stringify(body) : undefined;
+      const postData = body ? JSON.stringify(body) : (method === 'POST' || method === 'PUT' || method === 'DELETE') ? '{}' : undefined;
 
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };
       if (postData) {
-        headers['Content-Length'] = Buffer.byteLength(postData);
+        headers['Content-Length'] = Buffer.byteLength(postData).toString();
+      } else if (method === 'POST' || method === 'PUT' || method === 'DELETE') {
+        headers['Content-Length'] = '0';
       }
 
       if (this.authType === 'token' && this.tokenId && this.tokenSecret) {
@@ -226,7 +237,7 @@ export class ProxmoxApiClient {
   ): Promise<any> {
     return new Promise((resolve, reject) => {
       const url = new URL(`${this.baseUrl}${path}`);
-      const postData = body ? JSON.stringify(body) : undefined;
+      const postData = body ? JSON.stringify(body) : (method === 'POST' || method === 'PUT' || method === 'DELETE') ? '{}' : undefined;
 
       const options: https.RequestOptions = {
         hostname: url.hostname,

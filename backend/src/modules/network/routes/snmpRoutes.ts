@@ -71,7 +71,7 @@ router.post('/test', async (req: Request, res: Response) => {
   try {
     const { host, port = 161, version = 'v2c', community = 'public' } = req.body;
     const ok = await snmpService.testConnection(host, port, version as SnmpVersion, community);
-    res.json({ success: ok, data: { reachable: ok }, message: ok ? 'Connection successful' : 'Connection failed' });
+    res.json({ success: ok, data: { reachable: ok, message: ok ? 'Connection successful' : 'Connection failed' }, message: ok ? 'Connection successful' : 'Connection failed' });
   } catch (error: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(error) });
   }
@@ -89,7 +89,7 @@ router.post('/credentials/:id/test', async (req: Request, res: Response) => {
     }
     const community = (row as any).community ? decrypt((row as any).community) : 'public';
     const ok = await snmpService.testConnection(host, (row as any).snmp_port || 161, (row as any).snmp_version as SnmpVersion, community);
-    res.json({ success: ok, data: { reachable: ok }, message: ok ? 'Connection successful' : 'Connection failed' });
+    res.json({ success: ok, data: { reachable: ok, message: ok ? 'Connection successful' : 'Connection failed' }, message: ok ? 'Connection successful' : 'Connection failed' });
   } catch (error: unknown) {
     logger.error('Failed to test credential via ID:', error);
     res.status(500).json({ success: false, message: getErrorMessage(error) });

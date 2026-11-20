@@ -75,10 +75,7 @@ export function useAddDeviceModal(
   const { data: snmpCredentialsData = [] } = useQuery({
     queryKey: ['snmp-credentials'],
     queryFn: () =>
-      api.get('/snmp/credentials').then((r) => {
-        const body = r.data as { data?: SnmpCredential[] };
-        return body.data || [];
-      }),
+      api.get('/snmp/credentials').then((r) => (Array.isArray(r.data) ? (r.data as SnmpCredential[]) : [])),
   });
 
   // 获取 SSH 凭证（**修复**：原 L105 `queryFn: () => api.get('/ssh-keys').then(res => data)` Medium `data` 未定义）
@@ -99,15 +96,19 @@ export function useAddDeviceModal(
     [snmpCredentials],
   );
 
-  // useEffect：snmp 凭证 host === 设备 ip 时自动勾选 snmp_enabled
+  // useEffect：自动启用 SNMP 并填充端口（选中凭证时）
   useEffect(() => {
     if (formData.snmp_credential_id) {
-      const credHost = getCredentialHost(formData.snmp_credential_id);
-      if (credHost && credHost === formData.ip_address) {
-        setFormData((prev) => ({ ...prev, snmp_enabled: 1 }));
+      const cred = snmpCredentials.find((c) => c.id === formData.snmp_credential_id);
+      if (cred) {
+        setFormData((prev) => ({
+          ...prev,
+          snmp_enabled: 1,
+          snmp_port: cred.snmp_port || prev.snmp_port || 161,
+        }));
       }
     }
-  }, [formData.snmp_credential_id, formData.ip_address, getCredentialHost]);
+  }, [formData.snmp_credential_id, snmpCredentials]);
 
   // ── Handlers ──
   const handleSubmit = useCallback(
@@ -216,10 +217,10 @@ export function useAddDeviceModal(
       const response = await api.post(`/snmp/credentials/${formData.snmp_credential_id}/test`, {
         host: formData.ip_address,
       });
-      const body = response.data as { code?: number; message?: string };
+      const body = response.data as { reachable?: boolean; message?: string };
       setTestResult({
-        success: body.code === 0,
-        message: body.message || (body.code === 0 ? 'SNMP connection successful' : 'SNMP connection failed'),
+        success: body.reachable === true,
+        message: body.message || (body.reachable === true ? 'SNMP connection successful' : 'SNMP connection failed'),
       });
     } catch (error: unknown) {
       setTestResult({

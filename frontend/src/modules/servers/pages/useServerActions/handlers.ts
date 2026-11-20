@@ -200,7 +200,7 @@ export function useServerActionsHandlers(
       { id: selectedServer.id, command },
       {
         onSuccess: (data: any) => {
-          setCommandResult(data.data);
+          setCommandResult(data);
         },
         onSettled: () => {
           setIsExecuting(false);
@@ -223,7 +223,7 @@ export function useServerActionsHandlers(
       { id: selectedServer.id, options: complianceOptions },
       {
         onSuccess: (data: any) => {
-          setComplianceResults(data.data);
+          setComplianceResults(data);
         },
         onSettled: () => {
           setIsRunningCompliance(false);
@@ -329,7 +329,7 @@ User Requirement: ${aiPrompt}`;
       { id: aiCommandServer!.id, command: aiGeneratedCommand },
       {
         onSuccess: (data: any) => {
-          setCommandResult(data.data);
+          setCommandResult(data);
         },
         onSettled: () => {
           setIsExecuting(false);
@@ -342,7 +342,7 @@ User Requirement: ${aiPrompt}`;
     setIsCollecting(true);
     try {
       const result = await collectAllMutation.mutateAsync();
-      toast.success(`Collection complete: \${result.data.success} succeeded, \${result.data.failed} failed`);
+      toast.success(`Collection complete: \${result.success} succeeded, \${result.failed} failed`);
     } catch {
       toast.error('Batch collection failed');
     } finally {
@@ -366,7 +366,7 @@ User Requirement: ${aiPrompt}`;
     setIsCollectingMetrics(true);
     try {
       const result = await collectAllMetricsMutation.mutateAsync();
-      toast.success(`Metrics collection complete: \${result.data.success} succeeded, \${result.data.failed} failed`);
+      toast.success(`Metrics collection complete: \${result.success} succeeded, \${result.failed} failed`);
     } catch {
       toast.error('Batch collection failed');
     } finally {
@@ -419,7 +419,7 @@ User Requirement: ${aiPrompt}`;
         test_connection: true,
       });
       setImportResult(result.data);
-      toast.success(`Import complete: \${result.data.success} succeeded, \${result.data.failed} failed`);
+      toast.success(`Import complete: \${result.success} succeeded, \${result.failed} failed`);
     } catch (err) {
       toast.error((err as ApiError).response?.data?.error || 'Import failed');
     }

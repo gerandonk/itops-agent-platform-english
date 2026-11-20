@@ -62,9 +62,11 @@ export function SnmpConfigSection({
                 </option>
               ))}
             </select>
-            <p className="mt-1 text-xs text-text-secondary/60">
-              Please add credentials on the SNMP page first; the IP in the credentials will be automatically associated
-            </p>
+            {snmpCredentials.length === 0 && (
+              <p className="mt-1 text-xs text-amber-400">
+                No SNMP credentials yet. Create one on the SNMP page first.
+              </p>
+            )}
           </div>
           <div>
             <label className="block text-sm font-medium text-text-primary mb-1">SNMP Port</label>

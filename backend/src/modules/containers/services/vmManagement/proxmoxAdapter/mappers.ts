@@ -81,7 +81,7 @@ export function mapVMFromConfig(data: any, platformId: string): VirtualMachine {
 
   for (const key of Object.keys(data)) {
     if (key.startsWith('scsi') || key.startsWith('virtio') || key.startsWith('sata')) {
-      const match = data[key]?.match(/size=(\d+)G/i);
+      const match = String(data[key] ?? '').match(/size=(\d+)G/i);
       disks.push({
         id: `${data.id}-${key}`,
         name: key,
@@ -90,7 +90,7 @@ export function mapVMFromConfig(data: any, platformId: string): VirtualMachine {
       });
     }
     if (key.startsWith('net')) {
-      const macMatch = data[key]?.match(/([0-9A-Fa-f:]{17})/i);
+      const macMatch = String(data[key] ?? '').match(/([0-9A-Fa-f:]{17})/i);
       nics.push({
         id: `${data.id}-${key}`,
         name: key,

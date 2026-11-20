@@ -42,7 +42,7 @@ export function SnmpCredentialsTab({ searchQuery, setSearchQuery }: SnmpCredenti
     }),
     onMutate: () => setTestResult({ host: form.host, status: 'testing' }),
     onSuccess: (res) => {
-      if (res.data?.code === 0) {
+      if (res.data?.reachable === true) {
         setTestResult({ host: form.host, status: 'success' });
       } else {
         setTestResult({ host: form.host, status: 'fail', msg: res.data?.message || 'Connection failed' });
@@ -96,7 +96,7 @@ export function SnmpCredentialsTab({ searchQuery, setSearchQuery }: SnmpCredenti
     onSuccess: (res, cred) => {
       setCredTestResults(prev => ({
         ...prev,
-        [cred.id]: res.data?.code === 0
+        [cred.id]: res.data?.reachable === true
           ? { status: 'success' }
           : { status: 'fail', msg: res.data?.message || 'Connection failed' },
       }));

@@ -1,6 +1,6 @@
 import type { ClientChannel } from 'ssh2';
 import { Client } from 'ssh2';
-import { serversRepo } from '../../../repositories';
+import { serversRepo, sshKeysRepo } from '../../../repositories';
 import { decrypt } from '../../auth/services/encryptionService';
 import { logger } from '../../../utils/logger';
 export interface TerminalSession {
@@ -107,8 +107,29 @@ export class TerminalService {
       return { sessionId: '', shell: null as unknown as ClientChannel, error: 'Server is disabled' };
     }
 
-    const decryptedPassword = server.password ? decrypt(server.password) : undefined;
-    const decryptedPrivateKey = server.private_key ? decrypt(server.private_key) : undefined;
+    let decryptedPassword = server.password ? decrypt(server.password) : undefined;
+    let decryptedPrivateKey = server.private_key ? decrypt(server.private_key) : undefined;
+
+    // 优先使用 ssh_key_id 从密钥表获取认证凭证（与 sshConnectionPool 一致）
+    if (server.ssh_key_id) {
+      const sshKey = sshKeysRepo.getById(server.ssh_key_id) as { auth_type: string; private_key: string; username?: string; password?: string } | undefined;
+      if (sshKey) {
+        try {
+          if (sshKey.auth_type === 'password') {
+            if (sshKey.password) {
+              decryptedPassword = decrypt(sshKey.password);
+            }
+            if (sshKey.username) {
+              server.username = sshKey.username;
+            }
+          } else if (sshKey.private_key) {
+            decryptedPrivateKey = decrypt(sshKey.private_key);
+          }
+        } catch (error) {
+          logger.error(`Failed to decrypt SSH credential for terminal ${serverId}:`, error);
+        }
+      }
+    }
 
     return new Promise((resolve) => {
       const conn = new Client();

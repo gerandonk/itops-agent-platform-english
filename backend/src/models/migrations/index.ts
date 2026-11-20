@@ -118,6 +118,8 @@ import v059DcPolymorphicFk from './v059_dc_polymorphic_fk';
 import v060AgentExecutionsArchive from './v060_agent_executions_archive';
 // === CMDB 同步表 v061 ===
 import v061CmdbSyncTables from './v061_cmdb_sync_tables';
+// === DC rack FK 修复 v062 ===
+import v062FixDcRackFk from './v062_fix_dc_rack_fk';
 
 // Helper: wrap sync up/down into async
 function wrapAsync(fn: (db: any) => void): (db: any) => Promise<void> {
@@ -374,6 +376,8 @@ export const ALL_MIGRATIONS: Migration[] = [
   v060AgentExecutionsArchive,
   // v061: CMDB 同步状态与日志表
   v061CmdbSyncTables,
+  // v062: 修复 dc_rack_slots / dc_power_feeds 的外键引用（_dc_racks_backup -> dc_racks）
+  v062FixDcRackFk,
 ];
 
 export function createMigrationManager(db: any): MigrationManager {
