@@ -19,7 +19,7 @@ const localDocker = new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/
 
 function getDocker(req: Request): Docker {
   const endpointId = req.query.endpointId as string | undefined;
-  if (endpointId) {
+  if (endpointId && endpointId !== 'local') {
     try {
       return multiHostDockerService.getDockerClient(endpointId);
     } catch {
@@ -29,7 +29,17 @@ function getDocker(req: Request): Docker {
   return localDocker;
 }
 
-function checkDockerAvailable(res: Response): boolean {
+function checkDockerAvailable(res: Response, req?: Request): boolean {
+  if (req) {
+    const endpointId = req.query.endpointId as string | undefined;
+    if (endpointId && endpointId !== 'local') {
+      if (!multiHostDockerService.getEndpoint(endpointId)) {
+        res.status(404).json({ success: false, message: 'Docker endpoint does not exist' });
+        return false;
+      }
+      return true;
+    }
+  }
   if (!dockerService.isAvailable()) {
     res.status(503).json({ success: false, message: 'Docker service unavailable' });
     return false;
@@ -39,7 +49,7 @@ function checkDockerAvailable(res: Response): boolean {
 
 // GET / — Docker Volume 列表
 router.get('/', async (req: Request, res: Response) => {
-  if (!checkDockerAvailable(res)) return;
+  if (!checkDockerAvailable(res, req)) return;
   try {
     const d = getDocker(req);
     const result = await d.listVolumes();
@@ -51,7 +61,7 @@ router.get('/', async (req: Request, res: Response) => {
 
 // POST / — 创建 Docker Volume
 router.post('/', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
-  if (!checkDockerAvailable(res)) return;
+  if (!checkDockerAvailable(res, req)) return;
   try {
     const { name, driver, labels } = req.body;
     if (!name) return res.status(400).json({ success: false, message: 'Missing volume name' });
@@ -69,7 +79,7 @@ router.post('/', requireRole('admin', 'operator'), async (req: Request, res: Res
 
 // POST /prune — 清理未使用卷
 router.post('/prune', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
-  if (!checkDockerAvailable(res)) return;
+  if (!checkDockerAvailable(res, req)) return;
   try {
     const d = getDocker(req);
     const result = await (d as any).pruneVolumes();
@@ -87,7 +97,7 @@ router.post('/prune', requireRole('admin', 'operator'), async (req: Request, res
 
 // GET /:name — Docker Volume 详情
 router.get('/:name', async (req: Request, res: Response) => {
-  if (!checkDockerAvailable(res)) return;
+  if (!checkDockerAvailable(res, req)) return;
   try {
     const d = getDocker(req);
     const volume = d.getVolume(req.params.name);
@@ -100,7 +110,7 @@ router.get('/:name', async (req: Request, res: Response) => {
 
 // DELETE /:name — 删除 Docker Volume
 router.delete('/:name', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
-  if (!checkDockerAvailable(res)) return;
+  if (!checkDockerAvailable(res, req)) return;
   try {
     const d = getDocker(req);
     const vol = d.getVolume(req.params.name);

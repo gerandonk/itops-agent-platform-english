@@ -18,9 +18,10 @@ import { getErrorMessage } from '../../../utils/errorHelpers';
 const router = Router();
 
 /** GET /cluster-snapshot — 集群聚合快照 */
-router.get('/cluster-snapshot', async (_req: Request, res: Response) => {
+router.get('/cluster-snapshot', async (req: Request, res: Response) => {
   try {
-    const snapshot = await containerMonitorService.getClusterSnapshot();
+    const endpointId = req.query.endpointId as string | undefined;
+    const snapshot = await containerMonitorService.getClusterSnapshot(endpointId);
     res.json({ success: true, data: snapshot });
   } catch (err: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(err) });
@@ -33,8 +34,9 @@ router.post('/start/:id', (req: Request, res: Response) => {
     const intervalMs = req.query.intervalMs
       ? parseInt(req.query.intervalMs as string)
       : 5000;
-    containerMonitorService.startMonitoring(req.params.id, intervalMs);
-    res.json({ success: true, message: `已开始监控容器 ${req.params.id}` });
+    const endpointId = req.query.endpointId as string | undefined;
+    containerMonitorService.startMonitoring(req.params.id, intervalMs, endpointId);
+    res.json({ success: true, message: `Started monitoring container ${req.params.id}` });
   } catch (err: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(err) });
   }
@@ -44,7 +46,7 @@ router.post('/start/:id', (req: Request, res: Response) => {
 router.post('/stop/:id', (req: Request, res: Response) => {
   try {
     containerMonitorService.stopMonitoring(req.params.id);
-    res.json({ success: true, message: `已停止监控容器 ${req.params.id}` });
+    res.json({ success: true, message: `Stopped monitoring container ${req.params.id}` });
   } catch (err: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(err) });
   }

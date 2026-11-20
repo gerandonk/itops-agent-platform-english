@@ -22,6 +22,8 @@ interface LogEntry {
 export default function ContainerLogs() {
   const { token } = useAuth();
   const [containers, setContainers] = useState<Container[]>([]);
+  const [selectedHost, setSelectedHost] = useState<string>('all');
+  const [hosts, setHosts] = useState<Array<{ id: string; name: string; host: string }>>([]);
   const [selectedContainer, setSelectedContainer] = useState<string>('');
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [isStreaming, setIsStreaming] = useState(false);
@@ -52,18 +54,28 @@ export default function ContainerLogs() {
     return () => { socket.disconnect(); };
   }, [tailLines, token]);
 
+  // Fetch hosts
+  useEffect(() => {
+    api.get('/containers/hosts').then((r) => {
+      const list = r.data?.data || r.data || [];
+      setHosts(Array.isArray(list) ? list : []);
+    }).catch(() => {});
+  }, []);
+
   // Fetch containers list
   const fetchContainers = useCallback(async () => {
     setLoadingContainers(true);
     try {
-      const { data } = await api.get('/containers');
+      const params: Record<string, string> = {};
+      if (selectedHost && selectedHost !== 'all') params.endpointId = selectedHost;
+      const { data } = await api.get('/containers', { params });
       setContainers(data?.items || data || []);
     } catch {
       message.error('Failed to load container list');
     } finally {
       setLoadingContainers(false);
     }
-  }, []);
+  }, [selectedHost]);
 
   useEffect(() => { fetchContainers(); }, [fetchContainers]);
 
@@ -86,6 +98,7 @@ export default function ContainerLogs() {
       containerId: selectedContainer,
       tail: tailLines,
       roomId,
+      endpointId: selectedHost && selectedHost !== 'all' ? selectedHost : undefined,
     });
     setIsStreaming(true);
     setLogs([]);
@@ -176,8 +189,15 @@ export default function ContainerLogs() {
       {/* Toolbar */}
       <div className="flex flex-wrap items-center gap-3 mb-4 p-3 bg-surface rounded-lg border border-border">
         <Select
-          showSearch
-          placeholder="Select container"
+          value={selectedHost}
+          onChange={(v) => { setSelectedHost(v); setSelectedContainer(''); }}
+          style={{ width: 180 }}
+          options={[
+            { value: 'all', label: 'All hosts' },
+            ...hosts.map((h) => ({ value: h.id, label: h.name || h.host })),
+          ]}
+        />
+        <Select
           value={selectedContainer || undefined}
           onChange={(val) => setSelectedContainer(val)}
           options={containerOptions}

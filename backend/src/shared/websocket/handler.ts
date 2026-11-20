@@ -88,9 +88,9 @@ export function setupWebSocket(io: SocketIOServer) {
     });
 
     // 容器监控订阅
-    socket.on('container:subscribe', (data: { containerId: string }) => {
+    socket.on('container:subscribe', (data: { containerId: string; endpointId?: string }) => {
       socket.join(`container:${data.containerId}`);
-      containerMonitorService.startMonitoring(data.containerId);
+      containerMonitorService.startMonitoring(data.containerId, 5000, data.endpointId);
       logger.info(`📊 Client ${socket.id} subscribed to container ${data.containerId}`);
     });
 
@@ -101,17 +101,18 @@ export function setupWebSocket(io: SocketIOServer) {
     });
 
     // 容器日志订阅
-    socket.on('container:log:subscribe', (data: { containerId: string; tail?: number; timestamps?: boolean }, callback: (result: { roomId: string }) => void) => {
-      const roomId = `log:${socket.id}:${data.containerId}:${Date.now()}`;
+    socket.on('container:log:subscribe', (data: { containerId: string; tail?: number; timestamps?: boolean; endpointId?: string; roomId?: string }, callback?: (result: { roomId: string }) => void) => {
+      const roomId = data.roomId || `log:${socket.id}:${data.containerId}:${Date.now()}`;
       socket.join(roomId);
       containerLogService.startLogStream(roomId, data.containerId, {
         tail: data.tail,
         timestamps: data.timestamps,
+        endpointId: data.endpointId,
       }).catch((err: Error) => {
         logger.error(`Failed to start log stream for ${data.containerId}:`, err.message);
       });
-      callback({ roomId });
-      logger.info(`📜 Client ${socket.id} subscribed to logs of container ${data.containerId} (room: ${roomId})`);
+      if (typeof callback === 'function') callback({ roomId });
+      logger.info(`📜 Client ${socket.id} subscribed to logs of container ${data.containerId} (room: ${roomId}, endpoint: ${data.endpointId || 'local'})`);
     });
 
     // 容器日志取消订阅

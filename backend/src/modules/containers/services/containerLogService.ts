@@ -1,6 +1,9 @@
 import Docker from 'dockerode';
 import { logger } from '../../../utils/logger';
 import type { Server as SocketIOServer } from 'socket.io';
+import { dockerService } from './dockerService';
+import { multiHostDockerService } from './multiHostDockerService';
+import { demuxDockerLogChunk } from '../utils/logDemux';
 
 interface LogStream {
   stream: NodeJS.ReadableStream;
@@ -10,14 +13,17 @@ interface LogStream {
 class ContainerLogService {
   private streams: Map<string, LogStream> = new Map();
   private io: SocketIOServer | null = null;
-  private docker: Docker;
-
-  constructor() {
-    this.docker = new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/run/docker.sock' });
-  }
 
   setIO(io: SocketIOServer) {
     this.io = io;
+  }
+
+  private getDockerClient(endpointId?: string): Docker {
+    if (endpointId && endpointId !== 'local') {
+      return multiHostDockerService.getDockerClient(endpointId);
+    }
+    if (dockerService.isAvailable()) return dockerService.docker;
+    return new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/run/docker.sock' });
   }
 
   /**
@@ -27,13 +33,15 @@ class ContainerLogService {
     tail?: number;
     follow?: boolean;
     timestamps?: boolean;
+    endpointId?: string;
   } = {}): Promise<void> {
     if (this.streams.has(roomId)) {
       return; // 已在流式传输
     }
-    
+
     try {
-      const container = this.docker.getContainer(containerId);
+      const docker = this.getDockerClient(options.endpointId);
+      const container = docker.getContainer(containerId);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const logOptions: any = {
         stdout: true,
@@ -42,17 +50,16 @@ class ContainerLogService {
         follow: options.follow !== false, // 默认跟随
         timestamps: options.timestamps !== false,
       };
-      
+
       const stream = await container.logs(logOptions);
-      
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       this.streams.set(roomId, { stream: stream as any, containerId });
-      
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (stream as any).on('data', (chunk: Buffer) => {
         if (this.io) {
-          // Docker 日志前 8 字节是 header，需要去掉
-          const output = chunk.slice(8).toString('utf-8');
+          const output = demuxDockerLogChunk(chunk).toString('utf-8');
           this.io.to(roomId).emit('container:log:entry', {
             containerId,
             data: output,
@@ -60,20 +67,20 @@ class ContainerLogService {
           });
         }
       });
-      
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (stream as any).on('error', (err: Error) => {
         logger.error(`Log stream error for ${containerId}:`, err.message);
         this.stopLogStream(roomId);
       });
-      
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (stream as any).on('end', () => {
         logger.info(`Log stream ended for ${containerId}`);
         this.stopLogStream(roomId);
       });
-      
-      logger.info(`📜 Log stream started for container ${containerId} (room: ${roomId})`);
+
+      logger.info(`📜 Log stream started for container ${containerId} (room: ${roomId}, endpoint: ${options.endpointId || 'local'})`);
     } catch (err) {
       logger.error(`Failed to start log stream for ${containerId}:`, err);
       throw err;

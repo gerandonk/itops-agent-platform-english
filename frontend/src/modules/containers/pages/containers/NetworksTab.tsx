@@ -114,9 +114,10 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
                   networks.map((net) => {
                     const containers = net.Containers || net.containers || {};
                     const containerCount = Object.keys(containers).length;
-                    const ipam = net.IPAM;
-                    const subnet = ipam?.Config?.[0]?.Subnet || '-';
-                    const gateway = ipam?.Config?.[0]?.Gateway || '-';
+                    const ipam = net.IPAM || net.ipam;
+                    const ipamConfig = ipam?.Config || ipam?.config || [];
+                    const subnet = ipamConfig[0]?.Subnet || ipamConfig[0]?.subnet || '-';
+                    const gateway = ipamConfig[0]?.Gateway || ipamConfig[0]?.gateway || '-';
                     return (
                       <tr key={net.Id || net.id} className="hover:bg-slate-700/30 transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap">
@@ -236,8 +237,8 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
                   <div className="flex"><span className="text-xs text-text-tertiary w-16">ID</span><span className="text-sm text-text-primary font-mono">{(displayNetDetail.Id || displayNetDetail.id || '').substring(0, 16)}</span></div>
                   <div className="flex"><span className="text-xs text-text-tertiary w-16">Driver</span><span className="text-sm text-text-primary">{displayNetDetail.Driver || displayNetDetail.driver || '-'}</span></div>
                   <div className="flex"><span className="text-xs text-text-tertiary w-16">Scope</span><span className="text-sm text-text-primary">{displayNetDetail.Scope || displayNetDetail.scope || '-'}</span></div>
-                  <div className="flex"><span className="text-xs text-text-tertiary w-16">Subnet</span><span className="text-sm text-text-primary font-mono">{displayNetDetail.IPAM?.Config?.[0]?.Subnet || '-'}</span></div>
-                  <div className="flex"><span className="text-xs text-text-tertiary w-16">Gateway</span><span className="text-sm text-text-primary font-mono">{displayNetDetail.IPAM?.Config?.[0]?.Gateway || '-'}</span></div>
+                  <div className="flex"><span className="text-xs text-text-tertiary w-16">Subnet</span><span className="text-sm text-text-primary font-mono">{(() => { const i = displayNetDetail.IPAM || displayNetDetail.ipam; const c = i?.Config || i?.config || []; return c[0]?.Subnet || c[0]?.subnet || '-'; })()}</span></div>
+                  <div className="flex"><span className="text-xs text-text-tertiary w-16">Gateway</span><span className="text-sm text-text-primary font-mono">{(() => { const i = displayNetDetail.IPAM || displayNetDetail.ipam; const c = i?.Config || i?.config || []; return c[0]?.Gateway || c[0]?.gateway || '-'; })()}</span></div>
                 </div>
               </div>
               <div className="bg-background rounded-lg p-4 border border-border">

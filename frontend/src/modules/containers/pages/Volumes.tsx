@@ -44,20 +44,41 @@ export default function Volumes() {
   const [pageSize, setPageSize] = useState(20);
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState<string>('all');
+  const [hostFilter, setHostFilter] = useState<string>('all');
+  const [hosts, setHosts] = useState<Array<{ id: string; name: string; host: string }>>([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [editing, setEditing] = useState<Volume | null>(null);
   const [form] = Form.useForm();
 
+  useEffect(() => {
+    api.get('/containers/hosts').then((r) => {
+      const list = r.data?.data || r.data || [];
+      setHosts(Array.isArray(list) ? list : []);
+    }).catch(() => {});
+  }, []);
+
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data } = await api.get('/volumes', { params: { page, pageSize, search } });
+      const params: Record<string, string | number> = { page, pageSize, search };
+      const selected = hosts.find((h) => h.id === hostFilter);
+      if (hostFilter === 'local') params.host = 'local';
+      else if (hostFilter && hostFilter !== 'all') params.host = selected?.host || selected?.name || hostFilter;
+      const { data } = await api.get('/volumes', { params });
       const items = data?.items || data?.rows || [];
-      // 如果存储卷为空，自动从 Docker 同步卷列表
+      // Auto-sync docker volumes when empty
       if (items.length === 0) {
         try {
-          await api.post('/volumes/sync', { type: 'docker' });
-          const { data: syncedData } = await api.get('/volumes', { params: { page, pageSize, search } });
+          const syncBody: Record<string, string> = { type: 'docker' };
+          if (hostFilter && hostFilter !== 'all' && hostFilter !== 'local') {
+            syncBody.endpointId = hostFilter;
+            syncBody.host = selected?.host || selected?.name || hostFilter;
+          } else if (hostFilter === 'local') {
+            syncBody.endpointId = 'local';
+            syncBody.host = 'local';
+          }
+          await api.post('/volumes/sync', syncBody);
+          const { data: syncedData } = await api.get('/volumes', { params });
           setData(syncedData?.items || syncedData?.rows || []);
           setTotal(syncedData?.total || 0);
           return;
@@ -69,7 +90,7 @@ export default function Volumes() {
     finally { setLoading(false); }
   };
 
-  useEffect(() => { fetchData(); }, [page, pageSize, search]);
+  useEffect(() => { fetchData(); }, [page, pageSize, search, hostFilter]);
 
   const handleSave = async () => {
     const values = await form.validateFields();
@@ -94,8 +115,17 @@ export default function Volumes() {
 
   const handleSync = async () => {
     try {
-      const { data } = await api.post('/volumes/sync', { type: 'docker' });
-      message.success(`Sync completed: \${data?.synced || 0} volumes`);
+      const selected = hosts.find((h) => h.id === hostFilter);
+      const body: Record<string, string> = { type: 'docker' };
+      if (hostFilter && hostFilter !== 'all' && hostFilter !== 'local') {
+        body.endpointId = hostFilter;
+        body.host = selected?.host || selected?.name || hostFilter;
+      } else if (hostFilter === 'local') {
+        body.endpointId = 'local';
+        body.host = 'local';
+      }
+      const { data } = await api.post('/volumes/sync', body);
+      message.success(`Sync completed: ${data?.synced || 0} volumes`);
       fetchData();
     } catch { message.error('Sync failed'); }
   };
@@ -284,6 +314,16 @@ export default function Volumes() {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSearch(e.target.value); setPage(1); }}
             allowClear
             style={{ width: 240 }}
+          />
+          <Select
+            value={hostFilter}
+            onChange={(v) => { setHostFilter(v); setPage(1); }}
+            style={{ width: 180 }}
+            options={[
+              { value: 'all', label: 'All hosts' },
+              { value: 'local', label: 'Local' },
+              ...hosts.filter((h) => h.id !== 'local').map((h) => ({ value: h.id, label: h.name || h.host || h.id })),
+            ]}
           />
           <Select
             value={typeFilter}

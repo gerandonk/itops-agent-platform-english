@@ -21,7 +21,7 @@ function checkDockerAvailable(res: Response): boolean {
 
 function getDocker(req: Request): Docker {
   const endpointId = req.query.endpointId as string | undefined;
-  if (endpointId) {
+  if (endpointId && endpointId !== 'local') {
     try {
       return multiHostDockerService.getDockerClient(endpointId);
     } catch {
@@ -39,8 +39,20 @@ router.get('/', async (req: Request, res: Response) => {
     const page = parseInt(req.query.page as string) || 1;
     const pageSize = parseInt(req.query.pageSize as string) || 20;
     const search = (req.query.search as string || '').toLowerCase();
+    const endpointId = req.query.endpointId as string | undefined;
 
-    const allImages = await dockerService.listImages();
+    const allImages = endpointId
+      ? (await getDocker(req).listImages()).map((img: any) => ({
+          id: img.Id,
+          tags: img.RepoTags || [],
+          repository: (() => { const ft = (img.RepoTags?.[0] || '<none>:<none>'); const lc = ft.lastIndexOf(':'); return lc !== -1 ? ft.substring(0, lc) : ft; })(),
+          tag: (img.RepoTags?.[0] || '<none>:<none>').split(':')[1] || 'latest',
+          size: img.Size,
+          created: img.Created,
+          virtualSize: img.VirtualSize,
+          labels: img.Labels,
+        }))
+      : await dockerService.listImages();
 
     let filtered = allImages;
     if (search) {

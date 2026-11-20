@@ -50,21 +50,31 @@ export default function Images() {
   const [pageSize, setPageSize] = useState(20);
   const [search, setSearch] = useState('');
   const [hostFilter, setHostFilter] = useState<string>('all');
+  const [hosts, setHosts] = useState<Array<{ id: string; name: string; host: string }>>([]);
+  const [selectedHost, setSelectedHost] = useState<string>('all');
   const [pullOpen, setPullOpen] = useState(false);
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    api.get('/containers/hosts').then((r) => {
+      const list = r.data?.data || r.data || [];
+      setHosts(Array.isArray(list) ? list : []);
+    }).catch(() => {});
+  }, []);
 
   const fetchData = async () => {
     setLoading(true);
     try {
-      // 后端返回 { success, data: { items, total } }；axios 拦截器已解包 → data = { items, total }
-      const { data } = await api.get('/images', { params: { page, pageSize, search } });
+      const params: Record<string, string | number> = { page, pageSize, search };
+      if (selectedHost && selectedHost !== 'all') params.endpointId = selectedHost;
+      const { data } = await api.get('/images', { params });
       const items = data?.items || [];
       const mapped = items.map((img: any) => ({
         id: img.id,
         name: img.repository && img.repository !== '<none>' ? img.repository : (img.tags?.[0]?.split(':')[0] || '<none>'),
         tag: img.tag || img.tags?.[0]?.split(':')[1] || 'latest',
         size_bytes: img.size,
-        host: img.host || '',
+        host: img.host || (selectedHost !== 'all' ? selectedHost : 'local'),
         created_at: img.created ? new Date(img.created * 1000).toISOString() : '',
       }));
       setData(mapped);
@@ -73,7 +83,7 @@ export default function Images() {
     finally { setLoading(false); }
   };
 
-  useEffect(() => { fetchData(); }, [page, pageSize, search]);
+  useEffect(() => { fetchData(); }, [page, pageSize, search, selectedHost]);
 
   const handleSync = async () => {
     try {
@@ -252,14 +262,14 @@ export default function Images() {
             allowClear
             style={{ width: 240 }}
           />
-          {hostOptions.length > 1 && (
+          {hosts.length > 0 && (
             <Select
-              value={hostFilter}
-              onChange={(v) => setHostFilter(v)}
+              value={selectedHost}
+              onChange={(v) => { setSelectedHost(v); setPage(1); }}
               style={{ width: 180 }}
               options={[
                 { value: 'all', label: 'All hosts' },
-                ...hostOptions.map(h => ({ value: h, label: h })),
+                ...hosts.map((h) => ({ value: h.id, label: h.name || h.host })),
               ]}
             />
           )}

@@ -13,6 +13,7 @@ import { storageVolumeCrudService } from '../services/storageVolumeCrudService';
 import { storageVolumeRepository } from '../../../repositories/containersRepository/storageVolumeRepository';
 import { requireRole } from '../../../middleware/auth';
 import { getErrorMessage } from '../../../utils/errorHelpers';
+import { multiHostDockerService } from '../services/multiHostDockerService';
 
 const router = Router();
 
@@ -97,19 +98,37 @@ router.delete('/:id', requireRole('admin', 'operator'), (req: Request, res: Resp
 // 同步（从 host 上的 Docker / 存储系统拉取元数据）
 router.post('/sync', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
   try {
-    const { host, type } = req.body as { host?: string; type?: string };
+    const { host, type, endpointId } = req.body as { host?: string; type?: string; endpointId?: string };
     let synced = 0;
 
-    if (type === 'docker' && dockerService.isAvailable()) {
-      const dockerVols = await dockerService.listVolumes();
+    if (type === 'docker') {
+      let dockerVols: Array<{ name: string; driver: string; mountpoint: string; labels?: Record<string, string> }> = [];
+      let hostLabel = host || 'local';
+      let idPrefix = 'docker';
+
+      if (endpointId && endpointId !== 'local') {
+        const client = multiHostDockerService.getDockerClient(endpointId);
+        const ep = multiHostDockerService.getEndpoint(endpointId);
+        hostLabel = host || ep?.name || ep?.host || endpointId;
+        idPrefix = `docker-${endpointId}`;
+        const result = await client.listVolumes();
+        dockerVols = (result.Volumes || []).map((v: any) => ({
+          name: v.Name, driver: v.Driver, mountpoint: v.Mountpoint, labels: v.Labels || {},
+        }));
+      } else {
+        if (!dockerService.isAvailable()) {
+          return res.status(503).json({ success: false, error: 'Docker service unavailable' });
+        }
+        dockerVols = await dockerService.listVolumes();
+      }
       const toCreate: Array<Record<string, unknown>> = [];
       for (const vol of dockerVols) {
         if (host && vol.labels?.['storage.host'] && vol.labels['storage.host'] !== host) continue;
-        const id = `docker-${vol.name}`;
+        const id = `${idPrefix}-${vol.name}`;
         toCreate.push({
           id, name: vol.name, driver: vol.driver,
           mount_point: vol.mountpoint, size_gb: 0, used_gb: 0,
-          status: 'available', host: host || 'local',
+          status: 'available', host: hostLabel,
           type: 'docker', tags: JSON.stringify(vol.labels || {}),
         });
       }
@@ -117,7 +136,7 @@ router.post('/sync', requireRole('admin', 'operator'), async (req: Request, res:
       synced = result.added;
     }
 
-    res.json({ success: true, message: `同步完成: 新增 ${synced} 个卷`, data: { synced } });
+    res.json({ success: true, message: `Sync complete: ${synced} volumes added`, data: { synced } });
   } catch (error: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(error) });
   }

@@ -55,7 +55,8 @@ export interface NetworkItem {
   driver?: string;
   Scope?: string;
   scope?: string;
-  IPAM?: { Driver?: string; Config?: Array<{ Subnet?: string; Gateway?: string }> };
+  IPAM?: { Driver?: string; driver?: string; Config?: Array<{ Subnet?: string; Gateway?: string; subnet?: string; gateway?: string }>; config?: Array<{ Subnet?: string; Gateway?: string; subnet?: string; gateway?: string }> };
+  ipam?: { Driver?: string; driver?: string; Config?: Array<{ Subnet?: string; Gateway?: string; subnet?: string; gateway?: string }>; config?: Array<{ Subnet?: string; Gateway?: string; subnet?: string; gateway?: string }> };
   Containers?: Record<string, { Name: string; IPv4Address: string }>;
   containers?: Record<string, { Name: string; IPv4Address: string }>;
 }

@@ -56,7 +56,7 @@ export function useContainerTab(endpointId: string) {
 
   const containerActionMutation = useMutation({
     mutationFn: ({ id, action }: { id: string; action: string }) =>
-      api.post(`/containers/${id}/${action}`, null, { params: ep }),
+      api.post(`/containers/${id}/${action}`, {}, { params: ep }),
     onSuccess: (_d, vars) => {
       queryClient.invalidateQueries({ queryKey: containersQueryKey });
       toast.success(`Container ${vars.action === 'start' ? 'started' : vars.action === 'stop' ? 'stopped' : 'restarted'}`);

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Table, Button, Tag, Card, Row, Col, Drawer, Descriptions, Progress, message, Switch as _Switch, Space, Tooltip } from 'antd';
+import { Table, Button, Tag, Card, Row, Col, Drawer, Descriptions, Progress, message, Switch as _Switch, Space, Tooltip, Select } from 'antd';
 import { Play, Square, Eye, Activity, RefreshCw } from 'lucide-react';
 import api from '../../../lib/api';
 import type { Socket } from 'socket.io-client';
@@ -54,6 +54,8 @@ export default function ContainerMonitor() {
   const [detailInspect, setDetailInspect] = useState<any>(null);
   const [monitoredIds, setMonitoredIds] = useState<Set<string>>(new Set());
   const [containerStatsMap, setContainerStatsMap] = useState<Map<string, ContainerStats>>(new Map());
+  const [hosts, setHosts] = useState<Array<{ id: string; name: string; host: string }>>([]);
+  const [selectedHost, setSelectedHost] = useState<string>('all');
   const socketRef = useRef<Socket | null>(null);
 
   // Initialize Socket.io
@@ -68,39 +70,65 @@ export default function ContainerMonitor() {
     return () => { socket.disconnect(); };
   }, [token]);
 
+  // Fetch hosts
+  useEffect(() => {
+    api.get('/containers/hosts').then((r) => {
+      const list = r.data?.data || r.data || [];
+      setHosts(Array.isArray(list) ? list : []);
+    }).catch(() => {});
+  }, []);
+
   // Fetch initial data
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
+      const params: Record<string, string> = {};
+      if (selectedHost && selectedHost !== 'all') params.endpointId = selectedHost;
+      const snapParams = selectedHost && selectedHost !== 'all' ? { endpointId: selectedHost } : {};
       const [containerRes, snapRes] = await Promise.all([
-        api.get('/containers'),
-        api.get('/docker-monitor/cluster-snapshot'),
+        api.get('/containers', { params }),
+        api.get('/docker-monitor/cluster-snapshot', { params: snapParams }),
       ]);
       const containerList = containerRes.data?.items ?? containerRes.data;
-      setData(Array.isArray(containerList) ? containerList : []);
-      setClusterStats(snapRes.data || {
+      const list = Array.isArray(containerList) ? containerList : [];
+      setData(list);
+      const snap = snapRes.data || {
         totalContainers: 0, runningContainers: 0, totalCpuPercent: '0',
         totalMemoryUsage: 0, totalMemoryLimit: 0, totalMemoryPercent: '0',
+      };
+      const running = list.filter((c: any) => c.state === 'running' || c.status === 'running').length;
+      setClusterStats({
+        ...snap,
+        totalContainers: list.length,
+        runningContainers: running,
       });
     } catch {
       message.error('Failed to load');
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [selectedHost]);
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
   // Toggle monitoring
   const toggleMonitor = async (containerId: string, start: boolean) => {
     try {
-      await api.post(`/docker-monitor/${start ? 'start' : 'stop'}/${containerId}`);
+      const params = selectedHost && selectedHost !== 'all' ? { endpointId: selectedHost } : {};
+      await api.post(`/docker-monitor/${start ? 'start' : 'stop'}/${containerId}`, {}, { params });
       if (start) {
-        socketRef.current?.emit('container:subscribe', { containerId });
+        socketRef.current?.emit('container:subscribe', {
+          containerId,
+          endpointId: selectedHost && selectedHost !== 'all' ? selectedHost : undefined,
+        });
         setMonitoredIds(prev => new Set(prev).add(containerId));
       } else {
         socketRef.current?.emit('container:unsubscribe', { containerId });
-        setMonitoredIds(prev => { const next = new Set(prev); next.delete(containerId); return next; });
+        setMonitoredIds(prev => {
+          const next = new Set(prev);
+          next.delete(containerId);
+          return next;
+        });
       }
       message.success(start ? 'Monitoring started' : 'Monitoring stopped');
     } catch {
@@ -114,8 +142,9 @@ export default function ContainerMonitor() {
     setDetailInspect(null);
     setDetailVisible(true);
     try {
-      const { data } = await api.get(`/containers/${item.id}`);
-      setDetailInspect(data ||data);
+      const params = selectedHost && selectedHost !== 'all' ? { endpointId: selectedHost } : {};
+      const { data } = await api.get(`/containers/${item.id}`, { params });
+      setDetailInspect(data || data);
     } catch {
       // inspect may not be available
     }
@@ -282,9 +311,20 @@ export default function ContainerMonitor() {
           <h1 className="text-xl lg:text-2xl font-bold text-gray-900 dark:text-white">Real-Time Container Monitoring</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-1">Monitor container runtime status, CPU, memory, and network resources in real time</p>
         </div>
-        <Button icon={<RefreshCw className="w-4 h-4" />} onClick={fetchData} loading={loading}>
-          Refresh
-        </Button>
+        <div className="flex items-center gap-2">
+          <Select
+            value={selectedHost}
+            onChange={(v) => setSelectedHost(v)}
+            style={{ width: 200 }}
+            options={[
+              { value: 'all', label: 'All hosts' },
+              ...hosts.map((h) => ({ value: h.id, label: h.name || h.host })),
+            ]}
+          />
+          <Button icon={<RefreshCw className="w-4 h-4" />} onClick={fetchData} loading={loading}>
+            Refresh
+          </Button>
+        </div>
       </div>
 
       {/* Cluster Overview Cards */}

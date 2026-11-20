@@ -7,13 +7,14 @@ import Docker from 'dockerode';
 import { getErrorMessage, getErrorStatusCode } from '../../../utils/errorHelpers';
 import { logger } from '../../../utils/logger';
 import { dockerEndpointCrudService } from '../services/dockerEndpointCrudService';
+import { demuxDockerLog } from '../utils/logDemux';
 
 const router = Router();
 
 // ── Docker 客户端获取（支持多主机） ──
 function getDocker(req: Request): Docker {
   const endpointId = req.query.endpointId as string | undefined;
-  if (endpointId) {
+  if (endpointId && endpointId !== 'local') {
     try {
       return multiHostDockerService.getDockerClient(endpointId);
     } catch {
@@ -27,7 +28,7 @@ function getDocker(req: Request): Docker {
 function checkDockerAvailable(res: Response, req?: Request): boolean {
   if (req) {
     const endpointId = req.query.endpointId as string | undefined;
-    if (endpointId) {
+    if (endpointId && endpointId !== 'local') {
       if (!multiHostDockerService.getEndpoint(endpointId)) {
         res.status(404).json({ success: false, message: 'Docker endpoint does not exist' });
         return false;
@@ -306,20 +307,20 @@ router.get('/logs/:id', async (req: Request, res: Response) => {
     const timestamps = req.query.timestamps !== 'false';
     const d = getDocker(req);
     const container = d.getContainer(req.params.id);
-    const stream = await container.logs({ stdout: true, stderr: true, tail, timestamps, follow: false });
-    // dockerode 返回可读流，需要收集数据
-    const chunks: Buffer[] = [];
-    await new Promise<void>((resolve, reject) => {
-      stream.on('data', (chunk: Buffer) => chunks.push(chunk));
-      stream.on('end', () => resolve());
-      stream.on('error', (err) => reject(err));
-    });
-    const raw = Buffer.concat(chunks).toString('utf-8');
-    // dockerode 日志流在每个帧前有 8 字节头，需要去除
-    const logs = raw
-      .split('\n')
-      .map((line) => line.replace(/^[\x00-\x08].*?\x08/, ''))
-      .join('\n');
+    const result = await container.logs({ stdout: true, stderr: true, tail, timestamps, follow: false });
+    let raw: Buffer;
+    if (Buffer.isBuffer(result)) {
+      raw = result;
+    } else {
+      const chunks: Buffer[] = [];
+      await new Promise<void>((resolve, reject) => {
+        (result as any).on('data', (chunk: Buffer) => chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)));
+        (result as any).on('end', () => resolve());
+        (result as any).on('error', (err: Error) => reject(err));
+      });
+      raw = Buffer.concat(chunks);
+    }
+    const logs = demuxDockerLog(raw);
     res.json({ success: true, data: logs });
   } catch (err: unknown) {
     res

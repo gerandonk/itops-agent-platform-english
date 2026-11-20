@@ -107,8 +107,8 @@ router.get('/stats', async (req: Request, res: Response) => {
           platformId: p.id,
           platformName: p.name,
           total: vms.length,
-          running: vms.filter((v: any) => v.powerState === 'poweredOn').length,
-          stopped: vms.filter((v: any) => v.powerState === 'poweredOff').length,
+          poweredOn: vms.filter((v: any) => v.powerState === 'poweredOn').length,
+          poweredOff: vms.filter((v: any) => v.powerState === 'poweredOff').length,
           suspended: vms.filter((v: any) => v.powerState === 'suspended').length,
         });
       } catch {
@@ -116,12 +116,14 @@ router.get('/stats', async (req: Request, res: Response) => {
           platformId: p.id,
           platformName: p.name,
           error: 'Unable to fetch statistics',
-        });
+        } as any);
       }
     }
 
     const totalVMs = platformStats.reduce((sum, s) => sum + (s.total || 0), 0);
-    const totalRunning = platformStats.reduce((sum, s) => sum + (s.running || 0), 0);
+    const totalRunning = platformStats.reduce((sum, s) => sum + (s.poweredOn || 0), 0);
+    const totalPoweredOff = platformStats.reduce((sum, s) => sum + (s.poweredOff || 0), 0);
+    const totalSuspended = platformStats.reduce((sum, s) => sum + (s.suspended || 0), 0);
 
     // 通过 service 调 repository（routes 不直访）
     const sqliteTotal = virtualMachineCrudService.countAll();
@@ -131,7 +133,7 @@ router.get('/stats', async (req: Request, res: Response) => {
       success: true,
       data: {
         platforms: platformStats,
-        summary: { totalVMs, totalRunning },
+        summary: { total: totalVMs, poweredOn: totalRunning, poweredOff: totalPoweredOff, suspended: totalSuspended },
         sqliteFallback: { total: sqliteTotal, byStatus },
       },
     });
