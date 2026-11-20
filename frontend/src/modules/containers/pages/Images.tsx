@@ -58,7 +58,16 @@ export default function Images() {
     try {
       // 后端返回 { success, data: { items, total } }；axios 拦截器已解包 → data = { items, total }
       const { data } = await api.get('/images', { params: { page, pageSize, search } });
-      setData(data?.items || []);
+      const items = data?.items || [];
+      const mapped = items.map((img: any) => ({
+        id: img.id,
+        name: img.repository && img.repository !== '<none>' ? img.repository : (img.tags?.[0]?.split(':')[0] || '<none>'),
+        tag: img.tag || img.tags?.[0]?.split(':')[1] || 'latest',
+        size_bytes: img.size,
+        host: img.host || '',
+        created_at: img.created ? new Date(img.created * 1000).toISOString() : '',
+      }));
+      setData(mapped);
       setTotal(data?.total || 0);
     } catch { message.error('Failed to load'); }
     finally { setLoading(false); }

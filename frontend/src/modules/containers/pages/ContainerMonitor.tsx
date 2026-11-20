@@ -24,6 +24,7 @@ interface Container {
   state?: string;
   host?: string;
   container_id?: string;
+  ports?: any[];
 }
 
 interface ClusterSnapshot {
@@ -140,9 +141,10 @@ export default function ContainerMonitor() {
       title: 'Container name',
       dataIndex: 'name',
       key: 'name',
+      width: 220,
       render: (text: string, record: Container) => (
         <Tooltip title={record.container_id}>
-          <span className="font-medium">{text}</span>
+          <span className="font-medium break-all">{text}</span>
         </Tooltip>
       ),
     },
@@ -150,7 +152,12 @@ export default function ContainerMonitor() {
       title: 'Image',
       dataIndex: 'image',
       key: 'image',
-      ellipsis: true,
+      width: 280,
+      render: (text: string) => (
+        <Tooltip title={text}>
+          <span className="break-all text-xs">{text}</span>
+        </Tooltip>
+      ),
     },
     {
       title: 'Status',
@@ -160,6 +167,16 @@ export default function ContainerMonitor() {
       render: (status: string) => (
         <Tag color={statusColors[status] || 'default'}>{status}</Tag>
       ),
+    },
+    {
+      title: 'Port',
+      key: 'ports',
+      width: 140,
+      render: (_: unknown, record: Container) => {
+        const rawPorts = record.ports || [];
+        const mapped = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.PublicPort}→${p.PrivatePort}`);
+        return mapped.length > 0 ? <span className="text-xs">{mapped.join(', ')}</span> : <span className="text-text-tertiary text-xs">-</span>;
+      },
     },
     {
       title: 'CPU',
@@ -365,14 +382,15 @@ export default function ContainerMonitor() {
       </div>
 
       {/* Container Table */}
-      <Card title="Container list" className="shadow-sm">
+      <Card title="Container list" className="shadow-sm" bodyStyle={{ padding: '12px' }}>
         <Table
           columns={columns}
           dataSource={data}
           rowKey="id"
           loading={loading}
-          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (total) => `\${total} containers total` }}
-          scroll={{ x: 1100 }}
+          size="middle"
+          pagination={{ pageSize: 10, showSizeChanger: true, showTotal: (total) => `${total} containers total` }}
+          scroll={{ x: '100%' }}
         />
       </Card>
 

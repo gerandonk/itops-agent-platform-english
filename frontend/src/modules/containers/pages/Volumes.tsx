@@ -52,7 +52,18 @@ export default function Volumes() {
     setLoading(true);
     try {
       const { data } = await api.get('/volumes', { params: { page, pageSize, search } });
-      setData(data?.rows || []);
+      const items = data?.items || data?.rows || [];
+      // 如果存储卷为空，自动从 Docker 同步卷列表
+      if (items.length === 0) {
+        try {
+          await api.post('/volumes/sync', { type: 'docker' });
+          const { data: syncedData } = await api.get('/volumes', { params: { page, pageSize, search } });
+          setData(syncedData?.items || syncedData?.rows || []);
+          setTotal(syncedData?.total || 0);
+          return;
+        } catch { /* ignore sync errors */ }
+      }
+      setData(items);
       setTotal(data?.total || 0);
     } catch { message.error('Failed to load'); }
     finally { setLoading(false); }

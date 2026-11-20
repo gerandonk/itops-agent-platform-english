@@ -10,6 +10,7 @@ interface Container {
   id: string;
   name: string;
   status: string;
+  state?: string;
 }
 
 interface LogEntry {
@@ -56,7 +57,7 @@ export default function ContainerLogs() {
     setLoadingContainers(true);
     try {
       const { data } = await api.get('/containers');
-      setContainers(data || []);
+      setContainers(data?.items || data || []);
     } catch {
       message.error('Failed to load container list');
     } finally {
@@ -150,7 +151,7 @@ export default function ContainerLogs() {
   };
 
   const containerOptions = containers
-    .filter(c => c.status === 'running')
+    .filter(c => (c.state || c.status || '').toLowerCase() === 'running' || (c.status || '').toLowerCase().includes('up'))
     .map(c => ({ label: c.name, value: c.id }));
 
   return (

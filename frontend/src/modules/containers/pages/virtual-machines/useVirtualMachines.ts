@@ -78,7 +78,8 @@ export function useVirtualMachines() {
       if (statusFilter) params.status = statusFilter;
       if (selectedPlatformId) params.platformId = selectedPlatformId;
       const { data } = await api.get('/virtual-machines', { params });
-      return { data: data?.data || data || [], total: data?.total || 0, source: data?.source };
+      const items = data?.items || data?.data || data || [];
+      return { data: Array.isArray(items) ? items : [], total: data?.total || 0, source: data?.source };
     },
   });
 

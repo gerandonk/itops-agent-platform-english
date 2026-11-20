@@ -10,13 +10,14 @@ import type { Request, Response } from 'express';
 import { Router } from 'express';
 import { dockerService } from '../services/dockerService';
 import { storageVolumeCrudService } from '../services/storageVolumeCrudService';
+import { storageVolumeRepository } from '../../../repositories/containersRepository/storageVolumeRepository';
 import { requireRole } from '../../../middleware/auth';
 import { getErrorMessage } from '../../../utils/errorHelpers';
 
 const router = Router();
 
 // 列表
-router.get('/', (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
   try {
     const page = parseInt(req.query.page as string) || 1;
     const pageSize = parseInt(req.query.pageSize as string) || 20;
@@ -24,10 +25,28 @@ router.get('/', (req: Request, res: Response) => {
     const host = (req.query.host as string) || '';
     const type = (req.query.type as string) || '';
 
-    const result = storageVolumeCrudService.listVolumes({ page, pageSize, search, host, type });
-    const items = (result as { data?: unknown }).data ?? result;
-    const total = (result as { total?: number }).total ?? (Array.isArray(items) ? items.length : 0);
-    // 2026-07-23 把 total 嵌入 data.items（避免被前端 axios 拦截器剥掉兄弟字段）
+    const result = storageVolumeRepository.list({ page, pageSize, search, host, type });
+    let items = result.rows;
+    // 如果数据库为空，自动触发一次 docker 卷同步
+    if (items.length === 0 && dockerService.isAvailable()) {
+      try {
+        const dockerVols = await dockerService.listVolumes();
+        const toCreate: Array<Record<string, unknown>> = [];
+        for (const vol of dockerVols) {
+          const id = `docker-${vol.name}`;
+          toCreate.push({
+            id, name: vol.name, driver: vol.driver || 'local',
+            mount_point: vol.mountpoint || '', size_gb: 0, used_gb: 0,
+            status: 'available', host: 'local',
+            type: 'docker', tags: JSON.stringify(vol.labels || {}),
+          });
+        }
+        storageVolumeCrudService.syncVolumesFromDocker(toCreate);
+        const refreshed = storageVolumeRepository.list({ page, pageSize, search, host, type });
+        items = refreshed.rows;
+      } catch { /* ignore */ }
+    }
+    const total = storageVolumeRepository.list({ search, host, type }).total;
     res.json({ success: true, data: { items, total } });
   } catch (error: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(error) });

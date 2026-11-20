@@ -227,16 +227,31 @@ router.get('/', async (req: Request, res: Response) => {
     const status = ((req.query.status as string) || '').toLowerCase();
     const endpointId = req.query.endpointId as string | undefined;
 
+    // 归一化 Docker 容器数据为前端统一结构
+    const normalizeContainer = (raw: Record<string, unknown>) => ({
+      id: raw.Id || raw.id,
+      name: String(raw.Names?.[0] || raw.name || '').replace(/^\//, '') || 'unnamed',
+      image: raw.Image || raw.image || '',
+      imageId: raw.ImageID || raw.imageId || '',
+      state: raw.State || raw.state || '',
+      status: raw.Status || raw.status || '',
+      ports: raw.Ports || raw.ports || [],
+      created: raw.Created || raw.created,
+      labels: raw.Labels || raw.labels || {},
+    });
+
     let allContainers: Array<Record<string, unknown>>;
     if (endpointId && endpointId !== 'local') {
       const d = getDocker(req);
-      allContainers = (await d.listContainers({ all: true })) as unknown as Array<
+      const rawList = (await d.listContainers({ all: true })) as unknown as Array<
         Record<string, unknown>
       >;
+      allContainers = rawList.map(normalizeContainer);
     } else {
-      allContainers = (await dockerService.listContainers(true)) as unknown as Array<
+      const list = (await dockerService.listContainers(true)) as unknown as Array<
         Record<string, unknown>
       >;
+      allContainers = list.map(normalizeContainer);
     }
 
     let filtered = allContainers;
@@ -291,8 +306,20 @@ router.get('/logs/:id', async (req: Request, res: Response) => {
     const timestamps = req.query.timestamps !== 'false';
     const d = getDocker(req);
     const container = d.getContainer(req.params.id);
-    const stream = await container.logs({ stdout: true, stderr: true, tail, timestamps });
-    const logs = typeof stream === 'string' ? stream : stream.toString('utf-8');
+    const stream = await container.logs({ stdout: true, stderr: true, tail, timestamps, follow: false });
+    // dockerode 返回可读流，需要收集数据
+    const chunks: Buffer[] = [];
+    await new Promise<void>((resolve, reject) => {
+      stream.on('data', (chunk: Buffer) => chunks.push(chunk));
+      stream.on('end', () => resolve());
+      stream.on('error', (err) => reject(err));
+    });
+    const raw = Buffer.concat(chunks).toString('utf-8');
+    // dockerode 日志流在每个帧前有 8 字节头，需要去除
+    const logs = raw
+      .split('\n')
+      .map((line) => line.replace(/^[\x00-\x08].*?\x08/, ''))
+      .join('\n');
     res.json({ success: true, data: logs });
   } catch (err: unknown) {
     res

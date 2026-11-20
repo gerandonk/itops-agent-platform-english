@@ -151,10 +151,21 @@ router.get('/', async (req: Request, res: Response) => {
     const platformId = (req.query.platformId as string) || req.body.platformId;
 
     // 优先从 Hypervisor API 获取
-    if (platformId) {
+    const platformIds = platformId
+      ? [platformId]
+      : vmManagementService.listPlatformConfigs().map((p: any) => p.id);
+    if (platformIds.length > 0) {
       try {
-        const vms = await vmManagementService.listVMs(platformId);
-        let filtered = vms;
+        const allVms: any[] = [];
+        for (const pid of platformIds) {
+          try {
+            const vms = await vmManagementService.listVMs(pid);
+            allVms.push(...vms);
+          } catch {
+            // 单个平台失败不影响其他
+          }
+        }
+        let filtered = allVms;
         if (status) {
           filtered = filtered.filter((v: any) => {
             if (status === 'running') return v.powerState === 'poweredOn';
@@ -177,7 +188,7 @@ router.get('/', async (req: Request, res: Response) => {
 
         const total = filtered.length;
         const paged = filtered.slice(offset, offset + pageSize);
-        return res.json({ success: true, data: paged, total, source: 'hypervisor' });
+        return res.json({ success: true, data: { items: paged, total, source: 'hypervisor' } });
       } catch {
         // 失败时回退 SQLite
       }
@@ -186,7 +197,7 @@ router.get('/', async (req: Request, res: Response) => {
     // 后备：SQLite 查询（通过 service）
     const total = virtualMachineCrudService.countVms({ status, hypervisor, search });
     const data = virtualMachineCrudService.listVms({ status, hypervisor, search, limit: pageSize, offset });
-    res.json({ success: true, data, total, source: 'sqlite' });
+    res.json({ success: true, data: { items: data, total, source: 'sqlite' } });
   } catch (error: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(error) });
   }
@@ -289,14 +300,35 @@ router.put('/:id', requireRole('admin', 'operator'), (req: Request, res: Respons
 
 router.delete('/:id', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
   try {
-    const platformId = getPlatformId(req);
+    let platformId = req.query.platformId as string || req.body.platformId as string;
     const userId = getUserId(req);
     const username = getUsername(req);
 
-    try {
-      await vmManagementService.deleteVM(platformId, req.params.id, userId, username);
-    } catch {
-      // 继续删除 SQLite 记录
+    // 如果未传 platformId，则自动从现有平台中查找包含该 VM 的平台
+    if (!platformId) {
+      const platforms = vmManagementService.listPlatformConfigs();
+      for (const p of platforms) {
+        try {
+          const vms = await vmManagementService.listVMs(p.id);
+          if (vms.some((v: any) => String(v.id) === String(req.params.id))) {
+            platformId = p.id;
+            break;
+          }
+        } catch {
+          // ignore
+        }
+      }
+      if (!platformId && platforms.length > 0) {
+        platformId = platforms[0].id;
+      }
+    }
+
+    if (platformId) {
+      try {
+        await vmManagementService.deleteVM(platformId, req.params.id, userId, username);
+      } catch (err: any) {
+        console.warn('Hypervisor deleteVM warning:', err?.message);
+      }
     }
 
     virtualMachineCrudService.deleteVm(req.params.id);
@@ -357,32 +389,43 @@ router.post('/:id/restart', requireRole('admin', 'operator'), async (req: Reques
 
 router.post('/sync', requireRole('admin', 'operator'), async (req: Request, res: Response) => {
   try {
-    const platformId = getPlatformId(req);
-    const vms = await vmManagementService.listVMs(platformId);
+    const platformIds = req.body.platformId
+      ? [req.body.platformId]
+      : vmManagementService.listPlatformConfigs().map((p: any) => p.id);
 
     let synced = 0;
-    for (const vm of vms) {
-      const totalDiskGB = (vm.disks || []).reduce((sum: number, d: any) => sum + (d.sizeGB || 0), 0);
-      const status = vm.powerState === 'poweredOn' ? 'running'
-        : vm.powerState === 'suspended' ? 'suspended'
-        : 'stopped';
+    let total = 0;
 
-      virtualMachineCrudService.upsertFromHypervisor({
-        id: vm.id,
-        name: vm.name,
-        host: vm.hostName || '',
-        status,
-        os: vm.guestOs || '',
-        cpu_cores: vm.numCPUs || 0,
-        memory_mb: vm.memoryMB || 0,
-        disk_gb: totalDiskGB,
-        ip_address: vm.ipAddress || '',
-        hypervisor: vm.hypervisorType || '',
-      });
-      synced++;
+    for (const pid of platformIds) {
+      try {
+        const vms = await vmManagementService.listVMs(pid);
+        total += vms.length;
+        for (const vm of vms) {
+          const totalDiskGB = (vm.disks || []).reduce((sum: number, d: any) => sum + (d.sizeGB || 0), 0);
+          const status = vm.powerState === 'poweredOn' ? 'running'
+            : vm.powerState === 'suspended' ? 'suspended'
+            : 'stopped';
+
+          virtualMachineCrudService.upsertFromHypervisor({
+            id: vm.id,
+            name: vm.name,
+            host: vm.hostName || '',
+            status,
+            os: vm.guestOs || '',
+            cpu_cores: vm.numCPUs || 0,
+            memory_mb: vm.memoryMB || 0,
+            disk_gb: totalDiskGB,
+            ip_address: vm.ipAddress || '',
+            hypervisor: vm.hypervisorType || '',
+          });
+          synced++;
+        }
+      } catch (err: any) {
+        console.warn(`Sync failed for platform ${pid}:`, err?.message);
+      }
     }
 
-    res.json({ success: true, data: { synced, platformId, total: vms.length } });
+    res.json({ success: true, data: { synced, total } });
   } catch (error: unknown) {
     res.status(500).json({ success: false, message: getErrorMessage(error) });
   }

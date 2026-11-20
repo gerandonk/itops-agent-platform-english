@@ -20,7 +20,7 @@ export interface ProxmoxConfig {
 export class ProxmoxApiClient {
   readonly host: string;
   readonly port: number;
-  readonly node: string;
+  node: string;
   readonly platformId: string;
   private authType: 'password' | 'token';
   private username?: string;
@@ -63,6 +63,20 @@ export class ProxmoxApiClient {
         await this.testTokenAuth();
       } else {
         await this.acquireTicket();
+      }
+
+      // 自动探测节点名：若配置的节点不存在或为默认值，从 /nodes 列表取第一个
+      try {
+        const nodes = await this.apiRequest('GET', '/nodes');
+        if (Array.isArray(nodes) && nodes.length > 0) {
+          const firstNode = nodes[0]?.node || nodes[0]?.name;
+          if (firstNode && firstNode !== this.node) {
+            logger.info(`🔍 Proxmox 节点自动探测: ${this.node} -> ${firstNode}`);
+            this.node = firstNode;
+          }
+        }
+      } catch {
+        // 忽略探测失败，继续使用配置的节点名
       }
 
       this._connected = true;
@@ -191,7 +205,8 @@ export class ProxmoxApiClient {
     if (!this.tokenId || !this.tokenSecret) {
       throw new Error('Proxmox API Token not configured');
     }
-    await this.apiRequest('GET', `/nodes/${this.node}/version`);
+    // 使用全局 /version 端点验证 token，避免节点名错误导致失败
+    await this.apiRequest('GET', `/version`);
     logger.info('🔑 Proxmox API Token verified successfully');
   }
 

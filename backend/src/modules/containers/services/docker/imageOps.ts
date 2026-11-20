@@ -13,16 +13,23 @@ export async function impl_listImages(service: DS): Promise<DockerImage[]> {
   if (!service.initialized) throw new Error('Docker service not available');
   
   const images = await service.docker.listImages();
-  return images.map(img => ({
-    id: img.Id,
-    tags: img.RepoTags || [],
-    repository: img.RepoTags?.[0]?.split(':')[0] || '<none>',
-    tag: img.RepoTags?.[0]?.split(':')[1] || '<none>',
-    size: img.Size,
-    created: img.Created,
-    virtualSize: img.VirtualSize,
-    labels: img.Labels,
-  }));
+  return images.map(img => {
+    const repoTags = img.RepoTags || [];
+    const firstTag = repoTags[0] || '<none>:<none>';
+    const lastColon = firstTag.lastIndexOf(':');
+    const repo = lastColon !== -1 ? firstTag.substring(0, lastColon) : firstTag;
+    const tag = lastColon !== -1 ? firstTag.substring(lastColon + 1) : 'latest';
+    return {
+      id: img.Id,
+      tags: repoTags,
+      repository: repo,
+      tag: tag,
+      size: img.Size,
+      created: img.Created,
+      virtualSize: img.VirtualSize,
+      labels: img.Labels,
+    };
+  });
 }
 
 export async function impl_pullImage(service: DS, imageName: string, onProgress?: DockerPullProgress): Promise<void> {

@@ -41,6 +41,7 @@ export interface ContainerItem {
   Status?: string;
   status?: string;
   Ports?: Array<{ PublicPort?: number; PrivatePort?: number; Type?: string }>;
+  ports?: Array<{ PublicPort?: number; PrivatePort?: number; Type?: string }>;
   Created?: number;
   created?: number;
 }

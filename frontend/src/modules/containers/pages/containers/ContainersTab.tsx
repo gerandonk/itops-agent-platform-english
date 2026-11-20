@@ -113,7 +113,8 @@ export function ContainersTab({ ctx }: { ctx: Ctx }) {
                   (containerData?.data || []).map((c) => {
                     const state = (c.State || c.state || '').toLowerCase();
                     const badge = statusBadge(state);
-                    const ports = c.Ports?.filter((p) => p.PublicPort).map((p) => `${p.PublicPort}→${p.PrivatePort}`) || [];
+                    const rawPorts = (c as any).ports || c.Ports || [];
+const ports = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.PublicPort}→${p.PrivatePort}`);
                     return (
                       <tr key={c.id} className="hover:bg-slate-700/30 transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap">
