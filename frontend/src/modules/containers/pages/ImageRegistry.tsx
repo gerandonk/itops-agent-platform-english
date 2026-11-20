@@ -192,7 +192,7 @@ export default function ImageRegistry() {
             {currentRegistry.url && <Typography.Text type="secondary" className="text-sm">{currentRegistry.url}</Typography.Text>}
           </div>
         )}
-        <Table columns={imageColumns} dataSource={images} rowKey={(r: RegistryImage) => `${r.project}-${r.repository}-${r.tag}`} loading={imagesLoading} pagination={false} size="small" />
+        <Table columns={imageColumns} dataSource={images} rowKey={(r: RegistryImage) => `${r.project}-${r.repository}-${r.tag}`} loading={imagesLoading} pagination={false} size="small" scroll={{ x: 800 }} />
       </Modal>
     </div>
   );

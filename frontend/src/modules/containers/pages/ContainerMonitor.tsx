@@ -165,7 +165,7 @@ export default function ContainerMonitor() {
     return `${bytes} B`;
   };
 
-  const columns = [
+  const columns: any[] = [
     {
       title: 'Container name',
       dataIndex: 'name',
@@ -182,6 +182,7 @@ export default function ContainerMonitor() {
       dataIndex: 'image',
       key: 'image',
       width: 280,
+      responsive: ['lg'],
       render: (text: string) => (
         <Tooltip title={text}>
           <span className="break-all text-xs">{text}</span>
@@ -201,6 +202,7 @@ export default function ContainerMonitor() {
       title: 'Port',
       key: 'ports',
       width: 140,
+      responsive: ['xl'],
       render: (_: unknown, record: Container) => {
         const rawPorts = record.ports || [];
         const mapped = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.PublicPort}→${p.PrivatePort}`);
@@ -211,6 +213,7 @@ export default function ContainerMonitor() {
       title: 'CPU',
       key: 'cpu',
       width: 180,
+      responsive: ['md'],
       render: (_: unknown, record: Container) => {
         const stats = containerStatsMap.get(record.id);
         const cpu = parseFloat(stats?.cpuPercent || '0');
@@ -228,6 +231,7 @@ export default function ContainerMonitor() {
       title: 'Memory',
       key: 'memory',
       width: 200,
+      responsive: ['md'],
       render: (_: unknown, record: Container) => {
         const stats = containerStatsMap.get(record.id);
         const mem = stats?.memory;
@@ -249,6 +253,7 @@ export default function ContainerMonitor() {
       title: 'Network I/O',
       key: 'network',
       width: 160,
+      responsive: ['lg'],
       render: (_: unknown, record: Container) => {
         const stats = containerStatsMap.get(record.id);
         const net = stats?.network;

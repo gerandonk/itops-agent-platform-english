@@ -65,7 +65,7 @@ export function DbConnectionFormModal({
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-1">Database Type *</label>
               <select
@@ -91,7 +91,7 @@ export function DbConnectionFormModal({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-1">Host Address *</label>
               <input
@@ -114,7 +114,7 @@ export function DbConnectionFormModal({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-1">Username *</label>
               <input

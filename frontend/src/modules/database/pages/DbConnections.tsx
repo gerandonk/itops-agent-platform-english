@@ -32,7 +32,7 @@ export default function DbConnections() {
   const data = useDbConnectionsData();
 
   return (
-    <div className="h-full overflow-auto p-6 scrollbar-thin">
+    <div className="h-full overflow-auto p-4 lg:p-6 scrollbar-thin">
       <div className="space-y-6">
         <DbConnectionsHeader
           connections={data.connections}

@@ -74,7 +74,7 @@ export default function Kubernetes() {
   // ==================== 状态 2：集群加载中 ====================
   if (k.contextsLoading) {
     return (
-      <div className="p-6">
+      <div className="p-4 lg:p-6">
         <div className="flex items-center justify-center py-20">
           <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent" />
         </div>

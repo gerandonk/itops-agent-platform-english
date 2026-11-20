@@ -19,9 +19,10 @@ import type {
 } from './types';
 import { generateFallbackChartData, SERVER_COLORS, SERVER_METRICS_RANDOM_VALUES } from './types';
 
+// Polling queries (15-60s) self-heal on next tick. Retrying a 429 re-hits the
+// rate limiter and turns one error into four — skip retries entirely.
 const RETRY_CONFIG = {
-  retry: 3,
-  retryDelay: (attemptIndex: number) => Math.min(1000 * 2 ** attemptIndex, 5000),
+  retry: false,
 };
 
 export function useBigScreenData() {

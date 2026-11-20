@@ -45,7 +45,7 @@ export default function RoomManagement({ dc }: Props) {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => dc.setRoomSearch(e.target.value)}
           allowClear
         />
-        <Table columns={roomColumns} dataSource={filteredRooms.map((r: Room) => ({ ...r, key: r.id }))} loading={dc.loading} pagination={false} />
+        <Table columns={roomColumns} dataSource={filteredRooms.map((r: Room) => ({ ...r, key: r.id }))} loading={dc.loading} pagination={false} scroll={{ x: 800 }} />
       </div>
 
       <Modal

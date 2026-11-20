@@ -113,7 +113,7 @@ export default function Tools() {
     <div className="h-screen flex flex-col bg-slate-900 overflow-hidden">
       <div className="p-6 border-b border-slate-700 flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-slate-100 mb-2">Tool Management</h1>
+          <h1 className="text-xl lg:text-2xl font-bold text-slate-100 mb-2">Tool Management</h1>
           <p className="text-slate-400">Manage and test Agent tools</p>
         </div>
         <div className="flex gap-3">

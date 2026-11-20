@@ -70,7 +70,7 @@ export default function DataCenterManage() {
       key: 'slots',
       label: <span><Cube size={14} className="inline mr-1" />U position</span>,
       children: (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="col-span-1">
             <Card title="Cabinet list" size="small"
               extra={<Input prefix={<Search size={12} />} placeholder="Search..." size="small" style={{ width: 120 }} />}

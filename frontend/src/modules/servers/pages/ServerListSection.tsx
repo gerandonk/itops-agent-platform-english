@@ -76,7 +76,7 @@ export function ServerListSection({
   return (
     <>
       {/* 工具栏 */}
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex flex-wrap items-center gap-2 mb-4">
         <button
           onClick={onToggleGroups}
           className={clsx(
@@ -121,10 +121,10 @@ export function ServerListSection({
         </button>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col lg:flex-row gap-4">
         {/* Group Sidebar */}
         {showGroups && (
-          <div className="w-56 flex-shrink-0 bg-surface border border-border rounded-lg p-3">
+          <div className="w-full lg:w-56 flex-shrink-0 bg-surface border border-border rounded-lg p-3">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-medium text-text-primary">Server Groups</h3>
               <button
@@ -320,7 +320,7 @@ export function ServerListSection({
                       {(server.cpu_cores !== undefined ||
                         server.memory_gb !== undefined ||
                         server.disk_gb !== undefined) && (
-                        <div className="grid grid-cols-3 gap-2 text-xs">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
                           {server.cpu_cores !== undefined && (
                             <div className="flex items-center gap-1.5 text-text-secondary">
                               <Cpu className="w-3 h-3 flex-shrink-0" />

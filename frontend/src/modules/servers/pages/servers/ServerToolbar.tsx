@@ -25,12 +25,12 @@ export function ServerToolbar({
   return (
     <>
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary mb-2">Server management</h1>
+          <h1 className="text-xl lg:text-2xl font-bold text-text-primary mb-2">Server management</h1>
           <p className="text-text-secondary">Manage and monitor your servers</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <ImportExport
             resourceType="servers"
             onImportSuccess={() => queryClient.invalidateQueries({ queryKey: ['servers'] })}
@@ -85,7 +85,7 @@ export function ServerToolbar({
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex gap-2 border-b border-border">
+      <div className="flex flex-col lg:flex-row gap-2 border-b border-border">
         <button
           onClick={() => {
             setActiveTab('servers');

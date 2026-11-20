@@ -224,7 +224,7 @@ export default function AlertMappings() {
 
         {/* Mapping list - card layout */}
         {mappingsLoading ? (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[1,2,3].map(i => (
               <div key={i} className="bg-surface rounded-xl border border-border p-4 animate-pulse">
                 <div className="h-4 bg-gray-200 rounded w-3/4 mb-3"></div>
@@ -249,7 +249,7 @@ export default function AlertMappings() {
             </button>
           </div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {mappingsData?.map((mapping) => (
               <div key={mapping.id} className="bg-surface rounded-xl border border-border hover:shadow-md transition-all p-4">
                 <div className="flex items-start justify-between mb-3">

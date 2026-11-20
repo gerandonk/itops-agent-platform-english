@@ -121,7 +121,7 @@ export default function TerminalPage() {
       queryClient.invalidateQueries({ queryKey: ['servers'] });
       setVmCredModal(null);
     } catch {
-      toast.error('Gagal membuat koneksi terminal untuk VM ini');
+      toast.error('Failed to create terminal connection for this VM');
     } finally {
       setIsCreatingServer(false);
     }
@@ -171,7 +171,7 @@ export default function TerminalPage() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-4 lg:p-6">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
           <Terminal className="w-6 h-6" />
@@ -283,10 +283,10 @@ export default function TerminalPage() {
           <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-sm mx-4 p-6">
             <h3 className="text-lg font-medium text-text-primary mb-2">Open Terminal to VM</h3>
             <p className="text-sm text-text-secondary mb-4">
-              {vmCredModal.name} ({vmCredModal.ipAddress}) — pilih SSH credential
+              {vmCredModal.name} ({vmCredModal.ipAddress}) — select SSH credential
             </p>
             {sshKeys.length === 0 ? (
-              <p className="text-sm text-amber-400 mb-4">Belum ada SSH credential. Tambahkan di Server Management → SSH Keys.</p>
+              <p className="text-sm text-amber-400 mb-4">No SSH credentials yet. Add them in Server Management → SSH Keys.</p>
             ) : (
               <select
                 value={selectedCredId}

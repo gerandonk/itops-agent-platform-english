@@ -110,7 +110,7 @@ export default function AgentEditor({ agent, onClose }: AgentEditorProps) {
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Agent name
@@ -137,7 +137,7 @@ export default function AgentEditor({ agent, onClose }: AgentEditorProps) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Role description
@@ -237,7 +237,7 @@ export default function AgentEditor({ agent, onClose }: AgentEditorProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-text-primary mb-2">
                 Temperature

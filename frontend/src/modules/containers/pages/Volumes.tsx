@@ -137,7 +137,7 @@ export default function Volumes() {
     setModalOpen(true);
   };
 
-  // ── 派生：过滤 + 统计 ──
+  // Derived: filter + stats
   const filteredData = useMemo(() => {
     if (typeFilter === 'all') return data;
     return data.filter(v => v.type === typeFilter);
@@ -175,6 +175,7 @@ export default function Volumes() {
       dataIndex: 'driver',
       key: 'driver',
       width: 110,
+      className: 'hidden md:table-cell',
       render: (d: string) => <Tag className="m-0">{d || 'local'}</Tag>,
     },
     {
@@ -216,6 +217,7 @@ export default function Volumes() {
       dataIndex: 'host',
       key: 'host',
       width: 140,
+      className: 'hidden lg:table-cell',
       render: (h: string) => <span className="text-text-secondary">{h || '—'}</span>,
     },
     {
@@ -313,12 +315,12 @@ export default function Volumes() {
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setSearch(e.target.value); setPage(1); }}
             allowClear
-            style={{ width: 240 }}
+            className="w-full sm:w-60"
           />
           <Select
             value={hostFilter}
             onChange={(v) => { setHostFilter(v); setPage(1); }}
-            style={{ width: 180 }}
+            className="w-full sm:w-44"
             options={[
               { value: 'all', label: 'All hosts' },
               { value: 'local', label: 'Local' },
@@ -328,7 +330,7 @@ export default function Volumes() {
           <Select
             value={typeFilter}
             onChange={(v) => setTypeFilter(v)}
-            style={{ width: 140 }}
+            className="w-full sm:w-36"
             options={[
               { value: 'all', label: 'All types' },
               { value: 'docker', label: 'Docker' },
@@ -338,10 +340,10 @@ export default function Volumes() {
             ]}
           />
 
-          <div className="flex items-center gap-2 ml-auto">
+          <div className="flex flex-wrap items-center gap-2 sm:ml-auto w-full sm:w-auto">
             <Button icon={<RefreshCw size={14} />} onClick={fetchData} loading={loading}>Refresh</Button>
-            <Button icon={<RefreshCw size={14} />} onClick={handleSync}>Sync Volumes</Button>
-            <Button type="primary" icon={<Plus size={14} />} onClick={() => { setEditing(null); form.resetFields(); setModalOpen(true); }}>Create Volume</Button>
+            <Button icon={<RefreshCw size={14} />} onClick={handleSync}>Sync</Button>
+            <Button type="primary" icon={<Plus size={14} />} onClick={() => { setEditing(null); form.resetFields(); setModalOpen(true); }}>Create</Button>
           </div>
         </div>
       </div>

@@ -26,6 +26,7 @@ const rateLimitConfig: RateLimitConfig = {
   '/api/v1/copilot': { windowMs: 60 * 1000, max: 30 },
   '/api/v1/settings/api-keys': { windowMs: 60 * 1000, max: 10 },
   '/api/v1/webhooks': { windowMs: 1000, max: 10 },
+  '/tasks': { windowMs: 60 * 1000, max: 200 }, // BigScreen polling: req.path excludes /api/v1 mount prefix
 };
 
 const ipWhitelist: readonly string[] = env.WEBHOOK_IP_WHITELIST
@@ -171,7 +172,7 @@ export function rateLimiter(req: Request, res: Response, next: NextFunction) {
   if (entry.count > config.max) {
     return res.status(429).json({
       success: false,
-      message: '请求过于频繁，请稍后再试',
+      message: 'Too many requests. Please try again later.',
       retryAfter: Math.ceil((entry.resetTime - now) / 1000),
     });
   }

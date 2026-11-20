@@ -81,7 +81,7 @@ export default function Servers() {
     selectedServer && (activeTab === 'servers' || activeTab === 'compliance');
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         <ServerToolbar
           queryClient={queryClient}
