@@ -12,7 +12,7 @@
 
 import { randomUUID } from 'crypto';
 import { logger } from '../../../../../utils/logger';
-import { vmPlatformRepository } from '../../../../../repositories';
+import { vmAuditLogRepository, vmPlatformRepository } from '../../../../../repositories';
 import { credentialService } from '../../../../auth/services/credentialService';
 import { createAdapter as lifecycleCreateAdapter } from './lifecycle';
 import type { VMAdapter } from '../vmAdapter';
@@ -158,6 +158,9 @@ export async function deletePlatform(
   platformId: string,
 ): Promise<void> {
   try {
+    // 先清理该平台的审计日志，再删除平台（vm_audit_logs.platform_id 有 FK 约束，需先删除子记录）
+    vmAuditLogRepository.deleteByPlatformId(platformId);
+
     // 断开连接
     const adapter = ctx.adapters.get(platformId);
     if (adapter) {

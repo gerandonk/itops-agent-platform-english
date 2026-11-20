@@ -74,8 +74,15 @@ export function VMList({
                   <tr key={vm.id} className="border-b border-border/50 hover:bg-background/50 transition-colors">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
-                        <Monitor className="w-4 h-4 text-text-tertiary flex-shrink-0" />
+                        {vm.kind === 'lxc' ? (
+                          <Server className="w-4 h-4 text-text-tertiary flex-shrink-0" />
+                        ) : (
+                          <Monitor className="w-4 h-4 text-text-tertiary flex-shrink-0" />
+                        )}
                         <span className="text-text-primary font-medium truncate max-w-[160px]">{vm.name}</span>
+                        {vm.kind === 'lxc' && (
+                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/30 flex-shrink-0">LXC</span>
+                        )}
                       </div>
                     </td>
                     <td className="px-4 py-3">
@@ -85,7 +92,7 @@ export function VMList({
                       </span>
                     </td>
                     <td className="px-4 py-3 text-text-secondary">{vm.hypervisorType || '-'}</td>
-                    <td className="px-4 py-3 text-text-secondary truncate max-w-[120px]">{vm.guestOs || '-'}</td>
+                    <td className="px-4 py-3 text-text-secondary truncate max-w-[180px]" title={vm.guestOs}>{vm.guestOs || '-'}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-1.5 text-text-secondary">
                         <Cpu className="w-3.5 h-3.5" />

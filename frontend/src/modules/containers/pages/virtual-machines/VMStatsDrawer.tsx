@@ -32,13 +32,13 @@ export function VMStatsDrawer({ vm, stats, onClose }: VMStatsDrawerProps) {
                 CPU Usage
               </div>
               <span className="text-lg font-bold text-text-primary">
-                {stats?.cpuUsage !== null && stats?.cpuUsage !== undefined ? `${stats.cpuUsage.toFixed(1)}%` : '--'}
+                {stats?.cpuUsagePercent !== null && stats?.cpuUsagePercent !== undefined ? `${stats.cpuUsagePercent.toFixed(1)}%` : '--'}
               </span>
             </div>
             <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
               <div
                 className="bg-primary h-full rounded-full transition-all duration-500"
-                style={{ width: `${Math.min(stats?.cpuUsage ?? 0, 100)}%` }}
+                style={{ width: `${Math.min(stats?.cpuUsagePercent ?? 0, 100)}%` }}
               />
             </div>
           </div>
@@ -50,17 +50,17 @@ export function VMStatsDrawer({ vm, stats, onClose }: VMStatsDrawerProps) {
                 Memory Usage
               </div>
               <span className="text-lg font-bold text-text-primary">
-                {stats?.memoryUsage !== null && stats?.memoryUsage !== undefined ? `${stats.memoryUsage.toFixed(1)}%` : '--'}
+                {stats?.memoryUsagePercent !== null && stats?.memoryUsagePercent !== undefined ? `${stats.memoryUsagePercent.toFixed(1)}%` : '--'}
               </span>
             </div>
             <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
               <div
                 className={clsx(
                   'h-full rounded-full transition-all duration-500',
-                  (stats?.memoryUsage ?? 0) > 80 ? 'bg-red-500' :
-                    (stats?.memoryUsage ?? 0) > 60 ? 'bg-yellow-500' : 'bg-green-500'
+                  (stats?.memoryUsagePercent ?? 0) > 80 ? 'bg-red-500' :
+                    (stats?.memoryUsagePercent ?? 0) > 60 ? 'bg-yellow-500' : 'bg-green-500'
                 )}
-                style={{ width: `${Math.min(stats?.memoryUsage ?? 0, 100)}%` }}
+                style={{ width: `${Math.min(stats?.memoryUsagePercent ?? 0, 100)}%` }}
               />
             </div>
           </div>

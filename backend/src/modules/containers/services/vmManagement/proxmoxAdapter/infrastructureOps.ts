@@ -28,54 +28,64 @@ export async function getVMStats(client: ProxmoxApiClient, vmId: string): Promis
       'GET',
       `/nodes/${client.node}/qemu/${vmId}/status/current`
     );
-
-    const cpuPercent = status.cpu !== undefined ? status.cpu * 100 : 0;
-    const maxMem = status.maxmem || 0;
-    const usedMem = status.mem || 0;
-    const memPercent = maxMem > 0 ? (usedMem / maxMem) * 100 : 0;
-
-    const diskUsage = 0;
-    let diskTotal = 0;
-
+    return buildVMStats(client, vmId, status);
+  } catch (error) {
+    // 若为 LXC 容器，尝试对应的 LXC 状态接口
     try {
-      const config = await client.apiRequest(
+      const lxcStatus = await client.apiRequest(
         'GET',
-        `/nodes/${client.node}/qemu/${vmId}/config`
+        `/nodes/${client.node}/lxc/${vmId}/status/current`
       );
+      return buildVMStats(client, vmId, lxcStatus);
+    } catch (lxcError) {
+      logger.error(`❌ 获取 Proxmox 虚拟机 ${vmId} 状态失败:`, lxcError);
+      throw error;
+    }
+  }
+}
 
-      if (config) {
-        for (const key of Object.keys(config)) {
-          if (key.startsWith('scsi') || key.startsWith('virtio') || key.startsWith('ide')) {
-            const match = config[key]?.match(/size=(\d+)G/);
-            if (match) {
-              diskTotal += parseInt(match[1]) * 1024 * 1024 * 1024;
-            }
-          }
+/** 从 Proxmox 状态信息计算虚拟机性能指标 */
+async function buildVMStats(client: ProxmoxApiClient, vmId: string, status: any): Promise<VMStats> {
+  const cpuPercent = status?.cpu !== undefined ? status.cpu * 100 : 0;
+  const maxMem = status?.maxmem || status?.maxmemory || 0;
+  const usedMem = status?.mem || status?.memory || 0;
+  const memPercent = maxMem > 0 ? (usedMem / maxMem) * 100 : 0;
+
+  const diskUsage = status?.disk || 0;
+  let diskTotal = 0;
+
+  try {
+    const config = await client.apiRequest(
+      'GET',
+      `/nodes/${client.node}/qemu/${vmId}/config`
+    );
+    for (const key of Object.keys(config || {})) {
+      if (key.startsWith('scsi') || key.startsWith('virtio') || key.startsWith('ide')) {
+        const match = config[key]?.match(/size=(\d+)G/);
+        if (match) {
+          diskTotal += parseInt(match[1]) * 1024 * 1024 * 1024;
         }
       }
-    } catch {
-      // 忽略配置获取失败
     }
-
-    const netIn = status.netin || 0;
-    const netOut = status.netout || 0;
-
-    return {
-      cpuUsagePercent: Math.min(Math.round(cpuPercent * 100) / 100, 100),
-      memoryUsagePercent: Math.min(Math.round(memPercent * 100) / 100, 100),
-      memoryUsageMB: Math.round(usedMem / (1024 * 1024)),
-      memoryTotalMB: Math.round(maxMem / (1024 * 1024)),
-      diskUsageBytes: diskUsage || 0,
-      diskTotalBytes: diskTotal,
-      networkTxBytes: netOut,
-      networkRxBytes: netIn,
-      uptimeSeconds: status.uptime || 0,
-      snapshotCount: 0,
-    };
-  } catch (error) {
-    logger.error(`❌ 获取 Proxmox 虚拟机 ${vmId} 状态失败:`, error);
-    throw error;
+  } catch {
+    // 忽略配置获取失败
   }
+
+  const netIn = status?.netin || 0;
+  const netOut = status?.netout || 0;
+
+  return {
+    cpuUsagePercent: Math.min(Math.round(cpuPercent * 100) / 100, 100),
+    memoryUsagePercent: Math.min(Math.round(memPercent * 100) / 100, 100),
+    memoryUsageMB: Math.round(usedMem / (1024 * 1024)),
+    memoryTotalMB: Math.round(maxMem / (1024 * 1024)),
+    diskUsageBytes: diskUsage || 0,
+    diskTotalBytes: diskTotal,
+    networkTxBytes: netOut,
+    networkRxBytes: netIn,
+    uptimeSeconds: status?.uptime || 0,
+    snapshotCount: 0,
+  };
 }
 
 // ==========================================================================

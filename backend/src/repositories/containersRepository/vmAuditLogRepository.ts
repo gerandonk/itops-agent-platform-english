@@ -96,4 +96,8 @@ export const vmAuditLogRepository = {
 
     return { rows, total };
   },
+
+  deleteByPlatformId(platformId: string): void {
+    db.prepare(`DELETE FROM vm_audit_logs WHERE platform_id = ?`).run(platformId);
+  },
 };

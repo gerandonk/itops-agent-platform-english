@@ -24,6 +24,8 @@ export interface VM {
   hypervisorType: string;
   cpuUsage?: number;
   memoryUsage?: number;
+  kind?: 'vm' | 'lxc';
+  status?: string;
 }
 
 export interface Snapshot {
@@ -34,8 +36,16 @@ export interface Snapshot {
 }
 
 export interface VMStats {
-  cpuUsage?: number;
-  memoryUsage?: number;
+  cpuUsagePercent?: number;
+  memoryUsagePercent?: number;
+  memoryUsageMB?: number;
+  memoryTotalMB?: number;
+  diskUsageBytes?: number;
+  diskTotalBytes?: number;
+  networkTxBytes?: number;
+  networkRxBytes?: number;
+  uptimeSeconds?: number;
+  snapshotCount?: number;
 }
 
 export interface PlatformStatsSummary {

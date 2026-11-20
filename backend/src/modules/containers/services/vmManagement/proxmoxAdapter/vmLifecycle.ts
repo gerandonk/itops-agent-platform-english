@@ -6,7 +6,8 @@ import type {
   CloneVMRequest,
 } from '../../../../../types/vmManagement';
 import type { ProxmoxApiClient } from './apiClient';
-import { mapVM, mapVMFromConfig } from './mappers';
+import { mapVM, mapVMFromConfig, extractDisksFromConfig, extractNicsFromConfig, mapGuestOS, resolveGuestOSName } from './mappers';
+import { getLXC } from './lxcLifecycle';
 import { powerOnVM } from './vmPower';
 
 export async function listVMs(client: ProxmoxApiClient): Promise<VirtualMachine[]> {
@@ -16,7 +17,72 @@ export async function listVMs(client: ProxmoxApiClient): Promise<VirtualMachine[
 
   try {
     const vms = await client.apiRequest('GET', `/nodes/${client.node}/qemu`);
-    return vms.map((vm: any) => mapVM(vm, client.platformId));
+    const mapped = vms.map((vm: any) => mapVM(vm, client.platformId));
+
+    // 补充磁盘 / 网络接口 / OS / IP 等详情（从单 VM config + guest agent 获取）
+    const enriched = await Promise.all(
+      mapped.map(async (vm: VirtualMachine) => {
+        try {
+          const config = await client.apiRequest('GET', `/nodes/${client.node}/qemu/${vm.id}/config`);
+          const disks = extractDisksFromConfig(config, vm.id);
+          const nics = extractNicsFromConfig(config, vm.id);
+          const enrichedVm: VirtualMachine = {
+            ...vm,
+            disks: disks.length > 0 ? disks : vm.disks,
+            networkInterfaces: nics.length > 0 ? nics : vm.networkInterfaces,
+            guestOs: config.ostype ? mapGuestOS(config.ostype) : vm.guestOs,
+          };
+
+          // 通过 QEMU guest agent 获取更详细的操作系统信息（如有安装）
+          // 例如: "Ubuntu 24.04.1 LTS"；agent 不可用时回退到 ostype 映射
+          try {
+            const osinfo = await client.apiRequest('GET', `/nodes/${client.node}/qemu/${vm.id}/agent/get-osinfo`);
+            const osInfo: any = (osinfo as any)?.result ?? (osinfo as any)?.osinfo ?? (osinfo as any)?.data?.result ?? (osinfo as any)?.data ?? osinfo;
+            const osName = resolveGuestOSName(osInfo);
+            if (osName) {
+              enrichedVm.guestOs = osName;
+            }
+          } catch {
+            // guest agent OS 信息不可用时，保留 ostype 映射结果
+          }
+
+          // 通过 QEMU guest agent 获取网络接口 IP（若 agent 已安装且运行）
+          try {
+            const agentData = await client.apiRequest('GET', `/nodes/${client.node}/qemu/${vm.id}/agent/network-get-interfaces`);
+            const interfaces = (agentData as any)?.result;
+            if (Array.isArray(interfaces)) {
+              for (const iface of interfaces) {
+                const ipAddresses = (iface?.['ip-addresses'] || []).filter(
+                  (a: any) => a?.['ip-address-type'] === 'ipv4' && a?.['ip-address'],
+                );
+                if (ipAddresses.length > 0 && iface?.name && iface.name !== 'lo') {
+                  const target = enrichedVm.networkInterfaces?.find((n) => n.name === iface.name) || enrichedVm.networkInterfaces?.[0];
+                  if (target) {
+                    target.ipAddress = ipAddresses.map((a: any) => a['ip-address']).filter(Boolean);
+                  }
+                }
+              }
+            }
+          } catch {
+            // guest agent 不可用/未安装时忽略，保留 config 层的信息
+          }
+
+          // 汇总第一个可用 IP 到顶层 ipAddress
+          const firstIp = enrichedVm.networkInterfaces
+            ?.flatMap((n) => n.ipAddress || [])
+            .find((ip) => ip);
+          if (firstIp) {
+            enrichedVm.ipAddress = firstIp;
+          }
+
+          return enrichedVm;
+        } catch {
+          return vm;
+        }
+      }),
+    );
+
+    return enriched;
   } catch (error) {
     logger.error('❌ Failed to fetch Proxmox VM list:', error);
     throw error;
@@ -33,6 +99,15 @@ export async function getVM(client: ProxmoxApiClient, vmId: string): Promise<Vir
     const status = await client.apiRequest('GET', `/nodes/${client.node}/qemu/${vmId}/status/current`);
     return mapVMFromConfig({ id: vmId, ...config, ...status }, client.platformId);
   } catch (error) {
+    // 若为 LXC 容器，尝试走 LXC 接口
+    try {
+      const lxcVm = await getLXC(client, vmId);
+      if (lxcVm) {
+        return lxcVm;
+      }
+    } catch {
+      // LXC 查询失败时，继续抛出原始错误
+    }
     logger.error(`❌ 获取 Proxmox 虚拟机 ${vmId} 详情失败:`, error);
     return null;
   }

@@ -65,6 +65,7 @@ import {
   listNetworks,
   listResourcePools,
 } from './infrastructureOps';
+import { listLXCs } from './lxcLifecycle';
 
 export type { ProxmoxConfig } from './apiClient';
 
@@ -96,7 +97,12 @@ export class ProxmoxAdapter extends BaseVMAdapter {
   }
 
   // 虚拟机管理
-  async listVMs(): Promise<VirtualMachine[]> { return listVMs(this.client); }
+  async listVMs(): Promise<VirtualMachine[]> {
+    // 合并 QEMU/KVM 虚拟机 + LXC 容器（Proxmox 视容器为虚拟化对象）
+    const vms = await listVMs(this.client);
+    const lxc = await listLXCs(this.client);
+    return [...vms, ...lxc];
+  }
   async getVM(vmId: string): Promise<VirtualMachine | null> { return getVM(this.client, vmId); }
   async createVM(request: CreateVMRequest): Promise<VirtualMachine> { return createVM(this.client, request); }
   async cloneVM(request: CloneVMRequest): Promise<VirtualMachine> { return cloneVM(this.client, request); }

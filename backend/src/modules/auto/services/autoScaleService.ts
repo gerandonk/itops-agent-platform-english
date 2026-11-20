@@ -188,10 +188,12 @@ class AutoScaleService {
             : rule.targetId;
           const realStats = await vmManagementService.getVMStats(rule.targetId, vmId);
           const vmStats: any = realStats || stats;
-          if (rule.metricType === 'cpu' && vmStats?.cpuUsage !== undefined) {
-            currentMetric = Number(vmStats.cpuUsage);
-          } else if (rule.metricType === 'memory' && vmStats?.memoryUsage !== undefined) {
-            currentMetric = Number(vmStats.memoryUsage);
+          const vmCpu = vmStats?.cpuUsagePercent ?? vmStats?.cpuUsage;
+          const vmMem = vmStats?.memoryUsagePercent ?? vmStats?.memoryUsage;
+          if (rule.metricType === 'cpu') {
+            currentMetric = Number(vmCpu ?? 0);
+          } else if (rule.metricType === 'memory') {
+            currentMetric = Number(vmMem ?? 0);
           } else {
             currentMetric = 0;
           }

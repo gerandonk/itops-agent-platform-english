@@ -35,7 +35,9 @@ export class ProxmoxApiClient {
 
   constructor(platformId: string, config: ProxmoxConfig) {
     this.platformId = platformId;
-    this.host = config.host;
+    // 规范化 host：去掉协议前缀 (http:// / https://) 和尾部斜杠，避免拼出 https://https://...
+    const rawHost = (config.host || '').trim();
+    this.host = rawHost.replace(/^https?:\/\//, '').replace(/\/+$/, '') || '127.0.0.1';
     this.port = config.port || 8006;
     this.node = config.node || 'pve';
     this.authType = config.authType || 'password';
@@ -123,6 +125,9 @@ export class ProxmoxApiClient {
       const headers: Record<string, string> = {
         'Content-Type': 'application/json',
       };
+      if (postData) {
+        headers['Content-Length'] = Buffer.byteLength(postData);
+      }
 
       if (this.authType === 'token' && this.tokenId && this.tokenSecret) {
         headers['Authorization'] = `PVEAPIToken=${this.tokenId}=${this.tokenSecret}`;
@@ -196,6 +201,10 @@ export class ProxmoxApiClient {
       { username: this.username, password: this.password }
     );
 
+    if (!result || !result.ticket) {
+      throw new Error(`Proxmox ticket acquisition failed: ${(result as any)?.message || 'no ticket returned'}`);
+    }
+
     this.ticket = result.ticket;
     this.csrfToken = result.CSRFPreventionToken;
     logger.info('🔑 Proxmox login ticket obtained successfully');
@@ -225,7 +234,7 @@ export class ProxmoxApiClient {
         path: url.pathname + url.search,
         method,
         headers: postData
-          ? { 'Content-Type': 'application/json' }
+          ? { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(postData) }
           : {},
         agent: this.httpsAgent,
         timeout: 15000,

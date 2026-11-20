@@ -54,6 +54,8 @@ export interface VirtualMachine {
   name: string;
   hypervisorType: HypervisorType;
   hypervisorId: string;
+  /** 'vm' = QEMU/KVM 虚拟机, 'lxc' = LXC 容器 */
+  kind?: 'vm' | 'lxc';
   status: VMStatus;
   powerState: VMPowerState;
   guestOs?: string;

@@ -18,8 +18,16 @@ interface Snapshot {
 }
 
 interface VMStats {
-  cpuUsage?: number;
-  memoryUsage?: number;
+  cpuUsagePercent?: number;
+  memoryUsagePercent?: number;
+  memoryUsageMB?: number;
+  memoryTotalMB?: number;
+  diskUsageBytes?: number;
+  diskTotalBytes?: number;
+  networkTxBytes?: number;
+  networkRxBytes?: number;
+  uptimeSeconds?: number;
+  snapshotCount?: number;
 }
 
 const powerLabels: Record<string, string> = {
@@ -132,13 +140,13 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
                     CPU Usage
                   </div>
                   <span className="text-lg font-bold text-text-primary">
-                    {vmStatsData?.cpuUsage !== null && vmStatsData?.cpuUsage !== undefined ? `${vmStatsData.cpuUsage.toFixed(1)}%` : '--'}
+                    {vmStatsData?.cpuUsagePercent !== null && vmStatsData?.cpuUsagePercent !== undefined ? `${vmStatsData.cpuUsagePercent.toFixed(1)}%` : '--'}
                   </span>
                 </div>
                 <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
                   <div
                     className="bg-primary h-full rounded-full transition-all duration-500"
-                    style={{ width: `${Math.min(vmStatsData?.cpuUsage ?? 0, 100)}%` }}
+                    style={{ width: `${Math.min(vmStatsData?.cpuUsagePercent ?? 0, 100)}%` }}
                   />
                 </div>
               </div>
@@ -150,17 +158,17 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
                     Memory Usage
                   </div>
                   <span className="text-lg font-bold text-text-primary">
-                    {vmStatsData?.memoryUsage !== null && vmStatsData?.memoryUsage !== undefined ? `${vmStatsData.memoryUsage.toFixed(1)}%` : '--'}
+                    {vmStatsData?.memoryUsagePercent !== null && vmStatsData?.memoryUsagePercent !== undefined ? `${vmStatsData.memoryUsagePercent.toFixed(1)}%` : '--'}
                   </span>
                 </div>
                 <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
                   <div
                     className={clsx(
                       'h-full rounded-full transition-all duration-500',
-                      (vmStatsData?.memoryUsage ?? 0) > 80 ? 'bg-red-500' :
-                        (vmStatsData?.memoryUsage ?? 0) > 60 ? 'bg-yellow-500' : 'bg-green-500'
+                      (vmStatsData?.memoryUsagePercent ?? 0) > 80 ? 'bg-red-500' :
+                        (vmStatsData?.memoryUsagePercent ?? 0) > 60 ? 'bg-yellow-500' : 'bg-green-500'
                     )}
-                    style={{ width: `${Math.min(vmStatsData?.memoryUsage ?? 0, 100)}%` }}
+                    style={{ width: `${Math.min(vmStatsData?.memoryUsagePercent ?? 0, 100)}%` }}
                   />
                 </div>
               </div>
