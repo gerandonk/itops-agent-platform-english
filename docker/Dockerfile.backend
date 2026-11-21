@@ -128,8 +128,8 @@ COPY docker/docker-entrypoint-backend.sh /usr/local/bin/docker-entrypoint.sh
 RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Create non-root user and set ownership in one command
-RUN addgroup -S appgroup && \
-    adduser -S appuser -G appgroup && \
+RUN addgroup -g 1001 -S appgroup && \
+    adduser -u 1001 -S appuser -G appgroup && \
     mkdir -p /app/data && \
     chown -R appuser:appgroup /app
 
