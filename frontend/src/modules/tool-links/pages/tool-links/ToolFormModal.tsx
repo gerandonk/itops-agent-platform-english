@@ -44,7 +44,7 @@ export function ToolFormModal({
       onClick={(e) => e.stopPropagation()}
     >
       <div className="bg-surface border border-border/60 rounded-2xl w-full max-w-lg overflow-hidden">
-        <div className="px-5 py-4 border-b border-border/60 flex items-center justify-between">
+        <div className="px-5 py-4 border-b border-border/60 flex items-center justify-between flex-wrap">
           <h2 className="text-base font-semibold text-text-primary">
             {selectedToolId ? 'Edit tool' : 'Add tool'}
           </h2>
@@ -91,7 +91,7 @@ export function ToolFormModal({
               <button
                 type="button"
                 onClick={() => setShowIconPicker(!showIconPicker)}
-                className="w-full px-3 py-2 bg-bg-muted border border-border/60 rounded-lg text-text-primary flex items-center justify-between text-sm hover:border-primary/40 transition-colors"
+                className="w-full px-3 py-2 bg-bg-muted border border-border/60 rounded-lg text-text-primary flex items-center justify-between flex-wrap text-sm hover:border-primary/40 transition-colors"
               >
                 <span className="flex items-center gap-2">
                   <ToolIcon iconName={formData.icon} className="w-4 h-4" />

@@ -38,26 +38,26 @@ export default function AlertProviders() {
 
   if (data.isLoading) {
     return (
-      <div className="h-screen flex items-center justify-center bg-slate-900">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      <div className="h-screen flex items-center justify-center bg-background">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
       </div>
     );
   }
 
   return (
-    <div className="h-screen flex flex-col bg-slate-900 overflow-hidden">
+    <div className="h-screen flex flex-col bg-background overflow-hidden">
       {/* Header */}
-      <div className="p-6 border-b border-slate-700 flex items-center justify-between">
+      <div className="p-6 border-b border-border flex items-center justify-between flex-wrap">
         <div>
-          <h1 className="text-2xl font-bold text-slate-100 mb-2">Alert Source Configuration</h1>
-          <p className="text-slate-400">
+          <h1 className="text-2xl font-bold text-text-primary mb-2">Alert Source Configuration</h1>
+          <p className="text-text-secondary">
             Configure external alert sources such as Prometheus, Zabbix, and Grafana, and automatically plug them into the alert handling workflow
           </p>
         </div>
         <div className="flex gap-3">
           <button
             onClick={handleRefresh}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-slate-100 rounded-lg hover:bg-slate-700 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-surface text-text-primary rounded-lg hover:bg-surface/80 transition-all"
           >
             <RefreshCw className="w-4 h-4" />
             Refresh
@@ -66,23 +66,23 @@ export default function AlertProviders() {
       </div>
 
       {/* Filters */}
-      <div className="p-4 border-b border-slate-700 flex flex-wrap gap-3 items-center">
+      <div className="p-4 border-b border-border flex flex-wrap gap-3 items-center">
         <input
           type="text"
           value={data.searchQuery}
           onChange={(e) => data.setSearchQuery(e.target.value)}
           placeholder="Search alert sources..."
-          className="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-100 focus:outline-none focus:border-blue-500 w-full sm:w-64"
+          className="px-3 py-2 bg-surface border border-border rounded-lg text-sm text-text-primary focus:outline-none focus:border-blue-500 w-full sm:w-64"
         />
-        <div className="flex gap-2 items-center">
-          <span className="text-sm text-slate-400">Type:</span>
+        <div className="flex flex-wrap gap-2 items-center">
+          <span className="text-sm text-text-secondary">Type:</span>
           <button
             onClick={() => data.setSelectedType(null)}
             className={clsx(
               'px-3 py-1.5 rounded-full text-sm font-medium transition-all',
               !data.selectedType
-                ? 'bg-blue-600 text-white'
-                : 'bg-slate-800 text-slate-300 hover:bg-slate-700',
+                ? 'bg-primary text-white'
+                : 'bg-surface text-text-secondary hover:bg-surface/80',
             )}
           >
             All
@@ -94,8 +94,8 @@ export default function AlertProviders() {
               className={clsx(
                 'px-3 py-1.5 rounded-full text-sm font-medium transition-all',
                 data.selectedType === type
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700',
+                  ? 'bg-primary text-white'
+                  : 'bg-surface text-text-secondary hover:bg-surface/80',
               )}
             >
               <Globe className="w-3 h-3 inline mr-1" />
@@ -118,8 +118,8 @@ export default function AlertProviders() {
       />
 
       {/* Available alert sources grid */}
-      <div className="flex-1 overflow-auto p-6">
-        <h3 className="text-lg font-semibold text-slate-200 mb-4">Available Alert Source Types</h3>
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
+        <h3 className="text-lg font-semibold text-text-primary mb-4">Available Alert Source Types</h3>
         <AvailableProviderGrid
           providers={data.filteredProviders}
           relatedConfigsMap={data.configsByProvider}

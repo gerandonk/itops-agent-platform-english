@@ -32,7 +32,7 @@ export default function CriticalAlertBanner({
     <>
       {/* Critical Alert Banner */}
       {criticalAlertCount > 0 && (
-        <div className="mb-3 px-4 py-3 bg-gradient-to-r from-red-900/60 via-red-800/60 to-red-900/60 border border-red-500/60 rounded-xl backdrop-blur-md flex items-center justify-between animate-pulse">
+        <div className="mb-3 px-4 py-3 bg-gradient-to-r from-red-900/60 via-red-800/60 to-red-900/60 border border-red-500/60 rounded-xl backdrop-blur-md flex items-center justify-between flex-wrap animate-pulse">
           <div className="flex items-center gap-3">
             <Bell className="w-6 h-6 text-red-300" />
             <div>
@@ -57,7 +57,7 @@ export default function CriticalAlertBanner({
 
       {/* Error Banner */}
       {isStatsError && (
-        <div className="mb-3 px-4 py-3 bg-red-900/40 border border-red-500/50 rounded-xl backdrop-blur-md flex items-center justify-between">
+        <div className="mb-3 px-4 py-3 bg-red-900/40 border border-red-500/50 rounded-xl backdrop-blur-md flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-2">
             <AlertCircle className="w-5 h-5 text-red-400 animate-pulse" />
             <span className="text-red-200 font-medium">Backend service connection exception</span>

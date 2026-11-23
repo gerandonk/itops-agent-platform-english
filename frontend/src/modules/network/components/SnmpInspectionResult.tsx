@@ -52,11 +52,11 @@ function formatRate(bps: number): string {
 
 function formatUptime(ticks: number): string {
   const seconds = Math.floor(ticks / 100);
-  if (seconds < 60) return `\${seconds} seconds`;
+  if (seconds < 60) return `${seconds} seconds`;
   const d = Math.floor(seconds / 86400);
   const h = Math.floor((seconds % 86400) / 3600);
   const m = Math.floor((seconds % 3600) / 60);
-  return `\${d} days \${h} hours \${m} minutes`;
+  return `${d} days ${h} hours ${m} minutes`;
 }
 
 export default function SnmpInspectionResult({ result, deviceName, onClose }: Props) {
@@ -66,7 +66,7 @@ export default function SnmpInspectionResult({ result, deviceName, onClose }: Pr
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
         <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-md mx-4">
-          <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+          <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border">
             <h3 className="text-base font-medium text-text-primary">SNMP Inspection - {deviceName}</h3>
             <button onClick={onClose} className="text-text-secondary hover:text-text-primary"><X className="w-5 h-5" /></button>
           </div>
@@ -90,7 +90,7 @@ export default function SnmpInspectionResult({ result, deviceName, onClose }: Pr
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-3xl mx-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border sticky top-0 bg-surface rounded-t-xl z-10">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border sticky top-0 bg-surface rounded-t-xl z-10">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
               <Radio className="w-4 h-4 text-emerald-400" />
@@ -150,7 +150,7 @@ export default function SnmpInspectionResult({ result, deviceName, onClose }: Pr
 
         {/* 接口列表 */}
         <div className="p-6">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between flex-wrap mb-3">
             <div className="flex items-center gap-2">
               <Wifi className="w-4 h-4 text-blue-400" />
               <span className="text-sm font-medium text-text-primary">Interface status</span>

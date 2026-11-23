@@ -109,11 +109,11 @@ export default function ChatWidget() {
       return data;
     },
     onSuccess: (data) => {
-      if (data.success) {
-        setCurrentConversationId(data.data.id);
+      if (data?.id) {
+        setCurrentConversationId(data.id);
         queryClient.invalidateQueries({ queryKey: ['copilot-conversations'] });
       } else {
-        toast.error(`Failed to create conversation: \${data.error}`);
+        toast.error(`Failed to create conversation: ${data.error || 'Unknown error'}`);
       }
     },
     onError: () => {
@@ -147,8 +147,8 @@ export default function ChatWidget() {
 
     if (!currentConversationId) {
       await createConversationMutation.mutateAsync().then((data) => {
-        if (data?.success) {
-          sendMessageMutation.mutate({ conversationId: data.data.id, message });
+        if (data?.id) {
+          sendMessageMutation.mutate({ conversationId: data.id, message });
         }
       });
     } else {
@@ -190,7 +190,7 @@ export default function ChatWidget() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {!isMinimized && (
         <div className={`w-[min(420px,calc(100vw-3rem))] h-[min(600px,calc(100vh-10rem))] ${bgMain} rounded-2xl shadow-2xl border ${borderColor} flex flex-col mb-3 overflow-hidden animate-slide-up`}>
-          <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 flex-shrink-0">
+          <div className="flex items-center justify-between flex-wrap px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 flex-shrink-0">
             <div className="flex items-center gap-2">
               <Bot className="w-5 h-5 text-white" />
               <h3 className="font-semibold text-white">IT Operations Assistant</h3>
@@ -239,7 +239,7 @@ export default function ChatWidget() {
                         : `${cardBg} ${textSecondary} ${hoverBg}`
                     }`}
                   >
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between flex-wrap">
                       <span className="truncate">
                         {c.messages[0]?.content?.substring(0, 12) || 'New chat'}
                       </span>

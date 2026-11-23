@@ -97,8 +97,8 @@ export default function RemediationPolicies() {
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-      <div className="flex-1 overflow-auto p-6">
-        <div className="flex items-center justify-between mb-6">
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
+        <div className="flex items-center justify-between flex-wrap mb-6">
           <div>
             <h2 className="text-2xl font-bold text-text-primary mb-1">Auto-Remediation Policies</h2>
             <p className="text-text-secondary text-sm">Configure alert auto-remediation rules and policies</p>
@@ -241,7 +241,7 @@ export default function RemediationPolicies() {
         )}
 
         {data && data.total > limit && (
-          <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center justify-between flex-wrap mt-4">
             <div className="text-sm text-text-secondary">
               Total  {data.total}  policies
             </div>

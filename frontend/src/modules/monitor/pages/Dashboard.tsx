@@ -240,7 +240,7 @@ export default function Dashboard() {
   return (
     <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2">{t('dashboard.title')}</h1>
             <p className="text-text-secondary">{t('dashboard.subtitle')}</p>
@@ -259,7 +259,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="bg-surface rounded-xl p-6 border border-border animate-pulse">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between flex-wrap mb-4">
                   <div className="w-12 h-12 rounded-lg bg-border/50" />
                   <div className="w-8 h-8 rounded bg-border/50" />
                 </div>
@@ -300,7 +300,7 @@ export default function Dashboard() {
 
             {/* 右侧：最新告警 */}
             <div className="lg:col-span-3 bg-surface rounded-xl p-4 border border-border">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between flex-wrap mb-3">
                 <h2 className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
                   <Bell className="w-4 h-4 text-red-500" />
                   {t('dashboard.latestAlerts')}
@@ -352,7 +352,7 @@ export default function Dashboard() {
         )}
 
         <div className="bg-surface rounded-xl p-5 border border-border">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <h2 className="text-base font-semibold text-text-primary flex items-center gap-2">
               <Zap className="w-4 h-4 text-primary" />
               {t('dashboard.quickActions')}
@@ -381,7 +381,7 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="bg-surface rounded-xl p-4 border border-border">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <h2 className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
                 <Server className="w-4 h-4 text-purple-500" />
                 {t('dashboard.servers')}
@@ -429,7 +429,7 @@ export default function Dashboard() {
           </div>
 
           <div className="bg-surface rounded-xl p-4 border border-border">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <h2 className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
                 <Bot className="w-4 h-4 text-primary" />
                 {t('dashboard.onlineAgents')}
@@ -464,7 +464,7 @@ export default function Dashboard() {
           </div>
 
           <div className="bg-surface rounded-xl p-4 border border-border">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <h2 className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
                 <BookOpen className="w-4 h-4 text-cyan-500" />
                 {t('dashboard.knowledge')}
@@ -484,7 +484,7 @@ export default function Dashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-text-primary text-xs truncate">{item.title}</h3>
-                    <div className="flex items-center justify-between mt-0.5">
+                    <div className="flex items-center justify-between flex-wrap mt-0.5">
                       <span className="text-[10px] text-text-secondary">{item.category}</span>
                       <span className="text-[10px] text-status-success">
                         {item.usage_count || 0}
@@ -503,7 +503,7 @@ export default function Dashboard() {
           </div>
 
           <div className="bg-surface rounded-xl p-4 border border-border lg:col-span-3">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between flex-wrap mb-4">
               <h2 className="text-sm font-semibold text-text-primary flex items-center gap-1.5">
                 <Play className="w-4 h-4 text-green-500" />
                 {t('dashboard.recentTasks')}

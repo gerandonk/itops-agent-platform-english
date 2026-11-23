@@ -43,9 +43,9 @@ export default function Knowledge() {
   });
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2">Knowledge Base</h1>
             <p className="text-text-secondary">Operations knowledge management and problem solutions</p>
@@ -168,7 +168,7 @@ export default function Knowledge() {
                 </div>
               )}
 
-              <div className="flex items-center justify-between pt-4 border-t border-border">
+              <div className="flex items-center justify-between flex-wrap pt-4 border-t border-border">
                 <span className="text-xs text-text-secondary flex items-center gap-1">
                   <Eye className="w-3 h-3" />
                   Used  {entry.usage_count}  times
@@ -239,7 +239,7 @@ export default function Knowledge() {
       {showDetail && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="bg-surface rounded-xl p-6 w-full max-w-3xl max-h-[90vh] overflow-auto border border-border">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between flex-wrap mb-6">
               <h2 className="text-xl font-bold text-text-primary">{showDetail.title}</h2>
               <button
                 onClick={() => setShowDetail(null)}

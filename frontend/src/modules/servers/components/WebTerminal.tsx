@@ -273,7 +273,7 @@ export default function WebTerminal({ serverId, serverName, token, onClose }: Te
   return (
     <div className="flex flex-col h-full bg-gray-900">
       {/* Top Status Bar */}
-      <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+      <div className="flex items-center justify-between flex-wrap px-4 py-2 bg-gray-800 border-b border-gray-700">
         <div className="flex items-center gap-2">
           <div className={`w-2 h-2 rounded-full ${
             status === 'connected' ? 'bg-green-500' :

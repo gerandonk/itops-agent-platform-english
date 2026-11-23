@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Bell, Database, Shield, Brain, BookOpen, Network } from 'lucide-react';
+import { Bell, Database, Shield, Brain, BookOpen, Network, Group } from 'lucide-react';
 import clsx from 'clsx';
 import ModelSettings from './settings/ModelSettings';
 import NotificationSettings from '../../notification/pages/NotificationSettings';
@@ -17,6 +17,7 @@ import SecuritySettings from './settings/SecuritySettings';
 import GeneralSettings from './settings/GeneralSettings';
 import QAnythingSettings from './settings/QAnythingSettings';
 import ITopSyncSettings from './settings/ITopSyncSettings';
+import Grouping from './Grouping';
 
 interface TabDef {
   id: string;
@@ -39,6 +40,7 @@ export default function Settings() {
   const tabs: TabDef[] = [
     { id: 'models', name: t('settings.models'), icon: Brain },
     { id: 'qanything', name: t('dashboard.knowledge'), icon: BookOpen },
+    { id: 'grouping', name: t('settings.grouping'), icon: Group },
     { id: 'notifications', name: t('settings.monitoring'), icon: Bell },
     { id: 'database', name: t('settings.backup'), icon: Database },
     { id: 'itop', name: 'iTop CMDB', icon: Network },
@@ -46,7 +48,7 @@ export default function Settings() {
   ];
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-bold text-text-primary mb-2">{t('settings.title')}</h1>
@@ -54,9 +56,9 @@ export default function Settings() {
         </div>
 
         <div className="bg-surface rounded-xl border border-border overflow-hidden">
-          <div className="flex">
+          <div className="flex flex-col sm:flex-row gap-2 items-stretch">
             {/* Left Navigation */}
-            <div className="w-64 border-r border-border p-4">
+            <div className="w-full sm:w-64 border-r border-border p-4">
               <nav className="space-y-1">
                 {tabs.map((tab) => {
                   const Icon = tab.icon;
@@ -83,6 +85,7 @@ export default function Settings() {
             <div className="flex-1 p-6">
               {activeTab === 'models' && <ModelSettings />}
               {activeTab === 'qanything' && <QAnythingSettings />}
+              {activeTab === 'grouping' && <Grouping />}
               {activeTab === 'notifications' && <NotificationSettings />}
               {activeTab === 'database' && <BackupSettings />}
               {activeTab === 'itop' && <ITopSyncSettings />}
@@ -115,8 +118,8 @@ function CommunitySection() {
   return (
     <div className="bg-surface rounded-xl border border-border overflow-hidden">
       <div className="relative p-6">
-        {/* WeChat Business Card — Top Right */}
-        <div className="absolute top-10 right-5 flex flex-col items-center z-10">
+        {/* WeChat Business Card — Top Right (hidden on mobile) */}
+        <div className="hidden sm:flex absolute top-10 right-5 flex-col items-center z-10">
           <img
             src="/wechaterweima.png"
             alt="WeChat official account card"
@@ -129,13 +132,13 @@ function CommunitySection() {
         </div>
 
         {/* Title + Intro — Avoid right-side business card */}
-        <h3 className="text-lg font-semibold text-text-primary mb-1 pr-[600px]">Join the Community</h3>
-        <p className="text-sm text-text-secondary mb-4 pr-[600px]">
+        <h3 className="text-lg font-semibold text-text-primary mb-1 sm:pr-[600px]">Join the Community</h3>
+        <p className="text-sm text-text-secondary mb-4 sm:pr-[600px]">
           Gathered by interest and passion, building a user-friendly open-source AI IT operations platform together
         </p>
 
         {/* Upper Short Info — Avoid right-side business card */}
-        <div className="text-sm text-text-secondary leading-relaxed space-y-2 mb-4 pr-[600px]">
+        <div className="text-sm text-text-secondary leading-relaxed space-y-2 mb-4 sm:pr-[600px]">
           <p>
             👋 Welcome to join <span className="text-text-primary font-medium">AIOps Agent Platform</span> project group, latest code is in{' '}
             <code className="bg-bg-muted px-1.5 py-0.5 rounded text-xs font-mono">dev</code> branch.
@@ -157,7 +160,7 @@ function CommunitySection() {
         </div>
 
         {/* Lower Long Content — Avoid right-side business card */}
-        <div className="text-sm text-text-secondary leading-relaxed space-y-3 pr-[600px]">
+        <div className="text-sm text-text-secondary leading-relaxed space-y-3 sm:pr-[600px]">
           <div>
             <p className="text-text-primary font-medium mb-1">💡 Why We Started</p>
             <p>

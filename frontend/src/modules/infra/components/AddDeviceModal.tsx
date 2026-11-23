@@ -42,7 +42,7 @@ export default function AddDeviceModal({ device, onClose, onSuccess }: AddDevice
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border sticky top-0 bg-surface rounded-t-xl z-10">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border sticky top-0 bg-surface rounded-t-xl z-10">
           <h3 className="text-base font-medium text-text-primary">
             {data.isEditing ? 'Edit device' : 'Add network device'}
           </h3>

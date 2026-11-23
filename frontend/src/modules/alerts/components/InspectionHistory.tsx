@@ -71,7 +71,7 @@ export default function InspectionHistory({ deviceId, deviceName, onClose }: Ins
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden flex flex-col">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border">
           <div className="flex items-center gap-2">
             <History className="w-5 h-5 text-text-secondary" />
             <h3 className="text-base font-medium text-text-primary">
@@ -100,7 +100,7 @@ export default function InspectionHistory({ deviceId, deviceName, onClose }: Ins
                 <div
                   key={item.id}
                   onClick={() => handleViewDetails(item)}
-                  className="flex items-center justify-between p-4 bg-background rounded-lg hover:bg-background/80 cursor-pointer transition-colors"
+                  className="flex items-center justify-between flex-wrap p-4 bg-background rounded-lg hover:bg-background/80 cursor-pointer transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     {item.status === 'success' ? (
@@ -144,7 +144,7 @@ export default function InspectionHistory({ deviceId, deviceName, onClose }: Ins
       {selectedHistory && (
         <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-lg mx-4 max-h-[70vh] overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border">
               <h4 className="text-base font-medium text-text-primary">
                 Inspection Details
               </h4>

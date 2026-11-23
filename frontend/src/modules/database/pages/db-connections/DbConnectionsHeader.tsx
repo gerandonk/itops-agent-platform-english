@@ -48,7 +48,7 @@ export function DbConnectionsHeader({
 
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div>
           <h1 className="text-2xl font-bold text-text-primary flex items-center gap-3">
             <Database className="w-7 h-7 text-blue-400" />

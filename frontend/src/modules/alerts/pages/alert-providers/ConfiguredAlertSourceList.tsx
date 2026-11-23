@@ -32,8 +32,8 @@ export function ConfiguredAlertSourceList({
   if (!configs || configs.length === 0) return null;
 
   return (
-    <div className="px-6 py-4 border-b border-slate-700">
-      <h3 className="text-lg font-semibold text-slate-200 mb-4">
+    <div className="px-6 py-4 border-b border-border">
+      <h3 className="text-lg font-semibold text-text-primary mb-4">
         Configured alert sources ({configs.length})
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -43,7 +43,7 @@ export function ConfiguredAlertSourceList({
           return (
             <div
               key={config.id}
-              className="bg-slate-800 border border-slate-700 rounded-xl p-4 hover:border-slate-600 transition-all"
+              className="bg-surface border border-border rounded-xl p-4 hover:border-border/60 transition-all"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -51,8 +51,8 @@ export function ConfiguredAlertSourceList({
                     <Globe className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-slate-100">{config.name}</h3>
-                    <span className="text-xs text-slate-400">
+                    <h3 className="text-base font-semibold text-text-primary">{config.name}</h3>
+                    <span className="text-xs text-text-secondary">
                       {relatedProvider?.name || config.provider_id} · {relatedProvider?.type}
                     </span>
                   </div>
@@ -62,7 +62,7 @@ export function ConfiguredAlertSourceList({
                     'px-2 py-0.5 rounded-full text-xs font-medium',
                     config.enabled
                       ? 'bg-green-900/50 text-green-300'
-                      : 'bg-slate-700 text-slate-400',
+                      : 'bg-surface/50 text-text-secondary',
                   )}
                 >
                   {config.enabled ? 'Enabled' : 'Disabled'}
@@ -73,21 +73,21 @@ export function ConfiguredAlertSourceList({
               <div className="mb-3">
                 <div className="flex items-center gap-2 mb-1">
                   <Link className="w-3 h-3 text-blue-400" />
-                  <span className="text-xs text-slate-400">Webhook URL:</span>
+                  <span className="text-xs text-text-secondary">Webhook URL:</span>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <code className="flex-1 bg-slate-900 px-2 py-1.5 rounded text-xs text-blue-300 overflow-x-auto whitespace-nowrap select-all">
+                  <code className="flex-1 bg-background px-2 py-1.5 rounded text-xs text-text-primary overflow-x-auto whitespace-nowrap select-all">
                     {webhookUrl}
                   </code>
                   <button
                     onClick={() => onCopy(webhookUrl, config.id)}
-                    className="p-1.5 bg-slate-700 rounded hover:bg-slate-600 transition-all flex-shrink-0"
+                    className="p-1.5 bg-surface rounded hover:bg-surface/80 transition-all flex-shrink-0"
                     title="Copy"
                   >
                     {copied === config.id ? (
                       <CheckCircle className="w-4 h-4 text-green-400" />
                     ) : (
-                      <Copy className="w-4 h-4 text-slate-300" />
+                      <Copy className="w-4 h-4 text-text-tertiary" />
                     )}
                   </button>
                 </div>

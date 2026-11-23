@@ -23,7 +23,7 @@ export function SnmpTrapsTab() {
   return (
     <div className="space-y-4">
       <div className="bg-surface rounded-xl border border-border p-5">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between flex-wrap mb-4">
           <div className="flex items-center gap-2">
             <Activity className="w-5 h-5 text-emerald-400" />
             <h3 className="font-medium text-text-primary">SNMP Trap Reception Log</h3>
@@ -59,7 +59,7 @@ export function SnmpTrapsTab() {
           <div className="space-y-2">
             {traps.map((trap: SnmpTrap, idx: number) => (
               <div key={idx} className="bg-background rounded-lg p-3 border border-border/50">
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center justify-between flex-wrap mb-1">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-mono text-text-tertiary">
                       {new Date((trap.received_at || trap.timestamp) ?? 0).toLocaleString()}

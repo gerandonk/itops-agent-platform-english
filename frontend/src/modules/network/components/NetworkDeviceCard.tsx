@@ -210,24 +210,24 @@ export default function NetworkDeviceCard({ device, onEdit, onDelete, onInspect,
 
         <div className="space-y-2 text-xs">
           {device.location && (
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <span className="text-text-secondary">Location</span>
               <span className="font-medium text-text-primary">{device.location}</span>
             </div>
           )}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <span className="text-text-secondary">Status</span>
             <div className="flex items-center gap-1.5">
               <span className={`w-2 h-2 rounded-full ${statusColor}`} />
               <span className="font-medium text-text-primary">{statusText}</span>
             </div>
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <span className="text-text-secondary">Last Inspection</span>
             <span className="font-medium text-text-primary">{formatLastInspection(device.last_inspection_at)}</span>
           </div>
           {device.last_inspection_result && (
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <span className="text-text-secondary">Inspection Results</span>
               <span className="font-medium text-text-primary truncate max-w-[100px]">{device.last_inspection_result}</span>
             </div>
@@ -235,7 +235,7 @@ export default function NetworkDeviceCard({ device, onEdit, onDelete, onInspect,
         </div>
       </div>
 
-      <div className="border-t border-border px-4 py-2 flex items-center justify-between bg-background/50">
+      <div className="border-t border-border px-4 py-2 flex items-center justify-between flex-wrap bg-background/50">
         {device.snmp_enabled === 1 && onSnmpTestConnection ? (
           <button
             onClick={() => onSnmpTestConnection(device)}

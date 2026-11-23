@@ -78,7 +78,7 @@ export function authenticateToken(req: Request & { user?: AuthUser }, res: Respo
   if (!authHeader?.startsWith('Bearer ')) {
     return res.status(401).json({
       success: false,
-      message: '未提供认证token'
+      message: 'No authentication token provided'
     });
   }
 
@@ -88,7 +88,7 @@ export function authenticateToken(req: Request & { user?: AuthUser }, res: Respo
   if (!user) {
     return res.status(401).json({
       success: false,
-      message: 'Token已失效或无效'
+      message: 'Token is invalid or has expired'
     });
   }
 
@@ -132,14 +132,14 @@ export function requireRole(...allowedRoles: string[]) {
     if (!req.user) {
       return res.status(401).json({
         success: false,
-        message: '未认证'
+        message: 'Not authenticated'
       });
     }
 
     if (!allowedRoles.includes(req.user.role)) {
       return res.status(403).json({
         success: false,
-        message: '权限不足'
+        message: 'Insufficient permissions'
       });
     }
 
@@ -151,7 +151,7 @@ export function requirePasswordChange(req: Request & { user?: AuthUser }, res: R
   if (req.user?.password_must_change) {
     return res.status(403).json({
       success: false,
-      message: '请先修改初始密码',
+      message: 'Please change your initial password first',
       code: 'PASSWORD_MUST_CHANGE'
     });
   }

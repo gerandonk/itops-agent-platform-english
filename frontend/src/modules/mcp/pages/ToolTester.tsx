@@ -87,13 +87,13 @@ const ToolTester: React.FC = () => {
 
       <Card style={{ marginBottom: 16 }}>
         <Space direction="vertical" style={{ width: '100%' }}>
-          <Space wrap>
+          <Space wrap style={{ gap: 8 }}>
             <Select
               showSearch
               placeholder="Select tool..."
               value={selectedTool}
               onChange={handleToolChange}
-              style={{ width: 320 }}
+              style={{ width: '100%', maxWidth: 320, minWidth: 200 }}
               filterOption={(input, option) =>
                 (option?.label as string || '').toLowerCase().includes(input.toLowerCase())
               }
@@ -130,6 +130,7 @@ const ToolTester: React.FC = () => {
             loading={loading}
             disabled={!selectedTool}
             size="large"
+            block
           >
             Invoke Tool
           </Button>
@@ -157,9 +158,9 @@ const ToolTester: React.FC = () => {
           {history.map((h, i) => (
             <div key={i} style={{
               padding: '8px 0', borderBottom: i < history.length - 1 ? '1px solid #f0f0f0' : 'none',
-              display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
+              display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'space-between', alignItems: 'flex-start',
             }}>
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <Text strong>{h.tool}</Text>
                 <Text type="secondary" style={{ marginLeft: 8 }}>
                   {new Date(h.time).toLocaleTimeString()}

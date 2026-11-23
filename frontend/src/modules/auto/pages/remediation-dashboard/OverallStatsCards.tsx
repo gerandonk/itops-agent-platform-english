@@ -19,7 +19,7 @@ export function OverallStatsCards({ loading, remediationStats, stats }: OverallS
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="bg-surface/30 border border-border rounded-xl p-5 hover:border-blue-500/50 transition-all">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <div className="p-2.5 rounded-lg bg-blue-500/10">
             <Shield className="w-5 h-5 text-blue-400" />
           </div>
@@ -30,12 +30,12 @@ export function OverallStatsCards({ loading, remediationStats, stats }: OverallS
         </div>
         <div className="text-sm text-text-secondary">Total Policies</div>
         <div className="mt-2 text-xs text-green-400">
-          {loading ? '' : `\${remediationStats?.enabled_policies || 0} enabled`}
+          {loading ? '' : `${remediationStats?.enabled_policies || 0} enabled`}
         </div>
       </div>
 
       <div className="bg-surface/30 border border-border rounded-xl p-5 hover:border-green-500/50 transition-all">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <div className="p-2.5 rounded-lg bg-green-500/10">
             <CheckCircle className="w-5 h-5 text-green-400" />
           </div>
@@ -53,7 +53,7 @@ export function OverallStatsCards({ loading, remediationStats, stats }: OverallS
       </div>
 
       <div className="bg-surface/30 border border-border rounded-xl p-5 hover:border-purple-500/50 transition-all">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <div className="p-2.5 rounded-lg bg-purple-500/10">
             <Clock className="w-5 h-5 text-purple-400" />
           </div>
@@ -69,7 +69,7 @@ export function OverallStatsCards({ loading, remediationStats, stats }: OverallS
       </div>
 
       <div className="bg-surface/30 border border-border rounded-xl p-5 hover:border-orange-500/50 transition-all">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <div className="p-2.5 rounded-lg bg-orange-500/10">
             <AlertCircle className="w-5 h-5 text-orange-400" />
           </div>

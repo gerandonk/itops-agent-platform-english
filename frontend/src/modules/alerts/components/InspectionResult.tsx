@@ -104,7 +104,7 @@ export default function InspectionResult({ result, deviceName, onClose }: Inspec
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-2xl mx-4 max-h-[90vh] overflow-hidden flex flex-col">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border">
           <div>
             <h3 className="text-base font-medium text-text-primary">
               Inspection Report - {deviceName}
@@ -149,7 +149,7 @@ export default function InspectionResult({ result, deviceName, onClose }: Inspec
               <h4 className="text-sm font-medium text-text-primary mb-3">Detailed Results</h4>
               <div className="space-y-2">
                 {result.results.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-background rounded-md hover:bg-background/80 transition-colors">
+                  <div key={index} className="flex items-center justify-between flex-wrap p-3 bg-background rounded-md hover:bg-background/80 transition-colors">
                     <div className="flex items-center gap-3">
                       {getStatusIcon(item.status)}
                       <div>
@@ -187,7 +187,7 @@ export default function InspectionResult({ result, deviceName, onClose }: Inspec
           </div>
         </div>
 
-        <div className="flex items-center justify-between px-6 py-4 bg-background/50 border-t border-border">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 bg-background/50 border-t border-border">
           <div className="flex items-center gap-2 text-xs text-text-secondary">
             <Clock className="w-3 h-3" />
             <span>{new Date(result.results[0]?.timestamp).toLocaleString('en-US')}</span>

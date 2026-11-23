@@ -18,7 +18,7 @@ export default function AgentEditorTestModal({
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-gradient-to-br from-surface to-background backdrop-blur-xl rounded-2xl w-full max-w-3xl border border-border shadow-2xl shadow-blue-500/10 flex flex-col max-h-[90vh]">
-        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-shrink-0">
+        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-wrap flex-shrink-0">
           <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
             🧪 Test Agent
           </h2>

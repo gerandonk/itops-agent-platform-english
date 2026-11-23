@@ -128,7 +128,7 @@ export default function AgentList({ filteredAgents, isLoading, onShowDetail, onT
             )}
           </div>
 
-          <div className="flex items-center justify-between gap-2 pt-3 border-t border-border/30">
+          <div className="flex items-center justify-between flex-wrap gap-2 pt-3 border-t border-border/30">
             <span
               className={clsx(
                 'px-3 py-1.5 rounded-full text-xs font-semibold',

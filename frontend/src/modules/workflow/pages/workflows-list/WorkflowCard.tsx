@@ -115,7 +115,7 @@ export default function WorkflowCard({
         </p>
 
         <div className="bg-gradient-to-br from-background/80 to-background/40 rounded-xl p-5 mb-4 border border-border/60">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <span className="text-sm font-semibold text-text-primary flex items-center gap-2">
               <GitBranch className="w-4 h-4 text-primary" />
               Execution Flow

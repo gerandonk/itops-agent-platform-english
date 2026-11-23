@@ -64,9 +64,9 @@ export default function AuditLogs() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary">Audit Logs</h1>
             <p className="text-text-secondary">System operation logs and audit trail</p>
@@ -77,7 +77,7 @@ export default function AuditLogs() {
         {statsData && (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Today's Operations</p>
                   <p className="text-2xl font-bold text-blue-500">{statsData.todayCount}</p>
@@ -88,7 +88,7 @@ export default function AuditLogs() {
               </div>
             </div>
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Operation failed</p>
                   <p className="text-2xl font-bold text-red-500">{statsData.failureCount}</p>
@@ -99,7 +99,7 @@ export default function AuditLogs() {
               </div>
             </div>
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Operation Type</p>
                   <p className="text-2xl font-bold text-green-500">{statsData.actionStats?.length || 0}</p>
@@ -110,7 +110,7 @@ export default function AuditLogs() {
               </div>
             </div>
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Resource Type</p>
                   <p className="text-2xl font-bold text-purple-500">{statsData.resourceStats?.length || 0}</p>
@@ -136,11 +136,11 @@ export default function AuditLogs() {
                 className="flex-1 px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-primary"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
               <select
                 value={selectedAction}
                 onChange={(e) => setSelectedAction(e.target.value)}
-                className="px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-primary"
+                className="px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-primary w-full sm:w-auto min-w-[150px]"
               >
                 <option value="">All Operations</option>
                 {actions.map((action) => (
@@ -150,7 +150,7 @@ export default function AuditLogs() {
               <select
                 value={selectedResource}
                 onChange={(e) => setSelectedResource(e.target.value)}
-                className="px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-primary"
+                className="px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-primary w-full sm:w-auto min-w-[150px]"
               >
                 <option value="">All Resources</option>
                 {resources.map((resource) => (
@@ -232,7 +232,7 @@ export default function AuditLogs() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-surface border border-border rounded-xl w-full max-w-2xl max-h-[80vh] overflow-y-auto">
             <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between flex-wrap mb-4">
                 <h2 className="text-xl font-bold text-text-primary">Log Details</h2>
                 <button
                   onClick={() => setSelectedLog(null)}

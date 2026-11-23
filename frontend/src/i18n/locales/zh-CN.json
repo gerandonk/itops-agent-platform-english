@@ -235,7 +235,9 @@
     "security": "安全设置",
     "changePassword": "修改密码",
     "monitoring": "监控告警",
-    "dataManagement": "数据管理"
+    "dataManagement": "数据管理",
+    "grouping": "联邦分组",
+    "groupingDesc": "将 Agent 编入集群，并设置合并/拆分策略"
   },
   "user": {
     "admin": "管理员",

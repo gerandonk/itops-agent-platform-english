@@ -61,7 +61,7 @@ export default function BigScreenRightColumn({
     <div className="col-span-12 lg:col-span-3 flex flex-col gap-4">
       {/* 实时告警 */}
       <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-5 border border-slate-700/50">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             Real-time Alerts
@@ -89,7 +89,7 @@ export default function BigScreenRightColumn({
                       {alert.severity}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-xs text-slate-400">
+                  <div className="flex items-center justify-between flex-wrap text-xs text-slate-400">
                     <span
                       className={`px-2 py-0.5 rounded ${alert.status === 'new' ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-700/50'}`}
                     >
@@ -104,11 +104,11 @@ export default function BigScreenRightColumn({
                   key={i}
                   className="p-3 bg-slate-900/50 rounded-lg border border-slate-700/30 animate-pulse"
                 >
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between flex-wrap mb-2">
                     <div className="h-4 bg-slate-700 rounded w-3/4" />
                     <div className="h-4 bg-slate-700 rounded w-12" />
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap">
                     <div className="h-3 bg-slate-700 rounded w-16" />
                     <div className="h-3 bg-slate-700 rounded w-20" />
                   </div>
@@ -119,7 +119,7 @@ export default function BigScreenRightColumn({
 
       {/* Agent 调用统计 */}
       <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-5 border border-slate-700/50 flex flex-col">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between flex-wrap mb-3">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             Agent Call Stats

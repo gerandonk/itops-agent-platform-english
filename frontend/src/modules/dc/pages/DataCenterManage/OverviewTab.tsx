@@ -63,13 +63,13 @@ export default function OverviewTab({
     <div>
       {/* Stat cards */}
       <Row gutter={[12, 12]} className="mb-6">
-        <Col span={3}><Card size="small"><Statistic title="Data center" value={summary?.totalRooms || 0} prefix={<Monitor size={14} />} /></Card></Col>
-        <Col span={3}><Card size="small"><Statistic title="Cabinet/Rack" value={summary?.totalRacks || 0} prefix={<LayoutGrid size={14} />} /></Card></Col>
-        <Col span={3}><Card size="small"><Statistic title="Device" value={summary?.totalDevices || 0} prefix={<Server size={14} />} /></Card></Col>
-        <Col span={3}><Card size="small"><Statistic title="Online" value={summary?.onlineDevices || 0} valueStyle={{ color: '#52c41a' }} prefix={<Wifi size={14} />} /></Card></Col>
-        <Col span={3}><Card size="small"><Statistic title="Alert" value={summary?.alertDevices || 0} valueStyle={{ color: summary?.alertDevices ? '#ff4d4f' : undefined }} prefix={<AlertTriangle size={14} />} /></Card></Col>
-        <Col span={3}><Card size="small"><Statistic title="Offline" value={summary?.offlineDevices || 0} valueStyle={{ color: '#ff4d4f' }} prefix={<Clock size={14} />} /></Card></Col>
-        <Col span={3}>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Data center" value={summary?.totalRooms || 0} prefix={<Monitor size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Cabinet/Rack" value={summary?.totalRacks || 0} prefix={<LayoutGrid size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Device" value={summary?.totalDevices || 0} prefix={<Server size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Online" value={summary?.onlineDevices || 0} valueStyle={{ color: '#52c41a' }} prefix={<Wifi size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Alert" value={summary?.alertDevices || 0} valueStyle={{ color: summary?.alertDevices ? '#ff4d4f' : undefined }} prefix={<AlertTriangle size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}><Card size="small"><Statistic title="Offline" value={summary?.offlineDevices || 0} valueStyle={{ color: '#ff4d4f' }} prefix={<Clock size={14} />} /></Card></Col>
+        <Col xs={12} sm={8} md={6} lg={3}>
           <Card size="small">
             <Statistic
               title="Temperature"
@@ -81,7 +81,7 @@ export default function OverviewTab({
             />
           </Card>
         </Col>
-        <Col span={3}>
+        <Col xs={12} sm={8} md={6} lg={3}>
           <Card size="small">
             <Statistic
               title="Humidity"
@@ -104,7 +104,7 @@ export default function OverviewTab({
         {Object.keys(roomsGrouped).length === 0 ? (
           <Empty description="No cabinet data" className="py-8" />
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-4">
             {Object.entries(roomsGrouped).map(([roomId, roomRacks]) => {
               const roomInfo = rooms.find((r) => r.id === roomId) || rooms.find((r) => r.label === roomId);
               return (
@@ -112,7 +112,7 @@ export default function OverviewTab({
                   <h4 className="text-sm font-semibold text-text-primary mb-2">
                     {roomInfo?.label || roomInfo?.name || roomId}
                   </h4>
-                  <div className="grid grid-cols-8 sm:grid-cols-10 md:grid-cols-12 lg:grid-cols-16 gap-1.5">
+                  <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-1">
                     {roomRacks.map((rack) => {
                       const totalU = rack.total_u || 42;
                       const usedU = rack.used_u || 0;

@@ -180,7 +180,7 @@ export default function CostAnalysis() {
   return (
     <div className="p-4 lg:p-6 space-y-6">
       {/* Page title */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-3">
           <DollarSign size={28} className="text-green-400" />
           <h1 className="text-2xl font-bold text-white">Cost Analysis</h1>
@@ -318,7 +318,7 @@ export default function CostAnalysis() {
                               {recommendationIcons[rec.type] || <AlertCircle size={28} className="text-slate-400" />}
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-between flex-wrap">
                                 <h3 className="text-white font-medium text-sm">{rec.title}</h3>
                                 <Tag color="green" className="text-xs">
                                   Monthly saving ¥{rec.monthlySavings?.toFixed(2)}
@@ -337,7 +337,7 @@ export default function CostAnalysis() {
 
                   {/* 汇总卡片 */}
                   <Card className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border-green-500/30">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between flex-wrap">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
                           <DollarSign size={20} className="text-green-400" />

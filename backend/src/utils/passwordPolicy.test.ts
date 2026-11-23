@@ -54,12 +54,12 @@ describe('passwordPolicy', () => {
 
     it('should return descriptive message for valid password', () => {
       const result = validatePassword('TestPass123!');
-      expect(result.message).toBe('密码符合要求');
+      expect(result.message).toBe('Password meets requirements');
     });
 
     it('should return descriptive message for invalid password', () => {
       const result = validatePassword('short');
-      expect(result.message).toContain('密码复杂度不足');
+      expect(result.message).toContain('Password is too weak');
     });
 
     it('should reject empty password', () => {

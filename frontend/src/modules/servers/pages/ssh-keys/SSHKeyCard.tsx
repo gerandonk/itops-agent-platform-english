@@ -144,7 +144,7 @@ export function SSHKeyCard({
 
         {expandedKey === keyData.id && fullKeyData && (
           <div className="mt-4 p-4 bg-black/60 border border-border rounded-lg">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <span className="text-xs text-text-tertiary">Private Key Content</span>
               <button
                 onClick={handleCopyKey}
@@ -162,7 +162,7 @@ export function SSHKeyCard({
 
         {usageServers !== null && (
           <div className="mt-4 p-4 bg-background/50 border border-border rounded-lg">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <span className="text-xs font-medium text-text-primary">
                 Servers using this credential ({usageServers.length} servers)
               </span>

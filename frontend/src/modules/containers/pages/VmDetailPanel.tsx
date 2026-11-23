@@ -116,7 +116,7 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
       <div className="fixed inset-0 z-50 flex justify-end">
         <div className="absolute inset-0 bg-black/50" onClick={onClose} />
         <div className="relative w-full max-w-md bg-surface border-l border-border h-full overflow-y-auto p-6">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between flex-wrap mb-6">
             <div>
               <h3 className="text-lg font-bold text-text-primary">VM Details</h3>
               <p className="text-sm text-text-secondary">{vm.name}</p>
@@ -134,7 +134,7 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
             <h4 className="text-sm font-medium text-text-primary mb-3">Performance Monitor</h4>
             <div className="space-y-4">
               <div className="bg-background border border-border rounded-lg p-4">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between flex-wrap mb-3">
                   <div className="flex items-center gap-2 text-sm text-text-secondary">
                     <Cpu className="w-4 h-4" />
                     CPU Usage
@@ -152,7 +152,7 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
               </div>
 
               <div className="bg-background border border-border rounded-lg p-4">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between flex-wrap mb-3">
                   <div className="flex items-center gap-2 text-sm text-text-secondary">
                     <HardDrive className="w-4 h-4" />
                     Memory Usage
@@ -219,7 +219,7 @@ export default function VmDetailPanel({ open, onClose, vm }: VmDetailPanelProps)
 
           {/* Snapshots */}
           <div>
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <h4 className="text-sm font-medium text-text-primary">Snapshot Management</h4>
               <span className="text-xs text-text-tertiary">{snapshots?.length ?? 0} snapshots</span>
             </div>

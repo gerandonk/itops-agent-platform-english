@@ -90,7 +90,7 @@ export default function NotificationBell() {
     >
       <div
         className={clsx(
-          'flex items-center justify-between px-4 py-3 border-b',
+          'flex items-center justify-between flex-wrap px-4 py-3 border-b',
           isDark ? 'border-slate-700' : 'border-gray-200',
         )}
       >
@@ -145,7 +145,7 @@ export default function NotificationBell() {
                 >
                   <Icon className={clsx('w-4 h-4 mt-0.5 flex-shrink-0', color)} />
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between flex-wrap gap-2">
                       <p
                         className={clsx(
                           'text-sm font-medium truncate',

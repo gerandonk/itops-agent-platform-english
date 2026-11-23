@@ -353,7 +353,7 @@ export default function ComposeEditor() {
   return (
     <div className="p-6 space-y-4">
       {/* ── Header ── */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div>
           <h1 className="text-2xl font-bold text-text-primary">Compose Orchestration</h1>
           <p className="text-sm text-text-secondary mt-1">

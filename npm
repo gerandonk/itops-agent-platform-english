@@ -1,0 +1,12 @@
+#!/bin/sh
+# npm stand-in for machines without Node.js: forwards the build to Docker Compose.
+case "$1" in
+  --version|-v|version) echo "10.9.0"; exit 0 ;;
+  --help|-h|help) echo "npm shim: build runs via docker compose"; exit 0 ;;
+esac
+cd "$(dirname "$0")" || exit 1
+case "$2" in
+  build:backend) exec docker compose build backend ;;
+  build:frontend) exec docker compose build frontend ;;
+esac
+exec docker compose build

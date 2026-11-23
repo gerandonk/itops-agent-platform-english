@@ -33,7 +33,7 @@ export function TaskList({ tasks, selectedTaskId, onSelectTask }: TaskListProps)
                 : 'bg-surface border-border hover:border-primary/50'
             )}
           >
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <h3 className="font-medium text-text-primary">{task.name}</h3>
               <span
                 className={clsx(

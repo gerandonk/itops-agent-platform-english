@@ -183,7 +183,7 @@ export function VMList({
             </table>
           </div>
           {totalVMs > pageSize && (
-            <div className="flex items-center justify-between px-4 py-3 border-t border-border text-sm text-text-secondary">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-t border-border text-sm text-text-secondary">
               <span>
                 Total  {totalVMs} units, page  {page} / {Math.ceil(totalVMs / pageSize)} 
               </span>

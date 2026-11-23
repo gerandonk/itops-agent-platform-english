@@ -184,7 +184,7 @@ export default function Workflows() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-surface rounded-xl p-5 border border-border hover:border-primary/30 transition-all">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="p-2 bg-primary/10 rounded-lg">
                 <GitBranch className="w-5 h-5 text-primary" />
               </div>
@@ -193,7 +193,7 @@ export default function Workflows() {
             <div className="text-sm text-text-secondary">Total Workflows</div>
           </div>
           <div className="bg-surface rounded-xl p-5 border border-border hover:border-purple-500/30 transition-all">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="p-2 bg-purple-500/10 rounded-lg">
                 <Sparkles className="w-5 h-5 text-purple-500" />
               </div>
@@ -204,7 +204,7 @@ export default function Workflows() {
             <div className="text-sm text-text-secondary">Templates</div>
           </div>
           <div className="bg-surface rounded-xl p-5 border border-border hover:border-blue-500/30 transition-all">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="p-2 bg-blue-500/10 rounded-lg">
                 <Edit className="w-5 h-5 text-blue-500" />
               </div>
@@ -215,7 +215,7 @@ export default function Workflows() {
             <div className="text-sm text-text-secondary">Custom</div>
           </div>
           <div className="bg-surface rounded-xl p-5 border border-border hover:border-green-500/30 transition-all">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="p-2 bg-green-500/10 rounded-lg">
                 <Cpu className="w-5 h-5 text-green-500" />
               </div>

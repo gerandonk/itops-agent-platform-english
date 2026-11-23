@@ -147,9 +147,9 @@ export default function Notifications() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary">Notification System</h1>
             <p className="text-text-secondary">Manage system notifications and alert delivery</p>
@@ -160,7 +160,7 @@ export default function Notifications() {
         {stats && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Pending send</p>
                   <p className="text-2xl font-bold text-yellow-500">{stats.pendingCount}</p>
@@ -171,7 +171,7 @@ export default function Notifications() {
               </div>
             </div>
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Sent today</p>
                   <p className="text-2xl font-bold text-green-500">{stats.todaySent}</p>
@@ -182,7 +182,7 @@ export default function Notifications() {
               </div>
             </div>
             <div className="bg-surface rounded-xl border border-border p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-wrap">
                 <div>
                   <p className="text-sm text-text-secondary">Notification Type</p>
                   <p className="text-2xl font-bold text-purple-500">
@@ -331,7 +331,7 @@ export default function Notifications() {
 
           {/* Pagination */}
           {notificationsData?.total > limit && (
-            <div className="p-4 border-t border-border flex items-center justify-between">
+            <div className="p-4 border-t border-border flex items-center justify-between flex-wrap">
               <p className="text-sm text-text-secondary">
                 Total  {notificationsData.total} notifications
               </p>

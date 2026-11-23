@@ -97,11 +97,14 @@ router.post(
     try {
       const tmpl: any = configTemplateCrudService.getTemplateById(req.params.id);
       if (!tmpl) return res.status(404).json({ success: false, message: 'Not found' });
-
+      
+      // Handle empty content by falling back to template_content
       const variables = req.body.variables || {};
-      let rendered = tmpl.content;
-      const tmplVars = JSON.parse(tmpl.variables || '[]') as string[];
-      for (const v of tmplVars) {
+      let rendered = tmpl.content || tmpl.template_content || '';
+      const tmplVars = JSON.parse(tmpl.variables || '[]') as (string | { name: string })[];
+      const tmplVarNames = tmplVars.map(v => typeof v === 'object' && v !== null ? v.name : v);
+      
+      for (const v of tmplVarNames) {
         rendered = rendered.replace(
           new RegExp(`\\{\\{\\s*${v}\\s*\\}\\}`, 'g'),
           variables[v] || '',

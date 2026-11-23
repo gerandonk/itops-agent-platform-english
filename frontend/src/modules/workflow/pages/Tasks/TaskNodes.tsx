@@ -54,7 +54,7 @@ export function TaskNodes({ task, workflow, executingNodeId }: TaskNodesProps) {
               status === 'pending' && 'border-border bg-background/50'
             )}
           >
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-surface">
                   <span className="text-xl">{((node as Record<string, unknown>).data as Record<string, unknown>)?.avatar as string || '🤖'}</span>

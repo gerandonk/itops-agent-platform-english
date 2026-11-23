@@ -235,7 +235,9 @@
     "security": "Security",
     "changePassword": "Change Password",
     "monitoring": "Monitoring",
-    "dataManagement": "Data Management"
+    "dataManagement": "Data Management",
+    "grouping": "Federated Grouping",
+    "groupingDesc": "Configure agents into clusters and define merge/split behavior"
   },
   "user": {
     "admin": "Admin",

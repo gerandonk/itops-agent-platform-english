@@ -36,7 +36,7 @@ export function TaskLogs({ logs }: TaskLogsProps) {
             log.type === 'info' && 'bg-surface border-l-4 border-primary'
           )}
         >
-          <div className="flex items-center justify-between mb-1">
+          <div className="flex items-center justify-between flex-wrap mb-1">
             <span className="text-xs text-text-secondary">
               {format(new Date(log.timestamp), 'HH:mm:ss')}
             </span>

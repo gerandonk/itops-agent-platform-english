@@ -40,7 +40,7 @@ export const StatCard = ({
     className={`bg-slate-800/40 backdrop-blur-md rounded-2xl p-4 border border-border cursor-pointer transition-all hover:border-slate-600/50 hover:bg-slate-800/60 ${onClick ? '' : ''}`}
     onClick={onClick}
   >
-    <div className="flex items-center justify-between mb-3">
+    <div className="flex items-center justify-between flex-wrap mb-3">
       <div className={`w-10 h-10 rounded-xl ${color.bg} flex items-center justify-center`}>
         <Icon className={`w-5 h-5 ${color.fg}`} />
       </div>

@@ -119,7 +119,7 @@ export function ToolTestPanel({
                           [name]: v === '' ? undefined : Number(v),
                         }));
                       }}
-                      placeholder={desc || `Enter \${name}`}
+                      placeholder={desc || `Enter ${name}`}
                       className="w-full px-3 py-2 bg-background border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition-all"
                     />
                   ) : type === 'object' || type === 'array' ? (
@@ -144,7 +144,7 @@ export function ToolTestPanel({
                           setTestArgs((prev) => ({ ...prev, [name]: v }));
                         }
                       }}
-                      placeholder={desc || `Enter a JSON value of type \${type}`}
+                      placeholder={desc || `Enter a JSON value of type ${type}`}
                       rows={3}
                       className="w-full px-3 py-2 bg-background border border-border rounded-lg text-sm font-mono text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition-all resize-y"
                     />
@@ -155,7 +155,7 @@ export function ToolTestPanel({
                       onChange={(e) =>
                         setTestArgs((prev) => ({ ...prev, [name]: e.target.value }))
                       }
-                      placeholder={desc || `Enter \${name}`}
+                      placeholder={desc || `Enter ${name}`}
                       className="w-full px-3 py-2 bg-background border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition-all"
                     />
                   )}

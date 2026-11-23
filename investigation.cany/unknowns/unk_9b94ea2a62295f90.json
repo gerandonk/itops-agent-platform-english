@@ -1,0 +1,14 @@
+{
+  "id": "unk_9b94ea2a62295f90",
+  "revision": 1,
+  "question": "Does the backend route `POST /settings/grouping` exist and is the `Grouping.tsx` update editing or replacing existing grouping state (if any)? This affects whether account group federation changes have any effect on the UI, tools, or command rows.",
+  "severity": "high",
+  "domain": "frontend",
+  "status": "open",
+  "probes": [
+    "Visit /settings/grouping and check if it renders and if POST is called",
+    "Check backend/src/app.ts and backend/src/routes for a POST /settings/grouping handler"
+  ],
+  "evidence_for": [],
+  "evidence_against": []
+}

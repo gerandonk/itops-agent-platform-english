@@ -83,7 +83,7 @@ export default function BigScreenDashboard() {
               onNavigate={navigate}
             />
 
-            <div className="col-span-12 lg:col-span-6 flex flex-col gap-3 lg:gap-4">
+            <div className="col-span-12 lg:col-span-5 flex flex-col gap-3 lg:gap-4">
               <BigScreenStatCardRow
                 stats={data.stats}
                 slaStats={data.slaStats}

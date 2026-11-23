@@ -46,7 +46,7 @@ function AnalysisCard({ item, navigate, highlightId }: { item: AutoAnalysisResul
   return (
     <div className="bg-surface/60 border border-border rounded-lg overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-surface/30 transition-colors" onClick={() => setExpanded(!expanded)}>
+      <div className="flex items-center justify-between flex-wrap px-4 py-3 cursor-pointer hover:bg-surface/30 transition-colors" onClick={() => setExpanded(!expanded)}>
         <div className="flex items-center gap-3 min-w-0">
           {expanded ? <ChevronDown className="w-4 h-4 shrink-0 text-text-secondary" /> : <ChevronRight className="w-4 h-4 shrink-0 text-text-secondary" />}
           {typeIcon}
@@ -186,10 +186,10 @@ export default function AlertAutoAnalysis() {
     (analyses as AutoAnalysisResult[]).filter(a => a.device_type === type).length;
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-xl font-bold text-text-primary flex items-center gap-2">
               <Activity className="w-6 h-6 text-emerald-400" />

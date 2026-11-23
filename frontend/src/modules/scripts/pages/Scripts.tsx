@@ -90,9 +90,9 @@ export default function Scripts() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary">Script Management</h1>
             <p className="text-text-secondary">Manage system maintenance scripts and tools</p>
@@ -231,7 +231,7 @@ export default function Scripts() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-surface border border-border rounded-xl w-full max-w-2xl max-h-[80vh] overflow-y-auto">
             <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between flex-wrap mb-4">
                 <h2 className="text-xl font-bold text-text-primary">
                   Execute Script: {executingScript.name}
                 </h2>
@@ -357,7 +357,7 @@ function ScriptFormModal({ script, categories, onClose, onSaved }: ScriptFormMod
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-surface border border-border rounded-xl w-full max-w-2xl max-h-[80vh] overflow-y-auto">
         <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <h2 className="text-xl font-bold text-text-primary">
               {script ? 'Edit script' : 'Create script'}
             </h2>
@@ -418,7 +418,7 @@ function ScriptFormModal({ script, categories, onClose, onSaved }: ScriptFormMod
               />
             </div>
             <div>
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between flex-wrap mb-2">
                 <label className="block text-sm text-text-secondary">Parameters</label>
                 <button onClick={addParameter} className="text-sm text-primary hover:underline">
                   + Add Parameter

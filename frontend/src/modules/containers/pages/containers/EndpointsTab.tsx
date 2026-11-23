@@ -148,7 +148,7 @@ export function EndpointsTab({ ctx }: { ctx: Ctx }) {
       {showEpCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => { setShowEpCreateModal(false); resetEpForm(); }}>
           <div className="bg-surface rounded-lg border border-border w-full max-w-lg max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
               <h3 className="text-lg font-semibold text-text-primary">{editingEpId ? 'Edit Docker endpoint' : 'Add Docker endpoint'}</h3>
               <button onClick={() => { setShowEpCreateModal(false); resetEpForm(); }} className="text-text-secondary hover:text-text-primary"><X className="w-5 h-5" /></button>
             </div>

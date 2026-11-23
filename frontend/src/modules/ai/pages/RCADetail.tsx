@@ -29,7 +29,7 @@ export default function RCADetail() {
   });
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="mb-6">
         <button
           onClick={() => navigate(-1)}

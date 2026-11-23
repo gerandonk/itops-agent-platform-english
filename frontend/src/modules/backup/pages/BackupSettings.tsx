@@ -122,9 +122,9 @@ export default function BackupSettings() {
         </div>
 
         <div className="bg-background rounded-lg p-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <h4 className="font-medium text-text-primary">Data Backup</h4>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row items-stretch gap-2">
               <label className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all cursor-pointer flex items-center gap-2">
                 <Upload className="w-4 h-4" />
                 Upload backup
@@ -156,7 +156,7 @@ export default function BackupSettings() {
           {backupHistory.length > 0 ? (
             <div className="space-y-2">
               {backupHistory.map((backup) => (
-                <div key={backup.id} className="flex items-center justify-between p-3 bg-surface rounded-lg">
+                <div key={backup.id} className="flex items-center justify-between flex-wrap p-3 bg-surface rounded-lg">
                   <div>
                     <p className="text-sm font-medium text-text-primary">{backup.filename}</p>
                     <p className="text-xs text-text-secondary">

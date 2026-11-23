@@ -47,7 +47,7 @@ export default function ContainersPage() {
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 px-4 md:px-6 lg:px-8 containers-page-wrap">
       {/* ── Endpoint Selector ── */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export default function ContainersPage() {
             setSearch('');
             setStatusFilter('');
           }}
-          className="px-3 py-1.5 bg-surface border border-border rounded-lg text-sm text-text-primary focus:outline-none focus:border-blue-500 min-w-[200px]"
+          className="px-3 py-1.5 bg-surface border border-border rounded-lg text-sm text-text-primary focus:outline-none focus:border-blue-500 min-w-[200px] custom-select"
         >
           {hosts.map((h) => (
             <option key={h.id} value={h.id}>
@@ -73,7 +73,7 @@ export default function ContainersPage() {
       </div>
 
       {/* ── Tabs ── */}
-      <div className="flex gap-1 border-b border-border">
+      <div className="flex gap-1 overflow-x-auto border-b border-border no-scrollbar">
         {tabs.map((tab) => (
           <button
             key={tab.key}

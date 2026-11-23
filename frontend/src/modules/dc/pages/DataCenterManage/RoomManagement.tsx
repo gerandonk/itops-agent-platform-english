@@ -1,4 +1,4 @@
-import { Button, Modal, Form, Input, Select as _Select, Tag, Space, Popconfirm, Table, InputNumber } from 'antd';
+import { Button, Form, Input, Select as _Select, Tag, Space, Popconfirm, Table, InputNumber } from 'antd';
 import { Edit, Trash2, Search } from 'lucide-react';
 import type useDataCenter from './useDataCenter';
 import type { Room } from './types';
@@ -35,44 +35,16 @@ export default function RoomManagement({ dc }: Props) {
   ];
 
   return (
-    <>
-      <div>
-        <Input
-          prefix={<Search size={14} className="text-text-tertiary" />}
-          placeholder="Search data center name/tag..."
-          className="mb-4 max-w-xs"
-          value={dc.roomSearch}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => dc.setRoomSearch(e.target.value)}
-          allowClear
-        />
-        <Table columns={roomColumns} dataSource={filteredRooms.map((r: Room) => ({ ...r, key: r.id }))} loading={dc.loading} pagination={false} scroll={{ x: 800 }} />
-      </div>
-
-      <Modal
-        title={dc.editingRoom ? 'Edit data center' : 'Add data center'}
-        open={dc.roomModalOpen}
-        onOk={dc.saveRoom}
-        onCancel={() => { dc.setRoomModalOpen(false); dc.setEditingRoom(null); dc.roomForm.resetFields(); }}
-        okText="Save"
-        cancelText="Cancel"
-      >
-        <Form form={dc.roomForm} layout="vertical" size="small">
-          <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter data center name' }]}>
-            <Input placeholder="e.g.: Bldg-A-2F" />
-          </Form.Item>
-          <Form.Item name="label" label="Tags">
-            <Input placeholder="Optional alias" />
-          </Form.Item>
-          <Form.Item name="description" label="Description">
-            <Input.TextArea rows={2} placeholder="Optional description" />
-          </Form.Item>
-          <Space className="w-full" style={{ display: 'flex' }}>
-            <Form.Item name="width_m" label="Width (m)"><InputNumber min={1} step={1} /></Form.Item>
-            <Form.Item name="depth_m" label="Depth (m)"><InputNumber min={1} step={1} /></Form.Item>
-            <Form.Item name="sort_order" label="Sort"><InputNumber min={0} step={1} /></Form.Item>
-          </Space>
-        </Form>
-      </Modal>
-    </>
+    <div>
+      <Input
+        prefix={<Search size={14} className="text-text-tertiary" />}
+        placeholder="Search data center name/tag..."
+        className="mb-4 max-w-xs"
+        value={dc.roomSearch}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => dc.setRoomSearch(e.target.value)}
+        allowClear
+      />
+      <Table columns={roomColumns} dataSource={filteredRooms.map((r: Room) => ({ ...r, key: r.id }))} loading={dc.loading} pagination={false} scroll={{ x: 800 }} />
+    </div>
   );
 }

@@ -74,6 +74,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useTheme } from '../../contexts/ThemeContext';
 import ChatWidget from '../../modules/ai/components/ChatWidget';
 import NotificationBell from '../../modules/notification/components/NotificationBell';
+import LanguageSwitcher from '../../shared/components/LanguageSwitcher';
 import { navigationGroups } from '../../config/navigation';
 
 interface DockerStatus {
@@ -428,11 +429,33 @@ export default function Layout() {
                 <NotificationBell />
               </div>
             </div>
+            <div
+              className={clsx(
+                'flex items-center justify-between rounded-lg px-2 py-2',
+                theme === 'dark'
+                  ? 'bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50'
+                  : 'bg-gray-50 border border-gray-200',
+              )}
+            >
+              <div className="flex items-center gap-1.5 flex-shrink-0">
+                <span
+                  className={clsx(
+                    'text-[11px] font-semibold leading-tight',
+                    theme === 'dark' ? 'text-white' : 'text-gray-900',
+                  )}
+                >
+                  {t('app.systemNormal')}
+                </span>
+              </div>
+              <div className="flex items-center gap-1">
+                <LanguageSwitcher />
+              </div>
+            </div>
           </div>
         </div>
       </aside>
 
-      <main className="flex-1 overflow-auto flex flex-col pt-14 md:pt-0">
+      <main className="flex-1 overflow-auto flex flex-col pt-14 md:pt-4">
         {showDockerBanner && (
           <div className="px-4 pt-3 flex-shrink-0">
             <Alert

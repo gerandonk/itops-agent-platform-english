@@ -33,25 +33,25 @@ export function initializeEnhancedWorkflows() {
   const alertEndNode = randomUUID();
 
   const smartAlertNodes = JSON.stringify([
-    { id: alertStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: '开始' } },
-    { id: alertAnalysisNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: '告警分析', agentId: alertAgent?.id || null, avatar: '🔍' } },
+    { id: alertStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: 'Start' } },
+    { id: alertAnalysisNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: 'Alert Analysis', agentId: alertAgent?.id || null, avatar: '🔍' } },
     { id: alertConditionNode, type: 'condition', position: { x: 500, y: 300 }, data: {
-      label: '告警级别判断',
+      label: 'Alert Severity Check',
       conditionConfig: {
         variableSource: '{{alertAnalysis.output.level}}',
         branches: [
-          { id: 'p0_branch', label: 'P0/P1 紧急修复', expression: '{{_conditionValue}} == "P0" || {{_conditionValue}} == "P1"', expressionType: 'simple_compare', targetNodeId: urgentFixNode, priority: 1 },
-          { id: 'p2_branch', label: 'P2 自动修复', expression: '{{_conditionValue}} == "P2"', expressionType: 'simple_compare', targetNodeId: autoFixNode, priority: 2 },
-          { id: 'p3_branch', label: 'P3/P4 仅记录', expression: '{{_conditionValue}} == "P3" || {{_conditionValue}} == "P4"', expressionType: 'simple_compare', targetNodeId: logOnlyNode, priority: 3 }
+          { id: 'p0_branch', label: 'P0/P1 Emergency Remediation', expression: '{{_conditionValue}} == "P0" || {{_conditionValue}} == "P1"', expressionType: 'simple_compare', targetNodeId: urgentFixNode, priority: 1 },
+          { id: 'p2_branch', label: 'P2 Auto Remediation', expression: '{{_conditionValue}} == "P2"', expressionType: 'simple_compare', targetNodeId: autoFixNode, priority: 2 },
+          { id: 'p3_branch', label: 'P3/P4 Log Only', expression: '{{_conditionValue}} == "P3" || {{_conditionValue}} == "P4"', expressionType: 'simple_compare', targetNodeId: logOnlyNode, priority: 3 }
         ],
         defaultTargetNodeId: logOnlyNode
       }
     }},
-    { id: urgentFixNode, type: 'agent', position: { x: 700, y: 100 }, data: { label: '紧急修复', agentId: changeAgent?.id || null, avatar: '🚨' } },
-    { id: autoFixNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: '自动修复', agentId: changeAgent?.id || null, avatar: '⚙️' } },
-    { id: logOnlyNode, type: 'agent', position: { x: 700, y: 500 }, data: { label: '记录日志', agentId: logAgent?.id || null, avatar: '📝' } },
-    { id: approvalNode, type: 'approval', position: { x: 900, y: 100 }, data: { label: '人工确认', approvalConfig: { approver: 'admin', timeout: 3600 } } },
-    { id: alertEndNode, type: 'end', position: { x: 1100, y: 300 }, data: { label: '结束' } }
+    { id: urgentFixNode, type: 'agent', position: { x: 700, y: 100 }, data: { label: 'Emergency Remediation', agentId: changeAgent?.id || null, avatar: '🚨' } },
+    { id: autoFixNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: 'Auto Remediation', agentId: changeAgent?.id || null, avatar: '⚙️' } },
+    { id: logOnlyNode, type: 'agent', position: { x: 700, y: 500 }, data: { label: 'Log Event', agentId: logAgent?.id || null, avatar: '📝' } },
+    { id: approvalNode, type: 'approval', position: { x: 900, y: 100 }, data: { label: 'Manual Confirmation', approvalConfig: { approver: 'admin', timeout: 3600 } } },
+    { id: alertEndNode, type: 'end', position: { x: 1100, y: 300 }, data: { label: 'End' } }
   ]);
 
   const smartAlertEdges = JSON.stringify([
@@ -79,9 +79,9 @@ export function initializeEnhancedWorkflows() {
   const batchEndNode = randomUUID();
 
   const batchAuditNodes = JSON.stringify([
-    { id: batchStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: '开始' } },
+    { id: batchStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: 'Start' } },
     { id: initServersNode, type: 'variable_set', position: { x: 300, y: 300 }, data: {
-      label: '初始化服务器列表',
+      label: 'Init Server List',
       variableSetConfig: {
         assignments: [
           { name: 'server_list', valueType: 'json', valueExpression: '["server1", "server2", "server3"]' }
@@ -89,7 +89,7 @@ export function initializeEnhancedWorkflows() {
       }
     }},
     { id: loopNode, type: 'loop', position: { x: 500, y: 300 }, data: {
-      label: '遍历服务器',
+      label: 'Iterate Servers',
       loopConfig: {
         loopMode: 'for_each',
         itemsSource: '{{server_list}}',
@@ -101,7 +101,7 @@ export function initializeEnhancedWorkflows() {
       }
     }},
     { id: parallelForkNode, type: 'parallel', position: { x: 700, y: 300 }, data: {
-      label: '并行检查',
+      label: 'Parallel Check',
       parallelConfig: {
         mode: 'fork',
         forkTargets: [cpuCheckNode, memCheckNode, diskCheckNode],
@@ -109,18 +109,18 @@ export function initializeEnhancedWorkflows() {
         timeout: 300
       }
     }},
-    { id: cpuCheckNode, type: 'agent', position: { x: 900, y: 100 }, data: { label: 'CPU检查', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
-    { id: memCheckNode, type: 'agent', position: { x: 900, y: 300 }, data: { label: '内存检查', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
-    { id: diskCheckNode, type: 'agent', position: { x: 900, y: 500 }, data: { label: '磁盘检查', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
+    { id: cpuCheckNode, type: 'agent', position: { x: 900, y: 100 }, data: { label: 'CPU Check', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
+    { id: memCheckNode, type: 'agent', position: { x: 900, y: 300 }, data: { label: 'Memory Check', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
+    { id: diskCheckNode, type: 'agent', position: { x: 900, y: 500 }, data: { label: 'Disk Check', agentId: systemCheckAgent?.id || null, avatar: '🔎' } },
     { id: parallelJoinNode, type: 'parallel', position: { x: 1100, y: 300 }, data: {
-      label: '汇总结果',
+      label: 'Aggregate Results',
       parallelConfig: {
         mode: 'join',
         joinSources: [cpuCheckNode, memCheckNode, diskCheckNode]
       }
     }},
-    { id: summaryNode, type: 'agent', position: { x: 1300, y: 300 }, data: { label: '汇总报告', agentId: docAgent?.id || null, avatar: '📄' } },
-    { id: batchEndNode, type: 'end', position: { x: 1500, y: 300 }, data: { label: '结束' } }
+    { id: summaryNode, type: 'agent', position: { x: 1300, y: 300 }, data: { label: 'Summary Report', agentId: docAgent?.id || null, avatar: '📄' } },
+    { id: batchEndNode, type: 'end', position: { x: 1500, y: 300 }, data: { label: 'End' } }
   ]);
 
   const batchAuditEdges = JSON.stringify([
@@ -149,38 +149,38 @@ export function initializeEnhancedWorkflows() {
   const configEndNode = randomUUID();
 
   const configRemediationNodes = JSON.stringify([
-    { id: configStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: '开始' } },
-    { id: readTemplateNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: '读取配置模板', agentId: commandAgent?.id || null, avatar: '📖' } },
+    { id: configStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: 'Start' } },
+    { id: readTemplateNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: 'Read Config Template', agentId: commandAgent?.id || null, avatar: '📖' } },
     { id: renderVarsNode, type: 'variable_set', position: { x: 500, y: 300 }, data: {
-      label: '渲染变量',
+      label: 'Render Variables',
       variableSetConfig: {
         assignments: [
           { name: 'rendered_config', valueType: 'expression', valueExpression: '{{readTemplateNode.output}}' }
         ]
       }
     }},
-    { id: applyConfigNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: '下发配置', agentId: changeAgent?.id || null, avatar: '⚙️' } },
+    { id: applyConfigNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: 'Deploy Config', agentId: changeAgent?.id || null, avatar: '⚙️' } },
     { id: waitNode, type: 'wait', position: { x: 900, y: 300 }, data: {
-      label: '等待生效',
+      label: 'Wait Effective',
       waitConfig: {
         waitType: 'delay',
         delaySeconds: 10
       }
     }},
-    { id: verifyConfigNode, type: 'agent', position: { x: 1100, y: 300 }, data: { label: '验证配置', agentId: systemCheckAgent?.id || null, avatar: '✅' } },
+    { id: verifyConfigNode, type: 'agent', position: { x: 1100, y: 300 }, data: { label: 'Verify Config', agentId: systemCheckAgent?.id || null, avatar: '✅' } },
     { id: configConditionNode, type: 'condition', position: { x: 1300, y: 300 }, data: {
-      label: '验证结果',
+      label: 'Verification Result',
       conditionConfig: {
         variableSource: '{{verifyConfigNode.output.status}}',
         branches: [
-          { id: 'success_branch', label: '验证成功', expression: '{{_conditionValue}} == "success"', expressionType: 'simple_compare', targetNodeId: configEndNode, priority: 1 },
-          { id: 'failed_branch', label: '验证失败', expression: '{{_conditionValue}} == "failed"', expressionType: 'simple_compare', targetNodeId: rollbackNode, priority: 2 }
+          { id: 'success_branch', label: 'Verification Passed', expression: '{{_conditionValue}} == "success"', expressionType: 'simple_compare', targetNodeId: configEndNode, priority: 1 },
+          { id: 'failed_branch', label: 'Verification Failed', expression: '{{_conditionValue}} == "failed"', expressionType: 'simple_compare', targetNodeId: rollbackNode, priority: 2 }
         ],
         defaultTargetNodeId: rollbackNode
       }
     }},
-    { id: rollbackNode, type: 'agent', position: { x: 1500, y: 500 }, data: { label: '回滚配置', agentId: changeAgent?.id || null, avatar: '↩️' } },
-    { id: configEndNode, type: 'end', position: { x: 1700, y: 300 }, data: { label: '结束' } }
+    { id: rollbackNode, type: 'agent', position: { x: 1500, y: 500 }, data: { label: 'Rollback Config', agentId: changeAgent?.id || null, avatar: '↩️' } },
+    { id: configEndNode, type: 'end', position: { x: 1700, y: 300 }, data: { label: 'End' } }
   ]);
 
   const configRemediationEdges = JSON.stringify([
@@ -205,56 +205,56 @@ export function initializeEnhancedWorkflows() {
   const healthEndNode = randomUUID();
 
   const serviceHealingNodes = JSON.stringify([
-    { id: healthStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: '开始' } },
-    { id: checkServiceNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: '检查服务状态', agentId: systemCheckAgent?.id || null, avatar: '🔍' } },
+    { id: healthStartNode, type: 'start', position: { x: 100, y: 300 }, data: { label: 'Start' } },
+    { id: checkServiceNode, type: 'agent', position: { x: 300, y: 300 }, data: { label: 'Check Service Status', agentId: systemCheckAgent?.id || null, avatar: '🔍' } },
     { id: healthConditionNode, type: 'condition', position: { x: 500, y: 300 }, data: {
-      label: '服务是否正常',
+      label: 'Service Status Check',
       conditionConfig: {
         variableSource: '{{checkServiceNode.output.status}}',
         branches: [
-          { id: 'healthy_branch', label: '服务正常', expression: '{{_conditionValue}} == "healthy"', expressionType: 'simple_compare', targetNodeId: healthEndNode, priority: 1 },
-          { id: 'unhealthy_branch', label: '服务异常', expression: '{{_conditionValue}} == "unhealthy"', expressionType: 'simple_compare', targetNodeId: restartServiceNode, priority: 2 }
+          { id: 'healthy_branch', label: 'Service Healthy', expression: '{{_conditionValue}} == "healthy"', expressionType: 'simple_compare', targetNodeId: healthEndNode, priority: 1 },
+          { id: 'unhealthy_branch', label: 'Service Abnormal', expression: '{{_conditionValue}} == "unhealthy"', expressionType: 'simple_compare', targetNodeId: restartServiceNode, priority: 2 }
         ],
         defaultTargetNodeId: restartServiceNode
       }
     }},
-    { id: restartServiceNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: '尝试重启', agentId: changeAgent?.id || null, avatar: '🔄' } },
+    { id: restartServiceNode, type: 'agent', position: { x: 700, y: 300 }, data: { label: 'Attempt Restart', agentId: changeAgent?.id || null, avatar: '🔄' } },
     { id: waitRestartNode, type: 'wait', position: { x: 900, y: 300 }, data: {
-      label: '等待启动',
+      label: 'Wait for Startup',
       waitConfig: {
         waitType: 'delay',
         delaySeconds: 30
       }
     }},
     { id: webhookNode, type: 'webhook', position: { x: 1100, y: 300 }, data: {
-      label: '通知运维',
+      label: 'Notify IT Ops',
       webhookConfig: {
         url: 'https://hooks.slack.com/services/xxx',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: '{"text": "服务重启通知: {{restartServiceNode.output}}"}'
+        body: '{"text": "Service restart notification: {{restartServiceNode.output}}"}'
       }
     }},
     { id: restartConditionNode, type: 'condition', position: { x: 1300, y: 300 }, data: {
-      label: '重启是否成功',
+      label: 'Restart Verification',
       conditionConfig: {
         variableSource: '{{restartServiceNode.output.status}}',
         branches: [
-          { id: 'restart_success', label: '重启成功', expression: '{{_conditionValue}} == "success"', expressionType: 'simple_compare', targetNodeId: healthEndNode, priority: 1 },
-          { id: 'restart_failed', label: '重启失败', expression: '{{_conditionValue}} == "failed"', expressionType: 'simple_compare', targetNodeId: manualInterventionNode, priority: 2 }
+          { id: 'restart_success', label: 'Restart Successful', expression: '{{_conditionValue}} == "success"', expressionType: 'simple_compare', targetNodeId: healthEndNode, priority: 1 },
+          { id: 'restart_failed', label: 'Restart Failed', expression: '{{_conditionValue}} == "failed"', expressionType: 'simple_compare', targetNodeId: manualInterventionNode, priority: 2 }
         ],
         defaultTargetNodeId: manualInterventionNode
       }
     }},
     { id: manualInterventionNode, type: 'approval', position: { x: 1500, y: 500 }, data: {
-      label: '人工介入',
+      label: 'Manual Intervention',
       approvalConfig: {
         approver: 'ops_team',
         timeout: 7200,
-        message: '服务重启失败，需要人工介入'
+        message: 'Service restart failed, manual intervention required'
       }
     }},
-    { id: healthEndNode, type: 'end', position: { x: 1700, y: 300 }, data: { label: '结束' } }
+    { id: healthEndNode, type: 'end', position: { x: 1700, y: 300 }, data: { label: 'End' } }
   ]);
 
   const serviceHealingEdges = JSON.stringify([
@@ -282,70 +282,70 @@ export function initializeEnhancedWorkflows() {
   const aarsFullFlowNodes = JSON.stringify([
     {
       id: aarsN1, type: 'agent', position: { x: 50, y: 250 },
-      data: { label: '1. 告警处理', agentId: alertAgent?.id || null, avatar: '🚨',
-        description: '解析告警信息，提取关键字段（IP/服务/严重度）' }
+      data: { label: '1. Alert Processing', agentId: alertAgent?.id || null, avatar: '🚨',
+        description: 'Parse alert information and extract key fields (IP/Service/Severity)' }
     },
     {
       id: aarsN2, type: 'agent', position: { x: 250, y: 250 },
-      data: { label: '2. AI 诊断', agentId: diagnosticAgent?.id || null, avatar: '🔍',
-        description: 'SSH登录目标服务器，执行诊断命令，分析根因' }
+      data: { label: '2. AI Diagnostics', agentId: diagnosticAgent?.id || null, avatar: '🔍',
+        description: 'SSH to target server, execute diagnostic commands, analyze root cause' }
     },
     {
       id: aarsN3, type: 'agent', position: { x: 450, y: 250 },
-      data: { label: '3. 修复命令生成', agentId: changeAgent?.id || null, avatar: '⚡',
-        description: '基于诊断结果，AI生成修复命令及回滚命令' }
+      data: { label: '3. Remediation Command Generation', agentId: changeAgent?.id || null, avatar: '⚡',
+        description: 'Generate remediation and rollback commands based on diagnostic results' }
     },
     {
       id: aarsN4, type: 'risk_assess', position: { x: 650, y: 250 },
-      data: { label: '4. 风险评估',
-        description: '三维评分：操作风险 + 时间紧迫度 + AI置信度' }
+      data: { label: '4. Risk Assessment',
+        description: '3D scoring: Operation risk + Time urgency + AI confidence' }
     },
     {
       id: aarsN5, type: 'decision', position: { x: 850, y: 250 },
       data: {
-        label: '5. 智能决策',
-        description: '自适应决策引擎：低风险自动执行、中风险需审批、高风险升级人工',
+        label: '5. Intelligent Decision',
+        description: 'Adaptive decision engine: Auto-execute low risk, Approval required for medium risk, Escalate high risk',
         rules: [
-          { condition: 'risk_score <= 0.35', action: 'auto_execute', description: '低风险：自动执行' },
-          { condition: 'risk_score <= 0.65', action: 'request_approval', description: '中风险：需人工审批' },
-          { condition: 'risk_score > 0.65', action: 'escalate_to_human', description: '高风险：升级人工处理' }
+          { condition: 'risk_score <= 0.35', action: 'auto_execute', description: 'Low risk: Auto execute' },
+          { condition: 'risk_score <= 0.65', action: 'request_approval', description: 'Medium risk: Approval required' },
+          { condition: 'risk_score > 0.65', action: 'escalate_to_human', description: 'High risk: Escalate to human' }
         ],
         defaultAction: 'request_approval'
       } as any
     },
     {
       id: aarsN6, type: 'agent', position: { x: 1050, y: 250 },
-      data: { label: '6. SSH 执行', agentId: commandAgent?.id || null, avatar: '💻',
-        description: 'SSH 远程执行修复命令，超时保护和失败处理' }
+      data: { label: '6. SSH Execution', agentId: commandAgent?.id || null, avatar: '💻',
+        description: 'SSH remote execution of remediation commands with timeout protection' }
     },
     {
       id: aarsN7, type: 'verification', position: { x: 1250, y: 250 },
-      data: { label: '7. 5级验证',
-        description: '命令执行→服务健康→指标恢复→基线对比→影响评估',
+      data: { label: '7. 5-Tier Verification',
+        description: 'Command execution -> Service health -> Metric recovery -> Baseline comparison -> Impact assessment',
         gates: ['command_success', 'service_health', 'metric_recovery', 'impact_assessment'],
         timeout: 300000
       } as any
     },
     {
       id: aarsN8, type: 'rollback', position: { x: 1450, y: 250 },
-      data: { label: '8. 自动回滚',
-        description: '验证失败时自动执行回滚命令',
+      data: { label: '8. Auto Rollback',
+        description: 'Automatically execute rollback commands upon verification failure',
         allowFailure: true,
         commandTimeout: 30000
       } as any
     },
     {
       id: aarsN9, type: 'knowledge', position: { x: 1650, y: 250 },
-      data: { label: '9. 知识沉淀',
-        description: '将诊断/修复/验证全过程沉淀到知识库，支持去重',
+      data: { label: '9. Knowledge Deposition',
+        description: 'Save full process into knowledge base with deduplication',
         deduplicate: true,
-        category: '故障处理'
+        category: 'Fault Handling'
       } as any
     },
     {
       id: aarsN10, type: 'agent', position: { x: 1850, y: 250 },
-      data: { label: '10. 文档生成', agentId: docAgent?.id || null, avatar: '📄',
-        description: '生成完整的故障处理报告' }
+      data: { label: '10. Document Generation', agentId: docAgent?.id || null, avatar: '📄',
+        description: 'Generate comprehensive fault handling report' }
     }
   ]);
 
@@ -405,9 +405,9 @@ export function initializeEnhancedWorkflows() {
     }
   ];
 
-  // 幂等保护：仅插入不存在的记录，重启不会重复插入或 PK 冲突
+  // 幂等保护/更新：使用 INSERT OR REPLACE 更新模板记录
   const insertWorkflow = db.prepare(`
-    INSERT OR IGNORE INTO workflows (id, name, description, nodes, edges, is_template)
+    INSERT OR REPLACE INTO workflows (id, name, description, nodes, edges, is_template)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
 
@@ -421,5 +421,5 @@ export function initializeEnhancedWorkflows() {
     }
   });
 
-  logger.info(`✅ 增强型工作流模板处理完成（新增 ${insertedCount}/${enhancedWorkflows.length}，其余已存在跳过）`);
+  logger.info(`✅ 增强型工作流模板处理完成（更新 ${insertedCount}/${enhancedWorkflows.length}）`);
 }

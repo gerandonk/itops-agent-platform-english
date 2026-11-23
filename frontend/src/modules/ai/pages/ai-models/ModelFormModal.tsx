@@ -101,7 +101,7 @@ export function ModelFormModal({
           <label className="block text-sm font-medium text-text-secondary mb-2">AI Platform *</label>
           <button
             onClick={() => setShowProviderDropdown(!showProviderDropdown)}
-            className="w-full flex items-center justify-between px-4 py-2 bg-background border border-border rounded-lg text-text-primary hover:border-primary/50 transition-all"
+            className="w-full flex items-center justify-between flex-wrap px-4 py-2 bg-background border border-border rounded-lg text-text-primary hover:border-primary/50 transition-all"
           >
             <span className="flex items-center gap-2">
               <span>{providerPreset?.icon}</span>

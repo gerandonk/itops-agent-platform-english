@@ -48,7 +48,7 @@ export function AiCommandSection({
       {/* AI Command Generation Modal */}
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
         <div className="bg-surface rounded-xl p-8 w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between flex-wrap mb-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center">
                 <Bot className="w-5 h-5 text-text-primary" />
@@ -89,7 +89,7 @@ export function AiCommandSection({
 
           {/* OS Information Display */}
           <div className="mb-6 p-3 bg-background border border-border rounded-lg">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <div className="flex items-center gap-2 text-sm">
                 <Server className="w-4 h-4 text-text-secondary" />
                 <span className="text-text-secondary">Target OS:</span>
@@ -181,7 +181,7 @@ export function AiCommandSection({
           {/* Generated Command */}
           {aiGeneratedCommand && (
             <div className="mb-6">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between flex-wrap mb-2">
                 <label className="block text-sm font-medium text-text-secondary">AI-generated command (editable)</label>
                 <button
                   onClick={() => navigator.clipboard.writeText(aiGeneratedCommand)}

@@ -226,7 +226,7 @@ export default function AutoScale() {
   return (
     <div className="p-6 space-y-6">
       {/* Page title */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-3">
           <TrendingUp size={28} className="text-purple-400" />
           <h1 className="text-2xl font-bold text-white">Auto Scaling</h1>

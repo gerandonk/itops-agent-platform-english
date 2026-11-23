@@ -21,21 +21,21 @@ export function SubnetStatsCards({
 }: SubnetStatsCardsProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between">
+      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between flex-wrap">
         <div>
           <p className="text-text-tertiary text-xs">Total Subnets</p>
           <p className="text-2xl font-bold text-text-primary mt-1">{totalSubnets}</p>
         </div>
         <Layers size={28} className="text-blue-400" />
       </div>
-      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between">
+      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between flex-wrap">
         <div>
           <p className="text-text-tertiary text-xs">Total IPs</p>
           <p className="text-2xl font-bold text-text-primary mt-1">{totalIps.toLocaleString()}</p>
         </div>
         <Network size={28} className="text-green-400" />
       </div>
-      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between">
+      <div className="bg-card border border-border rounded-xl p-4 flex items-center justify-between flex-wrap">
         <div>
           <p className="text-text-tertiary text-xs">Allocated</p>
           <p className="text-2xl font-bold text-text-primary mt-1">{usedIps.toLocaleString()}</p>

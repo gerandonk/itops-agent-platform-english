@@ -24,7 +24,7 @@ export function ModalFooter({
   onClose,
 }: ModalFooterProps) {
   return (
-    <div className="flex items-center justify-between pt-4 border-t border-border">
+    <div className="flex items-center justify-between flex-wrap pt-4 border-t border-border">
       <div>
         {isSshTab && (
           <button

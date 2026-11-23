@@ -98,10 +98,10 @@ export default function InspectionCenter() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-xl font-bold text-text-primary flex items-center gap-2">
               <Activity className="w-6 h-6 text-blue-400" />
@@ -114,7 +114,7 @@ export default function InspectionCenter() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-surface/60 border border-border rounded-lg p-4">
             <div className="flex items-center gap-2">
               <Activity className="w-5 h-5 text-blue-400" />
@@ -146,8 +146,8 @@ export default function InspectionCenter() {
         </div>
 
         {/* Filters */}
-        <div className="flex items-center gap-3">
-          <div className="relative flex-1">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="relative w-full sm:flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-secondary" />
             <input
               type="text"
@@ -158,7 +158,7 @@ export default function InspectionCenter() {
             />
           </div>
 
-          <div className="flex gap-1 bg-surface border border-border rounded-lg p-1">
+          <div className="flex flex-wrap gap-1 bg-surface border border-border rounded-lg p-1">
             {([
               { key: 'all' as const, label: 'All', icon: Activity },
               { key: 'inspection' as const, label: 'Inspection', icon: Wifi },
@@ -190,7 +190,7 @@ export default function InspectionCenter() {
           </button>
 
           {!showTrends && (
-            <div className="flex gap-1 bg-surface border border-border rounded-lg p-1">
+            <div className="flex flex-wrap gap-1 bg-surface border border-border rounded-lg p-1">
               {([
                 { key: 'all' as const, label: 'All Devices', icon: Server },
                 { key: 'network_device' as const, label: 'Network device', icon: Wifi },
@@ -233,28 +233,30 @@ export default function InspectionCenter() {
               <div
                 key={item.id}
                 onClick={() => handleItemClick(item)}
-                className="flex items-center gap-4 px-4 py-3 bg-surface/40 border border-border rounded-lg hover:bg-surface/60 hover:border-primary/30 transition-all cursor-pointer"
+                className="flex flex-col sm:flex-row items-start gap-3 px-4 py-3 bg-surface/40 border border-border rounded-lg hover:bg-surface/60 hover:border-primary/30 transition-all cursor-pointer"
               >
-                {sourceIcon(item.source)}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-text-primary">{item.device_name || item.device_ip || 'Unknown Device'}</span>
-                    {item.device_ip && <span className="text-xs text-text-secondary">{item.device_ip}</span>}
-                    <span className={clsx(
-                      'text-xs px-1.5 py-0.5 rounded font-medium',
-                      item.source === 'analysis' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-blue-500/10 text-blue-400'
-                    )}>
-                      {sourceLabel(item.source, item.type)}
-                    </span>
+                <div className="flex items-center gap-3 min-w-0 flex-1">
+                  {sourceIcon(item.source)}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="text-sm font-medium text-text-primary truncate">{item.device_name || item.device_ip || 'Unknown Device'}</span>
+                      {item.device_ip && <span className="text-xs text-text-secondary truncate">{item.device_ip}</span>}
+                      <span className={clsx(
+                        'text-xs px-1.5 py-0.5 rounded font-medium whitespace-nowrap',
+                        item.source === 'analysis' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-blue-500/10 text-blue-400'
+                      )}>
+                        {sourceLabel(item.source, item.type)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-text-secondary mt-0.5 truncate">{item.summary || '(no summary)'}</p>
                   </div>
-                  <p className="text-xs text-text-secondary mt-0.5 truncate">{item.summary || '(no summary)'}</p>
                 </div>
-                <div className="flex items-center gap-3 shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   {statusIcon(item.status)}
                   {item.duration_ms > 0 && (
-                    <span className="text-xs text-text-secondary">{(item.duration_ms / 1000).toFixed(1)}s</span>
+                    <span className="text-xs text-text-secondary whitespace-nowrap">{(item.duration_ms / 1000).toFixed(1)}s</span>
                   )}
-                  <span className="text-xs text-text-secondary">{safeFormatDistance(item.created_at)}</span>
+                  <span className="text-xs text-text-secondary whitespace-nowrap">{safeFormatDistance(item.created_at)}</span>
                   <Eye className="w-3.5 h-3.5 text-text-secondary/50" />
                 </div>
               </div>

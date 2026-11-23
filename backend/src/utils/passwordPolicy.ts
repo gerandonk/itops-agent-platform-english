@@ -26,15 +26,15 @@ export function validatePassword(password: string): PasswordValidationResult {
   }
 
   const missing: string[] = [];
-  if (!details.minLength) missing.push('至少8位');
-  if (!details.uppercase) missing.push('大写字母');
-  if (!details.lowercase) missing.push('小写字母');
-  if (!details.number) missing.push('数字');
-  if (!details.special) missing.push('特殊字符(!@#$%^&*...)');
+  if (!details.minLength) missing.push('at least 8 characters');
+  if (!details.uppercase) missing.push('an uppercase letter');
+  if (!details.lowercase) missing.push('a lowercase letter');
+  if (!details.number) missing.push('a number');
+  if (!details.special) missing.push('a special character (!@#$%^&*...)');
 
   return {
     valid: false,
-    message: `密码复杂度不足，需要包含：${missing.join('、')}`,
+    message: `Password is too weak. It must contain: ${missing.join(', ')}`,
     details
   };
 }

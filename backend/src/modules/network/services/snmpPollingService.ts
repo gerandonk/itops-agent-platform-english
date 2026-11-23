@@ -273,7 +273,7 @@ class SnmpPollingService {
   private saveInspectionResult(deviceId: string, result: SnmpInspectionResult): void {
     const id = crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const summary = result.reachable
-      ? `SNMP 可达 | ${result.interfaceCount} 个接口（${result.upCount} UP / ${result.downCount} DOWN）${result.alerts.length > 0 ? ' | ' + result.alerts.length + ' 条告警' : ''}`
+      ? `SNMP Reachable | ${result.interfaceCount} interfaces (${result.upCount} UP / ${result.downCount} DOWN)${result.alerts.length > 0 ? ' | ' + result.alerts.length + ' alerts' : ''}`
       : 'SNMP connection failed';
     const status = result.reachable ? 'completed' : 'failed';
     const _alertsJson = result.alerts.length > 0 ? JSON.stringify(result.alerts) : '[]';

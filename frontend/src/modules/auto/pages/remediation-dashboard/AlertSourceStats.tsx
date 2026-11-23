@@ -8,7 +8,7 @@ interface AlertSourceStatsProps {
 export function AlertSourceStatsComponent({ sources }: AlertSourceStatsProps) {
   return (
     <div className="bg-surface/30 border border-border rounded-xl p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <h2 className="text-lg font-semibold text-text-primary flex items-center gap-2">
           <AlertTriangle className="w-5 h-5 text-yellow-400" />
           Stats grouped by alert source
@@ -26,7 +26,7 @@ export function AlertSourceStatsComponent({ sources }: AlertSourceStatsProps) {
                 key={source.source}
                 className="p-4 rounded-lg bg-surface border border-border/30 hover:border-blue-500/30 transition-all"
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between flex-wrap mb-3">
                   <h3 className="font-medium text-text-primary text-sm">{source.source}</h3>
                   <span className="text-xs text-text-secondary">
                     Resolution rate {resolveRate}%

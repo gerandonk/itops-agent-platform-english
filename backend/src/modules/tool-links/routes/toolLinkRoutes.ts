@@ -54,7 +54,7 @@ const getUpload = () => {
 };
 
 // Tool Links CRUD
-router.get('/', requireRole('viewer'), (_req: Request, res: Response) => {
+router.get('/', (_req: Request, res: Response) => {
   try {
     const tools = toolLinkCrudService.listLinks();
     res.json({ success: true, data: tools });
@@ -65,7 +65,7 @@ router.get('/', requireRole('viewer'), (_req: Request, res: Response) => {
 });
 
 // 按 category 分组聚合（前端 ToolLinks 页消费）
-router.get('/categories', requireRole('viewer'), (_req: Request, res: Response) => {
+router.get('/categories', (_req: Request, res: Response) => {
   try {
     const groups = toolLinkCrudService.listLinksByCategory();
     res.json({ success: true, data: groups });

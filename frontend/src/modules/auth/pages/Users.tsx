@@ -126,9 +126,9 @@ export default function Users() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary">User Management</h1>
             <p className="text-text-secondary">Manage system users and permissions</p>
@@ -227,7 +227,7 @@ export default function Users() {
       {showModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="bg-surface rounded-xl border border-border max-w-lg w-full">
-            <div className="p-4 border-b border-border flex items-center justify-between">
+            <div className="p-4 border-b border-border flex items-center justify-between flex-wrap">
               <h3 className="text-lg font-semibold text-text-primary">
                 {editingUser ? 'Edit user' : 'New user'}
               </h3>

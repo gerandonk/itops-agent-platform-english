@@ -36,9 +36,9 @@ export default function AIModelsPage() {
   const isPending = createModelMutation.isPending || updateModelMutation.isPending;
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2">AI Model Management</h1>
             <p className="text-text-secondary">Add and manage all AI models, with multi-platform configuration support</p>

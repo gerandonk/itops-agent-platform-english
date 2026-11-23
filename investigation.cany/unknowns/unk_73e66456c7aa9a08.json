@@ -1,0 +1,17 @@
+{
+  "id": "unk_73e66456c7aa9a08",
+  "revision": 1,
+  "question": "Does the backend route `POST /settings/grouping` exist? If yes, how is the config array updated (overwrite, merge, or patch)? This affects whether account group federation changes have any effect on the UI, tools, or command rows.",
+  "severity": "high",
+  "domain": "backend",
+  "status": "open",
+  "probes": [
+    "Check backend/src/routes.ts (if it exists) for a POST /settings/grouping route",
+    "Check backend/src/controllers.ts for a handler for POST /settings/grouping",
+    "Check backend/src/blueprint/ for a route definition for POST /settings/grouping"
+  ],
+  "evidence_for": [],
+  "evidence_against": [
+    "The backend src/app/ directory does not exist, so verifying a `POST /settings/grouping` handler in backend/src/app/routes cannot be done."
+  ]
+}

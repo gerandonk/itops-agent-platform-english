@@ -28,7 +28,7 @@ export function CommandSection({
       {/* Command Execution Result */}
       {commandResult !== null && (
         <div className="bg-surface border border-border rounded-lg p-6">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <h3 className="text-lg font-semibold text-text-primary">Command Execution Result</h3>
             <button onClick={onClearResult} className="p-1 hover:bg-background rounded transition-colors">
               <Trash2 className="w-4 h-4 text-text-secondary" />

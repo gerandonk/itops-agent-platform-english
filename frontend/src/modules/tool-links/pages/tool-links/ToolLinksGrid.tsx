@@ -82,7 +82,7 @@ export function ToolLinksGrid({
                   <p className="text-xs text-text-tertiary line-clamp-2 h-8 mb-3">
                     {tool.description || tool.url}
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap">
                     <span className="text-xs text-text-tertiary truncate flex-1 font-mono">
                       {tool.is_external === 1 && (
                         <ExternalLink className="w-3 h-3 inline mr-1 -mt-0.5" />

@@ -202,11 +202,17 @@ export function useNetworkDevices() {
     if (!inspectingDevice) return;
     setIsInspecting(true);
     try {
-      const response = await api.post(`/network-devices/${inspectingDevice.id}/inspect`, {
-        inspectionType,
-        customDescription: inspectionType === 'custom' ? customDescription : undefined,
-      });
-      setInspectionResult(response.data);
+      const snmpEnabled = inspectingDevice.snmp_enabled === 1;
+      if (snmpEnabled) {
+        const response = await api.post(`/network-devices/${inspectingDevice.id}/inspect-snmp`);
+        setSnmpInspectionResult(response.data as unknown as SnmpInspectionData);
+      } else {
+        const response = await api.post(`/network-devices/${inspectingDevice.id}/inspect`, {
+          inspectionType,
+          customDescription: inspectionType === 'custom' ? customDescription : undefined,
+        });
+        setInspectionResult(response.data);
+      }
       toast.success('Inspection completed');
       queryClient.invalidateQueries({ queryKey: ['network-devices'] });
     } catch (error: unknown) {

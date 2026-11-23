@@ -131,7 +131,7 @@ export default function AiRemediations() {
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-3">
           <Bot className="w-8 h-8 text-blue-500" />
           <div>
@@ -246,7 +246,7 @@ export default function AiRemediations() {
                   )}
 
                   {/* Links */}
-                  <div className="flex items-center justify-between gap-4 text-xs">
+                  <div className="flex items-center justify-between flex-wrap gap-4 text-xs">
                     <div className="flex items-center gap-4">
                       {rem.task_id && (
                         <a

@@ -50,10 +50,10 @@ export default function AlertList({
   return (
     <div className="divide-y divide-border">
       {alerts.map((alert) => (
-        <div key={alert.id} className="p-6 hover:bg-background/50 transition-all">
-          <div className="flex items-start justify-between">
+        <div key={alert.id} className="p-4 sm:p-6 hover:bg-background/50 transition-all">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-3">
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span
                   className={clsx(
                     'px-2 py-1 rounded text-xs font-medium',
@@ -78,16 +78,16 @@ export default function AlertList({
                   {alert.status === 'resolved' && 'Resolved'}
                 </span>
               </div>
-              <h3 className="font-semibold text-text-primary mb-1">{sanitizeText(alert.title)}</h3>
-              <p className="text-sm text-text-secondary mb-2">{sanitizeText(alert.content)}</p>
-              <div className="flex items-center gap-4 text-xs text-text-secondary">
-                <span>Source:  {sanitizeText(alert.source)}</span>
-                <span>
+              <h3 className="font-semibold text-text-primary mb-1 truncate">{sanitizeText(alert.title)}</h3>
+              <p className="text-sm text-text-secondary mb-2 line-clamp-2 break-words">{sanitizeText(alert.content)}</p>
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-secondary">
+                <span className="truncate max-w-xs sm:max-w-md">Source: {sanitizeText(alert.source)}</span>
+                <span className="whitespace-nowrap">
                   {safeFormatDistance(alert.created_at)}
                 </span>
               </div>
             </div>
-            <div className="flex gap-2 ml-4">
+            <div className="flex flex-wrap items-center gap-2 sm:ml-4 w-full sm:w-auto">
               {alert.status !== 'resolved' && (
                 <button
                   onClick={() => onProcess(alert.id)}
@@ -119,11 +119,11 @@ export default function AlertList({
           </div>
 
           {/* ── Related actions ── */}
-          <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border/50">
+          <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-border/50">
             {analysisMap[alert.id] && (
               <button
                 onClick={() => navigate(`/alert-auto-analysis?alertId=${alert.id}`)}
-                className="flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors px-2 py-1 rounded bg-emerald-500/5 hover:bg-emerald-500/10"
+                className="flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors px-2 py-1 rounded bg-emerald-500/5 hover:bg-emerald-500/10 whitespace-nowrap"
               >
                 <Zap className="w-3 h-3" />
                 AI Analysis
@@ -131,46 +131,18 @@ export default function AlertList({
             )}
             <button
               onClick={() => navigate(`/remediation-executions?alertId=${alert.id}`)}
-              className="flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 transition-colors px-2 py-1 rounded bg-orange-500/5 hover:bg-orange-500/10"
+              className="flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 transition-colors px-2 py-1 rounded bg-orange-500/5 hover:bg-orange-500/10 whitespace-nowrap"
             >
               <Wrench className="w-3 h-3" />
               Remediation records
             </button>
             <button
               onClick={() => onViewAutomationLog(alert)}
-              className="flex items-center gap-1 text-xs text-slate-300 hover:text-white transition-colors px-2 py-1 rounded bg-slate-500/10 hover:bg-slate-500/20"
+              className="flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors px-2 py-1 rounded bg-blue-500/5 hover:bg-blue-500/10 whitespace-nowrap"
             >
-              <Clock className="w-3 h-3" />
-              Auto-handling records
+              <Terminal className="w-3 h-3" />
+              Automation log
             </button>
-            {alert.related_task_id && (
-              <button
-                onClick={() => navigate(`/tasks?taskId=${encodeURIComponent(alert.related_task_id!)}`)}
-                className="flex items-center gap-1 text-xs text-cyan-400 hover:text-cyan-300 transition-colors px-2 py-1 rounded bg-cyan-500/5 hover:bg-cyan-500/10"
-              >
-                <Terminal className="w-3 h-3" />
-                Workflow tasks
-              </button>
-            )}
-            <button
-              onClick={() => navigate(`/inspection-center?alertId=${alert.id}`)}
-              className="flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors px-2 py-1 rounded bg-blue-500/5 hover:bg-blue-500/10"
-            >
-              <Wifi className="w-3 h-3" />
-              Inspection results
-            </button>
-            <button
-              onClick={() => navigate(`/root-cause-analysis?alertId=${alert.id}`)}
-              className="flex items-center gap-1 text-xs text-purple-400 hover:text-purple-300 transition-colors px-2 py-1 rounded bg-purple-500/5 hover:bg-purple-500/10"
-            >
-              <Search className="w-3 h-3" />
-              Root Cause Analysis
-            </button>
-            {analysisMap[alert.id]?.status === 'completed' && (
-              <span className="ml-auto text-xs text-emerald-500/60">
-                ✅ Auto-diagnosed
-              </span>
-            )}
           </div>
         </div>
       ))}

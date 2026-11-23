@@ -41,13 +41,13 @@ describe('createAppError', () => {
 });
 
 describe('getErrorMessage', () => {
-  it('返回已知错误码的中文消息', () => {
-    expect(getErrorMessage(ErrorCode.AUTH_ERROR)).toBe('认证失败，请重新登录');
-    expect(getErrorMessage(ErrorCode.DATABASE_ERROR)).toBe('数据库操作失败');
+  it('returns English messages for known error codes', () => {
+    expect(getErrorMessage(ErrorCode.AUTH_ERROR)).toBe('Authentication failed, please log in again');
+    expect(getErrorMessage(ErrorCode.DATABASE_ERROR)).toBe('Database operation failed');
   });
 
-  it('未匹配时返回 SERVER_ERROR 消息', () => {
-    expect(getErrorMessage('UNKNOWN_CODE' as ErrorCode)).toBe('服务器内部错误，请稍后重试');
+  it('returns SERVER_ERROR message for unknown codes', () => {
+    expect(getErrorMessage('UNKNOWN_CODE' as ErrorCode)).toBe('Internal server error, please try again later');
   });
 });
 

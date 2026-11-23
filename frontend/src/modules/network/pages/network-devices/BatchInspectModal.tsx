@@ -11,7 +11,7 @@ export function BatchInspectModal({ count, isInspecting, onClose, onConfirm }: B
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="bg-surface border border-border rounded-xl shadow-2xl w-full max-w-md mx-4">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border">
           <h3 className="text-base font-medium text-text-primary">Batch Inspection ({count} devices)</h3>
           <button onClick={onClose} className="text-text-secondary hover:text-text-primary transition-colors">
             <X className="w-5 h-5" />

@@ -228,7 +228,7 @@ export default function QAnythingSettings() {
         </h4>
 
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <div>
               <p className="text-sm font-medium text-text-primary">Enable QAnything knowledge base</p>
               <p className="text-xs text-text-secondary">When enabled, Agent execution prioritizes searching the QAnything knowledge base</p>
@@ -350,7 +350,7 @@ export default function QAnythingSettings() {
             )}
           </div>
 
-          <div className="flex items-center justify-between pt-4 border-t border-border">
+          <div className="flex items-center justify-between flex-wrap pt-4 border-t border-border">
             <div className="flex items-center gap-2">
               {saveStatus === 'saving' && <Loader2 className="w-4 h-4 animate-spin text-text-secondary" />}
               {saveStatus === 'saved' && (
@@ -420,7 +420,7 @@ export default function QAnythingSettings() {
               <p className="text-sm font-medium text-text-primary">Selected  {uploadFiles.length} files:</p>
               <div className="max-h-40 overflow-y-auto space-y-1">
                 {uploadFiles.map((file, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-surface rounded-lg">
+                  <div key={index} className="flex items-center justify-between flex-wrap p-2 bg-surface rounded-lg">
                     <div className="flex items-center gap-2 min-w-0 flex-1">
                       <FileText className="w-4 h-4 text-text-secondary flex-shrink-0" />
                       <span className="text-sm text-text-secondary truncate">{file.name}</span>

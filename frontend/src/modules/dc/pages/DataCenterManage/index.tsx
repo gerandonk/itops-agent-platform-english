@@ -15,13 +15,13 @@ import PDUManagement from './PDUManagement';
 import LifecycleTab from './LifecycleTab';
 import ExportImportTab from './ExportImportTab';
 import SlotModals from './SlotModals';
+import RoomModal from './RoomModal';
 import { ManufacturersTab, DeviceTypesTab, PowerPanelsTab, PowerFeedsTab, CablesTab } from './NetboxTabs';
 
 export default function DataCenterManage() {
   const dc = useDataCenter();
   const nb = useNetboxResources(dc.rooms, dc.racks);
   const navigate = useNavigate();
-
   const handleAddRoom = () => {
     dc.setEditingRoom(null);
     dc.roomForm.resetFields();
@@ -73,8 +73,7 @@ export default function DataCenterManage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="col-span-1">
             <Card title="Cabinet list" size="small"
-              extra={<Input prefix={<Search size={12} />} placeholder="Search..." size="small" style={{ width: 120 }} />}
-            >
+              extra={<Input prefix={<Search size={12} />} placeholder="Search..." size="small" style={{ width: 120 }} />}>
               <div className="space-y-1 max-h-[650px] overflow-y-auto">
                 {dc.racks.map(r => {
                   const room = dc.rooms.find(rm => rm.id === r.room_id);
@@ -149,6 +148,12 @@ export default function DataCenterManage() {
         Add Room
       </Button>
     ),
+    devices: (
+      <Button type="primary" size="small" icon={<Server size={14} />}
+        onClick={() => navigate('/servers')}>
+        Manage Servers/Devices
+      </Button>
+    ),
     rooms: (
       <Button type="primary" size="small" icon={<Plus size={14} />}
         onClick={() => { dc.setEditingRoom(null); dc.roomForm.resetFields(); dc.setRoomModalOpen(true); }}>
@@ -161,6 +166,12 @@ export default function DataCenterManage() {
         Add Rack
       </Button>
     ),
+    slots: dc.selectedRack ? (
+      <Button type="primary" size="small" icon={<Plus size={14} />}
+        onClick={() => { dc.setSlotModalOpen(true); }}>
+        Add Device
+      </Button>
+    ) : null,
     pdus: (
       <Button type="primary" size="small" icon={<Plus size={14} />}
         onClick={() => { dc.setEditingPdu(null); dc.pduForm.resetFields(); dc.setPduModalOpen(true); }}>
@@ -197,23 +208,11 @@ export default function DataCenterManage() {
         Add Cable
       </Button>
     ),
-    devices: (
-      <Button type="primary" size="small" icon={<Server size={14} />}
-        onClick={() => navigate('/servers')}>
-        Manage Servers/Devices
-      </Button>
-    ),
-    slots: dc.selectedRack ? (
-      <Button type="primary" size="small" icon={<Plus size={14} />}
-        onClick={() => { dc.setSlotModalOpen(true); }}>
-        Assign Device
-      </Button>
-    ) : null,
   };
 
   return (
     <div className="p-4">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between flex-wrap mb-4">
         <h2 className="text-lg font-bold text-text-primary flex items-center gap-2">
           <Server size={20} className="text-blue-400" />
           Data Center Management
@@ -222,9 +221,8 @@ export default function DataCenterManage() {
           {extraButtons[dc.activeTab]}
         </div>
       </div>
-
       <Tabs activeKey={dc.activeTab} onChange={dc.onTabChange} items={tabItems} className="dc-tabs" />
-
+      <RoomModal dc={dc} />
       <SlotModals dc={dc} />
     </div>
   );

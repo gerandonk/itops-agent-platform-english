@@ -35,7 +35,7 @@ export function SubnetCreateModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-card border border-border rounded-2xl shadow-2xl w-full max-w-lg mx-4 animate-fade-in">
-        <div className="flex items-center justify-between p-5 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap p-5 border-b border-border">
           <h3 className="text-lg font-semibold text-text-primary">
             {editingSubnet ? 'Edit subnet' : 'Create subnet'}
           </h3>

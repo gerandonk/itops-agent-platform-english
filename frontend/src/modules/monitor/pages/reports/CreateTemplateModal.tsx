@@ -23,7 +23,7 @@ export function CreateTemplateModal({ open, form, onChange, onClose, onSubmit, s
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-surface border border-border rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <h2 className="text-xl font-bold text-text-primary">Create Report Template</h2>
             <button onClick={onClose} className="p-2 hover:bg-background rounded-lg text-text-secondary">
               <X className="w-5 h-5" />

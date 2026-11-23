@@ -140,10 +140,10 @@ export default function AlertCorrelationGroups() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2 flex items-center gap-3">
               <Layers className="w-7 h-7 text-purple-400" />
@@ -154,7 +154,7 @@ export default function AlertCorrelationGroups() {
         </div>
 
         {/* Stats + actions */}
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {[
             { label: 'Total related groups', value: stats?.total_groups || 0, color: 'text-blue-400' },
             { label: 'Pending', value: stats?.open_groups || 0, color: 'text-status-failed' },
@@ -170,8 +170,8 @@ export default function AlertCorrelationGroups() {
         </div>
 
         {/* Filter + actions */}
-        <div className="flex items-center justify-between">
-          <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex flex-wrap gap-2">
             {['all', 'open', 'resolved'].map((status) => (
               <button
                 key={status}
@@ -229,7 +229,7 @@ export default function AlertCorrelationGroups() {
                   group.status === 'open' ? 'border-border' : 'border-border/50 opacity-75',
                 )}
               >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
                       className={clsx(
@@ -254,7 +254,7 @@ export default function AlertCorrelationGroups() {
                       )}
                     </div>
                     <div className="min-w-0">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center gap-2">
                         <p className="font-medium text-text-primary truncate">{group.title}</p>
                         <span
                           className={clsx(
@@ -280,7 +280,7 @@ export default function AlertCorrelationGroups() {
                           </span>
                         )}
                       </div>
-                      <div className="flex items-center gap-3 mt-1 text-xs text-text-secondary">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs text-text-secondary">
                         <span className="flex items-center gap-1">
                           <Bell className="w-3 h-3" />
                           {group.member_count || group.alert_count}  alerts
@@ -306,7 +306,7 @@ export default function AlertCorrelationGroups() {
       {showGroupDetail && groupDetail && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-surface rounded-xl border border-border p-6 w-full max-w-3xl shadow-2xl max-h-[85vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between flex-wrap mb-6">
               <h3 className="font-medium text-text-primary text-lg">
                 <span className="flex items-center gap-2">
                   <Layers className="w-5 h-5 text-purple-400" />

@@ -172,10 +172,10 @@ export default function NetworkDiscovery() {
   });
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2 flex items-center gap-3">
               <Radio className="w-7 h-7 text-emerald-400" />
@@ -292,7 +292,7 @@ export default function NetworkDiscovery() {
                     : 'border-border hover:border-emerald-400/30',
                 )}
               >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap">
                   <div className="flex items-center gap-4">
                     <div
                       className={clsx(
@@ -375,7 +375,7 @@ export default function NetworkDiscovery() {
 
         {/* 扫描结果 */}
         <div className="bg-surface rounded-xl border border-border p-5">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between flex-wrap mb-4">
             <div className="flex items-center gap-2">
               <Monitor className="w-5 h-5 text-emerald-400" />
               <h3 className="font-medium text-text-primary">
@@ -425,7 +425,7 @@ export default function NetworkDiscovery() {
                   <div
                     key={result.id}
                     className={clsx(
-                      'flex items-center justify-between p-3 rounded-lg border transition-all',
+                      'flex items-center justify-between flex-wrap p-3 rounded-lg border transition-all',
                       result.status === 'snmp_ok'
                         ? 'bg-emerald-500/5 border-emerald-500/20'
                         : result.status === 'online'

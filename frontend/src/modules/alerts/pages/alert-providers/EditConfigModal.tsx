@@ -56,14 +56,14 @@ export function EditConfigModal({
 }: EditConfigModalProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-        <div className="p-4 border-b border-slate-700 flex items-center justify-between sticky top-0 bg-slate-800 rounded-t-xl z-10">
-          <h3 className="text-lg font-semibold text-slate-100">
-            {editingConfig ? `Edit Config: \${configName}` : `New \${provider.name} Config`}
+      <div className="bg-surface border border-border rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div className="p-4 border-b border-border/50 flex items-center justify-between flex-wrap sticky top-0 bg-surface/50 rounded-t-xl z-10">
+          <h3 className="text-lg font-semibold text-text-primary">
+            {editingConfig ? `Edit Config: ${configName}` : `New ${provider.name} Config`}
           </h3>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-slate-700 transition-all text-slate-400 hover:text-slate-200"
+            className="p-1.5 rounded-lg hover:bg-background transition-all text-text-tertiary hover:text-text-primary"
           >
             ✕
           </button>
@@ -72,7 +72,7 @@ export function EditConfigModal({
         <form onSubmit={onSubmit} className="p-5 space-y-4">
           {/* Config Name */}
           <div className="space-y-1.5">
-            <label className="block text-sm font-medium text-slate-200">
+            <label className="block text-sm font-medium text-text-secondary">
               Config name <span className="text-red-400">*</span>
             </label>
             <input
@@ -80,34 +80,34 @@ export function EditConfigModal({
               required
               value={configName}
               onChange={(e) => setConfigName(e.target.value)}
-              className="w-full px-3 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 transition-all"
+              className="w-full px-3 py-2.5 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 transition-all"
               placeholder="e.g.: Production Prometheus"
             />
           </div>
 
           {/* Provider ID (readonly when editing) */}
           <div className="space-y-1.5">
-            <label className="block text-sm font-medium text-slate-200">Alert Source Type</label>
+            <label className="block text-sm font-medium text-text-secondary">Alert Source Type</label>
             <input
               type="text"
               disabled
               value={`${provider.name} (${provider.type})`}
-              className="w-full px-3 py-2.5 bg-slate-900/50 border border-slate-700 rounded-lg text-slate-400 cursor-not-allowed"
+              className="w-full px-3 py-2.5 bg-surface/50 border border-border rounded-lg text-text-tertiary cursor-not-allowed"
             />
           </div>
 
           {/* Dynamic Form Fields from configSchema */}
           {formFields.length > 0 && (
             <div className="space-y-1.5">
-              <label className="block text-sm font-medium text-slate-200 mb-2">Configuration Parameters</label>
-              <div className="space-y-3 p-3 bg-slate-900/50 rounded-lg border border-slate-700">
+              <label className="block text-sm font-medium text-text-secondary mb-2">Configuration Parameters</label>
+              <div className="space-y-3 p-3 bg-surface/50 rounded-lg border border-border">
                 {formFields.map((field) => (
                   <div key={field.key} className="space-y-1">
-                    <label className="block text-xs font-medium text-slate-300">
+                    <label className="block text-xs font-medium text-text-tertiary">
                       {field.label} {field.required && <span className="text-red-400">*</span>}
                     </label>
                     {field.description && (
-                      <p className="text-xs text-slate-500 mb-1">{field.description}</p>
+                      <p className="text-xs text-text-tertiary/70 mb-1">{field.description}</p>
                     )}
                     {field.type === 'boolean' ? (
                       <select
@@ -118,7 +118,7 @@ export function EditConfigModal({
                             [field.key]: e.target.value === 'true',
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm"
                       >
                         <option value="true">Yes</option>
                         <option value="false">No</option>
@@ -132,7 +132,7 @@ export function EditConfigModal({
                             [field.key]: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm"
                       >
                         <option value="">Select</option>
                         {field.enum.map((v) => (
@@ -151,8 +151,8 @@ export function EditConfigModal({
                             [field.key]: Number(e.target.value),
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm"
-                        placeholder={`Please enter \${field.label}`}
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm"
+                        placeholder={`Please enter ${field.label}`}
                       />
                     ) : field.key.includes('url') || field.key.includes('endpoint') ? (
                       <input
@@ -164,7 +164,7 @@ export function EditConfigModal({
                             [field.key]: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm font-mono"
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm font-mono"
                         placeholder={`https://...`}
                       />
                     ) : field.key.includes('token') ||
@@ -179,7 +179,7 @@ export function EditConfigModal({
                             [field.key]: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm"
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm"
                         placeholder="Please enter (stored encrypted automatically)"
                       />
                     ) : (
@@ -192,8 +192,8 @@ export function EditConfigModal({
                             [field.key]: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 focus:outline-none focus:border-blue-500 text-sm"
-                        placeholder={`Please enter \${field.label}`}
+                        className="w-full px-3 py-2 bg-background border border-border rounded-lg text-text-primary focus:outline-none focus:border-blue-500 text-sm"
+                        placeholder={`Please enter ${field.label}`}
                       />
                     )}
                   </div>
@@ -204,25 +204,25 @@ export function EditConfigModal({
 
           {/* Webhook URL (always show for reference) */}
           <div className="space-y-1.5">
-            <label className="block text-sm font-medium text-slate-200">Webhook URL</label>
+            <label className="block text-sm font-medium text-text-secondary">Webhook URL</label>
             <div className="flex gap-2 items-center">
-              <code className="flex-1 bg-slate-950 px-3 py-2.5 rounded-lg text-xs text-green-300 overflow-x-auto whitespace-nowrap select-all border border-slate-700">
+              <code className="flex-1 bg-surface px-3 py-2.5 rounded-lg text-xs text-green-300 overflow-x-auto whitespace-nowrap select-all border border-border">
                 {getWebhookUrl(provider.id)}
               </code>
               <button
                 type="button"
                 onClick={() => copy(getWebhookUrl(provider.id), 'modal-url')}
-                className="p-2 bg-slate-700 rounded-lg hover:bg-slate-600 transition-all flex-shrink-0"
+                className="p-2 bg-surface/50 rounded-lg hover:bg-surface/80 transition-all flex-shrink-0"
                 title="Copy"
               >
                 {copied === 'modal-url' ? (
                   <CheckCircle className="w-4 h-4 text-green-400" />
                 ) : (
-                  <Copy className="w-4 h-4 text-slate-300" />
+                  <Copy className="w-4 h-4 text-text-tertiary" />
                 )}
               </button>
             </div>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-text-tertiary mt-1">
               Configure this address in {provider.name} 's Webhook/Alertmanager
             </p>
           </div>
@@ -250,7 +250,7 @@ export function EditConfigModal({
           )}
 
           {/* Test Connection */}
-          <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700">
+          <div className="flex items-center gap-3 bg-surface/50 p-3 rounded-lg border border-border">
             <button
               type="button"
               onClick={onTestConnection}
@@ -268,32 +268,32 @@ export function EditConfigModal({
           </div>
 
           {/* Enabled */}
-          <div className="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg border border-slate-700">
+          <div className="flex items-center gap-3 bg-surface/50 p-3 rounded-lg border border-border">
             <input
               type="checkbox"
               id="config-enabled"
               checked={configEnabled}
               onChange={(e) => setConfigEnabled(e.target.checked)}
-              className="w-5 h-5 text-blue-600 bg-slate-800 border-slate-600 rounded focus:ring-blue-500"
+              className="w-5 h-5 text-blue-600 bg-background border-border rounded focus:ring-blue-500"
             />
-            <label htmlFor="config-enabled" className="text-sm text-slate-200">
+            <label htmlFor="config-enabled" className="text-sm text-text-secondary">
               Enable this alert source (the Webhook URL takes effect only after enabling)
             </label>
           </div>
 
           {/* Submit Buttons */}
-          <div className="flex justify-end gap-2 pt-4 border-t border-slate-700">
+          <div className="flex justify-end gap-2 pt-4 border-t border-border">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 bg-slate-700 border border-slate-600 rounded-lg text-slate-200 hover:bg-slate-600 transition-all font-medium"
+              className="px-4 py-2.5 bg-surface border border-border rounded-lg text-text-primary hover:bg-surface/80 transition-all font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={createPending || updatePending}
-              className="px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-all font-medium shadow-sm"
+              className="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-all font-medium shadow-sm"
             >
               {createPending || updatePending
                 ? 'Saving...'

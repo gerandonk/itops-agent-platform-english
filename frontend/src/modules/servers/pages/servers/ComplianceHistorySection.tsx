@@ -15,7 +15,7 @@ export function ComplianceHistorySection({
 }: ComplianceHistorySectionProps) {
   return (
     <div className="bg-surface border border-border rounded-lg p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <h2 className="text-lg font-bold text-text-primary">
           Compliance Check History - {selectedServer.name}
         </h2>
@@ -49,7 +49,7 @@ export function ComplianceHistorySection({
       <div className="space-y-4">
         {complianceHistory?.map((check) => (
           <div key={check.id} className="bg-background rounded-lg p-4">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <h4 className="font-medium text-text-primary">{check.check_name}</h4>
               <span
                 className={clsx(

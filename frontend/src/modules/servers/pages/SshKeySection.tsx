@@ -136,7 +136,7 @@ export function SshKeySection({
                     selectedSshKeyId === key.id && 'bg-primary/10',
                   )}
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap">
                     <span className="text-sm text-text-primary font-medium">{key.name}</span>
                     <span className="text-xs text-text-tertiary">{key.key_type}</span>
                   </div>

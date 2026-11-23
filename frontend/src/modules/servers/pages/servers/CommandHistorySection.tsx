@@ -15,7 +15,7 @@ export function CommandHistorySection({
 }: CommandHistorySectionProps) {
   return (
     <div className="bg-surface border border-border rounded-lg p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <h2 className="text-lg font-bold text-text-primary">Command History - {selectedServer.name}</h2>
         <button
           onClick={async () => {
@@ -44,7 +44,7 @@ export function CommandHistorySection({
       <div className="space-y-4">
         {commandHistory?.map((item) => (
           <div key={item.id} className="bg-background rounded-lg p-4">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-text-secondary" />
                 <span className="text-xs text-text-secondary">

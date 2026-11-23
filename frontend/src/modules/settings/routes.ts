@@ -7,7 +7,9 @@
 import { lazy } from 'react';
 
 const Settings = lazy(() => import('./pages/Settings'));
+const Grouping = lazy(() => import('./pages/Grouping'));
 
 export const settingsRoutes = [
   { path: 'settings', element: Settings },
+  { path: 'grouping', element: Grouping },
 ];

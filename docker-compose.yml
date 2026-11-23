@@ -20,8 +20,6 @@ services:
       - itops-network
     ports:
       - "3001:3001"
-    group_add:
-      - docker
     environment:
       - NODE_ENV=production
       - PORT=3001
@@ -29,6 +27,7 @@ services:
       - DATABASE_PATH=/app/data/app.db
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - DOCKER_SOCKET=/var/run/docker.sock
+      - DOCKER_GID=${DOCKER_GID:-998}
       # JWT_SECRET 可选 — 不设置则由 backend 自动生成并持久化到 /app/data/.jwt-secret
       # 重启不会使已有 token 失效。如需自定义，可通过环境变量覆盖。
       - JWT_SECRET=${JWT_SECRET:-}
@@ -56,6 +55,10 @@ services:
       - app-data:/app/data
       - app-backups:/app/backups
       - /var/run/docker.sock:/var/run/docker.sock
+    # Let the non-root app user access the mounted Docker socket.
+    # Override DOCKER_GID if the host docker group id differs (getent group docker).
+    group_add:
+      - "${DOCKER_GID:-998}"
     # Resource limits
     deploy:
       resources:

@@ -25,7 +25,7 @@ export function NotificationRulesSection({
         <h4 className="font-medium text-text-primary mb-4">Alert Notifications</h4>
         <p className="text-xs text-text-secondary mb-3">Select alert severities to notify</p>
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Critical alert (critical)</p>
             <ToggleSwitch
               checked={config.alert_notification.critical}
@@ -37,7 +37,7 @@ export function NotificationRulesSection({
               ariaLabel="Enable critical notifications"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Warning alert (warning)</p>
             <ToggleSwitch
               checked={config.alert_notification.warning}
@@ -49,7 +49,7 @@ export function NotificationRulesSection({
               ariaLabel="Enable warning notifications"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Info alert (info)</p>
             <ToggleSwitch
               checked={config.alert_notification.info}
@@ -69,7 +69,7 @@ export function NotificationRulesSection({
         <h4 className="font-medium text-text-primary mb-4">Task Notifications</h4>
         <p className="text-xs text-text-secondary mb-3">Select task statuses to notify</p>
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Task succeeded</p>
             <ToggleSwitch
               checked={config.task_notification.success}
@@ -81,7 +81,7 @@ export function NotificationRulesSection({
               ariaLabel="Enable task success notifications"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Task failed</p>
             <ToggleSwitch
               checked={config.task_notification.failed}
@@ -93,7 +93,7 @@ export function NotificationRulesSection({
               ariaLabel="Enable task failure notifications"
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <p className="text-sm text-text-secondary">Task running</p>
             <ToggleSwitch
               checked={config.task_notification.running}

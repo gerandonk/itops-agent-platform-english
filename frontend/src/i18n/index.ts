@@ -22,4 +22,9 @@ i18n
     },
   });
 
+// Force English as default unless user explicitly switches via LanguageSwitcher
+if (typeof localStorage !== 'undefined' && !localStorage.getItem('itops-lang')) {
+  localStorage.setItem('itops-lang', 'en');
+}
+
 export default i18n;

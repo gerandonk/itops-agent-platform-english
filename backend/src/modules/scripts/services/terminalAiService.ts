@@ -2,7 +2,7 @@ import { logger } from '../../../utils/logger';
 import { getDefaultModel } from '../../ai/services/models/aiModelService';
 import { callLLMAPI, buildProviderConfig } from '../../ai/services/llm/llmService/providerAdapters';
 
-// ── 类型定义 ──
+// ── Type Definitions ──
 
 export interface TerminalRound {
   input: string;
@@ -24,20 +24,20 @@ export interface AIAnalysisResult {
 
 // ── System Prompt ──
 
-const SYSTEM_PROMPT = `你是一名资深 Linux 运维专家和 SRE 工程师。
-用户在 Web 终端中执行命令，你的任务是分析终端输出并提供帮助。
+const SYSTEM_PROMPT = `You are a senior Linux operations expert and SRE engineer.
+The user executes commands in a Web Terminal, and your task is to analyze the terminal output and provide assistance.
 
-规则：
-1. 如果输出包含错误，解释错误原因并给出修复命令
-2. 如果输出正常但可以优化，给出优化建议
-3. 如果输出为空，建议下一步可能的操作
-4. 每个建议附带 1-3 条可执行的命令
-5. 回复格式必须为严格 JSON，不要有任何额外文字：
+Rules:
+1. If the output contains errors, explain the error cause and provide fix commands
+2. If the output is normal but can be optimized, provide optimization suggestions
+3. If the output is empty, suggest possible next steps
+4. Each suggestion must include 1-3 executable commands
+5. Response format must be strict JSON, no extra text:
    {"suggestion":"...","severity":"info|warning|error","relatedCommands":["cmd1","cmd2"]}
-6. 简洁直接，每条建议不超过 3 句话，不要用 markdown 格式
-7. 用中文回复`;
+6. Be concise and direct, each suggestion no more than 3 sentences, no markdown format
+7. Reply in English`;
 
-// ── 错误检测正则（前端检测用，后端也保留一份以应对手动触发） ──
+// ── Error Detection Patterns (for frontend detection, backend retains a copy for manual triggers) ──
 
 const ERROR_PATTERNS = [
   /error:/i,
@@ -59,20 +59,20 @@ const ERROR_PATTERNS = [
   /denied/i,
 ];
 
-// ── 服务类 ──
+// ── Service Class ──
 
 export class TerminalAiService {
   private static readonly AI_TIMEOUT_MS = 15000;
 
   /**
-   * 检测终端输出是否包含错误/异常
+   * Detect if terminal output contains errors/exceptions
    */
   detectError(output: string): boolean {
     return ERROR_PATTERNS.some((pattern) => pattern.test(output));
   }
 
   /**
-   * 构建 User Prompt
+   * Build User Prompt
    */
   private buildPrompt(request: AIAnalysisRequest): string {
     const parts: string[] = [];
@@ -84,9 +84,9 @@ export class TerminalAiService {
       for (let i = 0; i < request.rounds.length; i++) {
         const round = request.rounds[i];
         const isLast = i === request.rounds.length - 1;
-        parts.push(`\n[第 ${i + 1} 轮]`);
-        parts.push(`输入: ${round.input}`);
-        parts.push(`输出: ${round.output || '(无输出)'}`);
+        parts.push(`\n[Round ${i + 1}]`);
+        parts.push(`Input: ${round.input}`);
+        parts.push(`Output: ${round.output || '(no output)'}`);
         if (isLast && request.errorDetected) {
           parts.push('⚠️ Errors/exceptions detected in the previous round of output; please focus your analysis.');
         }
@@ -104,7 +104,7 @@ export class TerminalAiService {
   }
 
   /**
-   * 兜底建议（AI 不可用时返回）
+   * Fallback suggestion (returned when AI is unavailable)
    */
   private fallbackSuggestion(request: AIAnalysisRequest): AIAnalysisResult {
     if (request.errorDetected) {
@@ -122,10 +122,10 @@ export class TerminalAiService {
   }
 
   /**
-   * 分析终端内容并返回 AI 建议
+   * Analyze terminal content and return AI suggestions
    */
   async analyze(request: AIAnalysisRequest): Promise<AIAnalysisResult> {
-    // 1. 获取默认模型
+    // 1. Get default model
     const model = getDefaultModel();
     if (!model || !model.enabled) {
       logger.warn('[TerminalAI] No default AI model configured');
@@ -136,13 +136,13 @@ export class TerminalAiService {
       };
     }
 
-    // 2. 构建 prompt
+    // 2. Build prompt
     const userPrompt = this.buildPrompt(request);
 
     logger.info(`[TerminalAI] Analyzing session ${request.sessionId}, rounds=${request.rounds.length}, trigger=${request.triggeredBy}`);
 
     try {
-      // 3. 调用 AI（带超时）
+      // 3. Call AI (with timeout)
       const config = buildProviderConfig(model);
       const aiResponse = await Promise.race([
         callLLMAPI(config, SYSTEM_PROMPT, userPrompt, 'TerminalAI', 0.3, 'terminal-ai-assistant'),
@@ -151,7 +151,7 @@ export class TerminalAiService {
         ),
       ]);
 
-      // 4. 解析 JSON 响应
+      // 4. Parse JSON response
       return this.parseResponse(aiResponse, request);
     } catch (error) {
       logger.error('[TerminalAI] AI call failed:', error);
@@ -160,11 +160,11 @@ export class TerminalAiService {
   }
 
   /**
-   * 解析 AI 返回的 JSON
+   * Parse AI returned JSON
    */
   private parseResponse(raw: string, request: AIAnalysisRequest): AIAnalysisResult {
     try {
-      // 尝试从响应中提取 JSON（AI 可能在 JSON 前后加文字）
+      // Try to extract JSON from response (AI may add text before/after JSON)
       const jsonMatch = raw.match(/\{[\s\S]*\}/);
       if (!jsonMatch) {
         logger.warn('[TerminalAI] No JSON found in response, using raw text');

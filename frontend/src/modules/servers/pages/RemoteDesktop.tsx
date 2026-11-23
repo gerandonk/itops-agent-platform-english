@@ -221,7 +221,7 @@ export default function RemoteDesktop() {
 
   return (
     <div className="p-4 lg:p-6 max-w-7xl mx-auto">
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/servers')}

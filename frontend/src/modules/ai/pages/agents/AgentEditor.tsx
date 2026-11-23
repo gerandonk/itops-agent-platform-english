@@ -66,7 +66,7 @@ export default function AgentEditor({ agent, onClose }: AgentEditorProps) {
         ?.response?.data?.error
         || (err as { message?: string })?.message
         || 'Failed to save';
-      alert(`Save failed: \${msg}`);
+      alert(`Save failed: ${msg}`);
     },
   });
 
@@ -96,7 +96,7 @@ export default function AgentEditor({ agent, onClose }: AgentEditorProps) {
       setTestResult(data.result || 'Test completed, no results returned');
     } catch (error: unknown) {
       const err = error as { response?: { data?: { error?: string; message?: string } }; message?: string };
-      setTestResult(`Test failed: \${err.response?.data?.error || err.response?.data?.message || err.message}`);
+      setTestResult(`Test failed: ${err.response?.data?.error || err.response?.data?.message || err.message}`);
     } finally {
       setTestLoading(false);
     }

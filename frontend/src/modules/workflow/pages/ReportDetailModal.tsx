@@ -12,7 +12,7 @@ export function ReportDetailModal({ report, onClose, onDownload }: ReportDetailM
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-surface border border-border rounded-lg w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col">
-        <div className="flex items-center justify-between p-6 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap p-6 border-b border-border">
           <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
             <FileCheck className="w-6 h-6 text-primary" />
             {report.name}

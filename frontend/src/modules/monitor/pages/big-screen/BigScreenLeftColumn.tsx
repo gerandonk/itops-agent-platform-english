@@ -142,10 +142,10 @@ export default function BigScreenLeftColumn({
   ];
 
   return (
-    <div className="col-span-12 lg:col-span-3 flex flex-col gap-4">
+    <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
       {/* 系统资源监控 */}
       <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-5 border border-border">
-        <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center justify-between">
+        <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             System Resource Monitoring
@@ -185,8 +185,8 @@ export default function BigScreenLeftColumn({
           </div>
         </h2>
 
-        {/* 4 张并排指标卡 */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        {/* 2 di atas, 2 di bawah */}
+        <div className="grid grid-cols-2 gap-3">
           {metricConfigs.map((m) => {
             const pct = m.value ?? 0;
             const isPct = m.unit === '%';
@@ -194,28 +194,28 @@ export default function BigScreenLeftColumn({
             return (
               <div
                 key={m.label}
-                className="bg-slate-700/40 border border-border rounded-xl px-2.5 py-2.5 flex flex-col gap-1.5 transition-colors hover:border-blue-500/40 overflow-hidden"
+                className="bg-surface/40 border border-border rounded-xl px-3 py-3 flex flex-col gap-1.5 transition-colors hover:border-primary/40 overflow-hidden"
                 title={m.fullLabel}
               >
                 <div className="flex items-center gap-1.5">
                   <div
-                    className={`w-6 h-6 rounded-md ${m.iconBg} ${m.iconColor} flex items-center justify-center shrink-0`}
+                    className={`w-7 h-7 rounded-md ${m.iconBg} ${m.iconColor} flex items-center justify-center shrink-0`}
                   >
-                    <m.Icon className="w-3.5 h-3.5" />
+                    <m.Icon className="w-4 h-4" />
                   </div>
-                  <div className="text-xs font-medium text-text-primary whitespace-nowrap truncate">
+                  <div className="text-sm font-medium text-text-primary whitespace-nowrap truncate">
                     {m.label}
                   </div>
                 </div>
                 <div className="flex items-baseline gap-1 leading-none">
                   <span
-                    className={`text-lg font-bold font-mono tabular-nums ${m.valColor} whitespace-nowrap`}
+                    className={`text-xl font-bold font-mono tabular-nums ${m.valColor} whitespace-nowrap`}
                   >
                     {m.value !== null && m.value !== undefined && Number.isFinite(m.value)
                       ? m.fmt(m.value)
                       : '--'}
                   </span>
-                  <span className="text-[10px] text-text-tertiary font-medium whitespace-nowrap">
+                  <span className="text-xs text-text-tertiary font-medium whitespace-nowrap">
                     {m.unit}
                   </span>
                 </div>
@@ -263,7 +263,7 @@ export default function BigScreenLeftColumn({
 
       {/* 自动修复统计 */}
       <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-4 border border-border">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between flex-wrap mb-2">
           <h2 className="text-base font-semibold text-text-primary flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             Auto-Remediation Stats
@@ -305,7 +305,7 @@ export default function BigScreenLeftColumn({
           {remediationStats?.recent_executions?.slice(0, 4).map((exec) => (
             <div
               key={exec.id}
-              className="flex items-center justify-between p-1.5 bg-slate-700/30 rounded-lg border border-slate-700/40"
+              className="flex items-center justify-between flex-wrap p-1.5 bg-slate-700/30 rounded-lg border border-slate-700/40"
             >
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 <div

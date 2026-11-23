@@ -120,8 +120,8 @@ export function SnmpCredentialsTab({ searchQuery, setSearchQuery }: SnmpCredenti
   return (
     <div className="space-y-4">
       {/* 工具栏 */}
-      <div className="flex items-center justify-between">
-        <div className="relative w-64">
+      <div className="flex items-center justify-between flex-wrap">
+        <div className="relative w-full sm:w-64">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-tertiary" />
           <input type="text" placeholder="Search credentials..."
             value={searchQuery}
@@ -301,7 +301,7 @@ export function SnmpCredentialsTab({ searchQuery, setSearchQuery }: SnmpCredenti
             (c.snmp_user || '').toLowerCase().includes(searchQuery.toLowerCase())
           ).map((cred: SnmpCredential) => (
             <div key={cred.id}
-              className="bg-surface rounded-xl border border-border p-4 flex items-center justify-between hover:border-emerald-500/30 transition-all"
+              className="bg-surface rounded-xl border border-border p-4 flex items-center justify-between flex-wrap hover:border-emerald-500/30 transition-all"
             >
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">

@@ -41,7 +41,7 @@ export default function AgentTestPanel({
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-gradient-to-br from-surface to-background backdrop-blur-xl rounded-2xl w-full max-w-3xl border border-border shadow-2xl shadow-blue-500/10 flex flex-col max-h-[90vh]">
         {/* Header */}
-        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-shrink-0">
+        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-wrap flex-shrink-0">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-2xl">
               {editingAgent.avatar}
@@ -161,7 +161,7 @@ export default function AgentTestPanel({
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <label className="text-sm font-medium text-text-primary">Enter text</label>
               <button
                 onClick={async () => {
@@ -209,7 +209,7 @@ export default function AgentTestPanel({
 
           {testResult && (
             <div className="mt-4">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between flex-wrap mb-3">
                 <span className="text-sm font-medium text-text-primary">Output Result</span>
                 <span className="text-xs text-text-tertiary">Duration:  {testResult.time}ms</span>
               </div>

@@ -46,9 +46,9 @@ export default function AgentDetail({ agentId, onBack, deleteMutation }: AgentDe
   const executions = executionsData?.executions ?? [];
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-4">
             <button
               onClick={onBack}
@@ -328,7 +328,7 @@ export default function AgentDetail({ agentId, onBack, deleteMutation }: AgentDe
       >
         {selectedExecution && (
           <div className="space-y-4">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between flex-wrap">
               <span
                 className={clsx(
                   'px-3 py-1.5 rounded-full text-xs font-semibold',

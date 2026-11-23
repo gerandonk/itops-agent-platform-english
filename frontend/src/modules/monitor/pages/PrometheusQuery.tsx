@@ -91,7 +91,7 @@ export default function PrometheusQuery() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-4">
         {/* 标题 */}
         <div className="flex items-center gap-3">
@@ -104,7 +104,7 @@ export default function PrometheusQuery() {
 
         {/* 连接配置 */}
         <section className="bg-surface rounded-xl p-5 border border-border space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <h2 className="text-sm font-semibold text-text-primary flex items-center gap-2">
               <Plug className="w-4 h-4 text-primary" />
               Connection Configuration
@@ -194,7 +194,7 @@ export default function PrometheusQuery() {
 
         {/* PromQL 查询 */}
         <section className="bg-surface rounded-xl p-5 border border-border space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <h2 className="text-sm font-semibold text-text-primary">PromQL</h2>
             <div className="flex items-center gap-1 bg-background rounded-lg p-0.5 border border-border">
               {(['instant', 'range'] as QueryMode[]).map((m) => (
@@ -274,7 +274,7 @@ export default function PrometheusQuery() {
 
         {/* 结果 */}
         <section className="bg-surface rounded-xl p-5 border border-border">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between flex-wrap mb-3">
             <h2 className="text-sm font-semibold text-text-primary">Query Results</h2>
             {response?.data?.resultType && (
               <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-400">

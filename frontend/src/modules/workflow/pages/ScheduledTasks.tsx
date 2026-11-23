@@ -133,9 +133,9 @@ export default function ScheduledTasks() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary">Scheduled Tasks</h1>
             <p className="text-text-secondary">Manage automated tasks</p>
@@ -245,7 +245,7 @@ export default function ScheduledTasks() {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-surface rounded-xl border border-border max-w-lg w-full">
-            <div className="p-4 border-b border-border flex items-center justify-between">
+            <div className="p-4 border-b border-border flex items-center justify-between flex-wrap">
               <h3 className="text-lg font-semibold text-text-primary">
                 {editingTask ? 'Edit scheduled task' : 'New scheduled task'}
               </h3>

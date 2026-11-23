@@ -6,6 +6,7 @@ import { getApiKey, getModelId, getApiBase } from '../../../utils/apiConfig';
 import { credentialService } from '../../auth/services/credentialService';
 import { requireRole } from '../../../middleware/auth';
 import { settingsCrudService } from '../services/settingsCrudService';
+import { settingsRepository } from '../../../repositories/settingsRepository';
 
 const router = Router();
 
@@ -151,6 +152,29 @@ router.delete('/api-keys/:provider', requireRole('admin'), (req: Request, res: R
   } catch (error: unknown) {
     safeError('❌ Failed to delete configuration:', error);
     res.status(500).json({ success: false, error: 'Failed to delete configuration' });
+  }
+});
+
+// 获取分组配置
+router.get('/grouping', requireRole('admin'), (_req: Request, res: Response) => {
+  try {
+    const config = settingsRepository.getValue('AGENT_GROUPING_CONFIG');
+    const parsed = config ? JSON.parse(config) : { clusters: [] };
+    res.json({ success: true, data: parsed });
+  } catch {
+    res.status(500).json({ success: false, error: 'Failed to fetch grouping config' });
+  }
+});
+
+// 保存分组配置
+router.post('/grouping', requireRole('admin'), (req: Request, res: Response) => {
+  try {
+    const config = req.body?.config ?? { clusters: [] };
+    const serialized = JSON.stringify(config);
+    settingsRepository.upsert('AGENT_GROUPING_CONFIG', serialized);
+    res.json({ success: true, message: 'Grouping configuration saved', data: config });
+  } catch {
+    res.status(500).json({ success: false, error: 'Failed to save grouping config' });
   }
 });
 

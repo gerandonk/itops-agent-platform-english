@@ -150,7 +150,7 @@ export function ImageSection({ endpointId }: ImageSectionProps) {
       {showPullModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => { setShowPullModal(false); setPullImageName(''); }}>
           <div className="bg-surface rounded-lg border border-border w-full max-w-md" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
               <h3 className="text-lg font-semibold text-text-primary">Pull image</h3>
               <button onClick={() => { setShowPullModal(false); setPullImageName(''); }} className="text-text-secondary hover:text-text-primary"><X className="w-5 h-5" /></button>
             </div>

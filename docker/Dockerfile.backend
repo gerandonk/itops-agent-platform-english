@@ -106,7 +106,7 @@ ENV http_proxy= \
 
 # Install minimal runtime dependencies (sqlite library, gosu for privilege drop)
 RUN apk add --no-cache \
-    sqlite-libs \
+    sqlite \
     gosu \
     && rm -rf /var/cache/apk/*
 

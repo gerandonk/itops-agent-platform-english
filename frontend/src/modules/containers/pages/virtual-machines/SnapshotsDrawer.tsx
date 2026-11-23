@@ -39,7 +39,7 @@ export function SnapshotsDrawer({
       <div className="fixed inset-0 z-50 flex justify-end">
         <div className="absolute inset-0 bg-black/50" onClick={onClose} />
         <div className="relative w-full max-w-md bg-surface border-l border-border h-full overflow-y-auto p-6">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between flex-wrap mb-6">
             <div>
               <h3 className="text-lg font-bold text-text-primary">Snapshot Management</h3>
               <p className="text-sm text-text-secondary">{vm.name}</p>

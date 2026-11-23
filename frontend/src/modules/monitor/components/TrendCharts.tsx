@@ -66,7 +66,7 @@ export default function TrendCharts({ deviceId }: TrendChartsProps) {
   return (
     <div className="space-y-6">
       {/* 时间范围选择 */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-emerald-400" />
           <h3 className="font-medium text-text-primary">Historical Trends</h3>

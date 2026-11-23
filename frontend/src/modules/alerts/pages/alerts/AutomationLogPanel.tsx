@@ -27,7 +27,7 @@ export default function AutomationLogPanel({
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
       <div className="bg-surface rounded-xl border border-border max-w-3xl w-full shadow-2xl max-h-[80vh] flex flex-col">
-        <div className="p-4 border-b border-border flex items-center justify-between rounded-t-xl">
+        <div className="p-4 border-b border-border flex items-center justify-between flex-wrap rounded-t-xl">
           <div>
             <h3 className="text-lg font-semibold text-text-primary">Automation Records</h3>
             <p className="text-sm text-text-secondary mt-1">{sanitizeText(alert.title)}</p>
@@ -52,7 +52,7 @@ export default function AutomationLogPanel({
             <div className="space-y-3">
               {logs.map((log) => (
                 <div key={log.id} className="border border-border rounded-lg p-3 bg-background">
-                  <div className="flex items-center justify-between gap-3 mb-2">
+                  <div className="flex items-center justify-between flex-wrap gap-3 mb-2">
                     <span className="text-sm font-medium text-text-primary">{log.action}</span>
                     <span className="text-xs text-text-secondary">{new Date(log.created_at).toLocaleString()}</span>
                   </div>

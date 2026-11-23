@@ -39,7 +39,7 @@ export default function BigScreenRecentTasksList({
 
   return (
     <div className="bg-slate-800/40 backdrop-blur-md rounded-2xl p-5 border border-slate-700/50">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between flex-wrap mb-4">
         <h2 className="text-lg font-semibold text-white flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
           Recent Task Executions
@@ -58,7 +58,7 @@ export default function BigScreenRecentTasksList({
             className="p-3 bg-slate-900/50 rounded-lg border border-slate-700/30 hover:border-blue-500/30 transition-all cursor-pointer"
             onClick={onViewAll}
           >
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <div className="flex items-center gap-3">
                 <div
                   className={`w-2 h-2 rounded-full ${task.status === 'running' ? 'bg-status-running animate-pulse' : task.status === 'completed' ? 'bg-status-success' : task.status === 'failed' ? 'bg-status-failed' : 'bg-status-pending'}`}
@@ -73,7 +73,7 @@ export default function BigScreenRecentTasksList({
             </div>
             {task.status === 'running' && task.totalNodes > 0 && (
               <div className="ml-5">
-                <div className="flex items-center justify-between text-xs mb-1">
+                <div className="flex items-center justify-between flex-wrap text-xs mb-1">
                   <span className="text-slate-400">
                     {task.completedNodes}/{task.totalNodes} nodes completed
                   </span>

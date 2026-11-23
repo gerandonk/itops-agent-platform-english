@@ -33,7 +33,7 @@ router.post('/login', validateBody(authSchemas.login), async (req: Request, res:
       );
       return res.status(423).json({
         success: false,
-        message: `账户已被锁定，请${remainingMinutes}分钟后再试`,
+        message: `Account is locked. Please try again in ${remainingMinutes} minute(s).`,
       });
     }
 
@@ -64,7 +64,7 @@ router.post('/login', validateBody(authSchemas.login), async (req: Request, res:
       }
       return res.status(401).json({
         success: false,
-        message: `用户名或密码错误，剩余${result.remainingAttempts}次尝试机会`,
+        message: `Invalid username or password. ${result.remainingAttempts} attempts remaining`,
       });
     }
 
@@ -311,7 +311,7 @@ router.post(
         ip_address: req.ip,
       });
 
-      logger.info(`用户 ${user.username} 修改了密码`);
+      logger.info(`User ${user.username} changed password`);
 
       res.json({
         success: true,

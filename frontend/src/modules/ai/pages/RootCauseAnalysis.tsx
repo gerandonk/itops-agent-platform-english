@@ -103,7 +103,7 @@ export default function RootCauseAnalysisPage() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div>
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -254,7 +254,7 @@ export default function RootCauseAnalysisPage() {
       {showDetailModal && selectedRca && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 overflow-y-auto p-4">
           <div className="bg-surface rounded-xl p-6 w-full max-w-2xl my-8">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between flex-wrap mb-4">
               <h2 className="text-xl font-bold text-text-primary">Root Cause Analysis Details</h2>
               <button
                 onClick={() => setShowDetailModal(false)}
@@ -338,7 +338,7 @@ export default function RootCauseAnalysisPage() {
                               id: `${selectedRca.id}-rec-${idx}`,
                               // 风险等级简单推断：含「重启/删除/修改/格式」等关键词视为高风险
                               risk: /重启|删除|rm\s|reboot|shutdown|format/i.test(rec) ? 'high' : 'low',
-                              title: `Suggestion \${idx + 1}`,
+                              title: `Suggestion ${idx + 1}`,
                               // 每个建议作为单一步骤
                               steps: [{ title: rec }],
                               auto_executable: !/重启|删除|rm\s|reboot|shutdown|format|delete/i.test(rec),

@@ -99,7 +99,7 @@ const McpOverview: React.FC = () => {
       title: 'Tool name',
       dataIndex: 'name',
       key: 'name',
-      width: 190,
+      width: 180,
       render: (name: string) => <Text code style={{ fontSize: 12 }}>{name}</Text>,
     },
     {
@@ -112,7 +112,7 @@ const McpOverview: React.FC = () => {
     {
       title: 'Domain',
       key: 'domain',
-      width: 100,
+      width: 110,
       render: (_: unknown, record: McpTool) => {
         const d = (record.annotations)?.domain;
         return d ? <Tag>{domainLabels[d] || d}</Tag> : '-';
@@ -121,7 +121,7 @@ const McpOverview: React.FC = () => {
     {
       title: 'Risk',
       key: 'risk',
-      width: 70,
+      width: 80,
       render: (_: unknown, record: McpTool) => {
         const risk = record.annotations?.riskLevel || 'readonly';
         return <Tag color={riskColorMap[risk]}>{risk}</Tag>;
@@ -130,7 +130,7 @@ const McpOverview: React.FC = () => {
     {
       title: 'Read-only',
       key: 'readOnly',
-      width: 55,
+      width: 80,
       render: (_: unknown, record: McpTool) =>
         record.annotations?.readOnlyHint ? <Tag color="green">✓</Tag> : <Tag color="orange">✗</Tag>,
     },
@@ -197,11 +197,11 @@ const McpOverview: React.FC = () => {
 
       {/* 服务信息 */}
       <Card title="MCP Server info" style={{ marginBottom: 24 }}>
-        <Descriptions column={3} size="small">
+        <Descriptions column={{ xs: 1, sm: 2, md: 3 }} size="small">
           <Descriptions.Item label="Server name">{health?.server?.name}</Descriptions.Item>
           <Descriptions.Item label="Protocol version">{health?.protocol}</Descriptions.Item>
           <Descriptions.Item label="Uptime">
-            <ClockCircleOutlined /> {health?.uptime ? `\${Math.floor(health.uptime / 60)} minutes` : '-'}
+            <ClockCircleOutlined /> {health?.uptime ? `${Math.floor(health.uptime / 60)} minutes` : '-'}
           </Descriptions.Item>
           <Descriptions.Item label="Built-in tools">{manifest.length} available</Descriptions.Item>
           <Descriptions.Item label="External server">{servers.length} registered</Descriptions.Item>
@@ -227,12 +227,12 @@ const McpOverview: React.FC = () => {
             ) : (
               <Space direction="vertical" style={{ width: '100%' }}>
                 {servers.map((s) => (
-                  <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span>
+                  <div key={s.id} className="flex flex-col sm:flex-row items-center gap-2 sm:items-start sm:justify-between sm:gap-3">
+                    <span className="flex items-center">
                       {stateIconMap[s.state]} <Text strong>{s.name}</Text>
                       <Text type="secondary" style={{ marginLeft: 8 }}>({s.namespace}.*)</Text>
                     </span>
-                    <span>
+                    <span className="flex items-center">
                       <Tag>{s.transport}</Tag>
                       <Tag color={s.state === 'connected' ? 'green' : 'default'}>
                         {s.tools} tools
@@ -250,13 +250,13 @@ const McpOverview: React.FC = () => {
       <Card
         title={<><ToolOutlined /> Built-in MCP Tools List ({filteredTools.length}/{manifest.length})</>}
         extra={
-          <Space>
+          <Space wrap className="!flex-wrap">
             <Input
               prefix={<SearchOutlined />}
               placeholder="Search tools..."
               value={toolSearch}
               onChange={(e) => setToolSearch(e.target.value)}
-              style={{ width: 200 }}
+              style={{ width: '100%', minWidth: 140 }}
               size="small"
               allowClear
             />
@@ -291,7 +291,8 @@ const McpOverview: React.FC = () => {
           columns={toolColumns}
           rowKey="name"
           size="small"
-          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (total) => `Total \${total} tools` }}
+          scroll={{ x: 'max-content', y: 400 }}
+          pagination={{ pageSize: 15, showSizeChanger: true, showTotal: (total) => `Total ${total} tools` }}
         />
         <div style={{ marginTop: 12, padding: '8px 12px', background: '#f6ffed', border: '1px solid #b7eb8f', borderRadius: 6 }}>
           <Text style={{ fontSize: 12, color: '#52c41a' }}>

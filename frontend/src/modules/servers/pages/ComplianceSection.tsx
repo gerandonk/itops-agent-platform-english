@@ -21,7 +21,7 @@ export function ComplianceSection({
 }: ComplianceSectionProps) {
   return (
     <div className="bg-surface border border-border rounded-lg p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <div>
           <h2 className="text-lg font-bold text-text-primary">Compliance Check Results</h2>
           <p className="text-sm text-text-secondary">
@@ -103,7 +103,7 @@ export function ComplianceSection({
         <div className="space-y-4">
           {Object.entries(complianceResults).map(([checkName, result]) => (
             <div key={checkName} className="bg-background rounded-lg p-4">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between flex-wrap mb-2">
                 <h4 className="font-medium text-text-primary">
                   {checkName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                 </h4>

@@ -177,8 +177,8 @@ export default function Topology() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="h-full overflow-auto p-4 lg:p-6">
+      <div className="mb-6 flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-3">
           <Network className="w-7 h-7 text-primary" />
           <div>
@@ -217,7 +217,7 @@ export default function Topology() {
       {isAddModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-surface rounded-xl p-6 w-full max-w-md">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between flex-wrap mb-6">
               <h3 className="text-lg font-semibold text-text-primary">Add Service Dependency</h3>
               <button
                 onClick={() => setIsAddModalOpen(false)}

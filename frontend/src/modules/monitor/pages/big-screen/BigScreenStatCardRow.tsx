@@ -45,7 +45,7 @@ export default function BigScreenStatCardRow({
           icon={Play}
           label="Task success rate"
           value={`${stats?.tasks.successRate || 0}%`}
-          subValue={`Completed \${stats?.tasks.completed || 0} / Total \${stats?.tasks.total || 0}`}
+          subValue={`Completed ${stats?.tasks.completed || 0} / Total ${stats?.tasks.total || 0}`}
           color={{ bg: 'bg-green-500/15', fg: 'text-green-400' }}
           onClick={() => onNavigate('/tasks')}
         />
@@ -53,7 +53,7 @@ export default function BigScreenStatCardRow({
           icon={Bell}
           label="Active alerts"
           value={stats?.alerts.active || 0}
-          subValue={`Critical \${stats?.alerts.critical || 0} / High \${stats?.alerts.high || 0}`}
+          subValue={`Critical ${stats?.alerts.critical || 0} / High ${stats?.alerts.high || 0}`}
           color={{ bg: 'bg-red-500/15', fg: 'text-red-400' }}
           onClick={() => onNavigate('/alerts')}
         />

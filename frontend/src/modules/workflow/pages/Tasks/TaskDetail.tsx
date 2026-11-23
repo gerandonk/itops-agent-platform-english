@@ -58,7 +58,7 @@ export function TaskDetail({
     <>
       {/* Header */}
       <div className="p-6 border-b border-border">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between flex-wrap mb-4">
           <div>
             <h2 className="text-xl font-bold text-text-primary">{task.name}</h2>
             <p className="text-sm text-text-secondary">

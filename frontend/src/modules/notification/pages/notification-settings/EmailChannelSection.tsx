@@ -31,7 +31,7 @@ export function EmailChannelSection({
 }: EmailChannelSectionProps) {
   return (
     <div className="space-y-3 pb-4 border-b border-border last:border-0 last:pb-0">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div>
           <p className="text-sm font-medium text-text-primary">Email (SMTP)</p>
           <p className="text-xs text-text-secondary">Send notifications via SMTP email server</p>

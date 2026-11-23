@@ -104,7 +104,7 @@ export default function ForcePasswordChange() {
               />
               {newPassword && (
                 <div className="mt-3 space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap">
                     <span className="text-xs text-slate-400">Password Strength</span>
                     <span className={`text-xs font-medium ${getPasswordStrength(newPassword).color}`}>
                       {getPasswordStrength(newPassword).label}

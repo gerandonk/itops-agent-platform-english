@@ -167,7 +167,7 @@ export default function PodList({ pods, loading, error, onRetry, context, search
         <div className="fixed inset-0 z-50 flex justify-end">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => { setPodDetailOpen(false); setPodDetailTarget(null); }} />
           <div className="relative w-full max-w-xl bg-card border-l border-border shadow-2xl h-full overflow-y-auto animate-slide-in-right">
-            <div className="sticky top-0 bg-card border-b border-border px-5 py-4 flex items-center justify-between z-10">
+            <div className="sticky top-0 bg-card border-b border-border px-5 py-4 flex items-center justify-between flex-wrap z-10">
               <h3 className="text-lg font-semibold text-text-primary flex items-center gap-2">
                 <Eye size={18} /> Pod Details
               </h3>
@@ -293,7 +293,7 @@ export default function PodList({ pods, loading, error, onRetry, context, search
         <div className="fixed inset-0 z-50 flex justify-end">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => { setPodLogsOpen(false); setPodLogsTarget(null); }} />
           <div className="relative w-full max-w-3xl bg-card border-l border-border shadow-2xl h-full overflow-hidden flex flex-col animate-slide-in-right">
-            <div className="sticky top-0 bg-card border-b border-border px-5 py-4 flex items-center justify-between z-10 shrink-0">
+            <div className="sticky top-0 bg-card border-b border-border px-5 py-4 flex items-center justify-between flex-wrap z-10 shrink-0">
               <h3 className="text-lg font-semibold text-text-primary flex items-center gap-2">
                 <FileText size={18} /> Pod Logs
               </h3>

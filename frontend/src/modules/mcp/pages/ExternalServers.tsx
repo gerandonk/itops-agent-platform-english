@@ -197,7 +197,7 @@ const ExternalServers: React.FC = () => {
       <Title level={3}><CloudServerOutlined /> External MCP servers</Title>
 
       <Card style={{ marginBottom: 16 }}>
-        <Space>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           <Button type="primary" icon={<PlusOutlined />} onClick={() => setAddOpen(true)}>
             Register Server
           </Button>
@@ -207,7 +207,7 @@ const ExternalServers: React.FC = () => {
           <Button icon={<ReloadOutlined />} onClick={loadServers}>
             Refresh
           </Button>
-        </Space>
+        </div>
       </Card>
 
       <Table
@@ -217,6 +217,7 @@ const ExternalServers: React.FC = () => {
         loading={loading}
         pagination={false}
         size="small"
+        scroll={{ x: 'max-content' }}
         locale={{ emptyText: 'No external MCP servers. Click "Register Server" to add one.' }}
       />
 

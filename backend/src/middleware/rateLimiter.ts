@@ -21,12 +21,13 @@ interface RateLimitConfig {
 }
 
 const rateLimitConfig: RateLimitConfig = {
-  '/api/v1/auth/login': { windowMs: 15 * 60 * 1000, max: 5 },
-  '/api/v1/auth': { windowMs: 60 * 1000, max: 20 },
-  '/api/v1/copilot': { windowMs: 60 * 1000, max: 30 },
-  '/api/v1/settings/api-keys': { windowMs: 60 * 1000, max: 10 },
-  '/api/v1/webhooks': { windowMs: 1000, max: 10 },
-  '/tasks': { windowMs: 60 * 1000, max: 200 }, // BigScreen polling: req.path excludes /api/v1 mount prefix
+  '/api/v1/auth/login': { windowMs: 15 * 60 * 1000, max: 20 },
+  '/api/v1/auth': { windowMs: 60 * 1000, max: 120 },
+  '/api/v1/copilot': { windowMs: 60 * 1000, max: 120 },
+  '/api/v1/settings/api-keys': { windowMs: 60 * 1000, max: 60 },
+  '/api/v1/webhooks': { windowMs: 1000, max: 60 },
+  '/api/v1/network-discovery': { windowMs: 60 * 1000, max: 1200 },
+  '/api/v1/tasks': { windowMs: 60 * 1000, max: 1200 },
 };
 
 const ipWhitelist: readonly string[] = env.WEBHOOK_IP_WHITELIST
@@ -65,16 +66,21 @@ function ipToNumber(ip: string): number {
   return ((parts[0] << 24) | (parts[1] << 16) | (parts[2] << 8) | parts[3]) >>> 0;
 }
 
-const DEFAULT_CONFIG = { windowMs: 60 * 1000, max: 100 };
+const DEFAULT_CONFIG = { windowMs: 60 * 1000, max: 600 };
+
+function getFullPath(req: Request): string {
+  return (req.originalUrl || req.url || req.path || '').split('?')[0];
+}
 
 function getClientKey(req: Request): string {
   const ip = req.ip || req.socket.remoteAddress || 'unknown';
-  return `${ip}:${req.method}:${req.path}`;
+  return `${ip}:${req.method}:${getFullPath(req)}`;
 }
 
-function findMatchingConfig(path: string): { windowMs: number; max: number } {
+function findMatchingConfig(req: Request): { windowMs: number; max: number } {
+  const fullPath = getFullPath(req);
   for (const [routePath, cfg] of Object.entries(rateLimitConfig)) {
-    if (path.startsWith(routePath)) {
+    if (fullPath.startsWith(routePath)) { // Match against full path
       return cfg;
     }
   }
@@ -139,7 +145,7 @@ export function rateLimiter(req: Request, res: Response, next: NextFunction) {
     return next();
   }
 
-  const config = findMatchingConfig(req.path);
+  const config = findMatchingConfig(req);
   const key = getClientKey(req);
   const now = Date.now();
 

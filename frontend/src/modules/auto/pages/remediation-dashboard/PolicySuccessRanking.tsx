@@ -9,7 +9,7 @@ interface PolicySuccessRankingProps {
 export function PolicySuccessRanking({ policies }: PolicySuccessRankingProps) {
   return (
     <div className="bg-surface/30 border border-border rounded-xl p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <h2 className="text-lg font-semibold text-text-primary flex items-center gap-2">
           <Activity className="w-5 h-5 text-green-400" />
           Policy Success Rate Ranking
@@ -22,7 +22,7 @@ export function PolicySuccessRanking({ policies }: PolicySuccessRankingProps) {
               key={policy.id}
               className="p-3 rounded-lg bg-surface hover:bg-slate-700/30 transition-all"
             >
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between flex-wrap mb-2">
                 <div className="flex items-center gap-2">
                   <span
                     className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
@@ -65,7 +65,7 @@ export function PolicySuccessRanking({ policies }: PolicySuccessRankingProps) {
                   style={{ width: `${policy.stats.success_rate}%` }}
                 />
               </div>
-              <div className="flex items-center justify-between mt-1.5 text-xs text-text-tertiary">
+              <div className="flex items-center justify-between flex-wrap mt-1.5 text-xs text-text-tertiary">
                 <span>Triggered  {policy.stats.total_triggers}  times</span>
                 <span>Avg  {formatDuration(policy.stats.avg_duration_ms)}</span>
               </div>

@@ -368,19 +368,19 @@ class CopilotService {
     const highCount = severityCounts['high'] || 0;
     const newCount = statusCounts['new'] || 0;
 
-    let response = `📊 **Current Alert Status Overview**\\n\\n`;
-    response += `There are currently **${alerts.length}** alert records\\n`;
-    response += `- 🔴 Critical alerts: **${criticalCount}**\\n`;
-    response += `- 🟠 High-severity alerts: **${highCount}**\\n`;
-    response += `- 📌 Pending alerts: **${newCount}**\\n\\n`;
+    let response = `📊 **Current Alert Status Overview**\n\n`;
+    response += `There are currently **${alerts.length}** alert records\n`;
+    response += `- 🔴 Critical alerts: **${criticalCount}**\n`;
+    response += `- 🟠 High-severity alerts: **${highCount}**\n`;
+    response += `- 📌 Pending alerts: **${newCount}**\n\n`;
 
     if (alerts.length > 0) {
-      response += `**Recent Alerts**:\\n`;
+      response += `**Recent Alerts**:\n`;
       alerts.slice(0, 5).forEach((a, i) => {
         const emoji = a.severity === 'critical' ? '🔴' : a.severity === 'high' ? '🟠' : '🟡';
         response += `${i + 1}. ${emoji} [${a.severity?.toUpperCase()}] ${a.title}\n`;
       });
-      response += `\\n👉 Recommendation: Go to the "Alert Center" to view details and handle pending alerts`;
+      response += `\n👉 Recommendation: Go to the "Alert Center" to view details and handle pending alerts`;
     }
 
     return response;
@@ -396,18 +396,18 @@ class CopilotService {
     }>;
     const enabledCount = servers.filter((s) => s.enabled).length;
 
-    let response = `🖥️ **Server Management Overview**\\n\\n`;
-    response += `There are currently **${servers.length}** server configurations\\n`;
-    response += `- ✅ Enabled: **${enabledCount}**\\n`;
-    response += `- ❌ Disabled: **${servers.length - enabledCount}**\\n\\n`;
+    let response = `🖥️ **Server Management Overview**\n\n`;
+    response += `There are currently **${servers.length}** server configurations\n`;
+    response += `- ✅ Enabled: **${enabledCount}**\n`;
+    response += `- ❌ Disabled: **${servers.length - enabledCount}**\n\n`;
 
     if (servers.length > 0) {
-      response += `**Server List**:\\n`;
+      response += `**Server List**:\n`;
       servers.slice(0, 8).forEach((s, i) => {
         const status = s.enabled ? '✅' : '❌';
         response += `${i + 1}. ${status} ${s.name} (${s.hostname}:${s.port})\n`;
       });
-      response += `\\n👉 To perform operations on servers, please go to the "Server Management" page`;
+      response += `\n👉 To perform operations on servers, please go to the "Server Management" page`;
     }
 
     return response;
@@ -421,12 +421,12 @@ class CopilotService {
       statusCounts[t.status] = (statusCounts[t.status] || 0) + 1;
     });
 
-    let response = `📋 **Task Execution Overview**\\n\\n`;
-    response += `There are currently **${tasks.length}** task records\\n`;
-    response += `- ▶️ Running: **${statusCounts['running'] || 0}**\\n`;
-    response += `- ✅ Completed: **${statusCounts['completed'] || 0}**\\n`;
-    response += `- ❌ Failed: **${statusCounts['failed'] || 0}**\\n`;
-    response += `- ⏳ Pending: **${statusCounts['pending'] || 0}**\\n\\n`;
+    let response = `📋 **Task Execution Overview**\n\n`;
+    response += `There are currently **${tasks.length}** task records\n`;
+    response += `- ▶️ Running: **${statusCounts['running'] || 0}**\n`;
+    response += `- ✅ Completed: **${statusCounts['completed'] || 0}**\n`;
+    response += `- ❌ Failed: **${statusCounts['failed'] || 0}**\n`;
+    response += `- ⏳ Pending: **${statusCounts['pending'] || 0}**\n\n`;
 
     if (tasks.length > 0) {
       response += `**Recent Tasks**:\\n`;
@@ -440,50 +440,50 @@ class CopilotService {
   }
 
   private handleCheckQuery(): string {
-    return `🔍 **System Inspection Recommendations**\\n\\n` +
-      `I can help you perform the following inspection operations:\\n\\n` +
-      `1. **Server Health Check** - Check basic server status\\n` +
-      `2. **Disk Space Check** - Check disk usage\\n` +
-      `3. **Service Status Check** - Check critical service running status\\n` +
-      `4. **Security Compliance Check** - Check system security configuration\\n\\n` +
-      `👉 You can:\\n` +
-      `- Go to "Workflow" to use preset inspection templates\\n` +
-      `- Create custom inspection workflows\\n` +
-      `- Set up scheduled inspection tasks\\n\\n` +
+    return `🔍 **System Inspection Recommendations**\n\n` +
+      `I can help you perform the following inspection operations:\n\n` +
+      `1. **Server Health Check** - Check basic server status\n` +
+      `2. **Disk Space Check** - Check disk usage\n` +
+      `3. **Service Status Check** - Check critical service running status\n` +
+      `4. **Security Compliance Check** - Check system security configuration\n\n` +
+      `👉 You can:\n` +
+      `- Go to "Workflow" to use preset inspection templates\n` +
+      `- Create custom inspection workflows\n` +
+      `- Set up scheduled inspection tasks\n\n` +
       `Would you like me to recommend a suitable inspection workflow for you?`;
   }
 
   private handleHelpQuery(): string {
-    return `👋 **Welcome to ITOps Copilot!**\\n\\n` +
-      `I am your intelligent IT Ops assistant, and I can help you:\\n\\n` +
-      `**Query Category:**\\n` +
-      `- "View current alert status"\\n` +
-      `- "How is the server status?"\\n` +
-      `- "What tasks were executed recently?"\\n\\n` +
-      `**Operation Category:**\\n` +
-      `- "Help me execute system inspection"\\n` +
-      `- "Check disk space"\\n` +
-      `- "Generate an IT Ops report"\\n\\n` +
-      `**System Functions:**\\n` +
-      `- Alert Center: View and handle alerts\\n` +
-      `- Workflow: Orchestrate automated tasks\\n` +
-      `- Server Management: Operate remote servers\\n` +
-      `- Report System: Generate IT Ops reports\\n\\n` +
+    return `👋 **Welcome to ITOps Copilot!**\n\n` +
+      `I am your intelligent IT Ops assistant, and I can help you:\n\n` +
+      `**Query Category:**\n` +
+      `- "View current alert status"\n` +
+      `- "How is the server status?"\n` +
+      `- "What tasks were executed recently?"\n\n` +
+      `**Operation Category:**\n` +
+      `- "Help me execute system inspection"\n` +
+      `- "Check disk space"\n` +
+      `- "Generate an IT Ops report"\n\n` +
+      `**System Functions:**\n` +
+      `- Alert Center: View and handle alerts\n` +
+      `- Workflow: Orchestrate automated tasks\n` +
+      `- Server Management: Operate remote servers\n` +
+      `- Report System: Generate IT Ops reports\n\n` +
       `Is there anything I can help you with?`;
   }
 
   private handleGeneralQuery(input: string): string {
-    return `🤔 I understand you want to know about: **"${input}"**\\n\\n` +
-      `Let me give you some suggestions:\\n\\n` +
-      `**You can try:**\\n` +
-      `1. Check "Alert Center" - Understand current system status\\n` +
-      `2. Check "Workflow" - Run automated tasks\\n` +
-      `3. Use "Server Management" - Perform operations on servers\\n` +
-      `4. Generate "Report" - View IT Ops statistics\\n\\n` +
-      `**FAQ:**\\n` +
-      `- Q: How to handle alerts? A: Go to the alert center and click on an alert to handle it\\n` +
-      `- Q: How to create automated workflows? A: Use the workflow orchestration feature\\n` +
-      `- Q: How to connect to a server? A: Add server configuration in Server Management\\n\\n` +
+    return `🤔 I understand you want to know about: **"${input}"**\n\n` +
+      `Let me give you some suggestions:\n\n` +
+      `**You can try:**\n` +
+      `1. Check "Alert Center" - Understand current system status\n` +
+      `2. Check "Workflow" - Run automated tasks\n` +
+      `3. Use "Server Management" - Perform operations on servers\n` +
+      `4. Generate "Report" - View IT Ops statistics\n\n` +
+      `**FAQ:**\n` +
+      `- Q: How to handle alerts? A: Go to the alert center and click on an alert to handle it\n` +
+      `- Q: How to create automated workflows? A: Use the workflow orchestration feature\n` +
+      `- Q: How to connect to a server? A: Add server configuration in Server Management\n\n` +
       `Need more specific help? Ask me "Help"!`;
   }
 

@@ -110,7 +110,7 @@ export default function SecuritySettings() {
             />
             {newPassword && (
               <div className="mt-2 space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap">
                   <span className="text-sm text-text-secondary">Password Strength</span>
                   <span className={`text-sm font-medium ${getPasswordStrength(newPassword).color}`}>
                     {getPasswordStrength(newPassword).label}

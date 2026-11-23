@@ -684,6 +684,94 @@ body {
   background: linear-gradient(90deg, transparent, #2563eb, transparent);
 }
 
+/* Custom select: hilangkan tanda panah atas/bawah (dropdown arrow) */
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 2.5rem !important;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+.custom-select option {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+/* Global: remove all select dropdown arrows on mobile */
+@media (max-width: 767px) {
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    padding-right: 1rem !important;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* Ensure content has proper horizontal padding on mobile */
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ── Desktop: hide dropdown arrows globally ── */
+@media (min-width: 768px) {
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    padding-right: 1rem !important;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+/* ── Scrollbar: visible dan usable ── */
+/* Firefox: show scrollbar with proper width */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 var(--color-surface);
+}
+
+/* Chrome/Edge/Opera: proper scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 5px;
+  border: 2px solid var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Hilangkan tombol panah atas/bawah kecil (hanya tombol, track tetap ada) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 /* ── Mobile responsiveness ── */
 html {
   overflow-x: hidden;
@@ -706,5 +794,10 @@ html {
   /* Viewport-safe padding so fixed mobile header doesn't hide content */
   main {
     padding-top: 56px !important;
+  }
+
+  /* Fix category button width on mobile */
+  .category-button {
+    padding-right: 1rem !important;
   }
 }

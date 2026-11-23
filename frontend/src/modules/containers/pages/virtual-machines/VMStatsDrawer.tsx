@@ -14,7 +14,7 @@ export function VMStatsDrawer({ vm, stats, onClose }: VMStatsDrawerProps) {
     <div className="fixed inset-0 z-50 flex justify-end">
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       <div className="relative w-full max-w-sm bg-surface border-l border-border h-full overflow-y-auto p-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between flex-wrap mb-6">
           <div>
             <h3 className="text-lg font-bold text-text-primary">Performance Monitor</h3>
             <p className="text-sm text-text-secondary">{vm.name}</p>
@@ -26,7 +26,7 @@ export function VMStatsDrawer({ vm, stats, onClose }: VMStatsDrawerProps) {
 
         <div className="space-y-6">
           <div className="bg-background border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="flex items-center gap-2 text-sm text-text-secondary">
                 <Cpu className="w-4 h-4" />
                 CPU Usage
@@ -44,7 +44,7 @@ export function VMStatsDrawer({ vm, stats, onClose }: VMStatsDrawerProps) {
           </div>
 
           <div className="bg-background border border-border rounded-lg p-4">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="flex items-center gap-2 text-sm text-text-secondary">
                 <HardDrive className="w-4 h-4" />
                 Memory Usage

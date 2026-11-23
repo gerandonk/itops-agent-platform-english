@@ -14,7 +14,7 @@ export default function GeneralSettings() {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between p-4 bg-background rounded-lg">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-4 bg-background rounded-lg">
         <div>
           <h4 className="font-medium text-text-primary">{t('settings.language')}</h4>
           <p className="text-sm text-text-secondary">
@@ -31,7 +31,7 @@ export default function GeneralSettings() {
         </select>
       </div>
 
-      <div className="flex items-center justify-between p-4 bg-background rounded-lg">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-4 bg-background rounded-lg">
         <div>
           <h4 className="font-medium text-text-primary">{t('settings.theme')}</h4>
           <p className="text-sm text-text-secondary">

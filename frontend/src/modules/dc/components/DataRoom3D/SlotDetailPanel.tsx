@@ -27,7 +27,7 @@ export default function SlotDetailPanel({ rack, slots, onClose }: Props) {
   return (
     <div className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-[320px] max-h-[70vh] bg-[#0a1420]/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/5 overflow-hidden transition-all duration-300">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700/30">
+      <div className="flex items-center justify-between flex-wrap px-4 py-3 border-b border-gray-700/30">
         <div>
           <h3 className="text-sm font-bold text-white">{rack.name}</h3>
           <p className="text-[10px] text-slate-500 mt-0.5">

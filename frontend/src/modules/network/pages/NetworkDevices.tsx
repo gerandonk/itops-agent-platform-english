@@ -52,7 +52,7 @@ export default function NetworkDevices() {
       <div className="bg-surface rounded-xl border border-border mb-6">
         {/* 工具栏 */}
         <div className="px-6 py-4 border-b border-border">
-          <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center justify-between flex-wrap mb-3">
             <div className="flex items-center gap-4">
               <h2 className="text-base font-medium text-text-primary">Device List</h2>
               <div className="flex flex-wrap items-center gap-2">

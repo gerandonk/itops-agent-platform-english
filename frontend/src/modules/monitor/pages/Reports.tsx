@@ -189,9 +189,9 @@ export default function Reports() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary flex items-center gap-3">
               <FileText className="w-8 h-8 text-primary" />
@@ -210,12 +210,12 @@ export default function Reports() {
           )}
         </div>
 
-        <div className="flex gap-2 border-b border-border">
+        <div className="flex flex-wrap gap-2 border-b border-border">
           {TABS.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-2 border-b-2 transition-colors ${
+              className={`px-4 py-2 border-b-2 transition-colors whitespace-nowrap ${
                 activeTab === tab.key
                   ? 'border-primary text-primary'
                   : 'border-transparent text-text-secondary hover:text-text-primary'

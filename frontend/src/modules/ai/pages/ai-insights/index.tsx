@@ -10,8 +10,8 @@ import type { RootCauseAnalysis, Knowledge } from '../../api';
 function formatDelta(delta: number): { text: string; positive: boolean } {
   if (!Number.isFinite(delta) || delta === 0) return { text: 'Flat vs previous period', positive: true };
   const pct = Math.round(Math.abs(delta) * 100);
-  if (delta > 0) return { text: `+\${pct}% vs last week`, positive: true };
-  return { text: `-\${pct}% vs last week`, positive: false };
+  if (delta > 0) return { text: `+${pct}% vs last week`, positive: true };
+  return { text: `-${pct}% vs last week`, positive: false };
 }
 
 /**
@@ -66,7 +66,7 @@ export default function AIInsights() {
     // 修复耗时减少（completedThisWeek > completedLastWeek 表示更多完成）= 正面
     if (remediationStats && remediationStats.mttrSeconds !== null && remediationStats.mttrCount > 0) {
       // 用本周/上周的差值：本周完成更多 → 趋势向上
-      return { text: `\${remediationStats.completedThisWeek} completions this week`, positive: true };
+      return { text: `${remediationStats.completedThisWeek} completions this week`, positive: true };
     }
     return { text: 'No data', positive: true };
   })();
@@ -109,7 +109,7 @@ export default function AIInsights() {
       icon: <TrendingUp className="w-6 h-6" />,
       color: 'from-purple-500/20 to-purple-600/10',
       trend: totalRCAs > 0
-        ? `Based on \${totalRCAs} analyses (\${completedRCAs.length} completed)`
+        ? `Based on ${totalRCAs} analyses (${completedRCAs.length} completed)`
         : 'No data',
       trendPositive: rcaAccuracyRate >= 50,
     },
@@ -119,16 +119,16 @@ export default function AIInsights() {
       icon: <AlertTriangle className="w-6 h-6" />,
       color: 'from-yellow-500/20 to-yellow-600/10',
       trend: noiseFilter && noiseFilter.total > 0
-        ? `\${noiseFilter.autoHandled} of \${noiseFilter.total} alerts handled automatically`
+        ? `${noiseFilter.autoHandled} of ${noiseFilter.total} alerts handled automatically`
         : 'No alert data',
       trendPositive: noiseRatePct >= 50,
     },
     {
       title: 'Knowledge base growth',
-      value: `\${knowledge.length} items`,
+      value: `${knowledge.length} items`,
       icon: <BookOpen className="w-6 h-6" />,
       color: 'from-cyan-500/20 to-cyan-600/10',
-      trend: recentKnowledgeCount > 0 ? `+\${recentKnowledgeCount} this week` : 'No new entries this week',
+      trend: recentKnowledgeCount > 0 ? `+${recentKnowledgeCount} this week` : 'No new entries this week',
       trendPositive: recentKnowledgeCount > 0,
     },
   ];
@@ -176,7 +176,7 @@ export default function AIInsights() {
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-text-primary mb-1">AI Insights</h2>
           <p className="text-text-secondary text-sm">System operations insights and statistics based on AI analysis</p>
@@ -189,7 +189,7 @@ export default function AIInsights() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">
               {statsCards.map((card, index) => (
                 <div key={index} className={`bg-gradient-to-br ${card.color} border border-border rounded-xl p-4`}>
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between flex-wrap mb-3">
                     <span className="text-text-secondary">{card.icon}</span>
                     <span className="text-xs text-text-tertiary">{card.trend}</span>
                   </div>

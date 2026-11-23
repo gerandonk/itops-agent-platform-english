@@ -113,7 +113,7 @@ export default function AIAssistantSidebar({ sessionId, socket, roundHistory, ha
   return (
     <div className="flex flex-col h-full bg-gray-850 border-l border-gray-700 w-[320px] min-w-[280px] max-w-[360px]">
       {/* Title Bar */}
-      <div className="flex items-center justify-between px-3 py-2 bg-gray-800 border-b border-gray-700">
+      <div className="flex items-center justify-between flex-wrap px-3 py-2 bg-gray-800 border-b border-gray-700">
         <div className="flex items-center gap-2">
           <span className="text-base">🧠</span>
           <span className="text-sm font-medium text-gray-200">AI Terminal Assistant</span>
@@ -161,7 +161,7 @@ export default function AIAssistantSidebar({ sessionId, socket, roundHistory, ha
               className={`rounded-lg border p-3 text-sm ${config.bg} ${config.border}`}
             >
               {/* Title Row */}
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between flex-wrap mb-2">
                 <span className={`text-xs font-medium ${config.text}`}>
                   {config.icon} {config.label}
                   {item.triggeredBy === 'auto' && (
@@ -209,7 +209,7 @@ export default function AIAssistantSidebar({ sessionId, socket, roundHistory, ha
       </div>
 
       {/* Bottom Status */}
-      <div className="px-3 py-2 border-t border-gray-700/50 flex items-center justify-between">
+      <div className="px-3 py-2 border-t border-gray-700/50 flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-1.5">
           <div className={`w-1.5 h-1.5 rounded-full ${socket?.connected ? 'bg-green-500' : 'bg-gray-500'}`} />
           <span className="text-[10px] text-gray-600">

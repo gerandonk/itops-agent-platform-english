@@ -63,7 +63,7 @@ export default function DashboardOverlay({
   return (
     <>
       {/* ── 顶部标题栏 ── */}
-      <div className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-8 py-2.5 bg-gradient-to-b from-[rgba(12,24,50,0.9)] to-[rgba(8,16,32,0.7)] backdrop-blur-xl border-b border-[rgba(0,245,255,0.15)]">
+      <div className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between flex-wrap px-8 py-2.5 bg-gradient-to-b from-[rgba(12,24,50,0.9)] to-[rgba(8,16,32,0.7)] backdrop-blur-xl border-b border-[rgba(0,245,255,0.15)]">
         <div className="flex items-center gap-5">
           <span className="text-[12px] text-[#5a7a94] font-mono tracking-[0.5px]">{timeStr}</span>
         </div>

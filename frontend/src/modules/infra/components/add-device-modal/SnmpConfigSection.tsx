@@ -26,7 +26,7 @@ export function SnmpConfigSection({
 }: SnmpConfigSectionProps) {
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div className="flex items-center gap-2">
           <Radio className="w-4 h-4 text-emerald-400" />
           <span className="text-sm font-medium text-text-primary">SNMP Monitoring Configuration</span>

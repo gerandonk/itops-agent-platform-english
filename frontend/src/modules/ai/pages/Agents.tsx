@@ -11,7 +11,7 @@ import AgentTestPanel from './agents/AgentTestPanel';
 import api from '@/lib/api';
 import type { Agent as _Agent } from './agents/types';
 
-// Re-export types for backward compatibility
+/* Re-export types for backward compatibility */
 export type { Agent } from './agents/types';
 
 export default function Agents() {
@@ -49,7 +49,7 @@ export default function Agents() {
         throw new Error('File format error: missing agents array');
       }
       const { data } = await api.post('/agents/import', { agents });
-      message.success(`Import successful: \${data.data.importedCount} Agents imported`);
+      message.success(`Import successful: ${data.data.importedCount} Agents imported`);
       setImportModalOpen(false);
       setImportFile(null);
       queryClient.invalidateQueries({ queryKey: ['agents'] });
@@ -73,7 +73,7 @@ export default function Agents() {
   return (
     <div className="h-full overflow-auto p-4 lg:p-6 scrollbar-thin">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-3xl font-bold text-text-primary mb-2 tracking-tight">Agent management</h1>
             <p className="text-text-secondary">Manage ops automation Agents</p>
@@ -88,7 +88,7 @@ export default function Agents() {
             </button>
             <button
               onClick={vm.handleNew}
-              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-500 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold hover:scale-[1.02] active:scale-[0.98]"
+              className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-500 hover:to-blue-700 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold hover:scale-[1.02] active:scale-[0.98]"
             >
               <Plus className="w-5 h-5" />
               New Agent
@@ -97,9 +97,9 @@ export default function Agents() {
         </div>
 
         {/* Stat cards */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-xl rounded-2xl p-5 border border-blue-500/20 shadow-lg">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-blue-500/20">
                 <Bot className="w-5 h-5 text-blue-400" />
               </div>
@@ -110,7 +110,7 @@ export default function Agents() {
           </div>
 
           <div className="bg-gradient-to-br from-green-500/10 to-emerald-600/5 backdrop-blur-xl rounded-2xl p-5 border border-green-500/20 shadow-lg">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-green-500/20">
                 <Activity className="w-5 h-5 text-green-400" />
               </div>
@@ -125,7 +125,7 @@ export default function Agents() {
           </div>
 
           <div className="bg-gradient-to-br from-purple-500/10 to-violet-600/5 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/20 shadow-lg">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-purple-500/20">
                 <Zap className="w-5 h-5 text-purple-400" />
               </div>
@@ -136,7 +136,7 @@ export default function Agents() {
           </div>
 
           <div className="bg-gradient-to-br from-amber-500/10 to-orange-600/5 backdrop-blur-xl rounded-2xl p-5 border border-amber-500/20 shadow-lg">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-amber-500/20">
                 <BarChart3 className="w-5 h-5 text-amber-400" />
               </div>
@@ -150,18 +150,18 @@ export default function Agents() {
         </div>
 
         {/* Filters */}
-        <div className="bg-gradient-to-r from-surface to-background backdrop-blur-xl rounded-2xl p-5 border border-border/50 flex flex-wrap gap-4 items-center shadow-lg">
-          <div className="flex items-center gap-3">
-            <Search className="w-5 h-5 text-text-secondary" />
+        <div className="bg-gradient-to-r from-surface to-background backdrop-blur-xl rounded-2xl p-4 sm:p-5 border border-border/50 flex flex-wrap gap-3 sm:gap-4 items-center shadow-lg">
+          <div className="flex items-center gap-3 w-full sm:w-auto min-w-0">
+            <Search className="w-5 h-5 text-text-secondary shrink-0" />
             <input
               type="text"
               value={vm.searchQuery}
               onChange={(e) => vm.setSearchQuery(e.target.value)}
               placeholder="Search Agent..."
-              className="px-4 py-2 bg-surface border border-border rounded-xl text-sm text-text-primary placeholder-text-tertiary focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all w-64"
+              className="px-4 py-2 bg-surface border border-border rounded-xl text-sm text-text-primary placeholder-text-tertiary focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/20 transition-all w-full sm:w-64 min-w-0"
             />
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap gap-2 items-center min-w-0">
             <span className="text-sm text-text-secondary font-medium">Category:</span>
             <button
               onClick={() => vm.setSelectedCategory(null)}
@@ -199,70 +199,70 @@ export default function Agents() {
           onEdit={vm.handleEdit}
           onDelete={vm.handleDelete}
         />
-      </div>
 
-      {vm.showModal && (
-        <AgentEditor agent={vm.editingAgent} onClose={() => vm.setShowModal(false)} />
-      )}
+        {vm.showModal && (
+          <AgentEditor agent={vm.editingAgent} onClose={() => vm.setShowModal(false)} />
+        )}
 
-      {vm.showTestModal && vm.editingAgent && (
-        <AgentTestPanel
-          editingAgent={vm.editingAgent}
-          testInput={vm.testInput}
-          setTestInput={vm.setTestInput}
-          testResult={vm.testResult}
-          isTesting={vm.isTesting}
-          selectedServerIds={vm.selectedServerIds}
-          setSelectedServerIds={vm.setSelectedServerIds}
-          selectedDatabaseId={vm.selectedDatabaseId}
-          setSelectedDatabaseId={vm.setSelectedDatabaseId}
-          servers={vm.servers}
-          dbConnections={vm.dbConnections}
-          runTest={vm.runTest}
-          onClose={() => vm.setShowTestModal(false)}
-        />
-      )}
+        {vm.showTestModal && vm.editingAgent && (
+          <AgentTestPanel
+            editingAgent={vm.editingAgent}
+            testInput={vm.testInput}
+            setTestInput={vm.setTestInput}
+            testResult={vm.testResult}
+            isTesting={vm.isTesting}
+            selectedServerIds={vm.selectedServerIds}
+            setSelectedServerIds={vm.setSelectedServerIds}
+            selectedDatabaseId={vm.selectedDatabaseId}
+            setSelectedDatabaseId={vm.setSelectedDatabaseId}
+            servers={vm.servers}
+            dbConnections={vm.dbConnections}
+            runTest={vm.runTest}
+            onClose={() => vm.setShowTestModal(false)}
+          />
+        )}
 
-      <Modal
-        title="Import Agent"
-        open={importModalOpen}
-        onCancel={() => {
-          setImportModalOpen(false);
-          setImportFile(null);
-        }}
-        onOk={handleImport}
-        confirmLoading={importing}
-        okText="Import"
-        cancelText="Cancel"
-      >
-        <div className="space-y-4">
-          <p className="text-sm text-text-secondary">
-            Select a JSON file to import the Agent configuration. The file format must be{' '}
-            <code className="px-1.5 py-0.5 bg-surface rounded text-xs">{'{"agents": [...] }'}</code>{' '}
-            or a plain array.
-          </p>
-          <div
-            className={`border-2 border-dashed rounded-xl p-8 text-center transition-all cursor-pointer ${
-              importFile
-                ? 'border-blue-500/50 bg-blue-500/10'
-                : 'border-border hover:border-blue-500/30 hover:bg-surface/50'
-            }`}
-            onClick={() => document.getElementById('agent-import-file')?.click()}
-          >
-            <Upload className="w-10 h-10 mx-auto mb-3 text-text-tertiary" />
-            {importFile ? (
-              <div>
-                <p className="text-sm font-medium text-text-primary">{importFile.name}</p>
-                <p className="text-xs text-text-tertiary mt-1">
-                  {(importFile.size / 1024).toFixed(1)} KB
-                </p>
-              </div>
-            ) : (
-              <div>
-                <p className="text-sm text-text-primary">Click to select a file or drag it here</p>
-                <p className="text-xs text-text-tertiary mt-1">Supports .json format</p>
-              </div>
-            )}
+        <Modal
+          title="Import Agent"
+          open={importModalOpen}
+          onCancel={() => {
+            setImportModalOpen(false);
+            setImportFile(null);
+          }}
+          onOk={handleImport}
+          confirmLoading={importing}
+          okText="Import"
+          cancelText="Cancel"
+        >
+          <div className="space-y-4">
+            <p className="text-sm text-text-secondary">
+              Select a JSON file to import the Agent configuration. The file format must be{' '}
+              <code className="px-1.5 py-0.5 bg-surface rounded text-xs">{'{"agents": [...] }'}</code>{' '}
+              or a plain array.
+            </p>
+            <div
+              className={`border-2 border-dashed rounded-xl p-8 text-center transition-all cursor-pointer ${
+                importFile
+                  ? 'border-blue-500/50 bg-blue-500/10'
+                  : 'border-border hover:border-blue-500/30 hover:bg-surface/50'
+              }`}
+              onClick={() => document.getElementById('agent-import-file')?.click()}
+            >
+              <Upload className="w-10 h-10 mx-auto mb-3 text-text-tertiary" />
+              {importFile ? (
+                <div>
+                  <p className="text-sm font-medium text-text-primary">{importFile.name}</p>
+                  <p className="text-xs text-text-tertiary mt-1">
+                    {(importFile.size / 1024).toFixed(1)} KB
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p className="text-sm text-text-primary">Click to select a file or drag it here</p>
+                  <p className="text-xs text-text-tertiary mt-1">Supports .json format</p>
+                </div>
+              )}
+            </div>
             <input
               id="agent-import-file"
               type="file"
@@ -274,8 +274,8 @@ export default function Agents() {
               }}
             />
           </div>
-        </div>
-      </Modal>
+        </Modal>
+      </div>
     </div>
   );
 }

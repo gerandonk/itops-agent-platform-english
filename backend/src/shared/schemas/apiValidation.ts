@@ -2,23 +2,23 @@ import { z } from 'zod';
 
 export const authSchemas = {
   login: z.object({
-    username: z.string().min(1, '用户名不能为空').max(64),
-    password: z.string().min(1, '密码不能为空').max(128),
+    username: z.string().min(1, 'Username cannot be empty').max(64),
+    password: z.string().min(1, 'Password cannot be empty').max(128),
   }),
   register: z.object({
-    username: z.string().min(2, '用户名至少2个字符').max(64),
-    password: z.string().min(8, '密码至少8个字符').max(128),
-    email: z.string().email('邮箱格式不正确').max(255),
+    username: z.string().min(2, 'Username must be at least 2 characters').max(64),
+    password: z.string().min(8, 'Password must be at least 8 characters').max(128),
+    email: z.string().email('Invalid email format').max(255),
     role: z.enum(['admin', 'operator', 'viewer']).default('viewer'),
   }),
 };
 
 export const serverSchemas = {
   createServer: z.object({
-    name: z.string().min(1, '服务器名称不能为空').max(100),
-    hostname: z.string().min(1, '主机名不能为空').max(255),
+    name: z.string().min(1, 'Server name cannot be empty').max(100),
+    hostname: z.string().min(1, 'Hostname cannot be empty').max(255),
     port: z.coerce.number().int().min(1).max(65535).default(22),
-    username: z.string().min(1, '用户名不能为空').max(64),
+    username: z.string().min(1, 'Username cannot be empty').max(64),
     password: z.string().max(255).optional(),
     private_key: z.string().optional(),
     use_ssh_key: z.coerce.number().int().min(0).max(1).default(0),
@@ -41,7 +41,7 @@ export const serverSchemas = {
     ssh_key_id: z.string().uuid().optional(),
   }),
   serverId: z.object({
-    id: z.string().uuid('无效的服务器ID'),
+    id: z.string().uuid('Invalid server ID'),
   }),
 };
 
@@ -52,29 +52,29 @@ export const alertSchemas = {
     notes: z.string().max(2000).optional(),
   }),
   alertId: z.object({
-    id: z.string().uuid('无效的告警ID'),
+    id: z.string().uuid('Invalid alert ID'),
   }),
 };
 
 export const taskSchemas = {
   taskId: z.object({
-    id: z.string().uuid('无效的任务ID'),
+    id: z.string().uuid('Invalid task ID'),
   }),
   createTask: z.object({
-    name: z.string().min(1, '任务名称不能为空').max(200),
-    workflow_id: z.string().uuid('无效的工作流ID'),
+    name: z.string().min(1, 'Task name cannot be empty').max(200),
+    workflow_id: z.string().uuid('Invalid workflow ID'),
     input_data: z.record(z.unknown()).optional(),
   }),
 };
 
 export const workflowSchemas = {
   workflowId: z.object({
-    id: z.string().uuid('无效的工作流ID'),
+    id: z.string().uuid('Invalid workflow ID'),
   }),
   createWorkflow: z.object({
-    name: z.string().min(1, '工作流名称不能为空').max(200),
+    name: z.string().min(1, 'Workflow name cannot be empty').max(200),
     description: z.string().max(1000).optional(),
-    nodes: z.string().min(2, '节点配置不能为空'),
+    nodes: z.string().min(2, 'Node configuration cannot be empty'),
     edges: z.string().default('[]'),
     is_template: z.coerce.number().int().min(0).max(1).default(0),
   }),
@@ -82,10 +82,10 @@ export const workflowSchemas = {
 
 export const agentSchemas = {
   agentId: z.object({
-    id: z.string().uuid('无效的Agent ID'),
+    id: z.string().uuid('Invalid agent ID'),
   }),
   createAgent: z.object({
-    name: z.string().min(1, 'Agent名称不能为空').max(100),
+    name: z.string().min(1, 'Agent name cannot be empty').max(100),
     avatar: z.string().max(100).default('🤖'),
     role: z.string().max(100).optional(),
     system_prompt: z.string().max(5000).optional(),
@@ -100,7 +100,7 @@ export const agentSchemas = {
     fallback_model_id: z.string().uuid().optional().nullable(),
   }),
   updateAgent: z.object({
-    name: z.string().min(1, 'Agent名称不能为空').max(100).optional(),
+    name: z.string().min(1, 'Agent name cannot be empty').max(100).optional(),
     avatar: z.string().max(100).optional(),
     role: z.string().max(100).optional(),
     system_prompt: z.string().max(5000).optional(),
@@ -115,7 +115,7 @@ export const agentSchemas = {
     fallback_model_id: z.string().uuid().optional().nullable(),
   }),
   testAgent: z.object({
-    input: z.string().min(1, '测试输入不能为空'),
+    input: z.string().min(1, 'Test input cannot be empty'),
     serverId: z.string().uuid().optional(),
     serverIds: z.array(z.string().uuid()).optional(),
     context: z.record(z.unknown()).optional(),
@@ -128,7 +128,7 @@ export const agentSchemas = {
   }),
   importAgents: z.object({
     agents: z.array(z.object({
-      name: z.string().min(1, 'Agent名称不能为空').max(100),
+      name: z.string().min(1, 'Agent name cannot be empty').max(100),
       avatar: z.string().max(100).default('🤖'),
       role: z.string().max(100).optional(),
       system_prompt: z.string().max(5000).optional(),
@@ -141,7 +141,7 @@ export const agentSchemas = {
     })),
   }),
   testTool: z.object({
-    toolId: z.string().min(1, '工具ID不能为空'),
+    toolId: z.string().min(1, 'Tool ID cannot be empty'),
     args: z.record(z.unknown()).optional(),
   }),
   listAgentsQuery: z.object({
@@ -153,14 +153,14 @@ export const agentSchemas = {
 
 export const remediationSchemas = {
   createPolicy: z.object({
-    name: z.string().min(1, '策略名称不能为空').max(200),
+    name: z.string().min(1, 'Policy name cannot be empty').max(200),
     description: z.string().max(1000).optional(),
     alert_severity: z.string().min(1).max(20),
     alert_title_pattern: z.string().max(500).optional(),
     alert_source: z.string().max(100).optional(),
     alert_keywords: z.string().max(1000).optional(),
     alert_tags: z.string().max(1000).optional(),
-    workflow_id: z.string().uuid('无效的工作流ID'),
+    workflow_id: z.string().uuid('Invalid workflow ID'),
     execution_mode: z.enum(['auto', 'manual', 'approve_first']),
     cooldown_minutes: z.coerce.number().int().min(0).max(1440).default(30),
     max_executions_per_day: z.coerce.number().int().min(1).max(1000).default(10),
@@ -170,7 +170,7 @@ export const remediationSchemas = {
     rollback_workflow_id: z.string().uuid().optional(),
   }),
   policyId: z.object({
-    id: z.string().uuid('无效的策略ID'),
+    id: z.string().uuid('Invalid policy ID'),
   }),
   approveExecution: z.object({
     approved: z.boolean(),
@@ -181,15 +181,15 @@ export const remediationSchemas = {
 // ── 通用校验 Schema ──
 export const commonSchemas = {
   idParam: z.object({
-    id: z.string().uuid('无效的ID'),
+    id: z.string().uuid('Invalid ID'),
   }),
 };
 
 // ── 变更管理校验 Schema ──
 export const changeSchemas = {
   createChange: z.object({
-    server_id: z.string().uuid('无效的服务器ID'),
-    change_type: z.string().min(1, '变更类型不能为空').max(50),
+    server_id: z.string().uuid('Invalid server ID'),
+    change_type: z.string().min(1, 'Change type cannot be empty').max(50),
     description: z.string().max(2000).optional(),
     changed_by: z.string().max(64).optional(),
     status: z.enum(['pending', 'approved', 'rejected', 'executing', 'completed', 'failed', 'rolled_back']).optional(),
@@ -212,7 +212,7 @@ export const backupSchemas = {
 // ── 服务器分组校验 Schema ──
 export const serverGroupSchemas = {
   createGroup: z.object({
-    name: z.string().min(1, '分组名称不能为空').max(100),
+    name: z.string().min(1, 'Group name cannot be empty').max(100),
     description: z.string().max(500).optional(),
     parent_id: z.string().uuid().optional().nullable(),
     sort_order: z.coerce.number().int().min(0).default(0),
@@ -228,11 +228,11 @@ export const serverGroupSchemas = {
     sort_order: z.coerce.number().int().min(0).optional(),
   }),
   groupMapping: z.object({
-    server_id: z.string().uuid('无效的服务器ID'),
-    group_id: z.string().uuid('无效的分组ID'),
+    server_id: z.string().uuid('Invalid server ID'),
+    group_id: z.string().uuid('Invalid group ID'),
   }),
   groupId: z.object({
-    id: z.string().uuid('无效的分组ID'),
+    id: z.string().uuid('Invalid group ID'),
   }),
 };
 
@@ -241,14 +241,14 @@ export const alertCreateSchemas = {
   createAlert: z.object({
     source: z.string().max(100).default('unknown'),
     severity: z.enum(['critical', 'high', 'medium', 'low']).default('medium'),
-    title: z.string().min(1, '告警标题不能为空').max(500),
+    title: z.string().min(1, 'Alert title cannot be empty').max(500),
     content: z.string().max(10000).optional(),
     metadata: z.record(z.unknown()).optional(),
     related_task_id: z.string().uuid().optional(),
   }),
   createProviderConfig: z.object({
-    provider_id: z.string().min(1, 'Provider ID 不能为空').max(100),
-    name: z.string().min(1, '配置名称不能为空').max(100),
+    provider_id: z.string().min(1, 'Provider ID cannot be empty').max(100),
+    name: z.string().min(1, 'Config name cannot be empty').max(100),
     config: z.record(z.unknown()).optional(),
     enabled: z.coerce.boolean().optional(),
   }),
@@ -258,7 +258,7 @@ export const alertCreateSchemas = {
     enabled: z.coerce.boolean().optional(),
   }),
   fetchAlerts: z.object({
-    providerId: z.string().min(1, 'Provider ID 不能为空').max(100),
+    providerId: z.string().min(1, 'Provider ID cannot be empty').max(100),
     config: z.record(z.unknown()).optional(),
   }),
 };
@@ -269,7 +269,7 @@ export const alertMappingSchemas = {
     alert_source: z.string().max(100).optional(),
     alert_severity: z.string().max(50).optional(),
     alert_title_pattern: z.string().max(500).optional(),
-    workflow_id: z.string().uuid('无效的工作流ID'),
+    workflow_id: z.string().uuid('Invalid workflow ID'),
     enabled: z.coerce.number().int().min(0).max(1).default(1),
   }),
   updateMapping: z.object({
@@ -280,16 +280,16 @@ export const alertMappingSchemas = {
     enabled: z.coerce.number().int().min(0).max(1).optional(),
   }),
   mappingId: z.object({
-    id: z.string().uuid('无效的映射ID'),
+    id: z.string().uuid('Invalid mapping ID'),
   }),
 };
 
 // ── 定时任务校验 Schema ──
 export const scheduledTaskSchemas = {
   createTask: z.object({
-    name: z.string().min(1, '任务名称不能为空').max(200),
+    name: z.string().min(1, 'Task name cannot be empty').max(200),
     description: z.string().max(1000).optional(),
-    workflow_id: z.string().uuid('无效的工作流ID').optional(),
+    workflow_id: z.string().uuid('Invalid workflow ID').optional(),
     schedule: z.string().max(100).optional(),
     cron_expression: z.string().max(100).optional(),
     enabled: z.coerce.number().int().min(0).max(1).default(1),
@@ -303,14 +303,14 @@ export const scheduledTaskSchemas = {
     enabled: z.coerce.number().int().min(0).max(1).optional(),
   }),
   taskId: z.object({
-    id: z.string().uuid('无效的定时任务ID'),
+    id: z.string().uuid('Invalid scheduled task ID'),
   }),
 };
 
 // ── 服务器命令校验 Schema ──
 export const serverCommandSchemas = {
   execCommand: z.object({
-    command: z.string().min(1, '命令不能为空').max(10000),
+    command: z.string().min(1, 'Command cannot be empty').max(10000),
     timeout: z.coerce.number().int().min(1000).max(300000).optional(),
   }),
 };
@@ -318,10 +318,10 @@ export const serverCommandSchemas = {
 // ── 服务器导入校验 Schema ──
 export const serverImportSchemas = {
   importServer: z.object({
-    name: z.string().min(1, '服务器名称不能为空').max(100),
-    hostname: z.string().min(1, '主机名不能为空').max(255),
+    name: z.string().min(1, 'Server name cannot be empty').max(100),
+    hostname: z.string().min(1, 'Hostname cannot be empty').max(255),
     port: z.coerce.number().int().min(1).max(65535).default(22),
-    username: z.string().min(1, '用户名不能为空').max(64),
+    username: z.string().min(1, 'Username cannot be empty').max(64),
     password: z.string().max(255).optional(),
     private_key: z.string().optional(),
     use_ssh_key: z.coerce.number().int().min(0).max(1).default(0),
@@ -331,17 +331,17 @@ export const serverImportSchemas = {
   }),
   importServers: z.object({
     servers: z.array(z.object({
-      name: z.string().min(1, '服务器名称不能为空').max(100),
-      hostname: z.string().min(1, '主机名不能为空').max(255),
+      name: z.string().min(1, 'Server name cannot be empty').max(100),
+      hostname: z.string().min(1, 'Hostname cannot be empty').max(255),
       port: z.coerce.number().int().min(1).max(65535).default(22),
-      username: z.string().min(1, '用户名不能为空').max(64),
+      username: z.string().min(1, 'Username cannot be empty').max(64),
       password: z.string().max(255).optional(),
       private_key: z.string().optional(),
       use_ssh_key: z.coerce.number().int().min(0).max(1).default(0),
       description: z.string().max(500).optional(),
       tags: z.array(z.string()).optional(),
       group_id: z.string().uuid().optional(),
-    })).min(1, '请提供至少一个服务器'),
+    })).min(1, 'Please provide at least one server'),
     test_connection: z.coerce.boolean().default(true),
   }),
 };
@@ -363,7 +363,7 @@ export const aarsSchemas = {
 // (createWorkflow 已定义，这里补充 update 和 import)
 export const workflowExtendedSchemas = {
   updateWorkflow: z.object({
-    name: z.string().min(1, '工作流名称不能为空').max(200).optional(),
+    name: z.string().min(1, 'Workflow name cannot be empty').max(200).optional(),
     description: z.string().max(1000).optional(),
     nodes: z.array(z.unknown()).optional(),
     edges: z.array(z.unknown()).optional(),
@@ -372,7 +372,7 @@ export const workflowExtendedSchemas = {
   }),
   importWorkflow: z.object({
     workflow: z.object({
-      name: z.string().min(1, '工作流名称不能为空').max(200),
+      name: z.string().min(1, 'Workflow name cannot be empty').max(200),
       description: z.string().max(1000).optional(),
       nodes: z.array(z.unknown()).optional(),
       edges: z.array(z.unknown()).optional(),
@@ -431,10 +431,10 @@ export const alertNoiseSchemas = {
   }),
 };
 
-// ── Prometheus 主动查询 schemas（2026-07-22 修复，prometheusRoutes.ts 引用但原本未导出） ──
+// ── Prometheus 主动查询 schemas（2026-07-22 修复，prometheusRoutes.ts 引用但原本未导出）──
 
 const prometheusClientOptions = z.object({
-  url: z.string().url('Prometheus URL 必须为合法 URL'),
+  url: z.string().url('Prometheus URL must be a valid URL'),
   basicAuth: z
     .object({
       username: z.string().min(1).max(100),
@@ -448,7 +448,7 @@ const prometheusClientOptions = z.object({
 export const prometheusSchemas = {
   base: prometheusClientOptions,
   query: prometheusClientOptions.extend({
-    promql: z.string().min(1, 'PromQL 不能为空').max(2000),
+    promql: z.string().min(1, 'PromQL cannot be empty').max(2000),
     time: z.string().max(50).optional(),
   }),
   queryRange: prometheusClientOptions.extend({
@@ -467,7 +467,7 @@ export const prometheusSchemas = {
 // ── Zabbix 主动查询 schemas（2026-07-22 修复，zabbixRoutes.ts 引用但原本未导出） ──
 
 const zabbixClientOptions = z.object({
-  url: z.string().url('Zabbix API URL 必须为合法 URL'),
+  url: z.string().url('Zabbix API URL must be a valid URL'),
   apiToken: z.string().min(1).max(2000).optional(),
   timeoutMs: z.number().int().min(1000).max(60000).optional(),
 });

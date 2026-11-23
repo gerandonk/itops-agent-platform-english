@@ -59,7 +59,7 @@ export function NodeConfigPanel({
 }: NodeConfigPanelProps) {
   return (
     <div className="border-t border-border p-4 bg-background/50 overflow-y-auto max-h-96">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between flex-wrap mb-4">
         <h3 className="font-semibold flex items-center gap-2">
           <Settings className="w-4 h-4" />
           Node Configuration

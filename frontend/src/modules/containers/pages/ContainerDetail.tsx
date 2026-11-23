@@ -101,7 +101,7 @@ export function ContainerDetail({
         <div className="fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/50" onClick={onCloseLogs} />
           <div className="relative ml-auto w-full max-w-2xl bg-surface border-l border-border h-full overflow-hidden flex flex-col animate-slide-in-right">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border flex-shrink-0">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-b border-border flex-shrink-0">
               <div className="flex items-center gap-2">
                 <Terminal className="w-5 h-5 text-text-secondary" />
                 <h3 className="font-semibold text-text-primary">Container logs:  {selectedContainerName}</h3>
@@ -126,7 +126,7 @@ export function ContainerDetail({
         <div className="fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/50" onClick={onCloseStats} />
           <div className="relative ml-auto w-full max-w-lg bg-surface border-l border-border h-full overflow-hidden flex flex-col animate-slide-in-right">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border flex-shrink-0">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-b border-border flex-shrink-0">
               <div className="flex items-center gap-2">
                 <Activity className="w-5 h-5 text-text-secondary" />
                 <h3 className="font-semibold text-text-primary">Container status:  {selectedContainerName}</h3>
@@ -156,7 +156,7 @@ export function ContainerDetail({
                       const pct = sysDelta > 0 ? (delta / sysDelta * online * 100).toFixed(1) : '0.0';
                       return (
                         <>
-                          <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center justify-between flex-wrap mb-2">
                             <span className="text-xs text-text-tertiary">Usage</span>
                             <span className="text-lg font-bold text-text-primary">{pct}%</span>
                           </div>
@@ -176,7 +176,7 @@ export function ContainerDetail({
                       const pct = (used / limit * 100).toFixed(1);
                       return (
                         <>
-                          <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center justify-between flex-wrap mb-2">
                             <span className="text-xs text-text-tertiary">Usage / Limit</span>
                             <span className="text-sm font-medium text-text-primary">{formatBytes(used)} / {formatBytes(limit)}</span>
                           </div>
@@ -218,7 +218,7 @@ export function ContainerDetail({
         <div className="fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/50" onClick={onCloseDetail} />
           <div className="relative ml-auto w-full max-w-lg bg-surface border-l border-border h-full overflow-hidden flex flex-col animate-slide-in-right">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border flex-shrink-0">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-b border-border flex-shrink-0">
               <div className="flex items-center gap-2">
                 <Eye className="w-5 h-5 text-text-secondary" />
                 <h3 className="font-semibold text-text-primary">Container details:  {selectedContainerName}</h3>

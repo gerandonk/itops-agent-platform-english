@@ -54,7 +54,7 @@ export function DecisionConfig({ selectedNode, onUpdate }: DecisionConfigProps) 
         </div>
 
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between flex-wrap mb-2">
             <label className="block text-sm text-text-secondary">Decision rules (matched in order)</label>
             <button
               type="button"
@@ -73,7 +73,7 @@ export function DecisionConfig({ selectedNode, onUpdate }: DecisionConfigProps) 
             <div className="space-y-2">
               {rules.map((rule, idx) => (
                 <div key={idx} className="border border-border rounded p-2 space-y-1.5 bg-background/50">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap">
                     <span className="text-xs font-medium text-text-secondary">Rule #{idx + 1}</span>
                     <button
                       type="button"

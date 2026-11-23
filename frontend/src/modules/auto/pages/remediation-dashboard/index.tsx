@@ -20,10 +20,10 @@ export default function RemediationDashboardPage() {
   } = useRemediationDashboard();
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-1">Remediation Dashboard</h1>
             <p className="text-text-secondary text-sm">Auto-remediation policy execution effectiveness and statistics</p>

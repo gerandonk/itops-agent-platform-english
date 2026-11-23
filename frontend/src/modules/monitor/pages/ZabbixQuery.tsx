@@ -180,7 +180,7 @@ export default function ZabbixQuery() {
   };
 
   return (
-    <div className="h-full overflow-auto p-6 space-y-6 bg-background text-text-primary">
+    <div className="h-full overflow-auto p-4 lg:p-6 space-y-6 bg-background text-text-primary">
       <div className="flex items-center gap-3">
         <Activity size={26} className="text-emerald-400" />
         <div>
@@ -190,7 +190,7 @@ export default function ZabbixQuery() {
       </div>
 
       <section className="bg-surface border border-border rounded-xl p-5 space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <h3 className="text-sm font-medium text-text-secondary flex items-center gap-2">
             <Plug size={16} /> Connection Configuration
           </h3>

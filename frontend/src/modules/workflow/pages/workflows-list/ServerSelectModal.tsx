@@ -32,7 +32,7 @@ export default function ServerSelectModal({
           Please select the servers to execute workflow &quot;{workflow.name}&quot;
         </p>
 
-        <div className="flex items-center justify-between mb-4 p-3 bg-background rounded-lg border border-border">
+        <div className="flex items-center justify-between flex-wrap mb-4 p-3 bg-background rounded-lg border border-border">
           <span className="text-sm text-text-secondary">
             Selected:  <span className="font-medium text-primary">{selectedServers.length}</span> / {servers?.length || 0}
           </span>

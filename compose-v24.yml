@@ -21,6 +21,7 @@ services:
       - NODE_ENV=production
       - PORT=3001
       - HOST=0.0.0.0
+      - DOCKER_SOCKET=/var/run/docker.sock
       - DATABASE_PATH=/app/data/app.db
       - LOG_LEVEL=${LOG_LEVEL:-info}
       # JWT_SECRET 可选 — 不设置则由 backend 自动生成并持久化到 /app/data/.jwt-secret

@@ -170,7 +170,7 @@ export default function ContainerLogs() {
   return (
     <div className="p-6 flex flex-col h-full">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between flex-wrap mb-4">
         <div>
           <h1 className="text-2xl font-bold text-text-primary">Container Log Viewer</h1>
           <p className="text-sm text-text-secondary mt-1">View container terminal output logs in real time, with search, filtering, and export</p>

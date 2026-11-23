@@ -27,7 +27,12 @@ export default function SlotModals({ dc }: Props) {
           <Form.Item name="device_id" label="Select device" rules={[{ required: true, message: 'Please select device' }]}>
             <Select placeholder="Select a device to assign to this cabinet..." showSearch filterOption={(input, option) =>
               (option?.label as string || '').toLowerCase().includes(input.toLowerCase())
-            }>
+            } onChange={(value) => {
+              const selected = dc.availDevices.find(d => d.id === value);
+              if (selected) {
+                dc.slotForm.setFieldsValue({ device_type: selected.device_type });
+              }
+            }}>
               {dc.availDevices.map((d: DeviceSummary) => (
                 <Select.Option key={d.id} value={d.id}
                   label={`${d.name || d.device_name || 'Unnamed'} (${d.device_type || '?'})`}>
@@ -40,6 +45,9 @@ export default function SlotModals({ dc }: Props) {
                 </Select.Option>
               ))}
             </Select>
+          </Form.Item>
+          <Form.Item name="device_type" noStyle>
+            <input type="hidden" />
           </Form.Item>
           <Form.Item name="start_u" label="Starting U position" rules={[{ required: true, message: 'Please enter starting U position' }]}>
             <InputNumber min={1} max={dc.selectedRack?.total_u || 42} step={1} className="w-full" />

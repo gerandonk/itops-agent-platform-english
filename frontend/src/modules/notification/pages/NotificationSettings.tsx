@@ -97,7 +97,7 @@ export default function NotificationSettings() {
         <NotificationRulesSection config={data.notificationConfig} onChange={handleConfigChange} />
 
         {/* ==================== Save Button ==================== */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-2">
             {data.saveStatus === 'saving' && (
               <Loader2 className="w-4 h-4 animate-spin text-text-secondary" />

@@ -26,7 +26,7 @@ function authenticateSocket(socket: Socket, next: (err?: Error) => void) {
 
   if (!token) {
     logger.error('❌ WebSocket 认证失败: 未提供 token');
-    return next(new Error('未提供认证token'));
+    return next(new Error('No authentication token provided'));
   }
 
   try {

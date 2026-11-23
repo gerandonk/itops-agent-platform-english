@@ -65,7 +65,7 @@ export function ServerImportSection({
             {importResult.details && importResult.details.length > 0 && (
               <div className="mt-3 max-h-40 overflow-y-auto">
                 {importResult.details.map((d, i) => (
-                  <div key={i} className="flex items-center justify-between py-1 text-xs">
+                  <div key={i} className="flex items-center justify-between flex-wrap py-1 text-xs">
                     <span>
                       {d.name} ({d.hostname})
                     </span>

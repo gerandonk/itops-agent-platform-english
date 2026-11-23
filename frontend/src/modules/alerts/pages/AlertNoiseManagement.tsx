@@ -88,10 +88,10 @@ export default function AlertNoiseManagement() {
   ] : [];
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary flex items-center gap-3">
               <Shield className="w-8 h-8 text-primary" />

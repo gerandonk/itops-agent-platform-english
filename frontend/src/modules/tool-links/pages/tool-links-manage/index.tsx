@@ -40,9 +40,9 @@ export default function ToolLinksManagePage() {
   } = useToolLinksManage();
 
   return (
-    <div className="h-full overflow-auto p-6">
+    <div className="h-full overflow-auto p-4 lg:p-6">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-wrap">
           <div>
             <h1 className="text-2xl font-bold text-text-primary mb-2">Tool Link Configuration</h1>
             <p className="text-text-secondary text-sm">Manage ops tool navigation links with custom names, URLs, icons, and categories</p>

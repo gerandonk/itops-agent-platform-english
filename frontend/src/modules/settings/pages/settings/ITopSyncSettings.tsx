@@ -382,7 +382,7 @@ export default function ITopSyncSettings() {
         </div>
 
         {/* Action buttons */}
-        <div className="flex items-center justify-between pt-4 border-t border-border">
+        <div className="flex items-center justify-between flex-wrap pt-4 border-t border-border">
           {/* Test Connection */}
           <div className="flex items-center gap-3">
             <button
@@ -427,7 +427,7 @@ export default function ITopSyncSettings() {
 
       {/* === Sync Status Panel === */}
       <div className="bg-surface rounded-xl border border-border overflow-hidden">
-        <div className="flex items-center justify-between px-5 py-3 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap px-5 py-3 border-b border-border">
           <div className="flex items-center gap-2">
             <Activity className="w-4 h-4 text-text-secondary" />
             <h4 className="text-sm font-semibold text-text-primary">Sync Status</h4>

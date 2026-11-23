@@ -99,7 +99,7 @@ export default function VMMigrations() {
   }, [form, startMutation, toast]);
 
   return (
-    <div className="h-full overflow-auto p-6 space-y-4">
+    <div className="h-full overflow-auto p-4 lg:p-6 space-y-4">
       {/* ── Header ── */}
       <div>
         <h1 className="text-2xl font-bold text-text-primary">VM Migrations</h1>

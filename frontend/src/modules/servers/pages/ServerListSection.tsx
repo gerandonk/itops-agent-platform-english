@@ -125,7 +125,7 @@ export function ServerListSection({
         {/* Group Sidebar */}
         {showGroups && (
           <div className="w-full lg:w-56 flex-shrink-0 bg-surface border border-border rounded-lg p-3">
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between flex-wrap mb-2">
               <h3 className="text-sm font-medium text-text-primary">Server Groups</h3>
               <button
                 onClick={() => onSelectGroupId(null)}

@@ -180,8 +180,8 @@ export default function RemediationWorkbench() {
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-      <div className="flex-1 overflow-auto p-6">
-        <div className="flex items-center justify-between mb-6">
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
+        <div className="flex items-center justify-between flex-wrap mb-6">
           <div>
             <h2 className="text-2xl font-bold text-text-primary mb-1">Self-Healing Workbench</h2>
             <p className="text-text-secondary text-sm">Manage approval and execution of self-healing policies</p>
@@ -338,7 +338,7 @@ export default function RemediationWorkbench() {
           )}
 
           {data && data.total > limit && (
-            <div className="flex items-center justify-between mt-4">
+            <div className="flex items-center justify-between flex-wrap mt-4">
               <div className="text-sm text-text-secondary">Total  {data.total}  records</div>
               <div className="flex items-center gap-2">
                 <button
@@ -370,7 +370,7 @@ export default function RemediationWorkbench() {
             className="bg-surface border border-border rounded-xl w-full max-w-3xl max-h-[85vh] overflow-hidden flex flex-col"
             onClick={e => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border/50">
+            <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border/50">
               <h3 className="text-lg font-semibold text-text-primary">Audit Details</h3>
               <button
                 onClick={handleCloseModal}
@@ -380,7 +380,7 @@ export default function RemediationWorkbench() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-auto p-6 space-y-6">
+            <div className="flex-1 overflow-auto p-4 lg:p-6 space-y-6">
               <div className="grid grid-cols-2 gap-4 bg-surface rounded-lg p-4">
                 <div>
                   <div className="text-xs text-text-tertiary mb-1">Root Cause Analysis</div>

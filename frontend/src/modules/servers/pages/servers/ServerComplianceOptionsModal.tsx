@@ -37,7 +37,7 @@ export function ServerComplianceOptionsModal({
         className="bg-surface rounded-xl p-6 w-full max-w-md mx-4"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between flex-wrap mb-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
               <ShieldCheck className="w-5 h-5 text-primary" />
@@ -60,7 +60,7 @@ export function ServerComplianceOptionsModal({
         <div className="space-y-6">
           {/* AI Smart Analysis Toggle */}
           <div className="p-4 bg-background rounded-lg border border-border">
-            <label className="flex items-center justify-between cursor-pointer">
+            <label className="flex items-center justify-between flex-wrap cursor-pointer">
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-semibold text-text-primary">AI Analysis</span>
@@ -94,7 +94,7 @@ export function ServerComplianceOptionsModal({
 
           {/* Concurrency Selection */}
           <div className="p-4 bg-background rounded-lg border border-border">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between flex-wrap mb-3">
               <div>
                 <span className="text-sm font-medium text-text-primary">Concurrency</span>
                 <p className="text-xs text-text-tertiary mt-1">Number of check commands run concurrently</p>

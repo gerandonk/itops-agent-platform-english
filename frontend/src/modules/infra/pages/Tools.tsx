@@ -111,7 +111,7 @@ export default function Tools() {
 
   return (
     <div className="h-screen flex flex-col bg-slate-900 overflow-hidden">
-      <div className="p-6 border-b border-slate-700 flex items-center justify-between">
+      <div className="p-6 border-b border-slate-700 flex items-center justify-between flex-wrap">
         <div>
           <h1 className="text-xl lg:text-2xl font-bold text-slate-100 mb-2">Tool Management</h1>
           <p className="text-slate-400">Manage and test Agent tools</p>
@@ -135,7 +135,7 @@ export default function Tools() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search tools..."
-            className="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-100 focus:outline-none focus:border-blue-500 w-64"
+            className="px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-100 focus:outline-none focus:border-blue-500"
           />
         </div>
 
@@ -173,7 +173,7 @@ export default function Tools() {
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTools.map((tool) => {
             const Icon = getCategoryIcon(tool.category);
@@ -221,7 +221,7 @@ export default function Tools() {
       {showTestModal.tool && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-slate-800 border border-slate-700 rounded-xl w-full max-w-3xl flex flex-col max-h-[80vh]">
-            <div className="p-6 border-b border-slate-700 flex items-center justify-between">
+            <div className="p-6 border-b border-slate-700 flex items-center justify-between flex-wrap">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/20">
                   <Wrench className="w-5 h-5 text-blue-400" />

@@ -14,7 +14,7 @@ export default function WorkflowProviders() {
 
   return (
     <div className="flex-1 flex flex-col h-screen overflow-hidden bg-background">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-border/40 bg-surface/50 backdrop-blur-sm">
+      <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border/40 bg-surface/50 backdrop-blur-sm">
         <div>
           <h1 className="text-xl font-bold text-text-primary flex items-center gap-2">
             Workflow Action Library

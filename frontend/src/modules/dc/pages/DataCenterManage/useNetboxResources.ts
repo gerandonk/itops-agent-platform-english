@@ -67,11 +67,11 @@ export function useNetboxResources(injectedRooms?: Room[], injectedRacks?: Rack[
         dcApi.listPowerFeeds(),
         dcApi.listCables(),
       ]);
-      setManufacturers(m);
-      setDeviceTypes(d as unknown as DeviceTypeInfo[]);
-      setPowerPanels(pp);
-      setPowerFeeds(pf);
-      setCables(c as unknown as UiCable[]);
+      setManufacturers(m || []);
+      setDeviceTypes((d as unknown as DeviceTypeInfo[]) || []);
+      setPowerPanels(pp || []);
+      setPowerFeeds(pf || []);
+      setCables((c as unknown as UiCable[]) || []);
     } catch (err: unknown) {
       message.error((err as Error).message || 'Failed to load resources');
     } finally {

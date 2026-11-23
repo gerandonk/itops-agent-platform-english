@@ -17,7 +17,7 @@ export default function VirtualMachines() {
 
   return (
     <div className="p-4 lg:p-6 space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-wrap">
         <div>
           <h1 className="text-2xl font-bold text-text-primary">VM management</h1>
           <p className="text-sm text-text-secondary mt-1">

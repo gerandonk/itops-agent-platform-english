@@ -93,11 +93,11 @@ export function ContainersTab({ ctx }: { ctx: Ctx }) {
       {!containersError && (
         <div className="bg-surface rounded-lg border border-border overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full table-fixed min-w-[640px]">
               <thead className="bg-background border-b border-border">
                 <tr>
                   <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Name</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Image</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider truncate min-w-[200px]">Image</th>
                   <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Status</th>
                   <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider">Port</th>
                   <th className="px-4 py-3 text-left text-xs font-medium text-text-secondary uppercase tracking-wider hidden md:table-cell">Created At</th>
@@ -114,7 +114,17 @@ export function ContainersTab({ ctx }: { ctx: Ctx }) {
                     const state = (c.State || c.state || '').toLowerCase();
                     const badge = statusBadge(state);
                     const rawPorts = (c as any).ports || c.Ports || [];
-const ports = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.PublicPort}→${p.PrivatePort}`);
+// Deduplicate ports (Docker API returns same port for IPv4 + IPv6)
+const seen = new Set();
+const ports = rawPorts
+  .filter((p: any) => p.PublicPort)
+  .filter((p: any) => {
+    const key = `${p.PublicPort}:${p.PrivatePort}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  })
+  .map((p: any) => `${p.PublicPort}→${p.PrivatePort}`);
                     return (
                       <tr key={c.id} className="hover:bg-slate-700/30 transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap">
@@ -198,7 +208,7 @@ const ports = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.Pub
           </div>
           {/* Pagination */}
           {containerData && containerData.total > pageSize && (
-            <div className="flex items-center justify-between px-4 py-3 border-t border-border">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-t border-border">
               <span className="text-xs text-text-tertiary">
                 Total  {containerData.total} items, page  {page} / {Math.ceil(containerData.total / pageSize)} 
               </span>
@@ -223,7 +233,7 @@ const ports = rawPorts.filter((p: any) => p.PublicPort).map((p: any) => `${p.Pub
       {showCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => { setShowCreateModal(false); resetCreateForm(); }}>
           <div className="bg-surface rounded-lg border border-border w-full max-w-lg max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
               <h3 className="text-lg font-semibold text-text-primary">Create Container</h3>
               <button onClick={() => { setShowCreateModal(false); resetCreateForm(); }} className="text-text-secondary hover:text-text-primary"><X className="w-5 h-5" /></button>
             </div>

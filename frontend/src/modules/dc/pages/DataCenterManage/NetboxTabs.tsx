@@ -25,7 +25,7 @@ export function ManufacturersTab({ dc }: { dc: DC }) {
             )
           },
         ]}
-        dataSource={dc.manufacturers.map((m: Manufacturer) => ({ ...m, key: m.id }))}
+        dataSource={(dc.manufacturers || []).map((m: Manufacturer) => ({ ...m, key: m.id }))}
         loading={dc.loading}
         pagination={false}
       />
@@ -72,7 +72,7 @@ export function DeviceTypesTab({ dc }: { dc: DC }) {
             )
           },
         ]}
-        dataSource={dc.deviceTypes.map((t: DeviceTypeInfo) => ({ ...t, key: t.id }))}
+        dataSource={(dc.deviceTypes || []).map((t: DeviceTypeInfo) => ({ ...t, key: t.id }))}
         loading={dc.loading}
         pagination={false}
       />
@@ -90,7 +90,7 @@ export function DeviceTypesTab({ dc }: { dc: DC }) {
           </Form.Item>
           <Form.Item name="manufacturer_id" label="Manufacturer" rules={[{ required: true, message: 'Please select manufacturer' }]}>
             <Select placeholder="Select manufacturer...">
-              {dc.manufacturers.map((m: Manufacturer) => (
+              {(dc.manufacturers || []).map((m: Manufacturer) => (
                 <Select.Option key={m.id} value={m.id}>{m.name}</Select.Option>
               ))}
             </Select>
@@ -137,7 +137,7 @@ export function PowerPanelsTab({ dc }: { dc: DC }) {
             )
           },
         ]}
-        dataSource={dc.powerPanels.map((p: PowerPanel) => ({ ...p, key: p.id }))}
+        dataSource={(dc.powerPanels || []).map((p: PowerPanel) => ({ ...p, key: p.id }))}
         loading={dc.loading}
         pagination={false}
       />
@@ -155,7 +155,7 @@ export function PowerPanelsTab({ dc }: { dc: DC }) {
           </Form.Item>
           <Form.Item name="room_id" label="Data center">
             <Select placeholder="Select data center (optional)..." allowClear>
-              {dc.rooms.map(r => <Select.Option key={r.id} value={r.id}>{r.name || r.label}</Select.Option>)}
+              {(dc.rooms || []).map(r => <Select.Option key={r.id} value={r.id}>{r.name || r.label}</Select.Option>)}
             </Select>
           </Form.Item>
           <Form.Item name="type" label="Type">
@@ -199,7 +199,7 @@ export function PowerFeedsTab({ dc }: { dc: DC }) {
             )
           },
         ]}
-        dataSource={dc.powerFeeds.map((f: PowerFeed) => ({ ...f, key: f.id }))}
+        dataSource={(dc.powerFeeds || []).map((f: PowerFeed) => ({ ...f, key: f.id }))}
         loading={dc.loading}
         pagination={false}
       />
@@ -217,14 +217,14 @@ export function PowerFeedsTab({ dc }: { dc: DC }) {
           </Form.Item>
           <Form.Item name="power_panel_id" label="Power distribution cabinet" rules={[{ required: true, message: 'Please select power distribution cabinet' }]}>
             <Select placeholder="Select power distribution cabinet...">
-              {dc.powerPanels.map((p: PowerPanel) => (
+              {(dc.powerPanels || []).map((p: PowerPanel) => (
                 <Select.Option key={p.id} value={p.id}>{p.name}</Select.Option>
               ))}
             </Select>
           </Form.Item>
           <Form.Item name="rack_id" label="Target cabinet">
             <Select placeholder="Select cabinet (optional)..." allowClear>
-              {dc.racks.map(r => <Select.Option key={r.id} value={r.id}>{r.name}</Select.Option>)}
+              {(dc.racks || []).map(r => <Select.Option key={r.id} value={r.id}>{r.name}</Select.Option>)}
             </Select>
           </Form.Item>
           <Space className="w-full" style={{ display: 'flex' }}>
@@ -279,7 +279,7 @@ export function CablesTab({ dc }: { dc: DC }) {
             )
           },
         ]}
-        dataSource={dc.cables.map((c: Cable) => ({ ...c, key: c.id }))}
+        dataSource={(dc.cables || []).map((c: Cable) => ({ ...c, key: c.id }))}
         loading={dc.loading}
         pagination={false}
       />

@@ -59,7 +59,7 @@ export default function NodeList({ nodes, loading, error, onRetry, searchText }:
             const podPercent = node.podsMax > 0 ? Math.round((node.podsCount / node.podsMax) * 100) : 0;
             return (
               <div key={node.name} className="bg-surface border border-border rounded-xl p-4 space-y-3">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between flex-wrap">
                   <div className="flex items-center gap-2">
                     <Cpu size={16} className="text-text-tertiary" />
                     <span className="text-text-primary text-sm font-medium truncate max-w-[180px]">{node.name}</span>

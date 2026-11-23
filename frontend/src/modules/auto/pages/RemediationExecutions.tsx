@@ -177,7 +177,7 @@ export default function RemediationExecutions() {
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 lg:p-6">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-text-primary mb-1">Remediation Execution Records</h2>
           <p className="text-text-secondary text-sm">View execution history and results for all auto-remediation policies</p>
@@ -302,7 +302,7 @@ export default function RemediationExecutions() {
         )}
 
         {data && data.total > limit && (
-          <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center justify-between flex-wrap mt-4">
             <div className="text-sm text-text-secondary">Total  {data.total}  records</div>
             <div className="flex items-center gap-2">
               <button
@@ -333,7 +333,7 @@ export default function RemediationExecutions() {
             className="bg-surface border border-border rounded-xl w-full max-w-4xl max-h-[85vh] overflow-hidden flex flex-col"
             onClick={e => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border/50">
+            <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border/50">
               <h3 className="text-lg font-semibold text-text-primary">Execution details</h3>
               <button
                 onClick={handleCloseModal}
@@ -343,7 +343,7 @@ export default function RemediationExecutions() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-auto p-6 space-y-6">
+            <div className="flex-1 overflow-auto p-4 lg:p-6 space-y-6">
               <div className="space-y-4">
                 <h4 className="text-sm font-medium text-text-primary flex items-center gap-2">
                   <FileText className="w-4 h-4" />
@@ -484,7 +484,7 @@ export default function RemediationExecutions() {
                     <div key={item.key} className="py-2">
                       <button
                         onClick={() => toggleLog(item.key)}
-                        className="flex items-center justify-between w-full px-4 text-sm text-text-primary hover:text-text-primary transition-colors"
+                        className="flex items-center justify-between flex-wrap w-full px-4 text-sm text-text-primary hover:text-text-primary transition-colors"
                       >
                         <span className="flex items-center gap-2">
                           {expandedLogs[item.key] ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}

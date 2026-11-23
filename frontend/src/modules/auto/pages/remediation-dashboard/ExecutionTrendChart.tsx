@@ -15,7 +15,7 @@ export function ExecutionTrendChart({
 }: ExecutionTrendChartProps) {
   return (
     <div className="lg:col-span-2 bg-surface/30 border border-border rounded-xl p-6">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between flex-wrap mb-6">
         <h2 className="text-lg font-semibold text-text-primary flex items-center gap-2">
           <BarChart3 className="w-5 h-5 text-blue-400" />
           Execution Trend

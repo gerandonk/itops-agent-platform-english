@@ -164,7 +164,7 @@ export default function AgentToolsPage() {
   return (
     <div className="flex-1 flex flex-col h-screen overflow-hidden bg-background">
       {/* Top title bar */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-border/40 bg-surface/50 backdrop-blur-sm">
+      <div className="flex items-center justify-between flex-wrap px-6 py-4 border-b border-border/40 bg-surface/50 backdrop-blur-sm">
         <div>
           <h1 className="text-xl font-bold text-text-primary flex items-center gap-2">
             <Wrench className="w-5 h-5 text-primary" />
@@ -279,7 +279,7 @@ export default function AgentToolsPage() {
                           {riskCfg && (
                             <span
                               className={`text-[10px] px-1.5 py-0.5 rounded ${riskCfg.bg} ${riskCfg.color} font-medium flex items-center gap-1`}
-                              title={`Risk level: \${riskCfg.label}`}
+                              title={`Risk level: ${riskCfg.label}`}
                             >
                               {(tool.riskLevel === 'high' ||
                                 tool.riskLevel === 'destructive') && (
@@ -376,7 +376,7 @@ export default function AgentToolsPage() {
                       return (
                         <span
                           className={`text-[10px] px-2 py-0.5 rounded-md font-medium ${riskCfg.bg} ${riskCfg.color} flex items-center gap-1`}
-                          title={`Risk level: \${riskCfg.label}, will be written to the audit log upon execution`}
+                          title={`Risk level: ${riskCfg.label}, will be written to the audit log upon execution`}
                         >
                           {isHigh && <ShieldAlert className="w-3 h-3" />}
                           {riskCfg.label}

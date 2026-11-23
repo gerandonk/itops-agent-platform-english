@@ -38,21 +38,21 @@ export function createAppError(
 }
 
 export const ERROR_MESSAGES: Record<ErrorCode, string> = {
-  [ErrorCode.SERVER_ERROR]: '服务器内部错误，请稍后重试',
-  [ErrorCode.VALIDATION_ERROR]: '请求参数验证失败',
-  [ErrorCode.AUTH_ERROR]: '认证失败，请重新登录',
-  [ErrorCode.AUTH_TOKEN_EXPIRED]: '登录已过期，请重新登录',
-  [ErrorCode.AUTH_TOKEN_INVALID]: '无效的认证令牌',
-  [ErrorCode.AUTH_INSUFFICIENT_PERMISSIONS]: '权限不足，无法执行此操作',
-  [ErrorCode.NOT_FOUND]: '请求的资源不存在',
-  [ErrorCode.RESOURCE_NOT_FOUND]: '未找到指定的资源',
-  [ErrorCode.DUPLICATE_RESOURCE]: '资源已存在，请勿重复创建',
-  [ErrorCode.RATE_LIMIT_EXCEEDED]: '请求频率过高，请稍后重试',
-  [ErrorCode.DATABASE_ERROR]: '数据库操作失败',
-  [ErrorCode.EXTERNAL_SERVICE_ERROR]: '外部服务调用失败',
-  [ErrorCode.TIMEOUT_ERROR]: '请求超时，请稍后重试',
-  [ErrorCode.INVALID_REQUEST]: '请求格式错误',
-  [ErrorCode.BUSINESS_ERROR]: '业务处理失败'
+  [ErrorCode.SERVER_ERROR]: 'Internal server error, please try again later',
+  [ErrorCode.VALIDATION_ERROR]: 'Request parameter validation failed',
+  [ErrorCode.AUTH_ERROR]: 'Authentication failed, please log in again',
+  [ErrorCode.AUTH_TOKEN_EXPIRED]: 'Login expired, please log in again',
+  [ErrorCode.AUTH_TOKEN_INVALID]: 'Invalid authentication token',
+  [ErrorCode.AUTH_INSUFFICIENT_PERMISSIONS]: 'Insufficient permissions to perform this action',
+  [ErrorCode.NOT_FOUND]: 'Requested resource not found',
+  [ErrorCode.RESOURCE_NOT_FOUND]: 'Specified resource not found',
+  [ErrorCode.DUPLICATE_RESOURCE]: 'Resource already exists, please do not create duplicate',
+  [ErrorCode.RATE_LIMIT_EXCEEDED]: 'Request rate too high, please try again later',
+  [ErrorCode.DATABASE_ERROR]: 'Database operation failed',
+  [ErrorCode.EXTERNAL_SERVICE_ERROR]: 'External service call failed',
+  [ErrorCode.TIMEOUT_ERROR]: 'Request timeout, please try again later',
+  [ErrorCode.INVALID_REQUEST]: 'Invalid request format',
+  [ErrorCode.BUSINESS_ERROR]: 'Business processing failed'
 };
 
 export function getErrorMessage(code: ErrorCode): string {

@@ -19,7 +19,7 @@ export default function AlertFilterBar({
 }: AlertFilterBarProps) {
   return (
     <div className="p-6 border-b border-border">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between flex-wrap mb-4">
         <h2 className="text-lg font-semibold text-text-primary">Alert List</h2>
       </div>
       <div className="flex flex-col sm:flex-row gap-3">

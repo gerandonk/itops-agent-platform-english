@@ -43,7 +43,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-surface rounded-lg p-4 border border-border">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <div>
               <p className="text-text-secondary text-sm">Total Networks</p>
               <p className="text-2xl font-bold text-text-primary mt-1">{networks.length}</p>
@@ -52,7 +52,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
           </div>
         </div>
         <div className="bg-surface rounded-lg p-4 border border-border">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <div>
               <p className="text-text-secondary text-sm">Bridge Network</p>
               <p className="text-2xl font-bold text-text-primary mt-1">
@@ -63,7 +63,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
           </div>
         </div>
         <div className="bg-surface rounded-lg p-4 border border-border">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap">
             <div>
               <p className="text-text-secondary text-sm">Connected Containers</p>
               <p className="text-2xl font-bold text-text-primary mt-1">
@@ -167,7 +167,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
       {showNetCreateModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => { setShowNetCreateModal(false); resetNetForm(); }}>
           <div className="bg-surface rounded-lg border border-border w-full max-w-md max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
               <h3 className="text-lg font-semibold text-text-primary">Create Network</h3>
               <button onClick={() => { setShowNetCreateModal(false); resetNetForm(); }} className="text-text-secondary hover:text-text-primary"><X className="w-5 h-5" /></button>
             </div>
@@ -222,7 +222,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
         <div className="fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/50" onClick={() => setShowNetDetailDrawer(false)} />
           <div className="relative ml-auto w-full max-w-lg bg-surface border-l border-border h-full overflow-hidden flex flex-col animate-slide-in-right">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-border flex-shrink-0">
+            <div className="flex items-center justify-between flex-wrap px-4 py-3 border-b border-border flex-shrink-0">
               <div className="flex items-center gap-2">
                 <Globe className="w-5 h-5 text-text-secondary" />
                 <h3 className="font-semibold text-text-primary">Network Details: {displayNetDetail.Name || displayNetDetail.name}</h3>
@@ -248,7 +248,7 @@ export function NetworksTab({ ctx }: { ctx: Ctx }) {
                   const entries = Object.entries(containers);
                   if (entries.length === 0) return <p className="text-xs text-text-tertiary">No container connections</p>;
                   return entries.map(([cid, info]) => (
-                    <div key={cid} className="flex items-center justify-between py-2 border-b border-border last:border-0">
+                    <div key={cid} className="flex items-center justify-between flex-wrap py-2 border-b border-border last:border-0">
                       <span className="text-sm text-text-primary">{info.Name}</span>
                       <span className="text-xs text-text-tertiary font-mono">{info.IPv4Address || '-'}</span>
                     </div>

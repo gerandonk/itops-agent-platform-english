@@ -15,7 +15,7 @@ export function ViewReportModal({ report, typeLabels, typeColors, onClose, onDow
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-surface border border-border rounded-lg w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
-        <div className="flex items-center justify-between p-4 border-b border-border">
+        <div className="flex items-center justify-between flex-wrap p-4 border-b border-border">
           <h2 className="text-xl font-bold text-text-primary">{report.name}</h2>
           <button
             onClick={onClose}

@@ -82,11 +82,11 @@ const modules: ModuleConfig[] = [
   // scripts 的 `GET /:id` 通过 onlyUuidId 中间件穿透非 UUID 段（如 /settings, /users），
   // 因此 userRouter 的注册位置不再关键。保留前置声明以便未来扩展。
   { path: '/api/v1/users', router: userRouter },
-  { path: '/api/v1', router: scriptsRoutes },
+  { path: '/api/v1/scripts', router: scriptsRoutes },
 
   // === 受保护特殊路由 ===
   { path: '/api/v1', router: alertAutoRouter },
-  { path: '/api/v1', router: networkDiscoveryRouter },
+  { path: '/api/v1', router: networkDiscoveryRouter, options: { noRateLimit: true } },
   { path: '/api/v1', router: alertCorrelationRouter },
 ];
 

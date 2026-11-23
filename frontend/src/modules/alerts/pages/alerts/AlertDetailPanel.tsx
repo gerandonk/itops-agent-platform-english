@@ -20,7 +20,7 @@ export default function AlertDetailPanel({
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
       <div className="bg-surface rounded-xl border border-border max-w-lg w-full shadow-2xl max-h-[80vh] flex flex-col">
         {/* Header */}
-        <div className={`p-4 border-b border-border flex items-center justify-between rounded-t-xl ${
+        <div className={`p-4 border-b border-border flex items-center justify-between flex-wrap rounded-t-xl ${
           processResult.error
             ? 'bg-gradient-to-r from-amber-500/10 to-red-500/10'
             : hasProcessRecords(processResult)
@@ -72,7 +72,7 @@ export default function AlertDetailPanel({
               </h4>
               <div className="space-y-2">
                 {processResult.matchedPolicies.map((p, i) => (
-                  <div key={p.id} className="flex items-center justify-between p-2.5 bg-background rounded-lg border border-border">
+                  <div key={p.id} className="flex items-center justify-between flex-wrap p-2.5 bg-background rounded-lg border border-border">
                     <div className="flex items-center gap-2">
                       <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs flex items-center justify-center font-bold">
                         {i + 1}

@@ -41,7 +41,7 @@ export function DbConnectionFormModal({
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-surface backdrop-blur-xl rounded-2xl w-full max-w-lg border border-border shadow-2xl flex flex-col max-h-[90vh]">
-        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-shrink-0">
+        <div className="p-6 border-b border-border/30 flex items-center justify-between flex-wrap flex-shrink-0">
           <h2 className="text-xl font-bold text-text-primary">
             {editingConn ? 'Edit database connection' : 'Add database connection'}
           </h2>
